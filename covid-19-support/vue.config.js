@@ -1,6 +1,6 @@
 module.exports = {
-  // publicPath: process.env.NODE_ENV === 'production' ? '/COVID-Support-For-CH/' : '/',
-  publicPath: '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/NC-COVID-Support/' : '/',
+  // publicPath: '/',
   pluginOptions: {
     i18n: {
       locale: 'en',
