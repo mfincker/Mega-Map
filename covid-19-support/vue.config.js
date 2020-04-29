@@ -1,5 +1,7 @@
 module.exports = {
+
   publicPath: process.env.NODE_ENV === 'production' && process.env.VUE_APP_THEME === 'AmericanDemoTheme' ? '/NC-COVID-Support/' : '/',
+
   pluginOptions: {
     i18n: {
       locale: 'en',
