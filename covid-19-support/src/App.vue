@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" />
-    <about-us-modal />
+    <!-- <about-us-modal /> -->
     <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
       <search-filter
         :isFilterOpen="isFilterOpen"
@@ -45,7 +45,7 @@ import AppHeader from './components/Header.vue'
 import SearchFilter from './components/SearchFilter.vue'
 import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
-import AboutUsModal from './components/AboutUs.vue'
+// import AboutUsModal from './components/AboutUs.vue'
 import { latLng } from 'leaflet'
 import { haversineDistance, sortByDistance } from './utilities'
 
@@ -88,7 +88,7 @@ export default {
     Highlights,
     SearchFilter,
     ResourceMap,
-    AboutUsModal
+    // AboutUsModal
   },
   data() {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -142,15 +142,15 @@ export default {
     needSelected: function (val) {
       this.need = val
       this.highlightFilters = []
-      window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
+      // window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
     },
     daySelected: function (val) {
       this.day = val
       this.highlightFilters = []
-      window.gtag('event', 'When do you need it?', {
-        event_category: 'Search - (' + this.language.name + ')',
-        event_label: weekdays[this.getDay(val)].day
-      })
+      // window.gtag('event', 'When do you need it?', {
+      //   event_category: 'Search - (' + this.language.name + ')',
+      //   event_label: weekdays[this.getDay(val)].day
+      // })
     },
     changeLanguage: function (item) {
       this.language = item
@@ -160,6 +160,8 @@ export default {
       const res = await fetch(spreadsheetUrl)
       const entries = await res.json()
       this.entries = entries.feed.entry
+
+      console.log(this.entries[0].category)
     },
     passLocation: function (val) {
       this.locationData = val
@@ -169,10 +171,10 @@ export default {
         ? ', ' + this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
         : ''
 
-      window.gtag('event', val.isSetByMap ? 'Marker clicked' : 'List item clicked', {
-        event_category: 'View details - (' + this.language.name + ')',
-        event_label: this.filteredMarkers[val.locValue].marker.gsx$providername.$t + proName
-      })
+    //   window.gtag('event', val.isSetByMap ? 'Marker clicked' : 'List item clicked', {
+    //     event_category: 'View details - (' + this.language.name + ')',
+    //     event_label: this.filteredMarkers[val.locValue].marker.gsx$providername.$t + proName
+    //   })
     }
   },
   computed: {
@@ -184,7 +186,7 @@ export default {
       if (this.need == 'family') {
         markers = this.entries.filter((c) => c.gsx$familymeal.$t == 1 && c.gsx$status.$t == '1')
       } else {
-        markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t == '1')
+        markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t == '1' && c.gsx$lat.$t != 'error' && c.gsx$lon.$t != 'error')
       }
 
       // Filter out the boolean items
