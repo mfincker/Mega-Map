@@ -74,7 +74,7 @@ export default {
   },
   data() {
     return {
-      center: latLng(35.91371, -79.057919),
+      center: latLng(37.594, -122.223),
       zoom: 10,
       showParagraph: true,
       mapOptions: { zoomSnap: 0.5, setView: true },

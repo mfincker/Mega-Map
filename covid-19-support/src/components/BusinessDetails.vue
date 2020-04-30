@@ -15,7 +15,7 @@
             <div class="busName">
               <h5>{{ business.marker.gsx$providername.$t }}</h5>
               <span v-if="!!business.marker.gsx$provideraddloc.$t">{{ business.marker.gsx$provideraddloc.$t }}</span>
-              <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template>
+              <!-- <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template> -->
             </div>
           </div>
           <p>
@@ -52,12 +52,12 @@
               :link="'tel:' + business.marker.gsx$contact.$t"
             />
 
-            <icon-list-item
+<!--             <icon-list-item
               v-if="!!business.marker.gsx$contactspanish.$t"
               icon="fas fa-phone-alt"
               :title="business.marker.gsx$contactspanish.$t + ' (' + $t('languages.es').toLowerCase() + ')'"
               :link="'tel:' + business.marker.gsx$contactspanish.$t"
-            />
+            /> -->
 
             <icon-list-item
               v-if="!!business.marker.gsx$weblink.$t"

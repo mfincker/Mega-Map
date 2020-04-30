@@ -32,7 +32,7 @@ export const weekdayHours = [
 ]
 
 export const spreadsheetUrl =
-  'https://spreadsheets.google.com/feeds/list/1NNo23idWdFofp5LbBS_3S6EQfzgbe1sVgr2GRAjucA0/1/public/values?alt=json'
+  'https://spreadsheets.google.com/feeds/list/1SOUonPM40Si4LrPoGrkUnujbmLBxCQe1SdxydH2dVI4/1/public/values?alt=json'
 
 export const openStreetMapAttribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 
@@ -40,7 +40,7 @@ export const dayFilters = ['mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sun'].map
 export const seniorDayFilters = ['mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sun'].map((attr) => `gsx$sp${attr}`)
 
 export const booleanFilters = [
-  'in-storepickup',
+  'instorepickup',
   'curbside',
   'specialhours',
   'mealstudent',
@@ -53,6 +53,6 @@ export const booleanFilters = [
   'delivery',
   'freeproduce',
   'freegroceries',
-  'farmpick-up',
+  'farmpickup',
   'farmersmarket'
 ]
