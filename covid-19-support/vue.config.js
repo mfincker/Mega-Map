@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/Mega-Map/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/Mega-Map-dev/' : '/',
   // publicPath: '/',
   pluginOptions: {
     i18n: {
