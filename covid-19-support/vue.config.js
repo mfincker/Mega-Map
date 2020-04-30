@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/NC-COVID-Support/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/Mega-Map/' : '/',
   // publicPath: '/',
   pluginOptions: {
     i18n: {
