@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     countPickup() {
-      return countBoolean(this.filteredMarkers, 'in-storepickup')
+      return countBoolean(this.filteredMarkers, 'instorepickup')
     },
     countCurbside() {
       return countBoolean(this.filteredMarkers, 'curbside')
@@ -93,10 +93,34 @@ export default {
       return countBoolean(this.filteredMarkers, 'freegroceries')
     },
     countFarmPickUp() {
-      return countBoolean(this.filteredMarkers, 'farmpick-up')
+      return countBoolean(this.filteredMarkers, 'farmpickup')
     },
     countFarmersMarket() {
       return countBoolean(this.filteredMarkers, 'farmersmarket')
+    },
+    countFreeResource() {
+      return countBoolean(this.filteredMarkers, 'free')
+    },
+    countSnap() {
+      return countBoolean(this.filteredMarkers, 'snap')
+    },
+    countWic() {
+      return countBoolean(this.filteredMarkers, 'wic')
+    },
+    countCallInAdvance() {
+      return countBoolean(this.filteredMarkers, 'callinadvance')
+    },
+    callInAdvanceValueBox() {
+      return this.buildBoxValue('callinadvance', 'fa-phone', this.countCallInAdvance)
+    },
+    freeResourceValueBox() {
+      return this.buildBoxValue('free', 'fa-shopping-basket', this.countFreeResource)
+    },
+    snapValueBox() {
+      return this.buildBoxValue('snap', 'fa-users', this.countSnap, true)
+    },
+    wicValueBox() {
+      return this.buildBoxValue('wic', 'fa-users', this.countWic, true)
     },
     orderOnlineValueBox() {
       return this.buildBoxValue('orderonline', 'fa-mouse', this.countOrderOnline)
@@ -137,15 +161,15 @@ export default {
     valueBoxes() {
       switch (this.need) {
         case 'grocery':
-          return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.seniorShoppingValueBox]
+          return [this.freeResourceValueBox, this.snapValueBox, this.wicValueBox, this.seniorShoppingValueBox]
         case 'restaurant':
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.medicalDiscountsValueBox, this.deliveryValueBox]
         case 'family': // Family Meal Kits
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.mustPreOrderValueBox]
         case 'farm': // Farms
           return [this.curbsidePickupValueBox, this.onFarmPickupValueBox, this.farmersMarketValueBox, this.orderOnlineValueBox]
-        case 'meal': // Free Meals
-          return [this.openToPublicValueBox, this.freeStudentMealsValueBox, this.freeProduceValueBox, this.freeGroceryValueBox]
+        case 'meal': // Prepared Meals
+          return [this.openToPublicValueBox, this.freeStudentMealsValueBox, this.freeResourceValueBox, this.callInAdvanceValueBox]
         case 'pharmacy':
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.seniorShoppingValueBox, this.deliveryValueBox]
         case 'pet':

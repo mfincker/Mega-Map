@@ -54,5 +54,9 @@ export const booleanFilters = [
   'freeproduce',
   'freegroceries',
   'farmpickup',
-  'farmersmarket'
+  'farmersmarket',
+  'free',
+  'wic',
+  'snap',
+  'callinadvance'
 ]

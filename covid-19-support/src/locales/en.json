@@ -71,8 +71,11 @@
     "email": "Email",
     "email_lowercase": "email",
     "farmersmarket": "Farmers' market|Farmers' markets",
-    "farmpick-up": "On-farm pick-up",
+    "farmpickup": "On-farm pick-up",
     "freegroceries": "Free grocery location|Free grocery locations",
+    "free": "Free resource",
+    "snap": "SNAP-accepting location|SNAP-accepting locations",
+    "wic": "WIC-accepting location|WIC-accepting locations",
     "freemeals": "Free meal location|Free meal locations",
     "freeproduce": "Free produce location|Free produce locations",
     "instructions": "Instructions",
@@ -91,7 +94,8 @@
     "selected": "Selected",
     "seniorhours": "Senior hours",
     "specialhours": "Senior shopping hours",
-    "website": "Website"
+    "website": "Website",
+    "callinadvance": "Must call in advance"
   },
   "languages": {
     "ar": "Arabic",
