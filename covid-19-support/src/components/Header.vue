@@ -2,7 +2,6 @@
 
   <b-navbar toggleable="lg" type="dark" variant="primary" id="topnav">
     <!-- <b-navbar-brand href="#"> 
-
       <i18n path="title" tag="span" class="pagetitle">
         <span class="ncblue">NC</span>
       </i18n>
