@@ -23,7 +23,7 @@
             {{ business.marker.gsx$address.$t }}, {{ business.marker.gsx$city.$t }}, {{ business.marker.gsx$state.$t }}
             {{ business.marker.gsx$zip.$t }}<br />
             <a :href="'https://www.google.com/maps/search/?api=1&query=' + getBusinessGoogleMapUrl">
-            View on google map
+              View on google map
             </a>
           </p>
 
@@ -129,11 +129,14 @@ export default {
   },
   computed: {
     getBusinessGoogleMapUrl() {
-      let url = encodeURI(this.business.marker.gsx$providername.$t) + '+'
-                + encodeURI(this.business.marker.gsx$address.$t) + '+'
-                + encodeURI(this.business.marker.gsx$city.$t)
+      let url =
+        encodeURI(this.business.marker.gsx$providername.$t) +
+        '+' +
+        encodeURI(this.business.marker.gsx$address.$t) +
+        '+' +
+        encodeURI(this.business.marker.gsx$city.$t)
 
-      return(url.replace(/%20/g, '+').toLowerCase())
+      return url.replace(/%20/g, '+').toLowerCase()
     }
   }
 }
