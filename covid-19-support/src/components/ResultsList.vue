@@ -104,7 +104,7 @@ export default {
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
   font-size: 0.8rem;
   max-width: 282px;
-  background: #fff;
+  background: theme-color('secondary');
 
   @media (prefers-color-scheme: dark) {
     color: $gray-100;
