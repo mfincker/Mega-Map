@@ -49,7 +49,8 @@ import ResourceMap from './components/ResourceMap.vue'
 import { latLng } from 'leaflet'
 import { haversineDistance, sortByDistance } from './utilities'
 
-import { spreadsheetUrl, weekdays, dayFilters, booleanFilters, dayAny } from './constants'
+// import { spreadsheetUrl, weekdays, dayFilters, booleanFilters, dayAny } from './constants'
+import { spreadsheetUrl, dayFilters, booleanFilters, dayAny } from './constants'
 
 function extend(obj, src) {
   for (var key in src) {
@@ -87,7 +88,7 @@ export default {
     AppHeader,
     Highlights,
     SearchFilter,
-    ResourceMap,
+    ResourceMap
     // AboutUsModal
   },
   data() {
@@ -167,14 +168,14 @@ export default {
       this.locationData = val
       this.showList = false
       this.isFilterOpen = true
-      var proName = this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
-        ? ', ' + this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
-        : ''
+      // var proName = this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
+      //   ? ', ' + this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
+      //   : ''
 
-    //   window.gtag('event', val.isSetByMap ? 'Marker clicked' : 'List item clicked', {
-    //     event_category: 'View details - (' + this.language.name + ')',
-    //     event_label: this.filteredMarkers[val.locValue].marker.gsx$providername.$t + proName
-    //   })
+      //   window.gtag('event', val.isSetByMap ? 'Marker clicked' : 'List item clicked', {
+      //     event_category: 'View details - (' + this.language.name + ')',
+      //     event_label: this.filteredMarkers[val.locValue].marker.gsx$providername.$t + proName
+      //   })
     }
   },
   computed: {
@@ -186,7 +187,9 @@ export default {
       if (this.need == 'family') {
         markers = this.entries.filter((c) => c.gsx$familymeal.$t == 1 && c.gsx$status.$t == '1')
       } else {
-        markers = this.entries.filter((c) => c.gsx$resource.$t === this.need && c.gsx$status.$t == '1' && c.gsx$lat.$t != 'error' && c.gsx$lon.$t != 'error')
+        markers = this.entries.filter(
+          (c) => c.gsx$resource.$t === this.need && c.gsx$status.$t == '1' && c.gsx$lat.$t != 'error' && c.gsx$lon.$t != 'error'
+        )
       }
 
       // Filter out the boolean items

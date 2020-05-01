@@ -1,5 +1,4 @@
 <template>
-
   <b-navbar toggleable="lg" type="dark" variant="primary" id="topnav">
     <!-- <b-navbar-brand href="#">
       <i18n path="title" tag="span" class="pagetitle">
