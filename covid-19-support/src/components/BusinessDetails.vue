@@ -23,7 +23,7 @@
             {{ business.marker.gsx$address.$t }}, {{ business.marker.gsx$city.$t }}, {{ business.marker.gsx$state.$t }}
             {{ business.marker.gsx$zip.$t }}<br />
             <a :href="'https://www.google.com/maps/search/?api=1&query=' + getBusinessGoogleMapUrl">
-              View on google map
+              View on Google Maps
             </a>
           </p>
 
