@@ -1,5 +1,4 @@
 <template>
-
   <b-navbar toggleable="lg" type="dark" variant="primary" id="topnav">
     <!-- <b-navbar-brand href="#"> 
       <i18n path="title" tag="span" class="pagetitle">
@@ -20,7 +19,7 @@
           </b-nav-form>
         </b-nav-item> -->
 
-<!--         <b-nav-item right @click="$bvModal.show('about-us')">
+        <!-- <b-nav-item right @click="$bvModal.show('about-us')">
           {{ $t('about.linktext') }}
         </b-nav-item> -->
         <b-nav-item-dropdown right>

@@ -15,7 +15,7 @@
       </b-list-group-item>
     </b-list-group>
 
-<!--     <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="currentBusiness == null || showListing">
+    <!-- <InfoPanel :infotype="'note'" :icon="'fa-info-circle'" v-if="currentBusiness == null || showListing">
       {{ $t('sidebar.info-about-us') }} <a href="#" @click="$bvModal.show('about-us')">{{ $t('sidebar.info-link-text') }}</a
       >{{ $t('sidebar.info-end-text') }}
     </InfoPanel> -->
@@ -88,7 +88,7 @@ export default {
         { value: 'meal', text: this.$tc('category.meal', 2) },
         // { value: 'family', text: this.$tc('category.family', 2) },
         // { value: 'farm', text: this.$tc('category.farm', 2) },
-        { value: 'grocery', text: this.$tc('category.grocery', 2) },
+        { value: 'grocery', text: this.$tc('category.grocery', 2) }
         // { value: 'pharmacy', text: this.$tc('category.pharmacy', 1) },
         // { value: 'pet', text: this.$tc('category.petsupplies', 2) }
       ]
