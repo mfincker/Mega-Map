@@ -161,8 +161,6 @@ export default {
       const res = await fetch(spreadsheetUrl)
       const entries = await res.json()
       this.entries = entries.feed.entry
-
-      console.log(this.entries[0].category)
     },
     passLocation: function (val) {
       this.locationData = val
