@@ -22,7 +22,7 @@
             <b>{{ $t('label.address') }}:</b><br />
             {{ business.marker.gsx$address.$t }}, {{ business.marker.gsx$city.$t }}, {{ business.marker.gsx$state.$t }}
             {{ business.marker.gsx$zip.$t }}<br />
-            <a :href="'https://www.google.com/maps/search/?api=1&query=' + getBusinessGoogleMapUrl">
+            <a :href="'https://www.google.com/maps/search/?api=1&query=' + businessGoogleMapUrl">
               View on Google Maps
             </a>
           </p>
@@ -128,13 +128,19 @@ export default {
     businessIcon: businessIcon
   },
   computed: {
-    getBusinessGoogleMapUrl() {
+    businessGoogleMapUrl() {
       let url =
-        encodeURI(this.business.marker.gsx$providername.$t) +
+        (this.business.marker.gsx$provideraddloc.$t
+          ? encodeURI(this.business.marker.gsx$provideraddloc.$t)
+          : encodeURI(this.business.marker.gsx$providername.$t)) +
         '+' +
         encodeURI(this.business.marker.gsx$address.$t) +
         '+' +
-        encodeURI(this.business.marker.gsx$city.$t)
+        encodeURI(this.business.marker.gsx$city.$t) +
+        '+' +
+        encodeURI(this.business.marker.gsx$state.$t) +
+        '+' +
+        encodeURI(this.business.marker.gsx$zip.$t)
 
       return url.replace(/%20/g, '+').toLowerCase()
     }
@@ -189,5 +195,9 @@ export default {
 
 .updated {
   color: #aaa;
+}
+
+a {
+  color: #ee8842 !important;
 }
 </style>
