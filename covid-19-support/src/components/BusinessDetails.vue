@@ -22,7 +22,7 @@
             <b>{{ $t('label.address') }}:</b><br />
             {{ business.marker.gsx$address.$t }}, {{ business.marker.gsx$city.$t }}, {{ business.marker.gsx$state.$t }}
             {{ business.marker.gsx$zip.$t }}<br />
-            <a :href="'https://www.google.com/maps/search/?api=1&query=' + businessGoogleMapUrl">
+            <a :href="businessGoogleMapUrl">
               View on Google Maps
             </a>
           </p>
@@ -129,7 +129,8 @@ export default {
   },
   computed: {
     businessGoogleMapUrl() {
-      let url =
+      var url =
+        'https://www.google.com/maps/search/?api=1&query=' +
         (this.business.marker.gsx$provideraddloc.$t
           ? encodeURI(this.business.marker.gsx$provideraddloc.$t)
           : encodeURI(this.business.marker.gsx$providername.$t)) +
