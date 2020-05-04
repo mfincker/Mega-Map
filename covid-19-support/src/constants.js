@@ -58,5 +58,11 @@ export const booleanFilters = [
   'free',
   'wic',
   'snap',
-  'callinadvance'
+  'callinadvance',
+  'seniors',
+  'children',
+  'public'
 ]
+
+// Combination of boolean filters
+export const complexFilters = [{ name: 'curbside_or_delivery', columns: ['curbside', 'delivery'], combine: ([a, b]) => a || b }]

@@ -17,12 +17,22 @@
 
 <script>
 import ValueBox from './ValueBox.vue'
+import { complexFilters } from '../constants'
 
 export const countFeature = (filteredMarkers = [], feature) =>
   (filteredMarkers || []).reduce((total, c) => (c.marker.gsx$accesstype.$t.indexOf(feature) && c.oc > -1 ? total + 1 : total), 0)
 
 export const countBoolean = (filteredMarkers, fieldName) =>
   (filteredMarkers || []).reduce((total, c) => (c.marker['gsx$' + fieldName].$t == '1' && c.oc ? total + 1 : total), 0)
+
+export const countComplexFilter = (filteredMarkers, complexFilter) => {
+  const ct = (filteredMarkers || []).reduce((total, c) => {
+    const boolFiltersArray = complexFilter.columns.map((d) => c.marker['gsx$' + d].$t == '1')
+    const keepMarker = complexFilter.combine(boolFiltersArray)
+    return keepMarker && c.oc ? total + 1 : total
+  }, 0)
+  return ct
+}
 
 export default {
   name: 'Highlights',
@@ -52,13 +62,28 @@ export default {
     }
   },
   computed: {
+    // Counts
     countPickup() {
       return countBoolean(this.filteredMarkers, 'instorepickup')
     },
     countCurbside() {
       return countBoolean(this.filteredMarkers, 'curbside')
     },
-    countSenior() {
+    countDeliveryOrCurbside() {
+      // Location that offer either delivery or curbside
+      const complexFilter = complexFilters.filter((c) => c.name == 'curbside_or_delivery')[0]
+      return countComplexFilter(this.filteredMarkers, complexFilter)
+    },
+    countSeniors() {
+      return countBoolean(this.filteredMarkers, 'seniors')
+    },
+    countChildren() {
+      return countBoolean(this.filteredMarkers, 'children')
+    },
+    countPublic() {
+      return countBoolean(this.filteredMarkers, 'public')
+    },
+    countSeniorHours() {
       return countBoolean(this.filteredMarkers, 'specialhours')
     },
     countFreeStudentMeal() {
@@ -110,6 +135,7 @@ export default {
     countCallInAdvance() {
       return countBoolean(this.filteredMarkers, 'callinadvance')
     },
+    // Value Boxes
     callInAdvanceValueBox() {
       return this.buildBoxValue('callinadvance', 'fa-phone', this.countCallInAdvance)
     },
@@ -138,7 +164,7 @@ export default {
       return this.buildBoxValue('farmersmarket', 'fa-store', this.countFarmersMarket, true)
     },
     seniorShoppingValueBox() {
-      return this.buildBoxValue('specialhours', 'fa-history', this.countSenior)
+      return this.buildBoxValue('specialhours', 'fa-history', this.countSeniorHours)
     },
     medicalDiscountsValueBox() {
       return this.buildBoxValue('discountmedical', 'fa-user-md', this.countDiscountMedical, true)
@@ -158,10 +184,27 @@ export default {
     mustPreOrderValueBox() {
       return this.buildBoxValue('mustpreorder', 'fa-phone', this.countMustPreOrder, true)
     },
+    curbsideOrDeliveryValueBox() {
+      return this.buildBoxValue('curbside_or_delivery', 'fa-shipping-fast', this.countDeliveryOrCurbside)
+    },
+    seniorsValueBox() {
+      return this.buildBoxValue('seniors', '', this.countSeniors)
+    },
+    childrenValueBox() {
+      return this.buildBoxValue('children', '', this.countChildren)
+    },
+    publicValueBox() {
+      return this.buildBoxValue('public', '', this.countPublic)
+    },
+    // Displayed boxes
     valueBoxes() {
       switch (this.need) {
         case 'grocery':
           return [this.freeResourceValueBox, this.snapValueBox, this.wicValueBox, this.seniorShoppingValueBox]
+        case 'free_grocery':
+          return [this.seniorsValueBox, this.childrenValueBox, this.publicValueBox, this.curbsideOrDeliveryValueBox]
+        case 'snap_wic_retailer':
+          return [this.snapValueBox, this.wicValueBox, this.seniorShoppingValueBox, this.curbsideOrDeliveryValueBox]
         case 'food_bev':
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.seniorShoppingValueBox]
         case 'restaurant':
@@ -171,7 +214,7 @@ export default {
         case 'farm': // Farms
           return [this.curbsidePickupValueBox, this.onFarmPickupValueBox, this.farmersMarketValueBox, this.orderOnlineValueBox]
         case 'meal': // Prepared Meals
-          return [this.openToPublicValueBox, this.freeStudentMealsValueBox, this.freeResourceValueBox, this.callInAdvanceValueBox]
+          return [this.seniorsValueBox, this.childrenValueBox, this.publicValueBox, this.curbsideOrDeliveryValueBox]
         case 'pharmacy':
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.seniorShoppingValueBox, this.deliveryValueBox]
         case 'pet':

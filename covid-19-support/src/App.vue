@@ -50,7 +50,7 @@ import { latLng } from 'leaflet'
 import { haversineDistance, sortByDistance } from './utilities'
 
 // import { spreadsheetUrl, weekdays, dayFilters, booleanFilters, dayAny } from './constants'
-import { spreadsheetUrl, dayFilters, booleanFilters, dayAny } from './constants'
+import { spreadsheetUrl, dayFilters, booleanFilters, dayAny, complexFilters } from './constants'
 
 function extend(obj, src) {
   for (var key in src) {
@@ -198,6 +198,16 @@ export default {
       this.highlightFilters.forEach((element) => {
         if (booleanFilters.includes(element)) {
           markers = markers.filter((c) => c['gsx$' + element].$t == '1')
+        }
+      })
+
+      // Filter out items based on complexFilters
+      complexFilters.forEach((f) => {
+        if (this.highlightFilters.includes(f.name)) {
+          markers = markers.filter((c) => {
+            const bools = f.columns.map((d) => c['gsx$' + d].$t == '1')
+            return f.combine(bools)
+          })
         }
       })
 

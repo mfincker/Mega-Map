@@ -68,6 +68,7 @@
     "closedonday": "Closed (on the current selected day)",
     "curbside": "Curbside pick-up",
     "delivery": "Delivery",
+    "curbside_or_delivery": "Delivery or curbside pick-up",
     "discountmedical": "Medical worker discount|Medical worker discounts",
     "discounts": "",
     "drivethru": "Drive thru",
@@ -98,7 +99,10 @@
     "seniorhours": "Senior hours",
     "specialhours": "Senior shopping hours",
     "website": "Website",
-    "callinadvance": "Must call in advance"
+    "callinadvance": "Must call in advance",
+    "seniors": "For seniors",
+    "children": "For children",
+    "public": "Open to all"
   },
   "languages": {
     "ar": "Arabic",
