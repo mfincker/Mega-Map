@@ -38,12 +38,14 @@
     "family": "Prepared family meal|Prepared family meals",
     "farm": "Farm or farmer market|Farms & farmers' markets",
     "grocery": "Grocery|Groceries",
+    "free_grocery": "Free Grocery|Free Groceries",
     "meal": "Prepared meal|Prepared meals",
     "petsupplies": "Pet supplies",
     "pharmacy": "Pharmacy|Pharmacies",
     "restaurant": "Restaurant|Restaurants",
     "school": "School meal|School meals",
-    "food_bev": "Speciality food & beverage"
+    "food_bev": "Speciality food & beverage",
+    "snap_wic_retailer": "SNAP/WIC retailer|SNAP/WIC retailers"
   },
   "dayofweek": {
     "any": "Any",

@@ -184,6 +184,10 @@ export default {
 
       if (this.need == 'family') {
         markers = this.entries.filter((c) => c.gsx$familymeal.$t == 1 && c.gsx$status.$t == '1')
+      } else if (this.need == 'free_grocery') {
+        markers = this.entries.filter((c) => c.gsx$resource.$t == 'grocery' && c.gsx$status.$t == '1' && c.gsx$free.$t == '1')
+      } else if (this.need == 'snap_wic_retailer') {
+        markers = this.entries.filter((c) => c.gsx$resource.$t == 'grocery' && c.gsx$status.$t == '1' && c.gsx$free.$t == '0')
       } else {
         markers = this.entries.filter(
           (c) => c.gsx$resource.$t === this.need && c.gsx$status.$t == '1' && c.gsx$lat.$t != 'error' && c.gsx$lon.$t != 'error'
