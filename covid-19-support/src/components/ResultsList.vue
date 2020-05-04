@@ -28,7 +28,10 @@
         <template v-if="item.marker.gsx$mealstudent.$t == 1"
           ><span :title="$tc('label.mealstudent', 1)"><i class="fas fa-school" /></span
         ></template>
-        <template v-if="item.marker.gsx$mealstudent.$t == 1"
+        <!-- <template v-if="item.marker.gsx$mealstudent.$t == 1"
+          ><span :title="$tc('label.mealpublic', 1)"><i class="fas fa-users" /></span
+        ></template> -->
+        <template v-if="item.marker.gsx$public.$t == 1"
           ><span :title="$tc('label.mealpublic', 1)"><i class="fas fa-users" /></span
         ></template>
         <template v-if="item.marker.gsx$drivethru.$t == 1"
