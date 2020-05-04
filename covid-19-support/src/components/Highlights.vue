@@ -204,7 +204,7 @@ export default {
         case 'free_grocery':
           return [this.seniorsValueBox, this.childrenValueBox, this.publicValueBox, this.curbsideOrDeliveryValueBox]
         case 'snap_wic_retailer':
-          return [this.snapValueBox, this.wicValueBox, this.seniorShoppingValueBox, this.curbsideOrDeliveryValueBox]
+          return [this.wicValueBox, this.seniorShoppingValueBox, this.curbsideOrDeliveryValueBox, this.farmersMarketValueBox]
         case 'food_bev':
           return [this.orderOnlineValueBox, this.curbsidePickupValueBox, this.deliveryValueBox, this.seniorShoppingValueBox]
         case 'restaurant':
