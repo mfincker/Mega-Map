@@ -47,8 +47,8 @@ import Highlights from './components/Highlights.vue'
 import ResourceMap from './components/ResourceMap.vue'
 // import AboutUsModal from './components/AboutUs.vue'
 import { latLng } from 'leaflet'
-import { haversineDistance } from './utilities'
-// import { haversineDistance, sortByDistance } from './utilities'
+// import { haversineDistance } from './utilities'
+import { haversineDistance, sortByDistance } from './utilities'
 
 // import { spreadsheetUrl, weekdays, dayFilters, booleanFilters, dayAny } from './constants'
 import { spreadsheetUrl, dayFilters, booleanFilters, dayAny, complexFilters } from './constants'
@@ -233,7 +233,7 @@ export default {
           oc: false,
           distance: haversineDistance(this.centroid, [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
         }))
-      ) //.sort(sortByDistance)
+      ).sort(sortByDistance)
 
       return retList
     },
