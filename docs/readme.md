@@ -1,4 +1,4 @@
-# NC COVID Support Project
+# Bay Area Community Resources
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -11,7 +11,7 @@
 
 Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
-## Link to the live website: [NC COVID Support](https://www.nccovidsupport.org)
+## Link to the live website: [Bay Area COVID Support](https://dcl-covid-19.github.io/mega-map-dev/)
 
 ![The NC COVID Support Website](/covid-19-support/src/images/NCCOVID.png)
 
@@ -25,15 +25,14 @@ Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Co
 ## The types of resource questions we want to answer
 
 - Where can I find a free meal?
-- Where can I find free diapers/toilet paper/personal care items?
-- Where can I find a drive-up pharmacy?
 - Where can I find a market with senior/vulnerable shopping hours?
-- Where can I find a pet store with a drive-up option?
-- Which businesses offer discounts for medical workers?
+- Where can I find a market that takes SNAP and WIC benefits?
+- Where can I get legal assistance for eviction?
+- Where can I find a medical provider while I'm uninsured?
 
 ## Authors
 
-This project was initiated by [Code for Chapel Hill](http://www.codeforchapelhill.com/) with input from our local town and county officials.
+This project was initiated by students affiliated with Stanford's [Data Challenge Lab](https://datalab.stanford.edu/challenge-lab) with input from local officials and community organizations across the Bay Area. This project is a fork of [NC COVID Support](https://nccovidsupport.org/), thank you Chris and Kate for your ongoing support.
 
 ## How to contribute
 
