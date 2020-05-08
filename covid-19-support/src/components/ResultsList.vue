@@ -9,41 +9,41 @@
         :ref="'result' + index"
         @click="$emit('location-selected', { locValue: index, isSetByMap: false })"
       >
-        <h5 class="resultTitle">{{ item.marker.gsx$providername.$t }}</h5>
-        <template v-if="!!item.marker.gsx$provideraddloc.$t"
-          ><div class="addloc">{{ item.marker.gsx$provideraddloc.$t }}</div></template
+        <h5 class="resultTitle">{{ item.marker.provider_name }}</h5>
+        <template v-if="!!item.marker.provider_addloc"
+          ><div class="addloc">{{ item.marker.provider_addloc }}</div></template
         >
         <div v-if="!item.oc" class="closed">{{ getClosedMessage() }}</div>
         <span class="resultAddress">
-          <span v-if="!!item.marker.gsx$cuisine.$t">{{ item.marker.gsx$cuisine.$t }}<br /></span>
-          {{ item.marker.gsx$address.$t }},
-          {{ item.marker.gsx$city.$t }}
+          <span v-if="!!item.marker.cuisine">{{ item.marker.cuisine }}<br /></span>
+          {{ item.marker.address }},
+          {{ item.marker.city }}
         </span>
-        <template v-if="item.marker.gsx$discountmedical.$t == 1"
-          ><span :title="$tc('label.discountmedical', 1)"><i class="fas fa-user-md" /></span
+        <template v-if="item.marker.discount_medical == 1"
+          ><span :title="$tc('label.discount_medical', 1)"><i class="fas fa-user-md" /></span
         ></template>
-        <template v-if="item.marker.gsx$familymeal.$t == 1"
+        <template v-if="item.marker.family_meal == 1"
           ><span :title="$tc('category.family', 2)"><i class="fas fa-user-friends" /></span
         ></template>
-        <template v-if="item.marker.gsx$mealstudent.$t == 1"
-          ><span :title="$tc('label.mealstudent', 1)"><i class="fas fa-school" /></span
+        <template v-if="item.marker.meal_student == 1"
+          ><span :title="$tc('label.meal_student', 1)"><i class="fas fa-school" /></span
         ></template>
-        <!-- <template v-if="item.marker.gsx$mealstudent.$t == 1"
-          ><span :title="$tc('label.mealpublic', 1)"><i class="fas fa-users" /></span
+        <!-- <template v-if="item.marker.meal_student == 1"
+          ><span :title="$tc('label.meal_public', 1)"><i class="fas fa-users" /></span
         ></template> -->
-        <template v-if="item.marker.gsx$public.$t == 1"
-          ><span :title="$tc('label.mealpublic', 1)"><i class="fas fa-users" /></span
+        <template v-if="item.marker.public == 1"
+          ><span :title="$tc('label.meal_public', 1)"><i class="fas fa-users" /></span
         ></template>
-        <template v-if="item.marker.gsx$drivethru.$t == 1"
-          ><span :title="$t('label.drivethru')"><i class="fas fa-car-side" /></span
+        <template v-if="item.marker.drive_thru == 1"
+          ><span :title="$t('label.drive_thru')"><i class="fas fa-car-side" /></span
         ></template>
-        <template v-if="item.marker.gsx$curbside.$t == 1"
+        <template v-if="item.marker.curbside == 1"
           ><span :title="$tc('label.curbside', 1)"><i class="fas fa-car" /></span
         ></template>
-        <template v-if="item.marker.gsx$orderonline.$t == 1"
-          ><span :title="$t('label.orderonline')"><i class="fas fa-mouse" /></span
+        <template v-if="item.marker.order_online == 1"
+          ><span :title="$t('label.order_online')"><i class="fas fa-mouse" /></span
         ></template>
-        <template v-if="item.marker.gsx$delivery.$t == 1"
+        <template v-if="item.marker.delivery == 1"
           ><span :title="$t('label.delivery')"><i class="fas fa-shipping-fast" /></span
         ></template>
       </div>

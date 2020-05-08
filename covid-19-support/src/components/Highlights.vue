@@ -20,14 +20,14 @@ import ValueBox from './ValueBox.vue'
 import { complexFilters } from '../constants'
 
 export const countFeature = (filteredMarkers = [], feature) =>
-  (filteredMarkers || []).reduce((total, c) => (c.marker.gsx$accesstype.$t.indexOf(feature) && c.oc > -1 ? total + 1 : total), 0)
+  (filteredMarkers || []).reduce((total, c) => (c.marker.accesstype.indexOf(feature) && c.oc > -1 ? total + 1 : total), 0)
 
 export const countBoolean = (filteredMarkers, fieldName) =>
-  (filteredMarkers || []).reduce((total, c) => (c.marker['gsx$' + fieldName].$t == '1' && c.oc ? total + 1 : total), 0)
+  (filteredMarkers || []).reduce((total, c) => (c.marker['' + fieldName] == '1' && c.oc ? total + 1 : total), 0)
 
 export const countComplexFilter = (filteredMarkers, complexFilter) => {
   const ct = (filteredMarkers || []).reduce((total, c) => {
-    const boolFiltersArray = complexFilter.columns.map((d) => c.marker['gsx$' + d].$t == '1')
+    const boolFiltersArray = complexFilter.columns.map((d) => c.marker['' + d] == '1')
     const keepMarker = complexFilter.combine(boolFiltersArray)
     return keepMarker && c.oc ? total + 1 : total
   }, 0)
@@ -64,7 +64,7 @@ export default {
   computed: {
     // Counts
     countPickup() {
-      return countBoolean(this.filteredMarkers, 'instorepickup')
+      return countBoolean(this.filteredMarkers, 'in_store_pickup')
     },
     countCurbside() {
       return countBoolean(this.filteredMarkers, 'curbside')
@@ -84,44 +84,44 @@ export default {
       return countBoolean(this.filteredMarkers, 'public')
     },
     countSeniorHours() {
-      return countBoolean(this.filteredMarkers, 'specialhours')
+      return countBoolean(this.filteredMarkers, 'special_hours')
     },
     countFreeStudentMeal() {
-      return countBoolean(this.filteredMarkers, 'mealstudent')
+      return countBoolean(this.filteredMarkers, 'meal_student')
     },
     countPublicMeal() {
-      return countBoolean(this.filteredMarkers, 'mealpublic')
+      return countBoolean(this.filteredMarkers, 'meal_public')
     },
     countFamilyMeal() {
       // Family meal kits to purchase
-      return countBoolean(this.filteredMarkers, 'familymeal')
+      return countBoolean(this.filteredMarkers, 'family_meal')
     },
     countOrderOnline() {
-      return countBoolean(this.filteredMarkers, 'orderonline')
+      return countBoolean(this.filteredMarkers, 'order_online')
     },
     countPayOnline() {
-      return countBoolean(this.filteredMarkers, 'payonline')
+      return countBoolean(this.filteredMarkers, 'pay_online')
     },
     countMustPreOrder() {
-      return countBoolean(this.filteredMarkers, 'mustpreorder')
+      return countBoolean(this.filteredMarkers, 'must_preorder')
     },
     countDiscountMedical() {
-      return countBoolean(this.filteredMarkers, 'discountmedical')
+      return countBoolean(this.filteredMarkers, 'discount_medical')
     },
     countDelivery() {
       return countBoolean(this.filteredMarkers, 'delivery')
     },
     countProduce() {
-      return countBoolean(this.filteredMarkers, 'freeproduce')
+      return countBoolean(this.filteredMarkers, 'free_produce')
     },
     countGroceries() {
-      return countBoolean(this.filteredMarkers, 'freegroceries')
+      return countBoolean(this.filteredMarkers, 'free_groceries')
     },
     countFarmPickUp() {
-      return countBoolean(this.filteredMarkers, 'farmpickup')
+      return countBoolean(this.filteredMarkers, 'farm_pick_up')
     },
     countFarmersMarket() {
-      return countBoolean(this.filteredMarkers, 'farmersmarket')
+      return countBoolean(this.filteredMarkers, 'farmers_market')
     },
     countFreeResource() {
       return countBoolean(this.filteredMarkers, 'free')
@@ -133,11 +133,11 @@ export default {
       return countBoolean(this.filteredMarkers, 'wic')
     },
     countCallInAdvance() {
-      return countBoolean(this.filteredMarkers, 'callinadvance')
+      return countBoolean(this.filteredMarkers, 'call_in_advance')
     },
     // Value Boxes
     callInAdvanceValueBox() {
-      return this.buildBoxValue('callinadvance', 'fa-phone', this.countCallInAdvance)
+      return this.buildBoxValue('call_in_advance', 'fa-phone', this.countCallInAdvance)
     },
     freeResourceValueBox() {
       return this.buildBoxValue('free', 'fa-shopping-basket', this.countFreeResource)
@@ -149,7 +149,7 @@ export default {
       return this.buildBoxValue('wic', 'fa-users', this.countWic, true)
     },
     orderOnlineValueBox() {
-      return this.buildBoxValue('orderonline', 'fa-mouse', this.countOrderOnline)
+      return this.buildBoxValue('order_online', 'fa-mouse', this.countOrderOnline)
     },
     curbsidePickupValueBox() {
       return this.buildBoxValue('curbside', 'fa-car', this.countCurbside, true)
@@ -158,31 +158,31 @@ export default {
       return this.buildBoxValue('delivery', 'fa-shipping-fast', this.countDelivery)
     },
     onFarmPickupValueBox() {
-      return this.buildBoxValue('farmpick-up', 'fa-tractor', this.countFarmPickUp, true)
+      return this.buildBoxValue('farm_pick_up', 'fa-tractor', this.countFarmPickUp, true)
     },
     farmersMarketValueBox() {
-      return this.buildBoxValue('farmersmarket', 'fa-store', this.countFarmersMarket, true)
+      return this.buildBoxValue('farmers_market', 'fa-store', this.countFarmersMarket, true)
     },
     seniorShoppingValueBox() {
-      return this.buildBoxValue('specialhours', 'fa-history', this.countSeniorHours)
+      return this.buildBoxValue('special_hours', 'fa-history', this.countSeniorHours)
     },
     medicalDiscountsValueBox() {
-      return this.buildBoxValue('discountmedical', 'fa-user-md', this.countDiscountMedical, true)
+      return this.buildBoxValue('discount_medical', 'fa-user-md', this.countDiscountMedical, true)
     },
     openToPublicValueBox() {
-      return this.buildBoxValue('mealpublic', 'fa-users', this.countPublicMeal, true)
+      return this.buildBoxValue('meal_public', 'fa-users', this.countPublicMeal, true)
     },
     freeStudentMealsValueBox() {
-      return this.buildBoxValue('mealstudent', 'fa-school', this.countFreeStudentMeal, true)
+      return this.buildBoxValue('meal_student', 'fa-school', this.countFreeStudentMeal, true)
     },
     freeProduceValueBox() {
-      return this.buildBoxValue('freeproduce', 'fa-apple-alt', this.countProduce, true)
+      return this.buildBoxValue('free_produce', 'fa-apple-alt', this.countProduce, true)
     },
     freeGroceryValueBox() {
-      return this.buildBoxValue('freegroceries', 'fa-shopping-basket', this.countGroceries, true)
+      return this.buildBoxValue('free_groceries', 'fa-shopping-basket', this.countGroceries, true)
     },
     mustPreOrderValueBox() {
-      return this.buildBoxValue('mustpreorder', 'fa-phone', this.countMustPreOrder, true)
+      return this.buildBoxValue('must_preorder', 'fa-phone', this.countMustPreOrder, true)
     },
     curbsideOrDeliveryValueBox() {
       return this.buildBoxValue('curbside_or_delivery', 'fa-shipping-fast', this.countDeliveryOrCurbside)

@@ -20,7 +20,7 @@
       >{{ $t('sidebar.info-end-text') }}
     </InfoPanel> -->
 
-    <InfoPanel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="filteredMarkers.length == 0">
+    <InfoPanel :infotype="'handwash'" :icon="'fa-hands-wash'" v-if="!filteredMarkers || filteredMarkers.length == 0">
       <b class="themeFont">{{ $t('sidebar.shopsafe') }}</b>
       <br />
       (1) {{ $t('sidebar.stayhome') }}<br />
@@ -79,7 +79,7 @@ export default {
       if (this.location == null) {
         return
       }
-      return 0 + this.filteredMarkers.length > 0 && this.location.locValue > -1 ? this.filteredMarkers[this.location.locValue] : null
+      return !!this.filteredMarkers && 0 + this.filteredMarkers.length > 0 && this.location.locValue > -1 ? this.filteredMarkers[this.location.locValue] : null
     },
     needOptions() {
       return [

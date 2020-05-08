@@ -2,7 +2,7 @@
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" />
     <!-- <about-us-modal /> -->
-    <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
+    <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }">
       <search-filter
         :isFilterOpen="isFilterOpen"
         :need="need"
@@ -51,7 +51,7 @@ import { latLng } from 'leaflet'
 import { haversineDistance, sortByDistance } from './utilities'
 
 // import { spreadsheetUrl, weekdays, dayFilters, booleanFilters, dayAny } from './constants'
-import { spreadsheetUrl, dayFilters, booleanFilters, dayAny, complexFilters } from './constants'
+import { cartoBaseURL, sqlQueries, dayFilters, booleanFilters, dayAny, complexFilters } from './constants'
 
 function extend(obj, src) {
   for (var key in src) {
@@ -83,7 +83,8 @@ export default {
     currentPage: 'fetchData'
   },
   created() {
-    this.fetchData()
+    // const query = encodeURI('SELECT * FROM  LIMIT 5')
+    // this.fetchData(query)
   },
   components: {
     AppHeader,
@@ -141,9 +142,13 @@ export default {
     isAnyDaySelected(day) {
       return day >= dayAny
     },
-    needSelected: function (val) {
+    needSelected: async function (val) {
+      this.entries = null
       this.need = val
       this.highlightFilters = []
+
+      const query = encodeURI(sqlQueries[val])
+      this.fetchData(query)
       // window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
     },
     daySelected: function (val) {
@@ -158,22 +163,23 @@ export default {
       this.language = item
       this.$root.updateLang(item.iso)
     },
-    async fetchData() {
-      const res = await fetch(spreadsheetUrl)
+    async fetchData(query) {
+      const res = await fetch(cartoBaseURL + '&q=' + query)
       const entries = await res.json()
-      this.entries = entries.feed.entry
+      this.entries = entries.rows
+      console.log(this.entries)
     },
     passLocation: function (val) {
       this.locationData = val
       this.showList = false
       this.isFilterOpen = true
-      // var proName = this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
-      //   ? ', ' + this.filteredMarkers[val.locValue].marker.gsx$provideraddloc.$t
+      // var proName = this.filteredMarkers[val.locValue].marker.provider_addloc.$t
+      //   ? ', ' + this.filteredMarkers[val.locValue].marker.provider_addloc.$t
       //   : ''
 
       //   window.gtag('event', val.isSetByMap ? 'Marker clicked' : 'List item clicked', {
       //     event_category: 'View details - (' + this.language.name + ')',
-      //     event_label: this.filteredMarkers[val.locValue].marker.gsx$providername.$t + proName
+      //     event_label: this.filteredMarkers[val.locValue].marker.provider_name + proName
       //   })
     }
   },
@@ -181,24 +187,15 @@ export default {
     filteredMarkers() {
       if (this.entries == null) return null
 
-      var markers
-
-      if (this.need == 'family') {
-        markers = this.entries.filter((c) => c.gsx$familymeal.$t == 1 && c.gsx$status.$t == '1')
-      } else if (this.need == 'free_grocery') {
-        markers = this.entries.filter((c) => c.gsx$resource.$t == 'grocery' && c.gsx$status.$t == '1' && c.gsx$free.$t == '1')
-      } else if (this.need == 'snap_wic_retailer') {
-        markers = this.entries.filter((c) => c.gsx$resource.$t == 'grocery' && c.gsx$status.$t == '1' && c.gsx$free.$t == '0')
-      } else {
-        markers = this.entries.filter(
-          (c) => c.gsx$resource.$t === this.need && c.gsx$status.$t == '1' && c.gsx$lat.$t != 'error' && c.gsx$lon.$t != 'error'
+      // Double check sql results for data quality but assumes we got the right resources based on query
+      let markers = this.entries.filter(
+          (c) => c.status == 1 && c.lat != 'error' && c.lon != 'error' && c.lat && c.lon
         )
-      }
 
       // Filter out the boolean items
       this.highlightFilters.forEach((element) => {
         if (booleanFilters.includes(element)) {
-          markers = markers.filter((c) => c['gsx$' + element].$t == '1')
+          markers = markers.filter((c) => c[element] == 1)
         }
       })
 
@@ -206,7 +203,7 @@ export default {
       complexFilters.forEach((f) => {
         if (this.highlightFilters.includes(f.name)) {
           markers = markers.filter((c) => {
-            const bools = f.columns.map((d) => c['gsx$' + d].$t == '1')
+            const bools = f.columns.map((d) => c[d] == 1)
             return f.combine(bools)
           })
         }
@@ -219,28 +216,30 @@ export default {
       }
 
       const dayFilter = dayFilters[this.getDay(selectedDay)]
-      var open = markers.filter((c) => c[dayFilter].$t !== '0')
-      var closed = markers.filter((c) => c[dayFilter].$t == '0')
+      var open = markers.filter((c) => c[dayFilter] !== '0')
+      var closed = markers.filter((c) => c[dayFilter] == '0')
 
       var retList = extend(
         open.map((marker) => ({
           marker,
           oc: true,
-          distance: haversineDistance(this.centroid, [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
+          distance: haversineDistance(this.centroid, [marker.lat, marker.lon], true)
         })),
         closed.map((marker) => ({
           marker,
           oc: false,
-          distance: haversineDistance(this.centroid, [marker.gsx$lat.$t, marker.gsx$lon.$t], true)
+          distance: haversineDistance(this.centroid, [marker.lat, marker.lon], true)
         }))
       ).sort(sortByDistance)
 
       return retList
     },
     highlightFilteredMarkers() {
+      if (this.entries == null) return null
+
       var contained = [] //makers in map boundingbox
       this.filteredMarkers.forEach((m) => {
-        if (this.bounds.contains(latLng(m.marker.gsx$lat.$t, m.marker.gsx$lon.$t))) contained.push(m)
+        if (this.bounds.contains(latLng(m.marker.lat, m.marker.lon))) contained.push(m)
       })
 
       if (!this.isAnyDaySelected(this.day)) {

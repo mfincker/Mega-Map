@@ -30,7 +30,7 @@
         <v-marker-cluster ref="marks" :options="clusterOptions">
           <!-- @clusterclick="click()" @ready="ready" -->
           <l-marker
-            :lat-lng="latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t)"
+            :lat-lng="latLng(item.marker.lat, item.marker.lon)"
             :icon="selectedIcon(index === location.locValue, item)"
             v-for="(item, index) in filteredMarkers"
             v-bind:key="index"
@@ -117,7 +117,7 @@ export default {
         prefix: 'fa',
         svg: true
         // ,
-        // name: item.marker.gsx$providername.$t,
+        // name: item.marker.provider_name,
         // nameClasses: 'markerName'
       })
       return markerIcon
@@ -134,7 +134,7 @@ export default {
         return
       }
       var item = this.filteredMarkers[locationVal.locValue]
-      this.$refs.covidMap.mapObject.setView(latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t), 16, { duration: 1 })
+      this.$refs.covidMap.mapObject.setView(latLng(item.marker.lat, item.marker.lon), 16, { duration: 1 })
     }
   }
 }

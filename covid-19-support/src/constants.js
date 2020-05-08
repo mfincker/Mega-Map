@@ -31,34 +31,31 @@ export const weekdayHours = [
   { day: 'sunday' }
 ]
 
-export const spreadsheetUrl =
-  'https://spreadsheets.google.com/feeds/list/1SOUonPM40Si4LrPoGrkUnujbmLBxCQe1SdxydH2dVI4/1/public/values?alt=json'
-
 export const openStreetMapAttribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 
-export const dayFilters = ['mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sun'].map((attr) => `gsx$${attr}`)
-export const seniorDayFilters = ['mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sun'].map((attr) => `gsx$sp${attr}`)
+export const dayFilters = ['mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sun'].map((attr) => `${attr}`)
+export const seniorDayFilters = ['mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sun'].map((attr) => `sp_${attr}`)
 
 export const booleanFilters = [
-  'instorepickup',
+  'in_store_pickup',
   'curbside',
-  'specialhours',
-  'mealstudent',
-  'mealpublic',
-  'familymeal',
-  'orderonline',
-  'payonline',
-  'mustpreorder',
-  'discountmedical',
+  'special_hours',
+  'meal_student',
+  'meal_public',
+  'family_meal',
+  'order_online',
+  'pay_online',
+  'must_preorder',
+  'discount_medical',
   'delivery',
-  'freeproduce',
-  'freegroceries',
-  'farmpickup',
-  'farmersmarket',
+  'free_produce',
+  'free_groceries',
+  'farm_pick_up',
+  'farmers_market',
   'free',
   'wic',
   'snap',
-  'callinadvance',
+  'call_in_advance',
   'seniors',
   'children',
   'public'
@@ -66,3 +63,18 @@ export const booleanFilters = [
 
 // Combination of boolean filters
 export const complexFilters = [{ name: 'curbside_or_delivery', columns: ['curbside', 'delivery'], combine: ([a, b]) => a || b }]
+
+// CARTO DB VARIABLES
+export const cartoBaseURL = 
+  'https://mfincker.carto.com/api/v2/sql?api_key=' + process.env.VUE_APP_CARTO_API_KEY
+
+export const cartoDBName = 'mega_map_db'
+
+export const sqlQueries = {
+  free_grocery : 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 1",
+  meal : 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal'",
+  snap_wic_retailer: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 0"
+}
+
+
+

@@ -13,15 +13,15 @@
           <div class="title">
             <i :class="businessIcon(business.marker)"></i>
             <div class="busName">
-              <h5>{{ business.marker.gsx$providername.$t }}</h5>
-              <span v-if="!!business.marker.gsx$provideraddloc.$t">{{ business.marker.gsx$provideraddloc.$t }}</span>
-              <!-- <template v-if="!!business.marker.gsx$cuisine.$t">{{ business.marker.gsx$cuisine.$t }}</template> -->
+              <h5>{{ business.marker.provider_name }}</h5>
+              <span v-if="!!business.marker.provider_addloc">{{ business.marker.provider_addloc }}</span>
+              <!-- <template v-if="!!business.marker.cuisine">{{ business.marker.cuisine }}</template> -->
             </div>
           </div>
           <p>
             <b>{{ $t('label.address') }}:</b><br />
-            {{ business.marker.gsx$address.$t }}, {{ business.marker.gsx$city.$t }}, {{ business.marker.gsx$state.$t }}
-            {{ business.marker.gsx$zip.$t }}<br />
+            {{ business.marker.address }}, {{ business.marker.city }}, {{ business.marker.state }}
+            {{ business.marker.zip }}<br />
             <a :href="businessGoogleMapUrl">
               View on Google Maps
             </a>
@@ -29,73 +29,73 @@
 
           <p>
             <icon-list-item
-              v-if="business.marker.gsx$discountmedical.$t == 1"
+              v-if="business.marker.discount_medical == 1"
               icon="fas fa-user-md"
-              :title="$tc('label.discountmedical', 1)"
+              :title="$tc('label.discount_medical', 1)"
             />
-            <icon-list-item v-if="business.marker.gsx$familymeal.$t == 1" icon="fas fa-user-friends" :title="$tc('category.family', 2)" />
-            <icon-list-item v-if="business.marker.gsx$mealstudent.$t == 1" icon="fas fa-school" :title="$tc('label.mealstudent', 1)" />
-            <icon-list-item v-if="business.marker.gsx$mealpublic.$t == 1" icon="fas fa-users" :title="$tc('label.mealpublic', 1)" />
-            <icon-list-item v-if="business.marker.gsx$freeproduce.$t == 1" icon="fas fa-apple-alt" :title="$tc('label.freeproduce', 1)" />
+            <icon-list-item v-if="business.marker.family_meal == 1" icon="fas fa-user-friends" :title="$tc('category.family', 2)" />
+            <icon-list-item v-if="business.marker.meal_student == 1" icon="fas fa-school" :title="$tc('label.meal_student', 1)" />
+            <icon-list-item v-if="business.marker.meal_public == 1" icon="fas fa-users" :title="$tc('label.meal_public', 1)" />
+            <icon-list-item v-if="business.marker.free_produce == 1" icon="fas fa-apple-alt" :title="$tc('label.free_produce', 1)" />
             <icon-list-item
-              v-if="business.marker.gsx$freegroceries.$t == 1"
+              v-if="business.marker.free_groceries == 1"
               icon="fas fa-shopping-basket"
-              :title="$tc('label.freegroceries', 1)"
+              :title="$tc('label.free_groceries', 1)"
             />
-            <icon-list-item v-if="business.marker.gsx$curbside.$t == 1" icon="fas fa-car" :title="$tc('label.curbside', 1)" />
-            <icon-list-item v-if="business.marker.gsx$drivethru.$t == 1" icon="fas fa-car-side" :title="$t('label.drivethru')" />
-            <icon-list-item v-if="business.marker.gsx$orderonline.$t == 1" icon="fas fa-mouse" :title="$t('label.orderonline')" />
-            <icon-list-item v-if="business.marker.gsx$delivery.$t == 1" icon="fas fa-shipping-fast" :title="$t('label.delivery')" />
+            <icon-list-item v-if="business.marker.curbside == 1" icon="fas fa-car" :title="$tc('label.curbside', 1)" />
+            <icon-list-item v-if="business.marker.drive_thru == 1" icon="fas fa-car-side" :title="$t('label.drive_thru')" />
+            <icon-list-item v-if="business.marker.order_online == 1" icon="fas fa-mouse" :title="$t('label.order_online')" />
+            <icon-list-item v-if="business.marker.delivery == 1" icon="fas fa-shipping-fast" :title="$t('label.delivery')" />
           </p>
           <p>
             <icon-list-item
-              v-if="!!business.marker.gsx$contact.$t"
+              v-if="!!business.marker.contact"
               icon="fas fa-phone-alt"
-              :title="business.marker.gsx$contact.$t"
-              :link="'tel:' + business.marker.gsx$contact.$t"
+              :title="business.marker.contact"
+              :link="'tel:' + business.marker.contact"
             />
 
             <!-- <icon-list-item
-              v-if="!!business.marker.gsx$contactspanish.$t"
+              v-if="!!business.marker.contactspanish"
               icon="fas fa-phone-alt"
-              :title="business.marker.gsx$contactspanish.$t + ' (' + $t('languages.es').toLowerCase() + ')'"
-              :link="'tel:' + business.marker.gsx$contactspanish.$t"
+              :title="business.marker.contactspanish + ' (' + $t('languages.es').toLowerCase() + ')'"
+              :link="'tel:' + business.marker.contactspanish"
             /> -->
 
             <icon-list-item
-              v-if="!!business.marker.gsx$weblink.$t"
+              v-if="!!business.marker.web_link"
               icon="fas fa-globe"
-              :title="getDomain(business.marker.gsx$weblink.$t)"
-              :link="business.marker.gsx$weblink.$t"
+              :title="getDomain(business.marker.web_link)"
+              :link="business.marker.web_link"
             />
 
             <icon-list-item
-              v-if="!!business.marker.gsx$email.$t"
+              v-if="!!business.marker.email"
               icon="fas fa-envelope"
-              :title="getDomain(business.marker.gsx$email.$t)"
-              :link="'mailto:' + business.marker.gsx$email.$t"
+              :title="getDomain(business.marker.email)"
+              :link="'mailto:' + business.marker.email"
             />
           </p>
           <opening-hours :business="business.marker" :title="$t('label.openinghours')"></opening-hours>
 
           <opening-hours :business="business.marker" :title="$t('label.seniorhours')" :senior="true"></opening-hours>
 
-          <template v-if="!!business.marker.gsx$instructions.$t">
+          <template v-if="!!business.marker.instructions">
             <p>
-              <b>{{ $t('label.instructions') }}:</b><br />{{ business.marker.gsx$instructions.$t }}
+              <b>{{ $t('label.instructions') }}:</b><br />{{ business.marker.instructions }}
             </p>
           </template>
-          <template v-if="!!business.marker.gsx$offers.$t">
+          <template v-if="!!business.marker.offers">
             <p>
-              <b>{{ $t('label.offers') }}:</b><br />{{ business.marker.gsx$offers.$t }}
+              <b>{{ $t('label.offers') }}:</b><br />{{ business.marker.offers }}
             </p>
           </template>
-          <template v-if="!!business.marker.gsx$notes.$t">
+          <template v-if="!!business.marker.notes">
             <p>
-              <b>{{ $t('label.notes') }}:</b><br />{{ business.marker.gsx$notes.$t }}
+              <b>{{ $t('label.notes') }}:</b><br />{{ business.marker.notes }}
             </p>
           </template>
-          <p class="updated">Details last updated: {{ business.marker.gsx$lastupdate.$t }}</p>
+          <p class="updated">Details last updated: {{ business.marker.last_update }}</p>
         </div>
       </b-list-group-item>
     </b-list-group>
@@ -131,17 +131,17 @@ export default {
     businessGoogleMapUrl() {
       var url =
         'https://www.google.com/maps/search/?api=1&query=' +
-        (this.business.marker.gsx$provideraddloc.$t
-          ? encodeURI(this.business.marker.gsx$provideraddloc.$t)
-          : encodeURI(this.business.marker.gsx$providername.$t)) +
+        (this.business.marker.provider_addloc
+          ? encodeURI(this.business.marker.provider_addloc)
+          : encodeURI(this.business.marker.provider_name)) +
         '+' +
-        encodeURI(this.business.marker.gsx$address.$t) +
+        encodeURI(this.business.marker.address) +
         '+' +
-        encodeURI(this.business.marker.gsx$city.$t) +
+        encodeURI(this.business.marker.city) +
         '+' +
-        encodeURI(this.business.marker.gsx$state.$t) +
+        encodeURI(this.business.marker.state) +
         '+' +
-        encodeURI(this.business.marker.gsx$zip.$t)
+        encodeURI(this.business.marker.zip)
 
       return url.replace(/%20/g, '+').toLowerCase()
     }

@@ -1,5 +1,5 @@
 export function businessIcon(business) {
-  switch (business.gsx$resource.$t) {
+  switch (business.resource.$t) {
     case 'grocery':
       return 'fas fa-shopping-basket'
     case 'pharmacy':
@@ -7,14 +7,14 @@ export function businessIcon(business) {
     case 'pet':
       return 'fas fa-paw'
     case 'farm':
-      if (business.gsx$farmersmarket.$t == 1) {
+      if (business.farmers_market == 1) {
         return 'fas fa-store'
       }
       return 'fas fa-tractor'
     default:
   }
 
-  var cuisine = business.gsx$cuisine.$t
+  var cuisine = business.cuisine
   var item = cuisine.indexOf(',') > 0 ? cuisine.toLowerCase().substr(0, cuisine.indexOf(',')).trim() : cuisine.toLowerCase().trim()
   switch (item) {
     case 'burgers':
@@ -86,8 +86,8 @@ export function haversineDistance([lat1, lon1], [lat2, lon2], isMiles = false) {
 }
 
 export function sortByName(a, b) {
-  var nameA = a.marker.gsx$providername.$t.toUpperCase() // ignore upper and lowercase
-  var nameB = b.marker.gsx$providername.$t.toUpperCase() // ignore upper and lowercase
+  var nameA = a.marker.provider_name.toUpperCase() // ignore upper and lowercase
+  var nameB = b.marker.provider_name.toUpperCase() // ignore upper and lowercase
   if (nameA < nameB) {
     return -1
   }
