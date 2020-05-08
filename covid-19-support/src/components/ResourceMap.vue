@@ -70,7 +70,8 @@ export default {
   props: {
     filteredMarkers: Array,
     location: { locValue: Number, isSetByMap: Boolean },
-    mapUrl: String
+    mapUrl: String,
+    userLocation: { lon: Number, lat: Number }
   },
   data() {
     return {
@@ -85,11 +86,20 @@ export default {
       showKey: false
     }
   },
+  created() {
+    if (!!this.userLocation.lat && !! this.userLocation.lon) {
+      this.center = latLng(this.userLocation.lat, this.userLocation.lon)
+      this.zoom = 13
+    }
+  },
   mounted() {
     this.editZoomControl()
     this.$nextTick(() => {
       this.$emit('bounds', this.$refs.covidMap.mapObject.getBounds())
     })
+    // console.log("in ResourceMap mounted")
+    // console.log(this.userLocation)
+    // this.centerOnUserLocation()
   },
   methods: {
     centerUpdated(center) {
@@ -135,6 +145,12 @@ export default {
       }
       var item = this.filteredMarkers[locationVal.locValue]
       this.$refs.covidMap.mapObject.setView(latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t), 16, { duration: 1 })
+    },
+    userLocation: function(newVal) {
+      if (!newVal.lat || !newVal.lon) {
+        return
+      }
+      this.$refs.covidMap.mapObject.setView(latLng(newVal.lat, newVal.lon), 13, { duration: 1 })
     }
   }
 }

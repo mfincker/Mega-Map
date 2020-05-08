@@ -34,6 +34,7 @@
           @bounds="boundsUpdated"
           @center="centerUpdated"
           :mapUrl="mapUrl"
+          :userLocation="userLocation"
         />
       </div>
     </div>
@@ -83,6 +84,9 @@ export default {
     currentPage: 'fetchData'
   },
   created() {
+    // Get user location
+    this.getUserLocation()
+    // Get all data
     this.fetchData()
   },
   components: {
@@ -107,7 +111,9 @@ export default {
       centroid: [35.91371, -79.057919],
       darkModeMediaQuery: darkModeMediaQuery,
       darkMode: darkModeMediaQuery.matches,
-      mapUrl: ''
+      mapUrl: '',
+      userLocation: { lat: null, lon: null },
+      errorStr:null
     }
   },
   mounted() {
@@ -162,6 +168,26 @@ export default {
       const res = await fetch(spreadsheetUrl)
       const entries = await res.json()
       this.entries = entries.feed.entry
+    },
+    async getUserLocation() {
+      try {
+        const location = await this.requestUserLocation();
+        this.userLocation = { lon: location.coords.longitude, lat: location.coords.latitude }
+      } catch(e) {
+        this.errorStr = e.message;
+      }
+    },
+    async requestUserLocation() {
+      return new Promise((resolve, reject) => {
+        if(!("geolocation" in navigator)) {
+          reject(new Error('Geolocation is not available.'))
+        }
+        navigator.geolocation.getCurrentPosition(pos => {
+          resolve(pos)
+        }, err => {
+          reject(err)
+        })
+      })
     },
     passLocation: function (val) {
       this.locationData = val
