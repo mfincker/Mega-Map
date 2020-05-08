@@ -113,7 +113,7 @@ export default {
       darkMode: darkModeMediaQuery.matches,
       mapUrl: '',
       userLocation: { lat: null, lon: null },
-      errorStr:null
+      errorStr: null
     }
   },
   mounted() {
@@ -176,22 +176,21 @@ export default {
     },
     async getUserLocation() {
       try {
-        const location = await this.requestUserLocation();
+        const location = await this.requestUserLocation()
         this.userLocation = { lon: location.coords.longitude, lat: location.coords.latitude }
-      } catch(e) {
-        this.errorStr = e.message;
+      } catch (e) {
+        this.errorStr = e.message
       }
     },
     async requestUserLocation() {
       return new Promise((resolve, reject) => {
-        if(!("geolocation" in navigator)) {
+        if (!('geolocation' in navigator)) {
           reject(new Error('Geolocation is not available.'))
         }
-        navigator.geolocation.getCurrentPosition(pos => {
-          resolve(pos)
-        }, err => {
-          reject(err)
-        })
+        navigator.geolocation.getCurrentPosition(
+          (pos) => resolve(pos),
+          (err) => reject(err)
+        )
       })
     },
     passLocation: function (val) {
