@@ -87,7 +87,7 @@ export default {
     }
   },
   created() {
-    if (!!this.userLocation.lat && !! this.userLocation.lon) {
+    if (!!this.userLocation.lat && !!this.userLocation.lon) {
       this.center = latLng(this.userLocation.lat, this.userLocation.lon)
       this.zoom = 13
     }
@@ -146,7 +146,7 @@ export default {
       var item = this.filteredMarkers[locationVal.locValue]
       this.$refs.covidMap.mapObject.setView(latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t), 16, { duration: 1 })
     },
-    userLocation: function(newVal) {
+    userLocation: function (newVal) {
       if (!newVal.lat || !newVal.lon) {
         return
       }
