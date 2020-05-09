@@ -1,4 +1,4 @@
-# NC COVID Support Project
+# Bay Area Community Resources
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -9,9 +9,11 @@
 ![Release date](https://img.shields.io/github/release/code-for-chapel-hill/NC-COVID-Support?style=flat)
 
 
-Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
+Created by the Bay Area Mega Map team 
 
-## Link to the live website: [NC COVID Support](https://www.nccovidsupport.org)
+Pieces of this code has been adapted from [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
+
+## Link to the live website: [Bay Area COVID Support](https://dcl-covid-19.github.io/mega-map-dev/)
 
 ![The NC COVID Support Website](/covid-19-support/src/images/NCCOVID.png)
 
@@ -25,15 +27,14 @@ Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Co
 ## The types of resource questions we want to answer
 
 - Where can I find a free meal?
-- Where can I find free diapers/toilet paper/personal care items?
-- Where can I find a drive-up pharmacy?
 - Where can I find a market with senior/vulnerable shopping hours?
-- Where can I find a pet store with a drive-up option?
-- Which businesses offer discounts for medical workers?
+- Where can I find a market that takes SNAP and WIC benefits?
+- Where can I get legal assistance for eviction?
+- Where can I find a medical provider while I'm uninsured?
 
 ## Authors
 
-This project was initiated by [Code for Chapel Hill](http://www.codeforchapelhill.com/) with input from our local town and county officials.
+This project was initiated by students affiliated with Stanford's [Data Challenge Lab](https://datalab.stanford.edu/challenge-lab) with input from local officials and community organizations across the Bay Area. This project is a fork of [NC COVID Support](https://nccovidsupport.org/), thank you Chris and Kate for your ongoing support.
 
 ## How to contribute
 
@@ -51,36 +52,19 @@ We are always looking for people to join our content data team, as our site grow
 
 When we first started this project, we hoped that other areas would be interested in replicating our site for their area and working together to build an even better platform. Visit our [Replicating the site](replicating-the-site.md) page for more information.
 
-## Find us on Social Media
-
-Please follow our social media accounts and help us to spread the word about the site.
-
-- Twitter: [@nccovidsupport](https://www.twitter.com/nccovidsupport)
-- Instagram: [@nccovidsupport](https://www.instagram.com/nccovidsupport)
-- Facebook: [facebook.com/nccovidsupport](https://www.facebook.com/nccovidsupport)
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://www.vizioz.com"><img src="https://avatars0.githubusercontent.com/u/4398217?v=4" width="100px;" alt=""/><br /><sub><b>Chris Houston</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=readingdancer" title="Tests">⚠️</a> <a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=readingdancer" title="Code">💻</a> <a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=readingdancer" title="Documentation">📖</a> <a href="#design-readingdancer" title="Design">🎨</a> <a href="#ideas-readingdancer" title="Ideas, Planning, & Feedback">🤔</a> <a href="#platform-readingdancer" title="Packaging/porting to new platform">📦</a> <a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/pulls?q=is%3Apr+reviewed-by%3Areadingdancer" title="Reviewed Pull Requests">👀</a> <a href="#translation-readingdancer" title="Translation">🌍</a> <a href="#tutorial-readingdancer" title="Tutorials">✅</a></td>
-    <td align="center"><a href="https://github.com/KM-Hanson"><img src="https://avatars2.githubusercontent.com/u/58799043?v=4" width="100px;" alt=""/><br /><sub><b>KM-Hanson</b></sub></a><br /><a href="#business-KM-Hanson" title="Business development">💼</a> <a href="#content-KM-Hanson" title="Content">🖋</a> <a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=KM-Hanson" title="Documentation">📖</a> <a href="#ideas-KM-Hanson" title="Ideas, Planning, & Feedback">🤔</a> <a href="#projectManagement-KM-Hanson" title="Project Management">📆</a> <a href="#question-KM-Hanson" title="Answering Questions">💬</a></td>
-    <td align="center"><a href="http://suddengenesis.net"><img src="https://avatars2.githubusercontent.com/u/24510849?v=4" width="100px;" alt=""/><br /><sub><b>Adam Singer</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=suddengenesis" title="Code">💻</a></td>
-    <td align="center"><a href="https://ch4z.io"><img src="https://avatars3.githubusercontent.com/u/23623237?v=4" width="100px;" alt=""/><br /><sub><b>Charlie Kenney</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=charliekenney23" title="Code">💻</a></td>
-    <td align="center"><a href="http://jasonajones.netlify.com"><img src="https://avatars3.githubusercontent.com/u/23062043?v=4" width="100px;" alt=""/><br /><sub><b>Jason Jones</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=jasonajones73" title="Code">💻</a> <a href="#ideas-jasonajones73" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-jasonajones73" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/amkitt"><img src="https://avatars3.githubusercontent.com/u/24195503?v=4" width="100px;" alt=""/><br /><sub><b>Allison Kittinger</b></sub></a><br /><a href="#translation-amkitt" title="Translation">🌍</a> <a href="#content-amkitt" title="Content">🖋</a></td>
-    <td align="center"><a href="http://pinedesk.biz"><img src="https://avatars3.githubusercontent.com/u/30856?v=4" width="100px;" alt=""/><br /><sub><b>Dane Summers</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=dsummersl" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/fredlawl"><img src="https://avatars3.githubusercontent.com/u/2502213?v=4" width="100px;" alt=""/><br /><sub><b>Frederick</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/commits?author=fredlawl" title="Code">💻</a> <a href="#maintenance-fredlawl" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/zhanknight"><img src="https://avatars1.githubusercontent.com/u/20487008?v=4" width="100px;" alt=""/><br /><sub><b>zhanknight</b></sub></a><br /><a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/issues?q=author%3Azhanknight" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/mitomon"><img src="https://avatars3.githubusercontent.com/u/11986108?v=4" width="100px;" alt=""/><br /><sub><b>mitomon</b></sub></a><br /><a href="#translation-mitomon" title="Translation">🌍</a></td>
-  </tr>
+    <td align="center"><a href="https://www.vizioz.com"><img src="https://avatars2.githubusercontent.com/u/7332285?s=400&u=8471a1d6d304b73ae1eaa08519a2b059dd51e6a4&v=4" width="100px;" alt=""/><br /><sub><b>Maeva Finker</b></sub></a><br /><a href="https://github.com/mfincker" </td>
+    <td align="center"><a href="https://github.com/jayktee"><img src="https://avatars3.githubusercontent.com/u/59407366?s=400&u=20ccfa80753cc856e0b5748e8cfae153fe14bf1d&v=4" width="100px;" alt=""/><br /><sub><b>KJoyce Tagal</b></sub></a><br /></td>
+
 </table>
 
 <!-- markdownlint-enable -->

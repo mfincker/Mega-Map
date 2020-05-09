@@ -1,10 +1,12 @@
 # Replicating the NC COVID Support project
 
-Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
+Created by the Bay Area Mega Map team 
+
+Pieces of this code has been adapted from [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
 ## Introduction
 
-Thank you for your interest in replicating the NC COVID Support project to enable you to create a new site for your own state / area.
+Thank you for your interest in replicating the Bay Area Mega Map Support project to enable you to create a new site for your own state / area.
 
 ## Code of conduct
 
@@ -29,7 +31,7 @@ Clearly you could just fork our project, copy the spreadsheet mentioned below an
 
 ### Get in touch
 
-Please do get in touch with us, we'd love to chat with you to discuss how we can best work together. From a technical perspective it's probably best to first chat with [Chris Houston](https://github.com/readingdancer) who is currently the lead developer on this project. You can contact Chris via the Code for America Slack channel or he can be found on Twitter as [readingdancer](https://www.twitter.com/readingdancer).
+Please do get in touch with us, we'd love to chat with you to discuss how we can best work together. From a technical perspective it's probably best to first chat with [Maeva Fincker](https://github.com/mfincker) who is currently the lead developer on this project. 
 
 ## Project Structure
 
@@ -37,9 +39,7 @@ Our site is currently a VueJS website (think frontend code) backed by JSON data 
 
 ### Data source - Google Spreadsheet
 
-Our current data source for the site is a private Google Spreadsheet, the following link is a template that you can copy to ensure you have an identically structured spreadsheet.
-
-Google Sheets template for the data: [Database template](https://docs.google.com/spreadsheets/d/11aMYTpt0YrEaPyOI9OSZgQ6lloBnS0mctlHK8u96TTo/edit?usp=sharing)
+Our current data source for the site is a Google Spreadsheet, the following link [here](https://docs.google.com/spreadsheets/d/1SOUonPM40Si4LrPoGrkUnujbmLBxCQe1SdxydH2dVI4/edit?usp=sharing) is this database so that you can utilize this data for your own needs. 
 
 ### Frontend Code
 
@@ -50,5 +50,4 @@ Google Sheets template for the data: [Database template](https://docs.google.com
 
 ## Current Hosting
 
-The NC COVID Support website is currently hosted as a GitHub Pages site, however this may well change as we are intending to add a "back end" and using the Umbraco CMS.
-
+The Bay Area Mega Map website is currently hosted as a GitHub Pages site, however this may well change as we are intending to add a "back end".
