@@ -63,7 +63,7 @@ export default {
 
 <style lang="scss">
 #topnav {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   z-index: 1038;
 }

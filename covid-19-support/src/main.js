@@ -9,19 +9,21 @@
 import Vue from 'vue'
 import { BootstrapVue } from 'bootstrap-vue' // IconsPlugin
 import i18n from './i18n'
-
 import App from './App.vue'
+
+
+import router from './router'
 
 // The following line imports our custom SCSS file, inside that file
 // the main Bootstrap SCSS and BootstrapVue SCSS are imported.
 // import('./themes/' + process.env.VUE_APP_THEME + '/SCSS/custom.scss')
 
-import './ExtraMarkers/css/leaflet.extra-markers.min.css'
-import './ExtraMarkers/js/leaflet.extra-markers.min.js'
+// import './ExtraMarkers/css/leaflet.extra-markers.min.css'
+// import './ExtraMarkers/js/leaflet.extra-markers.min.js'
 
-import 'leaflet/dist/leaflet.css'
-import 'leaflet.markercluster/dist/MarkerCluster.css'
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
+// import 'leaflet/dist/leaflet.css'
+// import 'leaflet.markercluster/dist/MarkerCluster.css'
+// import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
 // REQUIRED - Importing Bootstrap and BootstrapVue
 import './scss/bootstrap.scss'
@@ -33,17 +35,20 @@ import './scss/Main.scss'
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
+
 // Optionally install the BootstrapVue icon components plugin
 // Vue.use(IconsPlugin)
 
 Vue.config.productionTip = true
 
 new Vue({
-  i18n,
-  render: (h) => h(App),
-  methods: {
-    updateLang(iso) {
-      i18n.locale = iso
+    router,
+    i18n,
+    render: (h) => h(App),
+    methods: {
+        updateLang(iso) {
+            i18n.locale = iso
     }
   }
 }).$mount('#app')
+
