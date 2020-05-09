@@ -63,7 +63,11 @@ Thanks goes to these wonderful people:
 <table>
   <tr>
     <td align="center"><a href="https://www.vizioz.com"><img src="https://avatars2.githubusercontent.com/u/7332285?s=400&u=8471a1d6d304b73ae1eaa08519a2b059dd51e6a4&v=4" width="100px;" alt=""/><br /><sub><b>Maeva Finker</b></sub></a><br /><a href="https://github.com/mfincker" </td>
-    <td align="center"><a href="https://github.com/jayktee"><img src="https://avatars3.githubusercontent.com/u/59407366?s=400&u=20ccfa80753cc856e0b5748e8cfae153fe14bf1d&v=4" width="100px;" alt=""/><br /><sub><b>KJoyce Tagal</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/jayktee"><img src="https://avatars3.githubusercontent.com/u/59407366?s=400&u=20ccfa80753cc856e0b5748e8cfae153fe14bf1d&v=4" width="100px;" alt=""/><br /><sub><b>Joyce Tagal</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/chrisleboa"><img src="https://avatars2.githubusercontent.com/u/37169245?s=460&u=bcd3b4bf5cf1cc9c166b8267fde0431491e6ebed&v=4" width="100px;" alt=""/><br /><sub><b>Christopher LeBoa</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/behrman"><img src="https://avatars2.githubusercontent.com/u/15931497?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Bill Behrman</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/skaltman"><img src="https://avatars1.githubusercontent.com/u/18153457?s=400&u=64ed9aa451b7ffd61d08075e1122d2772a289804&v=4" width="100px;" alt=""/><br /><sub><b>Sara Altman</b></sub></a><br /></td>
+    
 
 </table>
 
