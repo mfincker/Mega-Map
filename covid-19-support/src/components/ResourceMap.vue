@@ -32,7 +32,7 @@
           <l-marker
             :lat-lng="latLng(item.marker.lat, item.marker.lon)"
             :icon="selectedIcon(index === location.locValue, item)"
-            v-for="(item, index) in filteredMarkers"
+            v-for="(item, index) in markers"
             v-bind:key="index"
             @click="$emit('location-selected', { locValue: index, isSetByMap: true })"
           ></l-marker>
@@ -46,9 +46,9 @@
 import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
-import { openStreetMapAttribution as attribution } from '../constants'
-import IconListItem from './IconListItem.vue'
-import { businessIcon } from '../utilities'
+import { openStreetMapAttribution as attribution } from '@/constants'
+import IconListItem from '@/components/IconListItem.vue'
+import { businessIcon } from '@/utilities'
 
 delete Icon.Default.prototype._getIconUrl
 Icon.Default.mergeOptions({
@@ -68,10 +68,9 @@ export default {
     IconListItem
   },
   props: {
-    filteredMarkers: Array,
-    location: { locValue: Number, isSetByMap: Boolean },
+    markers: Array,
     mapUrl: String,
-    userLocation: { lon: Number, lat: Number }
+    nearLocation: { lon: Number, lat: Number }
   },
   data() {
     return {
@@ -87,8 +86,8 @@ export default {
     }
   },
   created() {
-    if (!!this.userLocation.lat && !!this.userLocation.lon) {
-      this.center = latLng(this.userLocation.lat, this.userLocation.lon)
+    if (!!this.nearLocation.lat && !!this.nearLocation.lon) {
+      this.center = latLng(this.nearLocation.lat, this.nearLocation.lon)
       this.zoom = 13
     }
   },
@@ -146,8 +145,8 @@ export default {
       var item = this.filteredMarkers[locationVal.locValue]
       this.$refs.covidMap.mapObject.setView(latLng(item.marker.lat, item.marker.lon), 16, { duration: 1 })
     },
-    userLocation: function (newVal) {
-      if (!newVal.lat || !newVal.lon) {
+    nearLocation: function (newVal) {
+      if (!newVal || !newVal.lat || !newVal.lon) {
         return
       }
       this.$refs.covidMap.mapObject.setView(latLng(newVal.lat, newVal.lon), 13, { duration: 1 })
