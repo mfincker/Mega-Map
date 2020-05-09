@@ -75,6 +75,3 @@ export const sqlQueries = {
   meal : 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal'",
   snap_wic_retailer: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 0"
 }
-
-
-

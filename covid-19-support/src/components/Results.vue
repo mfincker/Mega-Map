@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import { spreadsheetUrl } from '@/constants'
+
+import { cartoBaseURL, sqlQueries } from './constants'
 
 export default {
     name: 'results',
@@ -16,10 +17,11 @@ export default {
         this.fetchData()
     },
     methods:{
-        async fetchData() {
-            const res = await fetch(spreadsheetUrl)
-            const entries = await res.json()
-            this.entries = entries.feed.entry
+        async fetchData(query) {
+          const res = await fetch(cartoBaseURL + '&q=' + query)
+          const entries = await res.json()
+          this.entries = entries.rows
+          console.log(this.entries)
         }
     },
     computed: {
