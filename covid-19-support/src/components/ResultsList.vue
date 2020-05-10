@@ -2,48 +2,45 @@
   <div class="resultWrapper">
     <div ref="results" class="resultList">
       <div
-        v-for="(item, index) in filteredMarkers"
-        v-bind:key="index"
+        v-for="item in markers"
+        v-bind:key="item.cartodb_id"
         class="resultItem"
-        :class="{ selected: index == location.locValue, closedOne: item.oc == false }"
-        :ref="'result' + index"
-        @click="$emit('location-selected', { locValue: index, isSetByMap: false })"
+        :class="{ selected: item.cartodb_id == resource.resourceId, closedOne: item.isOpen == false }"
+        :ref="'result' + item.cartodb_id"
+        @click="$emit('resource-selected', { resourceId: item.cartodb_id, isSetByMap: false })"
       >
-        <h5 class="resultTitle">{{ item.marker.provider_name }}</h5>
-        <template v-if="!!item.marker.provider_addloc"
-          ><div class="addloc">{{ item.marker.provider_addloc }}</div></template
+        <h5 class="resultTitle">{{ item.provider_name }}</h5>
+        <template v-if="!!item.provider_addloc"
+          ><div class="addloc">{{ item.provider_addloc }}</div></template
         >
-        <div v-if="!item.oc" class="closed">{{ getClosedMessage() }}</div>
+        <div v-if="!item.isOpen" class="closed">{{ getClosedMessage() }}</div>
         <span class="resultAddress">
-          <span v-if="!!item.marker.cuisine">{{ item.marker.cuisine }}<br /></span>
-          {{ item.marker.address }},
-          {{ item.marker.city }}
+          <span v-if="!!item.cuisine">{{ item.cuisine }}<br /></span>
+          {{ item.address }},
+          {{ item.city }}
         </span>
-        <template v-if="item.marker.discount_medical == 1"
-          ><span :title="$tc('label.discount_medical', 1)"><i class="fas fa-user-md" /></span
-        ></template>
-        <template v-if="item.marker.family_meal == 1"
+        <template v-if="item.family_meal == 1"
           ><span :title="$tc('category.family', 2)"><i class="fas fa-user-friends" /></span
         ></template>
-        <template v-if="item.marker.meal_student == 1"
+        <template v-if="item.meal_student == 1"
           ><span :title="$tc('label.meal_student', 1)"><i class="fas fa-school" /></span
         ></template>
         <!-- <template v-if="item.marker.meal_student == 1"
           ><span :title="$tc('label.meal_public', 1)"><i class="fas fa-users" /></span
         ></template> -->
-        <template v-if="item.marker.public == 1"
+        <template v-if="item.public == 1"
           ><span :title="$tc('label.meal_public', 1)"><i class="fas fa-users" /></span
         ></template>
-        <template v-if="item.marker.drive_thru == 1"
+        <template v-if="item.drive_thru == 1"
           ><span :title="$t('label.drive_thru')"><i class="fas fa-car-side" /></span
         ></template>
-        <template v-if="item.marker.curbside == 1"
+        <template v-if="item.curbside == 1"
           ><span :title="$tc('label.curbside', 1)"><i class="fas fa-car" /></span
         ></template>
-        <template v-if="item.marker.order_online == 1"
+        <template v-if="item.order_online == 1"
           ><span :title="$t('label.order_online')"><i class="fas fa-mouse" /></span
         ></template>
-        <template v-if="item.marker.delivery == 1"
+        <template v-if="item.delivery == 1"
           ><span :title="$t('label.delivery')"><i class="fas fa-shipping-fast" /></span
         ></template>
       </div>
@@ -52,7 +49,6 @@
 </template>
 
 <script>
-import { weekdaysJs } from '../constants'
 
 export default {
   name: 'ResultsList',
@@ -64,25 +60,20 @@ export default {
   },
   components: {},
   props: {
-    filteredMarkers: Array,
-    location: { locValue: Number, isSetByMap: Boolean },
-    selectedDay: Number
+    markers: Array,
+    resource: { resourceId: Number, isSetByMap: Boolean },
   },
   watch: {
-    location: function (locationVal) {
-      if (locationVal.isSetByMap) {
-        var top = this.$refs['result' + locationVal.locValue][0].offsetTop - 330
+    resource: function (val) {
+      if (val.isSetByMap) {
+        var top = this.$refs['result' + val.resourceId][0].offsetTop - 330
         this.$refs['results'].scrollTo(0, top)
       }
     }
   },
   methods: {
     getClosedMessage: function () {
-      if (this.selectedDay > 6) {
-        return this.$t(`label.closed-today`)
-      }
-
-      return `${this.$t('label.closed-on')} ${this.$t(`dayofweek.${weekdaysJs[this.selectedDay].day}`)}`
+      return this.$t(`label.closed-today`)
     }
   }
 }
@@ -91,6 +82,10 @@ export default {
 <style lang="scss">
 .resultWrapper {
   scrollbar-color: $gray-900 $gray-700;
+}
+
+.selected {
+  border-color: 'red';
 }
 
 .addloc {

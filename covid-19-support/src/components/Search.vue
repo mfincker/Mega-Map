@@ -54,10 +54,10 @@ export default {
         { value: 'alameda' , text: this.$tc('county.alameda') },
         { value: 'san-francisco' , text: this.$tc('county.san-francisco') }
       ]
-
-      if (this.userLocation && this.userLocation.lat && this.userLocation.lon) {
-        locations.splice(1, 0, { value: 'current-location', text: this.$tc('sidebar.current_location', 1) })
-      }
+      // uncomment to enable user current location
+      // if (this.userLocation && this.userLocation.lat && this.userLocation.lon) {
+      //   locations.splice(1, 0, { value: 'current-location', text: this.$tc('sidebar.current_location', 1) })
+      // }
 
       return locations
     }

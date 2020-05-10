@@ -17,6 +17,13 @@
         :nearLatLonZoom="nearLatLonZoom"
         :resource="resourceData"
     />
+
+    <results-list
+      :markers="markers"
+      :resource="resourceData"
+      @resource-selected="passSelectedMarker"
+    />
+
     </div>
 </template>
 
@@ -24,13 +31,16 @@
 
 import { cartoBaseURL, sqlQueries, dayFilters } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
+import ResultsList from '@/components/ResultsList.vue'
 // import Filters from '@/components/Filters.vue'
 import { haversineDistance, sortByDistance } from '@/utilities'
+import { latLng } from 'leaflet'
 
 export default {
     name: 'results',
     components: {
         ResourceMap,
+        ResultsList
         // Filters
   },
     data() {
@@ -80,12 +90,18 @@ export default {
             var today = new Date().getDay()
             const dayFilter = dayFilters[today]
 
-            let markers = this.entries.filter((c) => c.lat && c.lon)
+            let markers = this.entries.filter((c) => c.lat && c.lon).filter((c) => {
+                return this.bounds.contains(latLng(c.lat, c.lon))
+            })
+
+
             markers = markers.map((c) => ({
                             ...c, 
                             isOpen: c[dayFilter] !== '0', 
                             distance: haversineDistance(this.centroid, [c.lat, c.lon], true)
                         })).sort(sortByDistance)
+
+
             return markers
         },
         nearLatLonZoom() {
