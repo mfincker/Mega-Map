@@ -18,8 +18,8 @@ import router from './router'
 // the main Bootstrap SCSS and BootstrapVue SCSS are imported.
 // import('./themes/' + process.env.VUE_APP_THEME + '/SCSS/custom.scss')
 
-// import './ExtraMarkers/css/leaflet.extra-markers.min.css'
-// import './ExtraMarkers/js/leaflet.extra-markers.min.js'
+import './ExtraMarkers/css/leaflet.extra-markers.min.css'
+import './ExtraMarkers/js/leaflet.extra-markers.min.js'
 
 import 'leaflet/dist/leaflet.css'
 import 'leaflet.markercluster/dist/MarkerCluster.css'

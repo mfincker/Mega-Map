@@ -30,10 +30,10 @@
           <!-- @clusterclick="click()" @ready="ready" -->
           <l-marker
             :lat-lng="latLng(item.lat, item.lon)"
-            :icon="selectedIcon(index === resource.resourceId, item)"
-            v-for="(item, index) in markers"
-            v-bind:key="index"
-            @click="$emit('location-selected', { resourceId: index, isSetByMap: true })"
+            :icon="selectedIcon(item.cartodb_id === resource.resourceId, item)"
+            v-for="item in markers"
+            v-bind:key="item.cartodb_id"
+            @click="$emit('marker-selected', { resourceId: item.cartodb_id, isSetByMap: true })"
           ></l-marker>
         </v-marker-cluster>
       </l-map>
@@ -47,7 +47,7 @@ import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import { openStreetMapAttribution as attribution } from '@/constants'
 import IconListItem from '@/components/IconListItem.vue'
-// import { businessIcon } from '@/utilities'
+import { businessIcon } from '@/utilities'
 
 delete Icon.Default.prototype._getIconUrl
 Icon.Default.mergeOptions({
@@ -114,15 +114,14 @@ export default {
     },
     latLng,
     selectedIcon(selected, item) {
-      const isOpen = item.oc
-      let markerColor = isOpen ? '#566ca9' : '#999'
-      // const iconClasses = businessIcon(item.marker)
+      let markerColor = item.isOpen ? '#566ca9' : '#999'
+      const iconClasses = businessIcon(item)
       if (selected) {
         markerColor = '#ff3d3d'
       }
       var markerIcon = ExtraMarkers.icon({
         markerColor,
-        // icon: iconClasses,
+        icon: iconClasses,
         prefix: 'fa',
         svg: true
         // ,
@@ -138,17 +137,18 @@ export default {
   },
   watch: {
     // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
-    location: function (locationVal) {
-      if (locationVal.isSetByMap) {
+    resource: function (newResource) {
+      if (newResource.isSetByMap) {
         return
       }
-      var item = this.filteredMarkers[locationVal.locValue]
-      this.$refs.covidMap.mapObject.setView(latLng(item.marker.lat, item.marker.lon), 16, { duration: 1 })
+      var item = this.markers[newResource.resourceId]
+      this.$refs.covidMap.mapObject.setView(latLng(item.lat, item.lon), 16, { duration: 1 })
     },
-    nearLocation: function (newVal) {
-      if (!newVal || !newVal.lat || !newVal.lon) {
+    nearLocation: function (newVal, oldVal) {
+      if (!newVal || !newVal.lat || !newVal.lon || (newVal.lat == oldVal.lat && newVal.lon == oldVal.lon)) {
         return
       }
+
       this.$refs.covidMap.mapObject.setView(latLng(newVal.lat, newVal.lon), 13, { duration: 1 })
     }
   }

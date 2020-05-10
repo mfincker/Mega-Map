@@ -1,6 +1,6 @@
 export function businessIcon(business) {
-  switch (business.resource.$t) {
-    case 'grocery':
+  switch (business.resource) {
+    case 'free_grocery':
       return 'fas fa-shopping-basket'
     case 'pharmacy':
       return 'fas fa-prescription'

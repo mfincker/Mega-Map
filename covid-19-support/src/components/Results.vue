@@ -1,10 +1,19 @@
 <template>
     <div>
     <div>Hello </div>
+<!--     <filters
+          :need="$route.params.need"
+          :class="{ toggled: isFilterOpen }"
+          :filteredMarkers="highlightFilteredMarkers"
+          :highlightFilters="highlightFilters"
+          @box-selected="boxSelected"
+    /> -->
     <resource-map
+        v-if="displayMap"
         :markers="markers"
         @bounds="boundsUpdated"
         @center="centerUpdated"
+        @marker-selected="passSelectedMarker"
         :mapUrl="mapUrl"
         :nearLocation="nearLocation"
         :resource="resourceData"
@@ -14,13 +23,16 @@
 
 <script>
 
-import { cartoBaseURL, sqlQueries } from '@/constants'
+import { cartoBaseURL, sqlQueries, dayFilters } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
+// import Filters from '@/components/Filters.vue'
+import { haversineDistance, sortByDistance } from '@/utilities'
 
 export default {
     name: 'results',
     components: {
-        ResourceMap
+        ResourceMap,
+        // Filters
   },
     data() {
         return {
@@ -45,13 +57,16 @@ export default {
             } catch(e) {
                 console.log(e)
             }
-            
         },
         centerUpdated(center) {
             this.centroid = [center.lat, center.lng]
         },
         boundsUpdated: function (bounds) {
             this.bounds = bounds
+        },
+        passSelectedMarker: function (val) {
+            console.log(val)
+            this.resourceData = val
         }
     },
     computed: {
@@ -63,7 +78,16 @@ export default {
             if (!this.entries) {
                 return null
             }
-            return this.entries.filter((c) => c.lat && c.lon)
+            var today = new Date().getDay()
+            const dayFilter = dayFilters[today]
+
+            let markers = this.entries.filter((c) => c.lat && c.lon)
+            markers = markers.map((c) => ({
+                            ...c, 
+                            isOpen: c[dayFilter] !== '0', 
+                            distance: haversineDistance(this.centroid, [c.lat, c.lon], true)
+                        })).sort(sortByDistance)
+            return markers
         },
         nearLocation() {
             if (this.$route.query.lat) {
@@ -71,12 +95,11 @@ export default {
             }
             return { lat: null, lon: null } 
         }
-
     },
     watch: {
-        $route(to) {
+        $route(to, from) {
           // update entries based on need
-          if (to.params && to.params.need) {
+          if (to.params && to.params.need && to.params.need != from.params.need) {
             const query = encodeURI(sqlQueries[to.params.need])
             this.fetchData(query)
           }

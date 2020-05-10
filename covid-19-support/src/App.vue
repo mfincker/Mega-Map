@@ -29,43 +29,8 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import AppHeader from './components/Header.vue'
-import SearchFilter from './components/SearchFilter.vue'
-import Highlights from './components/Highlights.vue'
-import ResourceMap from './components/ResourceMap.vue'
-// import AboutUsModal from './components/AboutUs.vue'
-import { latLng } from 'leaflet'
-// import { haversineDistance } from './utilities'
-import { haversineDistance, sortByDistance } from './utilities'
-
-// import { spreadsheetUrl, weekdays, dayFilters, booleanFilters, dayAny } from './constants'
-import { cartoBaseURL, sqlQueries, dayFilters, booleanFilters, dayAny, complexFilters } from './constants'
-
-function extend(obj, src) {
-  for (var key in src) {
-    obj.push(src[key])
-  }
-  return obj
-}
-
-function addOrRemove(array, item) {
-  const exists = array.includes(item)
-
-  if (exists) {
-    return array.filter((c) => {
-      return c !== item
-    })
-  } else {
-    const result = array
-    result.push(item)
-    return result
-  }
-}
-=======
 import AppHeader from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
->>>>>>> implemented search bar and partial router
 
 export default {
   name: 'app',
@@ -75,15 +40,10 @@ export default {
   created() {
     // Get user location
     this.getUserLocation()
-<<<<<<< HEAD
-    // Get all data
-    this.fetchData(query)
-=======
 
     if (this.$route.params && this.$route.params.need) {
       this.need = this.$route.params.need
     }
->>>>>>> implemented search bar and partial router
   },
   components: {
     AppHeader,
@@ -102,34 +62,6 @@ export default {
     }
   },
   methods: {
-<<<<<<< HEAD
-    centerUpdated(center) {
-      this.centroid = [center.lat, center.lng]
-    },
-    boundsUpdated: function (bounds) {
-      this.bounds = bounds
-    },
-    getDay: function (day) {
-      if (day == 0) {
-        return 6
-      } else {
-        return day - 1
-      }
-    },
-    boxSelected: function (content) {
-      this.highlightFilters = addOrRemove(this.highlightFilters, content.need)
-    },
-    isAnyDaySelected(day) {
-      return day >= dayAny
-    },
-    needSelected: async function (val) {
-      this.entries = null
-      this.need = val
-      this.highlightFilters = []
-
-      const query = encodeURI(sqlQueries[val])
-      this.fetchData(query)
-=======
     needSelected: function (val) {
       this.need = val
       console.log("needSelected:")
@@ -139,7 +71,6 @@ export default {
         console.log('going to ' + this.need)
         this.$router.push({ path: this.need, query: { lat: this.nearLocation.lat, lon: this.nearLocation.lon } })
       } 
->>>>>>> implemented search bar and partial router
       // window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
     },
     nearLocationSelected: function(val) {
@@ -156,15 +87,7 @@ export default {
       this.language = item
       this.$root.updateLang(item.iso)
     },
-<<<<<<< HEAD
-    async fetchData(query) {
-      const res = await fetch(cartoBaseURL + '&q=' + query)
-      const entries = await res.json()
-      this.entries = entries.rows
-      console.log(this.entries)
-    },
-=======
->>>>>>> implemented search bar and partial router
+
     async getUserLocation() {
       try {
         const location = await this.requestUserLocation()
@@ -183,91 +106,6 @@ export default {
           (err) => reject(err)
         )
       })
-<<<<<<< HEAD
-    },
-    passLocation: function (val) {
-      this.locationData = val
-      this.showList = false
-      this.isFilterOpen = true
-      // var proName = this.filteredMarkers[val.locValue].marker.provider_addloc.$t
-      //   ? ', ' + this.filteredMarkers[val.locValue].marker.provider_addloc.$t
-      //   : ''
-
-      //   window.gtag('event', val.isSetByMap ? 'Marker clicked' : 'List item clicked', {
-      //     event_category: 'View details - (' + this.language.name + ')',
-      //     event_label: this.filteredMarkers[val.locValue].marker.provider_name + proName
-      //   })
-    }
-  },
-  computed: {
-    filteredMarkers() {
-      if (this.entries == null) return null
-
-      // Double check sql results for data quality but assumes we got the right resources based on query
-      let markers = this.entries.filter(
-          (c) => c.status == 1 && c.lat != 'error' && c.lon != 'error' && c.lat && c.lon
-        )
-
-      // Filter out the boolean items
-      this.highlightFilters.forEach((element) => {
-        if (booleanFilters.includes(element)) {
-          markers = markers.filter((c) => c[element] == 1)
-        }
-      })
-
-      // Filter out items based on complexFilters
-      complexFilters.forEach((f) => {
-        if (this.highlightFilters.includes(f.name)) {
-          markers = markers.filter((c) => {
-            const bools = f.columns.map((d) => c[d] == 1)
-            return f.combine(bools)
-          })
-        }
-      })
-
-      var today = new Date().getDay()
-      var selectedDay = today
-      if (!this.isAnyDaySelected(this.day)) {
-        selectedDay = this.day
-      }
-
-      const dayFilter = dayFilters[this.getDay(selectedDay)]
-      var open = markers.filter((c) => c[dayFilter] !== '0')
-      var closed = markers.filter((c) => c[dayFilter] == '0')
-
-      var retList = extend(
-        open.map((marker) => ({
-          marker,
-          oc: true,
-          distance: haversineDistance(this.centroid, [marker.lat, marker.lon], true)
-        })),
-        closed.map((marker) => ({
-          marker,
-          oc: false,
-          distance: haversineDistance(this.centroid, [marker.lat, marker.lon], true)
-        }))
-      ).sort(sortByDistance)
-
-      return retList
-    },
-    highlightFilteredMarkers() {
-      if (this.entries == null) return null
-
-      var contained = [] //makers in map boundingbox
-      this.filteredMarkers.forEach((m) => {
-        if (this.bounds.contains(latLng(m.marker.lat, m.marker.lon))) contained.push(m)
-      })
-
-      if (!this.isAnyDaySelected(this.day)) {
-        return contained
-      }
-
-      return contained.map((m) => {
-        let obj = Object.assign({}, m)
-        obj.oc = true
-        return obj
-      })
-=======
     }
   },
   watch: {
@@ -278,7 +116,6 @@ export default {
     } else {
       this.need = null
     }
->>>>>>> implemented search bar and partial router
     }
   }
 }
