@@ -7,6 +7,7 @@
         @center="centerUpdated"
         :mapUrl="mapUrl"
         :nearLocation="nearLocation"
+        :resource="resourceData"
     />
     </div>
 </template>
@@ -26,7 +27,8 @@ export default {
             entries: null,
             mapUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
             bounds: null,
-            centroid: [null, null]
+            centroid: [null, null],
+            resourceData: { resourceId: null, isSetByMap: false },
         }
     },
     created() {
@@ -35,10 +37,15 @@ export default {
     },
     methods:{
         async fetchData(query) {
-            const res = await fetch(cartoBaseURL + '&q=' + query)
-            const entries = await res.json()
-            this.entries = entries.rows
-            console.log(this.entries)
+            try {
+                const res = await fetch(cartoBaseURL + '&q=' + query)
+                const entries = await res.json()
+                this.entries = entries.rows
+                console.log(this.entries)
+            } catch(e) {
+                console.log(e)
+            }
+            
         },
         centerUpdated(center) {
             this.centroid = [center.lat, center.lng]

@@ -1,5 +1,4 @@
 <template>
-  <b-container class="bv-example-row px-0" fluid>
     <div class="map">
       <l-map
         ref="covidMap"
@@ -30,25 +29,25 @@
         <v-marker-cluster ref="marks" :options="clusterOptions">
           <!-- @clusterclick="click()" @ready="ready" -->
           <l-marker
-            :lat-lng="latLng(item.marker.lat, item.marker.lon)"
-            :icon="selectedIcon(index === location.locValue, item)"
+            :lat-lng="latLng(item.lat, item.lon)"
+            :icon="selectedIcon(index === resource.resourceId, item)"
             v-for="(item, index) in markers"
             v-bind:key="index"
-            @click="$emit('location-selected', { locValue: index, isSetByMap: true })"
+            @click="$emit('location-selected', { resourceId: index, isSetByMap: true })"
           ></l-marker>
         </v-marker-cluster>
       </l-map>
     </div>
-  </b-container>
 </template>
 
 <script>
 import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
+// import { LMap, LTileLayer, LControl } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 import { openStreetMapAttribution as attribution } from '@/constants'
 import IconListItem from '@/components/IconListItem.vue'
-import { businessIcon } from '@/utilities'
+// import { businessIcon } from '@/utilities'
 
 delete Icon.Default.prototype._getIconUrl
 Icon.Default.mergeOptions({
@@ -70,7 +69,8 @@ export default {
   props: {
     markers: Array,
     mapUrl: String,
-    nearLocation: { lon: Number, lat: Number }
+    nearLocation: { lon: Number, lat: Number },
+    resource: { resourceId: Number, isSetByMap: Boolean },
   },
   data() {
     return {
@@ -116,13 +116,13 @@ export default {
     selectedIcon(selected, item) {
       const isOpen = item.oc
       let markerColor = isOpen ? '#566ca9' : '#999'
-      const iconClasses = businessIcon(item.marker)
+      // const iconClasses = businessIcon(item.marker)
       if (selected) {
         markerColor = '#ff3d3d'
       }
       var markerIcon = ExtraMarkers.icon({
         markerColor,
-        icon: iconClasses,
+        // icon: iconClasses,
         prefix: 'fa',
         svg: true
         // ,
@@ -157,9 +157,10 @@ export default {
 
 <style scoped lang="scss">
 .map {
-  width: auto;
-  height: 100%;
-  top: 0;
+  width: 500px;
+  height: 500px;
+  top: 50px;
+  left: 50px;
   padding: 0;
   /* margin-left: 8px;
     margin-right: 8px; */

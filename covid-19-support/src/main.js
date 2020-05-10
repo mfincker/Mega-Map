@@ -21,9 +21,9 @@ import router from './router'
 // import './ExtraMarkers/css/leaflet.extra-markers.min.css'
 // import './ExtraMarkers/js/leaflet.extra-markers.min.js'
 
-// import 'leaflet/dist/leaflet.css'
-// import 'leaflet.markercluster/dist/MarkerCluster.css'
-// import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
+import 'leaflet/dist/leaflet.css'
+import 'leaflet.markercluster/dist/MarkerCluster.css'
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
 // REQUIRED - Importing Bootstrap and BootstrapVue
 import './scss/bootstrap.scss'
