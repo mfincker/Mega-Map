@@ -1,6 +1,5 @@
 <template>
     <div>
-    <div>Hello </div>
 <!--     <filters
           :need="$route.params.need"
           :class="{ toggled: isFilterOpen }"
@@ -15,7 +14,7 @@
         @center="centerUpdated"
         @marker-selected="passSelectedMarker"
         :mapUrl="mapUrl"
-        :nearLocation="nearLocation"
+        :nearLatLonZoom="nearLatLonZoom"
         :resource="resourceData"
     />
     </div>
@@ -89,11 +88,17 @@ export default {
                         })).sort(sortByDistance)
             return markers
         },
-        nearLocation() {
-            if (this.$route.query.lat) {
-                return { lat: this.$route.query.lat, lon: this.$route.query.lon }
+        nearLatLonZoom() {
+            const countyLatLon = {
+                'san-francisco': {lat: 37.7749, lon: -122.4194 , zoom: 13 },
+                'alameda': {lat: 37.8097, lon: -122.25328 , zoom: 13 },
+                'anywhere': { lat: 37.594, lon: -122.223, zoom: 10 }
             }
-            return { lat: null, lon: null } 
+
+            if (this.$route.query.near) {
+                return countyLatLon[this.$route.query.near]
+            }
+            return countyLatLon['anywhere']
         }
     },
     watch: {

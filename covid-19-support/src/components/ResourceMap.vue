@@ -69,7 +69,7 @@ export default {
   props: {
     markers: Array,
     mapUrl: String,
-    nearLocation: { lon: Number, lat: Number },
+    nearLatLonZoom: { lat: Number, lon: Number, zoom: Number },
     resource: { resourceId: Number, isSetByMap: Boolean },
   },
   data() {
@@ -86,9 +86,9 @@ export default {
     }
   },
   created() {
-    if (!!this.nearLocation.lat && !!this.nearLocation.lon) {
-      this.center = latLng(this.nearLocation.lat, this.nearLocation.lon)
-      this.zoom = 13
+    if (!!this.nearLatLonZoom.lat && !!this.nearLatLonZoom.lon) {
+      this.center = latLng(this.nearLatLonZoom.lat, this.nearLatLonZoom.lon)
+      this.zoom = this.nearLatLonZoom.zoom
     }
   },
   mounted() {
@@ -144,12 +144,12 @@ export default {
       var item = this.markers[newResource.resourceId]
       this.$refs.covidMap.mapObject.setView(latLng(item.lat, item.lon), 16, { duration: 1 })
     },
-    nearLocation: function (newVal, oldVal) {
+    nearLatLonZoom: function (newVal, oldVal) {
       if (!newVal || !newVal.lat || !newVal.lon || (newVal.lat == oldVal.lat && newVal.lon == oldVal.lon)) {
         return
       }
 
-      this.$refs.covidMap.mapObject.setView(latLng(newVal.lat, newVal.lon), 13, { duration: 1 })
+      this.$refs.covidMap.mapObject.setView(latLng(newVal.lat, newVal.lon), newVal.zoom, { duration: 1 })
     }
   }
 }

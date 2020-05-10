@@ -7,7 +7,7 @@
       </b-list-group-item>
       <b-list-group-item>
         <!-- <h6>{{ $t('sidebar.what-do-you-need') }}</h6> -->
-        <b-form-select v-model="location" :options="locationOptions" @change="(opt) => $emit('near-location-selected', opt)" />
+        <b-form-select :value="nearLocation" :options="locationOptions" @change="(opt) => $emit('near-location-selected', opt)" />
       </b-list-group-item>
     </b-list-group>
 <!--     <b-list-group class="need-location-group">
@@ -35,6 +35,7 @@ export default {
   },
   props: {
     need: String,
+    nearLocation: String,
     userLocation: { lat: Number, lon: Number }
   },
   computed: {
@@ -49,11 +50,13 @@ export default {
     locationOptions() {
       let locations =  [
         { value: null, text: this.$tc('sidebar.where', 1), disabled: true },
-        { value: {lat: 37.633192, lon: -121.938116}, text: this.$tc('county.alameda') }
+        { value: 'anywhere' , text: this.$tc('county.anywhere', 1) },
+        { value: 'alameda' , text: this.$tc('county.alameda') },
+        { value: 'san-francisco' , text: this.$tc('county.san-francisco') }
       ]
 
       if (this.userLocation && this.userLocation.lat && this.userLocation.lon) {
-        locations.splice(1, 0, { value: this.userLocation, text: this.$tc('sidebar.current_location', 1) })
+        locations.splice(1, 0, { value: 'current-location', text: this.$tc('sidebar.current_location', 1) })
       }
 
       return locations

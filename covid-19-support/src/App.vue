@@ -3,6 +3,7 @@
     <app-header :language="language.name" @language-selected="changeLanguage" />
     <search 
       :need="need" 
+      :nearLocation="nearLocation"
       :userLocation="userLocation"
       @need-selected="needSelected"
       @near-location-selected="nearLocationSelected"
@@ -44,6 +45,9 @@ export default {
     if (this.$route.params && this.$route.params.need) {
       this.need = this.$route.params.need
     }
+    if (this.$route.query && this.$route.query.near) {
+      this.nearLocation = this.$route.query.near
+    }
   },
   components: {
     AppHeader,
@@ -56,9 +60,10 @@ export default {
       language: { name: 'English', iso: 'en' },
       darkModeMediaQuery: darkModeMediaQuery,
       darkMode: darkModeMediaQuery.matches,
-      nearLocation: { lat: null, lon: null },
+      nearLocation: null,
       userLocation: { lat: null, lon: null },
-      errorStr: null
+      errorStr: null,
+      initialSearch: true
     }
   },
   methods: {
@@ -67,10 +72,11 @@ export default {
       console.log("needSelected:")
       console.log(val)
 
-      if (this.nearLocation.lat && this.nearLocation.lon && this.need) {
+      if (this.nearLocation) {
         console.log('going to ' + this.need)
-        this.$router.push({ path: this.need, query: { lat: this.nearLocation.lat, lon: this.nearLocation.lon } })
+        this.$router.push({ path: this.need, query: { near: this.nearLocation} })
       } 
+
       // window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
     },
     nearLocationSelected: function(val) {
@@ -78,10 +84,10 @@ export default {
       console.log("nearLocationSelected:")
       console.log(val)
 
-      if (this.nearLocation.lat && this.nearLocation.lon && this.need) {
+      if (this.nearLocation) {
         console.log('going to ' + this.need)
-        this.$router.push({ path: this.need, query: { lat: this.nearLocation.lat, lon: this.nearLocation.lon } })
-      } 
+        this.$router.push({ path: this.need, query: { near: this.nearLocation} })
+      }
     },
     changeLanguage: function (item) {
       this.language = item
@@ -109,13 +115,15 @@ export default {
     }
   },
   watch: {
-    $route(to) {
+    $route(to, from) {
+      console.log(to)
       // update need based on route
-      if (to.params && to.params.need) {
-      this.need = to.params.need
-    } else {
-      this.need = null
-    }
+      if (to.params && to.params.need && to.params.need != from.params.need) {
+        this.need = to.params.need
+      }
+      if (to.query.near && to.query.near != from.query.near) {
+        this.nearLocation = to.query.near
+      }
     }
   }
 }
