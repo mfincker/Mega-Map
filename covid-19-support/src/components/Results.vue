@@ -7,7 +7,7 @@
           @box-selected="boxSelected"
     />
 
-    <div id="map-details">
+    <!-- <div id="map-details"> -->
         <resource-map
         v-if="displayMap"
         :markers="markers"
@@ -26,7 +26,7 @@
       @resource-selected="passSelectedMarker"
     />
 
-    </div>
+    <!-- </div> -->
 
 
 
@@ -183,8 +183,9 @@ export default {
 <style type="text/css">
 #results {
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     /*flex: 1 1 auto;*/
     /*border: 1px solid red;*/
@@ -192,11 +193,11 @@ export default {
 }
 
 #map-details {
-    width: 100%;
-    flex: 1 1 auto;
+    /*width: 100%;*/
+    /*flex: 1 1 auto;*/
     /*min-height: 100%;*/
     /*border: 1px solid red;*/
-    position: relative;
+    /*position: relative;*/
 }
 
 </style>

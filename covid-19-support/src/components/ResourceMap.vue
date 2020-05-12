@@ -11,7 +11,7 @@
         @update:zoom="(val) => (zoom = val)"
         @update:bounds="boundsUpdated"
       >
-        <l-control position="topright">
+        <l-control position="bottomleft">
           <div class="mapkey" :class="{ 'show-key': showKey }">
             <div class="title-block">
               <h6 class="title">{{ $t('label.mapkey') }}</h6>
@@ -110,7 +110,7 @@ export default {
     },
     editZoomControl() {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
-      zoomControl.className = 'leaflet-top leaflet-right'
+      zoomControl.className = 'leaflet-bottom leaflet-left'
     },
     latLng,
     selectedIcon(selected, item) {
@@ -160,7 +160,7 @@ export default {
   position: absolute;
   width: 100%;
   top: 0;
-  height: calc(100% - 120px);
+  height: calc(100% - 155px);
   /* top: 50px;
   left: 50px; */
   padding: 0;
@@ -207,6 +207,9 @@ export default {
 .title-block {
   width: 100%;
   text-align: right;
+  bottom: 18px;
+  position: absolute;
+
 }
 
 .mapkey .title {

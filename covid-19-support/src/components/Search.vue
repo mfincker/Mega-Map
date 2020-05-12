@@ -1,6 +1,6 @@
 <template>
   <div id="search">
-    <p v-if="$route.path != '/'">{{ $tc('SEARCH') }}</p>
+    <!-- <p v-if="$route.path != '/'">{{ $tc('SEARCH') }}</p> -->
     <b-list-group horizontal class="need-location-group">
       <!-- <b-list-group-item> -->
         <!-- <h6>{{ $t('sidebar.what') }}</h6> -->
@@ -74,6 +74,7 @@ export default {
   width: 48%;
   margin: 0 auto;
   border-radius: 0px;
+  font-weight: 600 !important;
 }
 
 @media (min-width: 768px) {
@@ -83,11 +84,13 @@ export default {
 }
 
 #search {
-  margin: 3px auto;
+  margin: 6px auto;
   width: 100%;
   font-size: 0.75rem;
   display: flex;
   flex-direction: column;
+  z-index: 2000;
+  position: relative;
   /*padding: 2px 0px;*/
 }
 

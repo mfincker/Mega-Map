@@ -1,6 +1,7 @@
 <template>
   <div class="resultWrapper">
     <div ref="results" class="resultList">
+      <div v-if="isEmpty" class="no-result"> {{ $tc('no_location_in_this_area')}}</div>
       <div
         v-for="item in markers"
         v-bind:key="item.cartodb_id"
@@ -14,11 +15,13 @@
           ><div class="addloc">{{ item.provider_addloc }}</div></template
         >
         <div v-if="!item.isOpen" class="closed">{{ getClosedMessage() }}</div>
+        <div v-if="item.isOpen" class="open">{{ getOpenMessage(item) }}</div>
         <span class="resultAddress">
-          <span v-if="!!item.cuisine">{{ item.cuisine }}<br /></span>
+          <!-- <span v-if="!!item.cuisine">{{ item.cuisine }}<br /></span> -->
           {{ item.address }},
           {{ item.city }}
         </span>
+        <div class="resultContact">{{ item.contact }}</div>
         <!-- <template v-if="item.family_meal == 1"
           ><span :title="$tc('category.family', 2)"><i class="fas fa-user-friends" /></span
         ></template>
@@ -49,7 +52,7 @@
 </template>
 
 <script>
-
+import { dayFilters } from '@/constants'
 export default {
   name: 'ResultsList',
   data() {
@@ -74,6 +77,17 @@ export default {
   methods: {
     getClosedMessage: function () {
       return this.$t(`label.closed-today`)
+    },
+    getOpenMessage(item) {
+      var today = new Date().getDay()
+      const dayFilter = dayFilters[today]
+
+      return this.$t('open-today') + ': ' + item[dayFilter]
+    }
+  },
+  computed: {
+    isEmpty() {
+      return !this.markers || this.markers.length == 0
     }
   }
 }
@@ -82,26 +96,37 @@ export default {
 <style lang="css">
 .resultWrapper {
   scrollbar-color: $gray-900 $gray-700;
-}
-
-.addloc {
-  /*margin-bottom: 8px;*/
-}
-.resultList {
-  /*max-height: calc(100vh - 294px);*/
-  /*max-height: 120px;*/
-  overflow-y: auto;
-  height: 120px;
+  height: 155px;
   width: 100%;
   position: absolute;
   bottom: 0;
   /*background-color: rgb(115, 10, 110, 0.5);*/
   z-index: 2000;
 }
+
+.addloc {
+  /*margin-bottom: 8px;*/
+  font-size: 0.65rem;
+  line-height: 0.6rem;
+  padding-bottom: 3px;
+}
+.resultList {
+  /*max-height: calc(100vh - 294px);*/
+  /*max-height: 120px;*/
+  position: absolute;
+  bottom: 0;
+  /*background-color: rgb(115, 10, 110, 0.5);*/
+  z-index: 2000;
+  height: 155px;
+  overflow-y: auto;
+  width: 100%;
+  border-top: solid 1px rgba(0, 0, 0, 0.125);
+  
+}
 .resultItem {
-  padding: 3px;
+  padding: 3px 15px;
   display: block;
-  height: 80px;
+  height: 90px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
   font-size: 0.75rem;
   /*max-width: 282px;*/
@@ -138,15 +163,36 @@ export default {
 
 .resultTitle {
   font-size: 0.75rem;
-  margin: 5 auto !important;
+  margin: 0 !important;
   padding: 0 !important;
+  display: inline;
 }
 .resultAddress {
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   display: block;
   max-width: 262px;
 }
-.closedOne {
-  /* background: #f9f9f9 !important; */
+
+.closed, .open {
+  font-size: 0.7rem;
+  padding-bottom: 3px;
+}
+
+.closed {
+    color: grey;
+}
+
+.open {
+  color: green;
+}
+
+.no-result {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.resultContact {
+  font-size: 0.65rem;
 }
 </style>
