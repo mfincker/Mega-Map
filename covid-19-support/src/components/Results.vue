@@ -1,13 +1,14 @@
 <template>
-    <div>
-<!--     <filters
+    <div id="results">
+    <filters
           :need="$route.params.need"
-          :class="{ toggled: isFilterOpen }"
-          :filteredMarkers="highlightFilteredMarkers"
-          :highlightFilters="highlightFilters"
+          :markers="markers"
+          :activeFilters="activeFilters"
           @box-selected="boxSelected"
-    /> -->
-    <resource-map
+    />
+
+    <div id="map-details">
+        <resource-map
         v-if="displayMap"
         :markers="markers"
         @bounds="boundsUpdated"
@@ -18,6 +19,7 @@
         :resource="resourceData"
     />
 
+    <!-- <div id='test'></div> -->
     <results-list
       :markers="markers"
       :resource="resourceData"
@@ -25,23 +27,38 @@
     />
 
     </div>
+
+
+
+
+<!-- <BusinessDetails
+      :infotype="'green'"
+      :icon="'fa-tractor'"
+      :business="currentBusiness"
+      v-if="currentBusiness != null"
+      @close-details="closeDetails"
+    ></BusinessDetails> -->
+
+    </div>
 </template>
 
 <script>
 
-import { cartoBaseURL, sqlQueries, dayFilters } from '@/constants'
+import { cartoBaseURL, sqlQueries, dayFilters, booleanFilters, complexFilters } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
-// import Filters from '@/components/Filters.vue'
-import { haversineDistance, sortByDistance } from '@/utilities'
+// import BusinessDetails from '@/components/BusinessDetails.vue'
+import Filters from '@/components/Filters.vue'
+import { haversineDistance, sortByDistance, addOrRemove } from '@/utilities'
 import { latLng } from 'leaflet'
 
 export default {
     name: 'results',
     components: {
         ResourceMap,
-        ResultsList
-        // Filters
+        ResultsList,
+        // BusinessDetails,
+        Filters
   },
     data() {
         return {
@@ -50,6 +67,7 @@ export default {
             bounds: null,
             centroid: [null, null],
             resourceData: { resourceId: null, isSetByMap: false },
+            activeFilters: []
         }
     },
     created() {
@@ -67,6 +85,10 @@ export default {
                 console.log(e)
             }
         },
+        boxSelected: function (filter) {
+            this.activeFilters = addOrRemove(this.activeFilters, filter)
+            console.log(this.activeFilters)
+        },
         centerUpdated(center) {
             this.centroid = [center.lat, center.lng]
         },
@@ -76,9 +98,19 @@ export default {
         passSelectedMarker: function (val) {
             console.log(val)
             this.resourceData = val
+            this.showList = false
+        },
+        closeDetails: function() {
+            return
         }
     },
     computed: {
+        currentBusiness() {
+          if (this.resourceData == null || this.markers == null) {
+            return null
+          }
+          return this.markers.length > 0 && this.resourceData.resourceId > -1 ? this.markers.filter((c) => c.cartodb_id == this.resourceData.resourceId)[0] : null
+        },
         displayMap() {
             const needWithMap = ['meal', 'free_grocery', 'snap_wic_retailer']
             return needWithMap.includes(this.$route.params.need)
@@ -93,6 +125,24 @@ export default {
             let markers = this.entries.filter((c) => c.lat && c.lon).filter((c) => {
                 return this.bounds.contains(latLng(c.lat, c.lon))
             })
+
+
+            // Filter out the boolean items
+            this.activeFilters.forEach((element) => {
+                if (booleanFilters.includes(element)) {
+                  markers = markers.filter((c) => c[element] == '1')
+                }
+              })
+            // Filter out items based on complexFilters
+            complexFilters.forEach((f) => {
+              if (this.activeFilters.includes(f.name)) {
+                markers = markers.filter((c) => {
+                  const bools = f.columns.map((d) => c[d] == '1')
+                  return f.combine(bools)
+                })
+              }
+            })
+
 
 
             markers = markers.map((c) => ({
@@ -129,3 +179,24 @@ export default {
 }
 
 </script>
+
+<style type="text/css">
+#results {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /*flex: 1 1 auto;*/
+    /*border: 1px solid red;*/
+    /*position: relative;*/
+}
+
+#map-details {
+    width: 100%;
+    flex: 1 1 auto;
+    /*min-height: 100%;*/
+    /*border: 1px solid red;*/
+    position: relative;
+}
+
+</style>

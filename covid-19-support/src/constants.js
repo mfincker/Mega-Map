@@ -34,7 +34,7 @@ export const weekdayHours = [
 export const openStreetMapAttribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 
 export const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `${attr}`)
-export const seniorDayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sun'].map((attr) => `sp_${attr}`)
+export const seniorDayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `sp_${attr}`)
 
 export const booleanFilters = [
   'in_store_pickup',
@@ -62,7 +62,10 @@ export const booleanFilters = [
 ]
 
 // Combination of boolean filters
-export const complexFilters = [{ name: 'curbside_or_delivery', columns: ['curbside', 'delivery'], combine: ([a, b]) => a || b }]
+export const complexFilters = [
+  { name: 'curbside_or_delivery', columns: ['curbside', 'delivery'], combine: ([a, b]) => a || b },
+  { name: 'safe_pick_up', columns: ['curbside', 'delivery'], combine: ([a, b]) => a || b },
+]
 
 // CARTO DB VARIABLES
 export const cartoBaseURL = 

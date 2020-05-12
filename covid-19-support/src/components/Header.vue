@@ -11,6 +11,13 @@
     <b-collapse id="nav-collapse" is-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
+        <b-nav-item href="#" v-for="item in languages" v-bind:key="item.iso" class="d-none d-lg-block d-xl-block">
+          <span :title="$t('languages.' + item.iso)"
+              ><div v-html="item.name" :lang="item.iso" @click="$emit('language-selected', item)"
+              :class="{ 'selected' : item.name == language }"></div
+            ></span>
+        </b-nav-item>
+
         <!-- <b-nav-item right>
           <b-nav-form>
             <b-button size="sm" class="my-2 my-sm-0" variant="buttons" type="button" @click="$bvModal.show('about-us')"
@@ -22,14 +29,15 @@
         <!-- <b-nav-item right @click="$bvModal.show('about-us')">
           {{ $t('about.linktext') }}
         </b-nav-item> -->
-        <b-nav-item-dropdown right>
+        <b-nav-item-dropdown right class="d-lg-none">
           <template v-slot:button-content>
             <i class="fas fa-globe-americas" aria-hidden="true" />
             <span v-html="language" class="language" />
           </template>
           <b-dropdown-item href="#" v-for="item in languages" v-bind:key="item.iso">
             <span :title="$t('languages.' + item.iso)"
-              ><div v-html="item.name" :lang="item.iso" @click="$emit('language-selected', item)"></div
+              ><div v-html="item.name" :lang="item.iso" @click="$emit('language-selected', item)"
+              ></div
             ></span>
           </b-dropdown-item>
         </b-nav-item-dropdown>
@@ -54,23 +62,35 @@ export default {
         { iso: 'ar', name: 'عربى' },
         { iso: 'ja', name: '日本人' },
         { iso: 'zh', name: '中文' },
-        { iso: 'ms', name: 'ဗမာ' }
+        { iso: 'ms', name: 'ဗမာ' },
       ]
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="css" scoped>
 #topnav {
   /* position: absolute; */
   width: 100%;
-  z-index: 1038;
+  z-index: 1050;
+}
+
+.navbar {
+  min-height: 37px;
+}
+
+.navbar-toggler{
+  padding: 0.15rem;
+}
+
+.selected {
+  color: rgba(255, 255, 255, 1)
 }
 
 .navbar-brand {
   margin-right: 2px !important;
-  font-size: 0.95rem !important;
+  font-size: 0.8rem !important;
   padding: 0.2rem 0 !important;
   font-weight: 600;
 }

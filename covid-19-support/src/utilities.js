@@ -110,3 +110,16 @@ export function sortByDistance(a, b) {
   // names must be equal
   return 0
 }
+
+export function addOrRemove(array, item) {
+  const exists = array.includes(item)
+  if (exists) {
+    return array.filter((c) => {
+      return c !== item
+    })
+  } else {
+    const result = array
+    result.push(item)
+    return result
+  }
+}

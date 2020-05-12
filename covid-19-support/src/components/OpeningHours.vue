@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { dayFilters, seniorDayFilters, weekdayHours } from '../constants'
+import { dayFilters, seniorDayFilters, weekdayHours } from '@/constants'
 export default {
   name: 'OpeningHours',
   data() {
@@ -25,8 +25,7 @@ export default {
     infotype: { type: String },
     icon: { type: String },
     senior: { type: Boolean },
-    business: { type: Object },
-    day: { type: String }
+    business: { type: Object }
   },
   computed: {
     days() {

@@ -110,7 +110,7 @@ export default {
     },
     editZoomControl() {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
-      zoomControl.className = 'leaflet-bottom leaflet-right'
+      zoomControl.className = 'leaflet-top leaflet-right'
     },
     latLng,
     selectedIcon(selected, item) {
@@ -141,8 +141,8 @@ export default {
       if (newResource.isSetByMap) {
         return
       }
-      var item = this.markers[newResource.resourceId]
-      this.$refs.covidMap.mapObject.setView(latLng(item.lat, item.lon), 16, { duration: 1 })
+      var item = this.markers.filter((c) => c.cartodb_id == newResource.resourceId)[0]
+      this.$refs.covidMap.mapObject.setView(latLng(item.lat, item.lon), 14, { duration: 1 })
     },
     nearLatLonZoom: function (newVal, oldVal) {
       if (!newVal || !newVal.lat || !newVal.lon || (newVal.lat == oldVal.lat && newVal.lon == oldVal.lon)) {
@@ -155,30 +155,33 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="css">
 .map {
-  width: 500px;
-  height: 500px;
-  top: 50px;
-  left: 50px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: calc(100% - 120px);
+  /* top: 50px;
+  left: 50px; */
   padding: 0;
+  z-index: 1;
   /* margin-left: 8px;
     margin-right: 8px; */
 }
 
-.bv-example-row {
+/*.bv-example-row {
   height: calc(100% - 124px);
-}
+}*/
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .bv-example-row {
     height: calc(100% - 116px);
   }
-}
+}*/
 
-.noselection.bv-example-row {
+/*.noselection.bv-example-row {
   height: 100%;
-}
+}*/
 
 .mapkey {
   padding: 16px;

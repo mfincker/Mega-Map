@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" />
-    <search 
+    <h5 v-if="initialSearch">{{ $tc('sidebar.what-are-you-looking-for', 1) }}</h5>
+    <!-- <div id="search-result"> -->
+      <search 
       :need="need" 
       :nearLocation="nearLocation"
       :userLocation="userLocation"
@@ -9,6 +11,8 @@
       @near-location-selected="nearLocationSelected"
     />
      <router-view/>
+
+    <!-- </div> -->
     <!-- <about-us-modal /> -->
 
     <!-- <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
@@ -44,6 +48,7 @@ export default {
 
     if (this.$route.params && this.$route.params.need) {
       this.need = this.$route.params.need
+      this.initialSearch = false
     }
     if (this.$route.query && this.$route.query.near) {
       this.nearLocation = this.$route.query.near
@@ -75,6 +80,7 @@ export default {
       if (this.nearLocation) {
         console.log('going to ' + this.need)
         this.$router.push({ path: this.need, query: { near: this.nearLocation} })
+        this.initialSearch = false
       } 
 
       // window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
@@ -84,9 +90,10 @@ export default {
       console.log("nearLocationSelected:")
       console.log(val)
 
-      if (this.nearLocation) {
+      if (this.nearLocation && this.need) {
         console.log('going to ' + this.need)
         this.$router.push({ path: this.need, query: { near: this.nearLocation} })
+        this.initialSearch = false
       }
     },
     changeLanguage: function (item) {
@@ -115,18 +122,49 @@ export default {
     }
   },
   watch: {
-    $route(to, from) {
+    $route(to) {
       console.log(to)
       // update need based on route
-      if (to.params && to.params.need && to.params.need != from.params.need) {
-        this.need = to.params.need
-      }
-      if (to.query.near && to.query.near != from.query.near) {
-        this.nearLocation = to.query.near
+      if (to.path == '/') {
+        this.initialSearch = true
+        this.need = null
+        this.nearLocation = null
+      } else {
+        this.initialSearch = false
+        if (to.params.need) {
+          this.need = to.params.need
+        }
+        if (to.query.near) {
+          this.nearLocation = to.query.near
+        }
       }
     }
   }
 }
 </script>
 
-<style></style>
+<style scope>
+h5 {
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  font-weight: 300 !important;
+  padding-top: 50px !important;
+  padding-bottom: 20px !important;
+}
+
+.home {
+  height: 100vh;
+  /*border: 1px solid blue;*/
+  display: flex;
+  flex-direction: column;
+}
+
+#search-result {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  /*border: 1px solid black;*/
+}
+
+</style>

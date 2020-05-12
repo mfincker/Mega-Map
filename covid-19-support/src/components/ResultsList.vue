@@ -19,16 +19,16 @@
           {{ item.address }},
           {{ item.city }}
         </span>
-        <template v-if="item.family_meal == 1"
+        <!-- <template v-if="item.family_meal == 1"
           ><span :title="$tc('category.family', 2)"><i class="fas fa-user-friends" /></span
         ></template>
         <template v-if="item.meal_student == 1"
           ><span :title="$tc('label.meal_student', 1)"><i class="fas fa-school" /></span
-        ></template>
+        ></template> -->
         <!-- <template v-if="item.marker.meal_student == 1"
           ><span :title="$tc('label.meal_public', 1)"><i class="fas fa-users" /></span
         ></template> -->
-        <template v-if="item.public == 1"
+        <!-- <template v-if="item.public == 1"
           ><span :title="$tc('label.meal_public', 1)"><i class="fas fa-users" /></span
         ></template>
         <template v-if="item.drive_thru == 1"
@@ -42,7 +42,7 @@
         ></template>
         <template v-if="item.delivery == 1"
           ><span :title="$t('label.delivery')"><i class="fas fa-shipping-fast" /></span
-        ></template>
+        ></template> -->
       </div>
     </div>
   </div>
@@ -79,33 +79,40 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="css">
 .resultWrapper {
   scrollbar-color: $gray-900 $gray-700;
 }
 
-.selected {
-  border-color: 'red';
-}
-
 .addloc {
-  margin-bottom: 8px;
+  /*margin-bottom: 8px;*/
 }
 .resultList {
-  max-height: calc(100vh - 294px);
+  /*max-height: calc(100vh - 294px);*/
+  /*max-height: 120px;*/
   overflow-y: auto;
+  height: 120px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  /*background-color: rgb(115, 10, 110, 0.5);*/
+  z-index: 2000;
 }
 .resultItem {
-  padding: 10px;
+  padding: 3px;
   display: block;
-  min-height: 100px;
+  height: 80px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
-  font-size: 0.8rem;
-  max-width: 282px;
+  font-size: 0.75rem;
+  /*max-width: 282px;*/
   background: theme-color('secondary');
 
   @media (prefers-color-scheme: dark) {
     color: $gray-100;
+    background: $gray-800;
+  }
+
+  &.selected {
     background: $gray-800;
   }
 
@@ -130,11 +137,12 @@ export default {
 }
 
 .resultTitle {
-  font-size: 0.9rem;
-  margin-bottom: 0;
+  font-size: 0.75rem;
+  margin: 5 auto !important;
+  padding: 0 !important;
 }
 .resultAddress {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   display: block;
   max-width: 262px;
 }
