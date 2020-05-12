@@ -69,10 +69,17 @@ export default {
   watch: {
     resource: function (val) {
       if (val.isSetByMap) {
-        var top = this.$refs['result' + val.resourceId][0].offsetTop - 330
+        var top = this.$refs['result' + val.resourceId][0].offsetTop
         this.$refs['results'].scrollTo(0, top)
       }
-    }
+    },
+    markers: function () {
+      console.log(this.$refs)
+      if (this.resource && typeof this.$refs['result' + this.resource.resourceId] !== 'undefined') {
+        var top = this.$refs['result' + this.resource.resourceId][0].offsetTop
+        this.$refs['results'].scrollTo(0, top)
+      }
+    },
   },
   methods: {
     getClosedMessage: function () {
@@ -93,10 +100,10 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 .resultWrapper {
   scrollbar-color: $gray-900 $gray-700;
-  height: 155px;
+  height: 25%;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -117,7 +124,7 @@ export default {
   bottom: 0;
   /*background-color: rgb(115, 10, 110, 0.5);*/
   z-index: 2000;
-  height: 155px;
+  height: 100%;
   overflow-y: auto;
   width: 100%;
   border-top: solid 1px rgba(0, 0, 0, 0.125);
@@ -138,7 +145,7 @@ export default {
   }
 
   &.selected {
-    background: $gray-800;
+    background: $gray-200 !important; 
   }
 
   &:hover {

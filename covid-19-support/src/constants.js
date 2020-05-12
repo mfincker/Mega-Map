@@ -69,7 +69,8 @@ export const complexFilters = [
 
 // CARTO DB VARIABLES
 export const cartoBaseURL = 
-  'https://mfincker.carto.com/api/v2/sql?api_key=' + process.env.VUE_APP_CARTO_API_KEY
+  // 'https://mfincker.carto.com/api/v2/sql?api_key=' + process.env.VUE_APP_CARTO_API_KEY
+  'https://mfincker.carto.com/api/v2/sql?'
 
 export const cartoDBName = 'mega_map_db'
 

@@ -49,7 +49,8 @@ import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
 // import BusinessDetails from '@/components/BusinessDetails.vue'
 import Filters from '@/components/Filters.vue'
-import { haversineDistance, sortByDistance, addOrRemove } from '@/utilities'
+// import { haversineDistance, sortByDistance, addOrRemove } from '@/utilities'
+import { haversineDistance, addOrRemove } from '@/utilities'
 import { latLng } from 'leaflet'
 
 export default {
@@ -149,7 +150,7 @@ export default {
                             ...c, 
                             isOpen: c[dayFilter] !== '0', 
                             distance: haversineDistance(this.centroid, [c.lat, c.lon], true)
-                        })).sort(sortByDistance)
+                        }))//.sort(sortByDistance)
 
 
             return markers

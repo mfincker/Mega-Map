@@ -34,7 +34,8 @@
             v-for="item in markers"
             v-bind:key="item.cartodb_id"
             @click="$emit('marker-selected', { resourceId: item.cartodb_id, isSetByMap: true })"
-          ></l-marker>
+          >
+          </l-marker>
         </v-marker-cluster>
       </l-map>
     </div>
@@ -142,7 +143,7 @@ export default {
         return
       }
       var item = this.markers.filter((c) => c.cartodb_id == newResource.resourceId)[0]
-      this.$refs.covidMap.mapObject.setView(latLng(item.lat, item.lon), 14, { duration: 1 })
+      this.$refs.covidMap.mapObject.setView(latLng(item.lat, item.lon), 16, { duration: 1 })
     },
     nearLatLonZoom: function (newVal, oldVal) {
       if (!newVal || !newVal.lat || !newVal.lon || (newVal.lat == oldVal.lat && newVal.lon == oldVal.lon)) {
@@ -160,7 +161,8 @@ export default {
   position: absolute;
   width: 100%;
   top: 0;
-  height: calc(100% - 155px);
+  /*height: calc(100% - 155px);*/
+  height: 75%;
   /* top: 50px;
   left: 50px; */
   padding: 0;
@@ -227,5 +229,9 @@ export default {
 }
 .mapkey.show-key .title {
   display: inline;
+}
+
+.tooltip {
+  font-size: 2rem;
 }
 </style>
