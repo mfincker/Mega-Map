@@ -67,7 +67,11 @@ Thanks goes to these wonderful people:
     <td align="center"><a href="https://github.com/chrisleboa"><img src="https://avatars2.githubusercontent.com/u/37169245?s=460&u=bcd3b4bf5cf1cc9c166b8267fde0431491e6ebed&v=4" width="100px;" alt=""/><br /><sub><b>Christopher LeBoa</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/behrman"><img src="https://avatars2.githubusercontent.com/u/15931497?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Bill Behrman</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/skaltman"><img src="https://avatars1.githubusercontent.com/u/18153457?s=400&u=64ed9aa451b7ffd61d08075e1122d2772a289804&v=4" width="100px;" alt=""/><br /><sub><b>Sara Altman</b></sub></a><br /></td>
-    
+   <td align="center"><a href="https://github.com/charliehoffs"><img src="https://avatars0.githubusercontent.com/u/63679604?s=400&u=e9ccd4677985df5e99780dcb44abc2c9ae5d0b05&v=4" width="100px;" alt=""/><br /><sub><b>Charlie Hoffs</b></sub></a><br /></td>
+   <td align="center"><a href="https://github.com/jenren"><img src="https://avatars0.githubusercontent.com/u/5131960?s=400&u=42d43338dd81a33aaee74cdda0455cf0be275574&v=4" width="100px;" alt=""/><br /><sub><b>Jen Ren</b></sub></a><br /></td>
+   <td align="center"><a href="https://github.com/akatta13"><img src="https://avatars3.githubusercontent.com/u/46289770?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Akatta13</b></sub></a><br /></td>
+   <td align="center"><a href="https://github.com/16chuang"><img src="https://avatars3.githubusercontent.com/u/4879368?s=400&u=706bdb5e7feb58446e6cd2a16ae7040986f9af0e&v=4" width="100px;" alt=""/><br /><sub><b>Claire Huang</b></sub></a><br /></td>
+   <td align="center"><a href="https://github.com/chanishere149"><img src="https://avatars1.githubusercontent.com/u/8195324?s=400&u=17d8ad8634720c9e9fc01253253db8570f4972ff&v=4" width="100px;" alt=""/><br /><sub><b>Patrick Chan</b></sub></a><br /></td>
 
 </table>
 
