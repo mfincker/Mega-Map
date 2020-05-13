@@ -1,15 +1,8 @@
 <template>
-
-    <div class="filters" v-if="filterList[0] != null">
-      <!-- <p>{{ $tc('FILTERS') }}</p> -->
-      <div>
-        <b-form-checkbox
-        v-for="(item, index) in filterList"
-        v-bind:key="index"
-        :value="item"
-        @change="$emit('box-selected', item)"
-    >{{ $tc(`label.${item}`) }}</b-form-checkbox>
-      </div>
+  <div class="filters" v-if="filterList[0] != null">
+    <b-form-checkbox v-for="(item, index) in filterList" v-bind:key="index" :value="item" @change="$emit('box-selected', item)">
+      {{ $tc(`label.${item}`) }}
+    </b-form-checkbox>
   </div>
 </template>
 
@@ -225,70 +218,25 @@ export default {
 </script>
 
 <style lang="css">
-
 .filters {
   position: relative;
-  /*top: 0;*/
-  display: flex;
-  flex-direction: column;
-  z-index: 10;
+  justify-content: space-evenly;
+  z-index: 3000;
   width: 100%;
-  /*background-color: white;*/
-  font-weight: 400;
-  font-size: 0.75em;
-  line-height: 1.5;
-  vertical-align: middle;
-  padding: 10px 0px 6px 0px;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.filters > p {
-  /*padding-left: 3px !important;*/
-  margin: 0 auto !important;
-  /*text-decoration: underline;*/
-}
-
-.filters > div {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  font-size: 0.8em;
+  padding: 8px 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
 }
 
 .custom-checkbox {
-  /*font-size: 0.75rem;*/
-  /*margin-left: 15px;*/
-  /*text-align: center;*/
-  /*vertical-align: middle;*/
-  width: 48% !important;
-  /*max-width: 160px;*/
   color: #495057;
-  /*padding: 0px 10px 0px 5px !;*/
-  border: 1px solid rgb(206, 212, 218);
-  border-radius: 0px;
   background: white;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+  width: 50%;
+  display: inline-block !important;
+  line-height: 2;
 }
-
-@media (min-width: 768px) {
-  .filters > div {
-    justify-content: center;
-  }
-  .custom-checkbox {
-    max-width: 175px;
-    margin: 0px 5px;
-  }
-}
-
-.custom-control {
-  padding-left: 1.8rem !important;
-}
-
-.custom-control-label {
-  padding-top: 3px;
-}
-
 
 .highlights {
   position: absolute;

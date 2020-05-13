@@ -1,44 +1,44 @@
 <template>
-    <div class="map">
-      <l-map
-        ref="covidMap"
-        v-if="showMap"
-        :zoom="zoom"
-        :center="center"
-        :options="mapOptions"
-        style="height: 100%; width: 100%;"
-        @update:center="centerUpdated"
-        @update:zoom="(val) => (zoom = val)"
-        @update:bounds="boundsUpdated"
-      >
-        <l-control position="bottomleft">
-          <div class="mapkey" :class="{ 'show-key': showKey }">
-            <div class="title-block">
-              <h6 class="title">{{ $t('label.mapkey') }}</h6>
-              <i @click="showKey = !showKey" class="fas fa-info-circle" />
-            </div>
-            <div class="keys" :class="{ 'show-key': showKey }">
-              <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link="" />
-              <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link="" />
-              <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link="" />
-            </div>
+  <div class="map">
+    <l-map
+      ref="covidMap"
+      v-if="showMap"
+      :zoom="zoom"
+      :center="center"
+      :options="mapOptions"
+      style="height: 100%; width: 100%;"
+      @update:center="centerUpdated"
+      @update:zoom="(val) => (zoom = val)"
+      @update:bounds="boundsUpdated"
+    >
+      <l-control position="bottomleft">
+        <div class="mapkey" :class="{ 'show-key': showKey }">
+          <div class="title-block">
+            <h6 class="title">{{ $t('label.mapkey') }}</h6>
+            <i @click="showKey = !showKey" class="fas fa-info-circle" />
           </div>
-        </l-control>
-        <l-tile-layer :url="mapUrl" :attribution="attribution" />
+          <div class="keys" :class="{ 'show-key': showKey }">
+            <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link="" />
+            <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link="" />
+            <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link="" />
+          </div>
+        </div>
+      </l-control>
+      <l-tile-layer :url="mapUrl" :attribution="attribution" />
 
-        <v-marker-cluster ref="marks" :options="clusterOptions">
-          <!-- @clusterclick="click()" @ready="ready" -->
-          <l-marker
-            :lat-lng="latLng(item.lat, item.lon)"
-            :icon="selectedIcon(item.cartodb_id === resource.resourceId, item)"
-            v-for="item in markers"
-            v-bind:key="item.cartodb_id"
-            @click="$emit('marker-selected', { resourceId: item.cartodb_id, isSetByMap: true })"
-          >
-          </l-marker>
-        </v-marker-cluster>
-      </l-map>
-    </div>
+      <v-marker-cluster ref="marks" :options="clusterOptions">
+        <!-- @clusterclick="click()" @ready="ready" -->
+        <l-marker
+          :lat-lng="latLng(item.lat, item.lon)"
+          :icon="selectedIcon(item.cartodb_id === resource.resourceId, item)"
+          v-for="item in markers"
+          v-bind:key="item.cartodb_id"
+          @click="$emit('marker-selected', { resourceId: item.cartodb_id, isSetByMap: true })"
+        >
+        </l-marker>
+      </v-marker-cluster>
+    </l-map>
+  </div>
 </template>
 
 <script>
@@ -71,7 +71,7 @@ export default {
     markers: Array,
     mapUrl: String,
     nearLatLonZoom: { lat: Number, lon: Number, zoom: Number },
-    resource: { resourceId: Number, isSetByMap: Boolean },
+    resource: { resourceId: Number, isSetByMap: Boolean }
   },
   data() {
     return {
@@ -158,17 +158,11 @@ export default {
 
 <style scoped lang="css">
 .map {
-  position: absolute;
+  flex: 1 1 100%;
+  height: 100%;
   width: 100%;
-  top: 0;
-  /*height: calc(100% - 155px);*/
-  height: 75%;
-  /* top: 50px;
-  left: 50px; */
   padding: 0;
   z-index: 1;
-  /* margin-left: 8px;
-    margin-right: 8px; */
 }
 
 /*.bv-example-row {
@@ -211,7 +205,6 @@ export default {
   text-align: right;
   bottom: 18px;
   position: absolute;
-
 }
 
 .mapkey .title {

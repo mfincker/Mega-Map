@@ -1,7 +1,7 @@
 <template>
   <div class="resultWrapper">
     <div ref="results" class="resultList">
-      <div v-if="isEmpty" class="no-result"> {{ $tc('no_location_in_this_area')}}</div>
+      <div v-if="isEmpty" class="no-result">{{ $tc('no_location_in_this_area') }}</div>
       <div
         v-for="item in markers"
         v-bind:key="item.cartodb_id"
@@ -10,12 +10,12 @@
         :ref="'result' + item.cartodb_id"
         @click="$emit('resource-selected', { resourceId: item.cartodb_id, isSetByMap: false })"
       >
-        <h5 class="resultTitle">{{ item.provider_name }}</h5>
-        <template v-if="!!item.provider_addloc"
-          ><div class="addloc">{{ item.provider_addloc }}</div></template
-        >
-        <div v-if="!item.isOpen" class="closed">{{ getClosedMessage() }}</div>
-        <div v-if="item.isOpen" class="open">{{ getOpenMessage(item) }}</div>
+        <template v-if="!!item.provider_addloc">
+          <div class="addloc">{{ item.provider_addloc }}</div>
+        </template>
+        <span class="resultTitle">{{ item.provider_name }}</span>
+        <!--<div v-if="!item.isOpen" class="closed">{{ getClosedMessage() }}</div>
+        <div v-if="item.isOpen" class="open">{{ getOpenMessage(item) }}</div>-->
         <span class="resultAddress">
           <!-- <span v-if="!!item.cuisine">{{ item.cuisine }}<br /></span> -->
           {{ item.address }},
@@ -64,7 +64,7 @@ export default {
   components: {},
   props: {
     markers: Array,
-    resource: { resourceId: Number, isSetByMap: Boolean },
+    resource: { resourceId: Number, isSetByMap: Boolean }
   },
   watch: {
     resource: function (val) {
@@ -79,7 +79,7 @@ export default {
         var top = this.$refs['result' + this.resource.resourceId][0].offsetTop
         this.$refs['results'].scrollTo(0, top)
       }
-    },
+    }
   },
   methods: {
     getClosedMessage: function () {
@@ -102,41 +102,30 @@ export default {
 
 <style lang="scss">
 .resultWrapper {
+  flex: 1 1 100%;
+  overflow-y: scroll;
   scrollbar-color: $gray-900 $gray-700;
-  height: 25%;
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  /*background-color: rgb(115, 10, 110, 0.5);*/
   z-index: 2000;
 }
 
 .addloc {
-  /*margin-bottom: 8px;*/
-  font-size: 0.65rem;
-  line-height: 0.6rem;
   padding-bottom: 3px;
+  color: $gray-600;
+  font-size: 0.8rem;
 }
+
 .resultList {
-  /*max-height: calc(100vh - 294px);*/
-  /*max-height: 120px;*/
-  position: absolute;
-  bottom: 0;
-  /*background-color: rgb(115, 10, 110, 0.5);*/
   z-index: 2000;
-  height: 100%;
-  overflow-y: auto;
   width: 100%;
   border-top: solid 1px rgba(0, 0, 0, 0.125);
-  
 }
+
 .resultItem {
-  padding: 3px 15px;
+  padding: 16px;
   display: block;
-  height: 90px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
-  font-size: 0.75rem;
-  /*max-width: 282px;*/
+  font-size: 1rem;
   background: theme-color('secondary');
 
   @media (prefers-color-scheme: dark) {
@@ -145,7 +134,7 @@ export default {
   }
 
   &.selected {
-    background: $gray-200 !important; 
+    background: $gray-200 !important;
   }
 
   &:hover {
@@ -169,24 +158,24 @@ export default {
 }
 
 .resultTitle {
-  font-size: 0.75rem;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: inline;
-}
-.resultAddress {
-  font-size: 0.65rem;
-  display: block;
-  max-width: 262px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0 0 4px;
 }
 
-.closed, .open {
-  font-size: 0.7rem;
-  padding-bottom: 3px;
+.resultAddress {
+  display: block;
+  max-width: 300px;
+  margin-bottom: 4px;
+}
+
+.closed,
+.open {
 }
 
 .closed {
-    color: grey;
+  color: grey;
 }
 
 .open {
@@ -197,9 +186,5 @@ export default {
   margin-top: 10px;
   text-align: center;
   font-size: 0.75rem;
-}
-
-.resultContact {
-  font-size: 0.65rem;
 }
 </style>

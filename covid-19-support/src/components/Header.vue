@@ -13,9 +13,13 @@
       <b-navbar-nav class="ml-auto">
         <b-nav-item href="#" v-for="item in languages" v-bind:key="item.iso" class="d-none d-lg-block d-xl-block">
           <span :title="$t('languages.' + item.iso)"
-              ><div v-html="item.name" :lang="item.iso" @click="$emit('language-selected', item)"
-              :class="{ 'selected' : item.name == language }"></div
-            ></span>
+            ><div
+              v-html="item.name"
+              :lang="item.iso"
+              @click="$emit('language-selected', item)"
+              :class="{ selected: item.name == language }"
+            ></div
+          ></span>
         </b-nav-item>
 
         <!-- <b-nav-item right>
@@ -36,8 +40,7 @@
           </template>
           <b-dropdown-item href="#" v-for="item in languages" v-bind:key="item.iso">
             <span :title="$t('languages.' + item.iso)"
-              ><div v-html="item.name" :lang="item.iso" @click="$emit('language-selected', item)"
-              ></div
+              ><div v-html="item.name" :lang="item.iso" @click="$emit('language-selected', item)"></div
             ></span>
           </b-dropdown-item>
         </b-nav-item-dropdown>
@@ -62,7 +65,7 @@ export default {
         { iso: 'ar', name: 'عربى' },
         { iso: 'ja', name: '日本人' },
         { iso: 'zh', name: '中文' },
-        { iso: 'ms', name: 'ဗမာ' },
+        { iso: 'ms', name: 'ဗမာ' }
       ]
     }
   }
@@ -80,12 +83,13 @@ export default {
   min-height: 37px;
 }
 
-.navbar-toggler{
+.navbar-toggler {
   padding: 0.15rem;
+  border: none;
 }
 
 .selected {
-  color: rgba(255, 255, 255, 1)
+  color: rgba(255, 255, 255, 1);
 }
 
 .navbar-brand {

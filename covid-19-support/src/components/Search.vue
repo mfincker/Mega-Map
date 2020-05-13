@@ -3,15 +3,19 @@
     <!-- <p v-if="$route.path != '/'">{{ $tc('SEARCH') }}</p> -->
     <b-list-group horizontal class="need-location-group">
       <!-- <b-list-group-item> -->
-        <!-- <h6>{{ $t('sidebar.what') }}</h6> -->
+      <!-- <h6>{{ $t('sidebar.what') }}</h6> -->
+      <div class="searchDropdown">
         <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
+      </div>
       <!-- </b-list-group-item> -->
       <!-- <b-list-group-item> -->
-        <!-- <h6>{{ $t('sidebar.where') }}</h6> -->
+      <!-- <h6>{{ $t('sidebar.where') }}</h6> -->
+      <div class="searchDropdown">
         <b-form-select :value="nearLocation" :options="locationOptions" @change="(opt) => $emit('near-location-selected', opt)" />
+      </div>
       <!-- </b-list-group-item> -->
     </b-list-group>
-<!--     <b-list-group class="need-location-group">
+    <!--     <b-list-group class="need-location-group">
       <b-list-group-item variant="sideNav">
         <h6>{{ $t('searchbar.what-do-you-need') }}</h6>
         <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
@@ -25,8 +29,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: 'search',
   data() {
@@ -49,11 +51,11 @@ export default {
       ]
     },
     locationOptions() {
-      let locations =  [
+      let locations = [
         { value: null, text: this.$tc('sidebar.where', 1), disabled: true },
-        { value: 'anywhere' , text: this.$tc('county.anywhere', 1) },
-        { value: 'alameda' , text: this.$tc('county.alameda') },
-        { value: 'san-francisco' , text: this.$tc('county.san-francisco') }
+        { value: 'anywhere', text: this.$tc('county.anywhere', 1) },
+        { value: 'alameda', text: this.$tc('county.alameda') },
+        { value: 'san-francisco', text: this.$tc('county.san-francisco') }
       ]
       // uncomment to enable user current location
       // if (this.userLocation && this.userLocation.lat && this.userLocation.lon) {
@@ -67,14 +69,18 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.searchDropdown {
+  width: 50%;
+  padding: 0 8px;
+  display: inline-block;
+}
+
 .custom-select {
-  font-size: 0.8rem;
-  min-width: 100px;
-  max-width: 300px;
-  width: 48%;
-  margin: 0 auto;
-  border-radius: 0px;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 4px;
   font-weight: 600 !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
 }
 
 @media (min-width: 768px) {
@@ -123,8 +129,4 @@ export default {
   /* border-bottom: solid 1px rgba(0, 0, 0, 0.125); */
   padding: 0;
 }
-
-
-
-
 </style>
