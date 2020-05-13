@@ -1,6 +1,6 @@
 <template>
-  <div class="resultWrapper">
-    <div ref="results" class="resultList">
+  <div class="resultWrapper" ref="results">
+    <div class="resultList">
       <div v-if="isEmpty" class="no-result">{{ $tc('no_location_in_this_area') }}</div>
       <div
         v-for="item in markers"
@@ -10,18 +10,23 @@
         :ref="'result' + item.cartodb_id"
         @click="$emit('resource-selected', { resourceId: item.cartodb_id, isSetByMap: false })"
       >
+      <div class='left'>
         <template v-if="!!item.provider_addloc">
           <div class="addloc">{{ item.provider_addloc }}</div>
         </template>
         <span class="resultTitle">{{ item.provider_name }}</span>
-        <!--<div v-if="!item.isOpen" class="closed">{{ getClosedMessage() }}</div>
-        <div v-if="item.isOpen" class="open">{{ getOpenMessage(item) }}</div>-->
         <span class="resultAddress">
           <!-- <span v-if="!!item.cuisine">{{ item.cuisine }}<br /></span> -->
           {{ item.address }},
           {{ item.city }}
         </span>
         <div class="resultContact">{{ item.contact }}</div>
+      </div>
+      <div class='right'>
+         <span v-if="!item.isOpen" class="closed">{{ getClosedMessage() }}</span>
+        <span v-if="item.isOpen" class="open">{{ getOpenMessage(item) }}</span>
+        <div>More info</div>
+      </div>
         <!-- <template v-if="item.family_meal == 1"
           ><span :title="$tc('category.family', 2)"><i class="fas fa-user-friends" /></span
         ></template>
@@ -68,18 +73,17 @@ export default {
   },
   watch: {
     resource: function (val) {
-      if (val.isSetByMap) {
-        var top = this.$refs['result' + val.resourceId][0].offsetTop
+      console.log("scroll based on resourceSelected change")
+        var top = this.$refs['result'+ val.resourceId][0].offsetTop - this.$refs['result'+ this.markers[0].cartodb_id][0].offsetTop
         this.$refs['results'].scrollTo(0, top)
-      }
-    },
-    markers: function () {
-      console.log(this.$refs)
-      if (this.resource && typeof this.$refs['result' + this.resource.resourceId] !== 'undefined') {
-        var top = this.$refs['result' + this.resource.resourceId][0].offsetTop
-        this.$refs['results'].scrollTo(0, top)
-      }
-    }
+    }//,
+    // markers: function () {
+    //   console.log(this.$refs)
+    //   if (this.resource && typeof this.$refs['result' + this.resource.resourceId] !== []) {
+    //     var top = this.$refs['result' + this.resource.resourceId][0].offsetTop
+    //     this.$refs['results' + this.resource.resourceId].scrollTo(0, top)
+    //   }
+    // }
   },
   methods: {
     getClosedMessage: function () {
@@ -115,6 +119,16 @@ export default {
   font-size: 0.8rem;
 }
 
+.left {
+  width: 70%;
+}
+
+.right {
+  width: 30%;
+  font-size: 0.8rem;
+}
+
+
 .resultList {
   z-index: 2000;
   width: 100%;
@@ -123,9 +137,12 @@ export default {
 
 .resultItem {
   padding: 16px;
-  display: block;
+  width: 100%;
+  /* display: block; */
+  display: flex;
+  flex: 1 1 auto;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
-  font-size: 1rem;
+  font-size: 0.8rem;
   background: theme-color('secondary');
 
   @media (prefers-color-scheme: dark) {
@@ -158,7 +175,7 @@ export default {
 }
 
 .resultTitle {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   display: inline-block;
   margin: 0 0 4px;
