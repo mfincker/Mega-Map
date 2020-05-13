@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { cartoBaseURL, sqlQueries, dayFilters, booleanFilters, complexFilters } from '@/constants'
+import { cartoBaseURL, sqlQueries, dayFilters, booleanFilters, complexFilters, countyLatLon } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
 // import BusinessDetails from '@/components/BusinessDetails.vue'
@@ -65,7 +65,7 @@ export default {
         const res = await fetch(cartoBaseURL + '&q=' + query)
         const entries = await res.json()
         this.entries = entries.rows
-        console.log(this.entries)
+        console.log(res)
       } catch (e) {
         console.log(e)
       }
@@ -73,7 +73,7 @@ export default {
     boxSelected: function (filter) {
       this.activeFilters = addOrRemove(this.activeFilters, filter)
       console.log("in results.boxSelected")
-      console.log(this.activeFilters)
+      // console.log(this.activeFilters)
     },
     centerUpdated(center) {
       this.centroid = [center.lat, center.lng]
@@ -82,6 +82,7 @@ export default {
       this.bounds = bounds
     },
     passSelectedMarker: function (val) {
+      console.log("passSelectedMarker")
       console.log(val)
       this.resourceData = val
       this.showList = false
@@ -141,12 +142,6 @@ export default {
       return markers
     },
     nearLatLonZoom() {
-      const countyLatLon = {
-        'san-francisco': { lat: 37.7749, lon: -122.4194, zoom: 13 },
-        alameda: { lat: 37.8097, lon: -122.25328, zoom: 13 },
-        anywhere: { lat: 37.594, lon: -122.223, zoom: 10 }
-      }
-
       if (this.$route.query.near) {
         return countyLatLon[this.$route.query.near]
       }
@@ -160,7 +155,7 @@ export default {
       if (to.params && to.params.need && to.params.need != from.params.need) {
         const query = encodeURI(sqlQueries[to.params.need])
         this.activeFilters = []
-        console.log(this.activeFilters)
+        // console.log(this.activeFilters)
         this.fetchData(query)
 
       }

@@ -208,7 +208,6 @@ export default {
           return [this.wicValueBox, this.seniorShoppingValueBox, this.curbsideOrDeliveryValueBox, this.farmersMarketValueBox]
         case 'meal': // Prepared Meals
           return [this.seniorsValueBox, this.childrenValueBox, this.publicValueBox, this.curbsideOrDeliveryValueBox]
-
         default:
           return [null, null, null, null, null]
       }
@@ -216,11 +215,13 @@ export default {
     filterList() {
       switch (this.need) {
         case 'free_grocery':
-          return ['seniors', 'children', 'public', 'safe_pick_up']
+          return ['children', 'public', 'safe_pick_up']
         case 'snap_wic_retailer':
           return ['wic', 'special_hours', 'safe_pick_up', 'farmers_market']
         case 'meal':
           return ['seniors', 'children', 'public', 'safe_pick_up']
+        case 'mental_health':
+          return ['test']
         default:
           return [null]
       }
