@@ -33,6 +33,7 @@ import ResultsList from '@/components/ResultsList.vue'
 import Filters from '@/components/Filters.vue'
 // import { haversineDistance, sortByDistance, addOrRemove } from '@/utilities'
 import { haversineDistance, addOrRemove } from '@/utilities'
+// import { haversineDistance } from '@/utilities'
 import { latLng } from 'leaflet'
 
 export default {
@@ -56,6 +57,7 @@ export default {
   created() {
     const query = encodeURI(sqlQueries[this.$route.params.need])
     this.fetchData(query)
+    console.log("results created")
   },
   methods: {
     async fetchData(query) {
@@ -70,6 +72,7 @@ export default {
     },
     boxSelected: function (filter) {
       this.activeFilters = addOrRemove(this.activeFilters, filter)
+      console.log("in results.boxSelected")
       console.log(this.activeFilters)
     },
     centerUpdated(center) {
@@ -151,11 +154,15 @@ export default {
     }
   },
   watch: {
-    $route(to, from) {
+    $route: function(to, from) {
       // update entries based on need
+      console.log("changing route")
       if (to.params && to.params.need && to.params.need != from.params.need) {
         const query = encodeURI(sqlQueries[to.params.need])
+        this.activeFilters = []
+        console.log(this.activeFilters)
         this.fetchData(query)
+
       }
     }
   }
