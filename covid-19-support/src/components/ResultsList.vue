@@ -34,7 +34,7 @@
         <business-details v-if="item.cartodb_id == resource.resourceId && showDetails" :business="item" />
       </div>
       </div>
-      <div v-if="!isEmpty" class="more-result" @click="$emit('zoom-out')">{{ $tc('zoom_out_for_more_results') }}</div>
+      <div v-if="!isEmpty" class="more-result" @click="zoomOut">{{ $tc('zoom_out_for_more_results') }}</div>
     </div>
   </div>
 </template>
@@ -108,9 +108,10 @@ export default {
         console.log('toggle show details in list after clicking on result')
         this.showDetails = !this.showDetails
       }
-      
-      // this.showDetails = !this.showDetails
-      
+    },
+    zoomOut() {
+      this.$emit('zoom-out')
+      this.showDetails = false
     }
 
   },
