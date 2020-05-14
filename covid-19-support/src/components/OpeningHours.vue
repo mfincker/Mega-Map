@@ -64,7 +64,7 @@ export default {
               break
             case 1:
               if (this.business[attr] == 0) {
-                myDays.push({ name: dayName, val: this.$t('label.closed'), class: 'closed' })
+                myDays.push({ name: dayName, val: this.$t('label.closed'), class: 'openingHoursClosed' })
               } else {
                 // myDays.push({ name: dayName, val: this.$t('label.normalhours') })
                 // cnt++
@@ -96,8 +96,5 @@ export default {
 .oh-name {
   padding-right: 20px;
   vertical-align: top;
-}
-.closed {
-  color: #ff2c1c;
 }
 </style>
