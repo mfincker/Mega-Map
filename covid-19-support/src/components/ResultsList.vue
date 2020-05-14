@@ -20,16 +20,17 @@
           <span class="resultTitle">{{ item.provider_name }}
           </span>
           <span class="resultAddress">
-            <!-- <span v-if="!!item.cuisine">{{ item.cuisine }}<br /></span> -->
             {{ item.address }},
             {{ item.city }}
           </span>
           <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
         </div>
+        <!-- Badges -->
         <span v-if="!item.isOpen" class="badge closed">{{ getClosedMessage() }}</span>
         <span v-if="item.isOpen" class="badge open">{{ getOpenMessage(item) }}</span>
         <span v-if="item.call_in_advance == 1" class="badge">{{ $tc('label.call_in_advance')}}</span>
         <span v-if="item.special_hours == 1" class="badge">{{ $tc('label.special_hours')}}</span>
+        <!-- End Badges -->
         </div>
           <i class="fas fa-chevron-right fa-lg" :class="{'fa-rotate-90': showDetails && item.cartodb_id == resource.resourceId}"></i>  
         </div>
