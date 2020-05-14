@@ -1,5 +1,5 @@
 <template>
-  <div id="results">
+  <div id="results" :class="{ noMap: !displayMap }">
     <div id="map-details">
       <resource-map
         v-if="displayMap"
@@ -14,14 +14,6 @@
       <filters :need="$route.params.need" :markers="markers" :activeFilters="activeFilters" @box-selected="boxSelected" />
       <results-list :markers="markers" :resource="resourceData" @resource-selected="passSelectedMarker" />
     </div>
-
-    <!-- <BusinessDetails
-      :infotype="'green'"
-      :icon="'fa-tractor'"
-      :business="currentBusiness"
-      v-if="currentBusiness != null"
-      @close-details="closeDetails"
-    ></BusinessDetails> -->
   </div>
 </template>
 
@@ -57,7 +49,7 @@ export default {
   created() {
     const query = encodeURI(sqlQueries[this.$route.params.need])
     this.fetchData(query)
-    console.log("results created")
+    console.log('results created')
   },
   methods: {
     async fetchData(query) {
@@ -72,7 +64,7 @@ export default {
     },
     boxSelected: function (filter) {
       this.activeFilters = addOrRemove(this.activeFilters, filter)
-      console.log("in results.boxSelected")
+      console.log('in results.boxSelected')
       // console.log(this.activeFilters)
     },
     centerUpdated(center) {
@@ -82,7 +74,7 @@ export default {
       this.bounds = bounds
     },
     passSelectedMarker: function (val) {
-      console.log("passSelectedMarker")
+      console.log('passSelectedMarker')
       console.log(val)
       this.resourceData = val
       this.showList = false
@@ -149,15 +141,14 @@ export default {
     }
   },
   watch: {
-    $route: function(to, from) {
+    $route: function (to, from) {
       // update entries based on need
-      console.log("changing route")
+      console.log('changing route')
       if (to.params && to.params.need && to.params.need != from.params.need) {
         const query = encodeURI(sqlQueries[to.params.need])
         this.activeFilters = []
         // console.log(this.activeFilters)
         this.fetchData(query)
-
       }
     }
   }
@@ -172,6 +163,10 @@ export default {
   flex: 1 1 auto;
   flex-direction: column;
   position: absolute;
+}
+
+.noMap {
+  position: relative !important;
 }
 
 #map-details {

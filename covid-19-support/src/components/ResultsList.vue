@@ -10,23 +10,22 @@
         :ref="'result' + item.cartodb_id"
         @click="$emit('resource-selected', { resourceId: item.cartodb_id, isSetByMap: false })"
       >
-      <div class='left'>
         <template v-if="!!item.provider_addloc">
           <div class="addloc">{{ item.provider_addloc }}</div>
         </template>
-        <span class="resultTitle">{{ item.provider_name }}</span>
-        <span class="resultAddress">
-          <!-- <span v-if="!!item.cuisine">{{ item.cuisine }}<br /></span> -->
-          {{ item.address }},
-          {{ item.city }}
-        </span>
-        <div class="resultContact">{{ item.contact }}</div>
-      </div>
-      <div class='right'>
-         <span v-if="!item.isOpen" class="closed">{{ getClosedMessage() }}</span>
+        <div class="resultMetadata">
+          <span class="resultTitle">{{ item.provider_name }}</span>
+          <span class="resultAddress">
+            <!-- <span v-if="!!item.cuisine">{{ item.cuisine }}<br /></span> -->
+            {{ item.address }},
+            {{ item.city }}
+          </span>
+          <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
+        </div>
+        <span v-if="!item.isOpen" class="closed">{{ getClosedMessage() }}</span>
         <span v-if="item.isOpen" class="open">{{ getOpenMessage(item) }}</span>
-        <div>More info</div>
-      </div>
+        <business-details v-if="item.cartodb_id == resource.resourceId" :business="item" />
+        <!-- <div>More info</div> -->
         <!-- <template v-if="item.family_meal == 1"
           ><span :title="$tc('category.family', 2)"><i class="fas fa-user-friends" /></span
         ></template>
@@ -57,7 +56,8 @@
 </template>
 
 <script>
-import { dayFilters } from '@/constants'
+import BusinessDetails from '@/components/BusinessDetails.vue'
+
 export default {
   name: 'ResultsList',
   data() {
@@ -66,17 +66,19 @@ export default {
       today: new Date().getDay()
     }
   },
-  components: {},
+  components: {
+    BusinessDetails
+  },
   props: {
     markers: Array,
     resource: { resourceId: Number, isSetByMap: Boolean }
   },
   watch: {
     resource: function (val) {
-      console.log("scroll based on resourceSelected change")
-        var top = this.$refs['result'+ val.resourceId][0].offsetTop - this.$refs['result'+ this.markers[0].cartodb_id][0].offsetTop
-        this.$refs['results'].scrollTo(0, top)
-    }//,
+      console.log('scroll based on resourceSelected change')
+      var top = this.$refs['result' + val.resourceId][0].offsetTop - this.$refs['result' + this.markers[0].cartodb_id][0].offsetTop
+      this.$refs['results'].scrollTo(0, top)
+    } //,
     // markers: function () {
     //   console.log(this.$refs)
     //   if (this.resource && typeof this.$refs['result' + this.resource.resourceId] !== []) {
@@ -86,14 +88,11 @@ export default {
     // }
   },
   methods: {
-    getClosedMessage: function () {
+    getClosedMessage() {
       return this.$t(`label.closed-today`)
     },
-    getOpenMessage(item) {
-      var today = new Date().getDay()
-      const dayFilter = dayFilters[today]
-
-      return this.$t('open-today') + ': ' + item[dayFilter]
+    getOpenMessage() {
+      return this.$t('label.open-today')
     }
   },
   computed: {
@@ -128,7 +127,6 @@ export default {
   font-size: 0.8rem;
 }
 
-
 .resultList {
   z-index: 2000;
   width: 100%;
@@ -138,8 +136,7 @@ export default {
 .resultItem {
   padding: 16px;
   width: 100%;
-  /* display: block; */
-  display: flex;
+  display: block;
   flex: 1 1 auto;
   border-bottom: solid 1px rgba(0, 0, 0, 0.125);
   font-size: 0.8rem;
@@ -161,17 +158,6 @@ export default {
       background: $gray-900;
     }
   }
-
-  a {
-    color: #000;
-  }
-
-  & > span > i {
-    margin-right: 8px;
-    color: #2eb7cb;
-    font-size: 1rem;
-    margin-top: 6px;
-  }
 }
 
 .resultTitle {
@@ -179,6 +165,10 @@ export default {
   font-weight: 600;
   display: inline-block;
   margin: 0 0 4px;
+}
+
+.resultMetadata {
+  margin-bottom: 12px;
 }
 
 .resultAddress {
@@ -189,14 +179,23 @@ export default {
 
 .closed,
 .open {
-}
-
-.closed {
-  color: grey;
+  display: inline-block;
+  border-radius: 100px;
+  background-color: white;
+  border: 1px solid;
+  padding: 2px 6px;
+  margin-bottom: 8px;
 }
 
 .open {
-  color: green;
+  border-color: $gray-400;
+  color: grey;
+}
+
+.closed {
+  border-color: $gray-700;
+  background-color: $gray-700;
+  color: white;
 }
 
 .no-result {
