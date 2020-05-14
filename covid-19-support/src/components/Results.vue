@@ -49,7 +49,7 @@ export default {
   created() {
     const query = encodeURI(sqlQueries[this.$route.params.need])
     this.fetchData(query)
-    console.log('results created')
+    // console.log('results created')
   },
   methods: {
     async fetchData(query) {
@@ -57,14 +57,14 @@ export default {
         const res = await fetch(cartoBaseURL + '&q=' + query)
         const entries = await res.json()
         this.entries = entries.rows
-        console.log(res)
+        // console.log(res)
       } catch (e) {
         console.log(e)
       }
     },
     boxSelected: function (filter) {
       this.activeFilters = addOrRemove(this.activeFilters, filter)
-      console.log('in results.boxSelected')
+      // console.log('in results.boxSelected')
       // console.log(this.activeFilters)
     },
     centerUpdated(center) {
@@ -74,8 +74,8 @@ export default {
       this.bounds = bounds
     },
     passSelectedMarker: function (val) {
-      console.log('passSelectedMarker')
-      console.log(val)
+      // console.log('passSelectedMarker')
+      // console.log(val)
       this.resourceData = val
       this.showList = false
     },

@@ -139,7 +139,7 @@ export default {
   watch: {
     // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
     resource: function (newResource) {
-      if (newResource.isSetByMap) {
+      if (newResource.isSetByMap || !newResource.resourceId) {
         return
       }
       var item = this.markers.filter((c) => c.cartodb_id == newResource.resourceId)[0]
