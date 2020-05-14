@@ -71,7 +71,8 @@ export default {
     markers: Array,
     mapUrl: String,
     nearLatLonZoom: { lat: Number, lon: Number, zoom: Number },
-    resource: { resourceId: Number, isSetByMap: Boolean }
+    resource: { resourceId: Number, isSetByMap: Boolean },
+    zoomDiff: Number
   },
   data() {
     return {
@@ -151,6 +152,12 @@ export default {
       }
 
       this.$refs.covidMap.mapObject.setView(latLng(newVal.lat, newVal.lon), newVal.zoom, { duration: 1 })
+    },
+    zoomDiff: function(val) {
+      if (val > 0) {
+        console.log("zoomDiff")
+        this.$refs.covidMap.mapObject.zoomOut( val, { duration: 1 })
+      }
     }
   }
 }

@@ -10,9 +10,10 @@
         :mapUrl="mapUrl"
         :nearLatLonZoom="nearLatLonZoom"
         :resource="resourceData"
+        :zoomDiff="zoomDiff"
       />
       <filters :need="$route.params.need" :markers="markers" :activeFilters="activeFilters" @box-selected="boxSelected" />
-      <results-list :markers="markers" :resource="resourceData" @resource-selected="passSelectedMarker" />
+      <results-list :markers="markers" :resource="resourceData" @resource-selected="passSelectedMarker" @zoom-out="zoomOut"/>
     </div>
   </div>
 </template>
@@ -43,7 +44,8 @@ export default {
       bounds: null,
       centroid: [null, null],
       resourceData: { resourceId: null, isSetByMap: false },
-      activeFilters: []
+      activeFilters: [],
+      zoomDiff: 0
     }
   },
   created() {
@@ -79,8 +81,9 @@ export default {
       this.resourceData = val
       this.showList = false
     },
-    closeDetails: function () {
-      return
+    zoomOut() {
+      this.zoomDiff = 2
+      this.$nextTick(() => this.zoomDiff = 0)
     }
   },
   computed: {

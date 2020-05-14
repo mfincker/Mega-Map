@@ -33,33 +33,8 @@
         </div>
         <business-details v-if="item.cartodb_id == resource.resourceId && showDetails" :business="item" />
       </div>
-        
-        <!-- <div>More info</div> -->
-        <!-- <template v-if="item.family_meal == 1"
-          ><span :title="$tc('category.family', 2)"><i class="fas fa-user-friends" /></span
-        ></template>
-        <template v-if="item.meal_student == 1"
-          ><span :title="$tc('label.meal_student', 1)"><i class="fas fa-school" /></span
-        ></template> -->
-        <!-- <template v-if="item.marker.meal_student == 1"
-          ><span :title="$tc('label.meal_public', 1)"><i class="fas fa-users" /></span
-        ></template> -->
-        <!-- <template v-if="item.public == 1"
-          ><span :title="$tc('label.meal_public', 1)"><i class="fas fa-users" /></span
-        ></template>
-        <template v-if="item.drive_thru == 1"
-          ><span :title="$t('label.drive_thru')"><i class="fas fa-car-side" /></span
-        ></template>
-        <template v-if="item.curbside == 1"
-          ><span :title="$tc('label.curbside', 1)"><i class="fas fa-car" /></span
-        ></template>
-        <template v-if="item.order_online == 1"
-          ><span :title="$t('label.order_online')"><i class="fas fa-mouse" /></span
-        ></template>
-        <template v-if="item.delivery == 1"
-          ><span :title="$t('label.delivery')"><i class="fas fa-shipping-fast" /></span
-        ></template> -->
       </div>
+      <div v-if="!isEmpty" class="more-result" @click="$emit('zoom-out')">{{ $tc('zoom_out_for_more_results') }}</div>
     </div>
   </div>
 </template>
@@ -178,6 +153,7 @@ export default {
   z-index: 2000;
   width: 100%;
   border-top: solid 1px rgba(0, 0, 0, 0.125);
+  background-color: white;
 }
 
 .more-info {
@@ -186,12 +162,13 @@ export default {
 
 .resultItem {
   padding: 16px;
-  width: 100%;
+  width: calc(100% - 20px);
   display: block;
   flex: 1 1 auto;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.125);
+  border: solid 1px rgba(0, 0, 0, 0.125);
   font-size: 0.8rem;
   background: theme-color('secondary');
+  margin: 10px;
 
   @media (prefers-color-scheme: dark) {
     color: $gray-100;
@@ -254,6 +231,15 @@ export default {
   text-align: center;
   font-size: 0.75rem;
 }
+
+.more-result {
+  margin: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 
 .more-info {
   align-content: flex-end;
