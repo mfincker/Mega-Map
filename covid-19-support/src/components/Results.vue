@@ -134,6 +134,9 @@ export default {
         distance: haversineDistance(this.centroid, [c.lat, c.lon], true)
       })) //.sort(sortByDistance)
 
+      if (this.activeFilters.includes('open_today')) {
+        markers = markers.filter((c) => c.isOpen)
+      }
       return markers
     },
     nearLatLonZoom() {

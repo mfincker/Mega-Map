@@ -215,13 +215,19 @@ export default {
     filterList() {
       switch (this.need) {
         case 'free_grocery':
-          return ['children', 'public', 'safe_pick_up']
+          return ['children', 'seniors', 'open_today', 'safe_pick_up']
         case 'snap_wic_retailer':
           return ['wic', 'special_hours', 'safe_pick_up', 'farmers_market']
         case 'meal':
-          return ['seniors', 'children', 'public', 'safe_pick_up']
-        case 'mental_health':
-          return ['test']
+          return ['seniors', 'children', 'open_today', 'safe_pick_up']
+        case 'mental_health_telehealth':
+          return ['free']
+        case 'mental_health_in_person':
+          return ['free']
+        case 'medical_in_person':
+          return ['free']
+        case 'medical_telehealth':
+          return ['free']
         default:
           return [null]
       }

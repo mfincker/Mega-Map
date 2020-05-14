@@ -63,7 +63,8 @@ export default {
         {
           label: this.$tc('category.mental_health_resources', 1),
           options: [
-            { value: 'mental_health', text: this.$tc('mental.mental_health_support', 1) }
+            { value: 'mental_health_in_person', text: this.$tc('mental.in_person', 1) },
+            { value: 'mental_health_telehealth', text: this.$tc('mental.telehealth', 1) }
           ]
         },
         {

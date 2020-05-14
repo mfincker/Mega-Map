@@ -26,8 +26,9 @@
           </span>
           <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
         </div>
-        <span v-if="!item.isOpen" class="closed">{{ getClosedMessage() }}</span>
-        <span v-if="item.isOpen" class="open">{{ getOpenMessage(item) }}</span>
+        <span v-if="!item.isOpen" class="badge closed">{{ getClosedMessage() }}</span>
+        <span v-if="item.isOpen" class="badge open">{{ getOpenMessage(item) }}</span>
+        <span v-if="item.call_in_advance == 1" class="badge">{{ $tc('label.call_in_advance')}}</span>
         </div>
           <i class="fas fa-chevron-right fa-lg" :class="{'fa-rotate-90': showDetails && item.cartodb_id == resource.resourceId}"></i>  
         </div>
@@ -206,14 +207,15 @@ export default {
   margin-bottom: 4px;
 }
 
-.closed,
-.open {
+.badge {
   display: inline-block;
   border-radius: 100px;
   background-color: white;
   border: 1px solid;
   padding: 2px 6px;
   margin-bottom: 8px;
+  margin-right: 5px;
+  font-size: 0.7rem;
 }
 
 .open {
