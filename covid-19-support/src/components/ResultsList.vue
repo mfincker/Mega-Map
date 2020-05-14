@@ -29,6 +29,7 @@
         <span v-if="!item.isOpen" class="badge closed">{{ getClosedMessage() }}</span>
         <span v-if="item.isOpen" class="badge open">{{ getOpenMessage(item) }}</span>
         <span v-if="item.call_in_advance == 1" class="badge">{{ $tc('label.call_in_advance')}}</span>
+        <span v-if="item.special_hours == 1" class="badge">{{ $tc('label.special_hours')}}</span>
         </div>
           <i class="fas fa-chevron-right fa-lg" :class="{'fa-rotate-90': showDetails && item.cartodb_id == resource.resourceId}"></i>  
         </div>
