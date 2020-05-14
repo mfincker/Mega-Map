@@ -75,14 +75,14 @@ export const cartoBaseURL =
 export const cartoDBName = 'mega_map_db'
 
 export const sqlQueries = {
-  free_grocery : 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 1",
+  free_grocery : 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 1 AND status = 1",
   meal : 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal'",
-  snap_wic_retailer: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 0",
+  snap_wic_retailer: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 0 AND status = 1",
   // legal_general_info: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_general_info'",
-  legal_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_assistance'",
-  mental_health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health'",
-  medical_in_person: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical_in_person'",
-  medical_telehealth: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical_telehealth'"
+  legal_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_assistance' AND status = 1",
+  mental_health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND status = 1",
+  medical_in_person: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical_in_person' AND status = 1",
+  medical_telehealth: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical_telehealth' AND status = 1"
 }
 
 export const countyLatLon = {
