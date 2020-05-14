@@ -56,8 +56,9 @@ export default {
 }
 
 .ilIcon {
-  font-size: 1.2rem;
-  width: 33px;
+  font-size: 1rem;
+  width: 28px;
+  color: $teal;
 }
 
 .ilTitle {

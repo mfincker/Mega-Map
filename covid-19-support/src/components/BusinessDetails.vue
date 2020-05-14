@@ -26,17 +26,17 @@
           <opening-hours :business="business" :title="$t('label.seniorhours')" :senior="true"></opening-hours>
           <template v-if="!!business.instructions">
             <p>
-              <b>{{ $t('label.instructions') }}:</b><br />{{ business.instructions }}
+              <b>{{ $t('label.instructions') }}:</b> {{ business.instructions }}
             </p>
           </template>
           <template v-if="!!business.offers">
             <p>
-              <b>{{ $t('label.offers') }}:</b><br />{{ business.offers }}
+              <b>{{ $t('label.offers') }}:</b> {{ business.offers }}
             </p>
           </template>
           <template v-if="!!business.notes">
             <p>
-              <b>{{ $t('label.notes') }}:</b><br />{{ business.notes }}
+              <b>{{ $t('label.notes') }}:</b> {{ business.notes }}
             </p>
           </template>
         </p>

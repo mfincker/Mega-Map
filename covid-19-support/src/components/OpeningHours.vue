@@ -4,7 +4,7 @@
       <b>{{ title }}</b>
     </div>
     <table>
-      <tr v-for="(item, index) in days" :key="index">
+      <tr v-for="(item, index) in days" :key="index" class="oh-row">
         <!-- <i class="fas" :class="icon" /> -->
         <td class="oh-name">{{ item.name }}</td>
         <td :class="item.class"><span v-html="item.val"></span></td>
@@ -91,10 +91,17 @@ export default {
 
 <style>
 .openhours {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+}
+.oh-title {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
 }
 .oh-name {
-  padding-right: 20px;
+  padding: 2px 20px 2px 0;
   vertical-align: top;
+}
+.oh-row {
+  padding-bottom: 4px;
 }
 </style>
