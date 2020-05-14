@@ -14,14 +14,6 @@
       <filters :need="$route.params.need" :markers="markers" :activeFilters="activeFilters" @box-selected="boxSelected" />
       <results-list :markers="markers" :resource="resourceData" @resource-selected="passSelectedMarker" />
     </div>
-
-    <!-- <BusinessDetails
-      :infotype="'green'"
-      :icon="'fa-tractor'"
-      :business="currentBusiness"
-      v-if="currentBusiness != null"
-      @close-details="closeDetails"
-    ></BusinessDetails> -->
   </div>
 </template>
 

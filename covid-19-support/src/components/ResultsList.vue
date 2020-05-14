@@ -56,7 +56,6 @@
 </template>
 
 <script>
-import { dayFilters } from '@/constants'
 import BusinessDetails from '@/components/BusinessDetails.vue'
 
 export default {
@@ -89,14 +88,11 @@ export default {
     // }
   },
   methods: {
-    getClosedMessage: function () {
+    getClosedMessage() {
       return this.$t(`label.closed-today`)
     },
-    getOpenMessage(item) {
-      var today = new Date().getDay()
-      const dayFilter = dayFilters[today]
-
-      return this.$t('open-today') + ': ' + item[dayFilter]
+    getOpenMessage() {
+      return this.$t('label.open-today')
     }
   },
   computed: {
