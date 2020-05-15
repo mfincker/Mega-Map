@@ -10,34 +10,33 @@
         :ref="'result' + item.cartodb_id"
         @click="resourceClicked(item)"
       >
-      <div>
-        <div class="resultTop">
         <div>
-          <template v-if="!!item.provider_addloc">
-          <div class="addloc">{{ item.provider_addloc }}</div>
-        </template>
-        <div class="resultMetadata">
-          <span class="resultTitle">{{ item.provider_name }}
-          </span>
-          <span class="resultAddress">
-            {{ item.address }},
-            {{ item.city }}
-          </span>
-          <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
+          <div class="resultTop">
+            <div>
+              <template v-if="!!item.provider_addloc">
+                <div class="addloc">{{ item.provider_addloc }}</div>
+              </template>
+              <div class="resultMetadata">
+                <span class="resultTitle">{{ item.provider_name }} </span>
+                <span class="resultAddress">
+                  {{ item.address }},
+                  {{ item.city }}
+                </span>
+                <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
+              </div>
+              <!-- Badges -->
+              <span v-if="!item.isOpen" class="badge closed">{{ getClosedMessage() }}</span>
+              <span v-if="item.isOpen" class="badge open">{{ getOpenMessage(item) }}</span>
+              <span v-if="item.call_in_advance == 1" class="badge">{{ $tc('label.call_in_advance') }}</span>
+              <span v-if="item.special_hours == 1" class="badge">{{ $tc('label.special_hours') }}</span>
+              <!-- End Badges -->
+            </div>
+            <i class="fas fa-chevron-right fa-lg" :class="{ 'fa-rotate-90': showDetails && item.cartodb_id == resource.resourceId }"></i>
+          </div>
+          <business-details v-if="item.cartodb_id == resource.resourceId && showDetails" :business="item" />
         </div>
-        <!-- Badges -->
-        <span v-if="!item.isOpen" class="badge closed">{{ getClosedMessage() }}</span>
-        <span v-if="item.isOpen" class="badge open">{{ getOpenMessage(item) }}</span>
-        <span v-if="item.call_in_advance == 1" class="badge">{{ $tc('label.call_in_advance')}}</span>
-        <span v-if="item.special_hours == 1" class="badge">{{ $tc('label.special_hours')}}</span>
-        <!-- End Badges -->
-        </div>
-          <i class="fas fa-chevron-right fa-lg" :class="{'fa-rotate-90': showDetails && item.cartodb_id == resource.resourceId}"></i>  
-        </div>
-        <business-details v-if="item.cartodb_id == resource.resourceId && showDetails" :business="item" />
       </div>
-      </div>
-      <div v-if="!isEmpty" class="more-result" @click="zoomOut">{{ $tc('zoom_out_for_more_results') }}</div>
+      <a v-if="!isEmpty" class="more-result" href="#" @click="zoomOut">{{ $tc('label.zoom_out_for_more_results') }}</a>
     </div>
   </div>
 </template>
@@ -66,9 +65,9 @@ export default {
       // if no resource are selected, hide location details
       if (!val.resourceId) {
         this.showDetails = false
-      // a location is selected, keep the list scrolled to that location
+        // a location is selected, keep the list scrolled to that location
       } else {
-        this.showDetails= true
+        this.showDetails = true
         this.$nextTick(() => {
           const top = this.$refs['result' + val.resourceId][0].offsetTop - this.$refs['result' + this.markers[0].cartodb_id][0].offsetTop
           this.$refs['results'].scrollTo(0, top)
@@ -80,16 +79,18 @@ export default {
       console.log('in markers watch - resultList')
       if (this.resource.resourceId && newMarkers) {
         // is the selected location still in the map view
-        const selectedLocationInView = newMarkers.filter((c) => {
-          return c.cartodb_id == this.resource.resourceId
-        }).length > 0
+        const selectedLocationInView =
+          newMarkers.filter((c) => {
+            return c.cartodb_id == this.resource.resourceId
+          }).length > 0
         // if it's not in view, clear selection
         if (!selectedLocationInView) {
-          this.$emit('resource-selected', {resourceId: null, isSetByMap: false})
-        // if it's in view, scroll to it after the update on the markers
+          this.$emit('resource-selected', { resourceId: null, isSetByMap: false })
+          // if it's in view, scroll to it after the update on the markers
         } else {
           this.$nextTick(() => {
-            const top = this.$refs['result' + this.resource.resourceId][0].offsetTop - this.$refs['result' + newMarkers[0].cartodb_id][0].offsetTop
+            const top =
+              this.$refs['result' + this.resource.resourceId][0].offsetTop - this.$refs['result' + newMarkers[0].cartodb_id][0].offsetTop
             this.$refs['results'].scrollTo(0, top)
           })
         }
@@ -116,7 +117,6 @@ export default {
       this.$emit('zoom-out')
       this.showDetails = false
     }
-
   },
   computed: {
     isEmpty() {
@@ -133,6 +133,8 @@ export default {
   scrollbar-color: $gray-900 $gray-700;
   width: 100%;
   z-index: 2000;
+  padding: 8px;
+  background-color: $gray-200;
 }
 
 .resultTop {
@@ -156,8 +158,6 @@ export default {
 .resultList {
   z-index: 2000;
   width: 100%;
-  border-top: solid 1px rgba(0, 0, 0, 0.125);
-  background-color: white;
 }
 
 .more-info {
@@ -166,13 +166,14 @@ export default {
 
 .resultItem {
   padding: 16px;
-  width: calc(100% - 20px);
+  width: 100%;
   display: block;
   flex: 1 1 auto;
   border: solid 1px rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
   font-size: 0.8rem;
-  background: theme-color('secondary');
-  margin: 10px;
+  background: white;
+  margin-bottom: 8px;
 
   @media (prefers-color-scheme: dark) {
     color: $gray-100;
@@ -180,11 +181,12 @@ export default {
   }
 
   &.selected {
-    background: $gray-200 !important;
+    background: white !important;
+    border-color: $gray-500;
   }
 
   &:hover {
-    background: #f8f9fa;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     @media (prefers-color-scheme: dark) {
       background: $gray-900;
@@ -213,16 +215,12 @@ export default {
   display: inline-block;
   border-radius: 100px;
   background-color: white;
-  border: 1px solid;
+  border: 1px solid $gray-400;
+  color: grey;
   padding: 2px 6px;
   margin-bottom: 8px;
   margin-right: 5px;
   font-size: 0.7rem;
-}
-
-.open {
-  border-color: $gray-400;
-  color: grey;
 }
 
 .closed {
@@ -238,13 +236,18 @@ export default {
 }
 
 .more-result {
-  margin: 10px;
+  padding: 8px 0;
   text-align: center;
-  font-size: 0.75rem;
-  cursor: pointer;
-  text-decoration: underline;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.125);
 }
-
 
 .more-info {
   align-content: flex-end;

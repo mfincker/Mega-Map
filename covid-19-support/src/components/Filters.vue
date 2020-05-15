@@ -1,6 +1,12 @@
 <template>
   <div class="filters" v-if="filterList[0] != null">
-    <b-form-checkbox v-for="(item, index) in filterList" v-model="selected" v-bind:key="index" :value="item" @change="$emit('box-selected', item)">
+    <b-form-checkbox
+      v-for="(item, index) in filterList"
+      v-model="selected"
+      v-bind:key="index"
+      :value="item"
+      @change="$emit('box-selected', item)"
+    >
       {{ $tc(`label.${item}`) }}
     </b-form-checkbox>
   </div>
@@ -58,7 +64,7 @@ export default {
     }
   },
   watch: {
-    activeFilters: function(val) {
+    activeFilters: function (val) {
       if (val.length == 0) {
         this.selected = []
       }
@@ -242,7 +248,7 @@ export default {
   justify-content: space-evenly;
   z-index: 3000;
   width: 100%;
-  font-size: 0.8em;
+  font-size: 0.7em;
   padding: 8px 16px;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);

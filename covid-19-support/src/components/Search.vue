@@ -88,7 +88,7 @@ export default {
         { value: 'san-mateo', text: this.$tc('county.san-mateo', 1) },
         { value: 'santa-clara', text: this.$tc('county.santa-clara', 1) },
         { value: 'solano', text: this.$tc('county.solano', 1) },
-        { value: 'sonoma', text: this.$tc('county.sonoma', 1) },
+        { value: 'sonoma', text: this.$tc('county.sonoma', 1) }
       ]
 
       // uncomment to enable user current location
@@ -124,14 +124,12 @@ export default {
 }
 
 #search {
-  margin: 6px auto;
+  margin: 6px auto 0;
   width: 100%;
   font-size: 0.75rem;
   display: flex;
   flex-direction: column;
-  z-index: 2000;
-  position: relative;
-  /*padding: 2px 0px;*/
+  z-index: 9999;
 }
 
 #search > p {
