@@ -1,7 +1,7 @@
 <template>
   <div class="valuebox themeFont" :class="{ selected: content.selected }" @click="$emit('box-selected', { need: content.need })">
-    <div class="number"> &#10003; </div>
-    <div class="title" :class="{thousand: content.value > 999 }">
+    <div class="number">&#10003;</div>
+    <div class="title" :class="{ thousand: content.value > 999 }">
       {{ content.title }}
     </div>
     <!-- <i class="fas" v-bind:class="content.icon" v-if="content.icon != ''"></i> -->

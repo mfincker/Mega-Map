@@ -51,7 +51,6 @@ export default {
   created() {
     const query = encodeURI(sqlQueries[this.$route.params.need])
     this.fetchData(query)
-    // console.log('results created')
   },
   methods: {
     async fetchData(query) {
@@ -59,15 +58,12 @@ export default {
         const res = await fetch(cartoBaseURL + '&q=' + query)
         const entries = await res.json()
         this.entries = entries.rows
-        // console.log(res)
       } catch (e) {
         console.log(e)
       }
     },
     boxSelected: function (filter) {
       this.activeFilters = addOrRemove(this.activeFilters, filter)
-      // console.log('in results.boxSelected')
-      // console.log(this.activeFilters)
     },
     centerUpdated(center) {
       this.centroid = [center.lat, center.lng]
@@ -76,8 +72,6 @@ export default {
       this.bounds = bounds
     },
     passSelectedMarker: function (val) {
-      // console.log('passSelectedMarker')
-      // console.log(val)
       this.resourceData = val
       this.showList = false
     },
@@ -149,11 +143,9 @@ export default {
   watch: {
     $route: function (to, from) {
       // update entries based on need
-      console.log('changing route')
       if (to.params && to.params.need && to.params.need != from.params.need) {
         const query = encodeURI(sqlQueries[to.params.need])
         this.activeFilters = []
-        // console.log(this.activeFilters)
         this.fetchData(query)
       }
     }

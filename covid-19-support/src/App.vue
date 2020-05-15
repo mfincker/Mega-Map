@@ -1,15 +1,15 @@
 <template>
   <div class="home">
-    <app-header :language="language.name" @language-selected="changeLanguage"/>
+    <app-header :language="language.name" @language-selected="changeLanguage" />
     <h5 v-if="initialSearch">{{ $tc('sidebar.what-are-you-looking-for', 1) }}</h5>
-      <search 
-      :need="need" 
+    <search
+      :need="need"
       :nearLocation="nearLocation"
       :userLocation="userLocation"
       @need-selected="needSelected"
       @near-location-selected="nearLocationSelected"
     />
-     <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -54,25 +54,16 @@ export default {
   methods: {
     needSelected: function (val) {
       this.need = val
-      console.log("needSelected:")
-      console.log(val)
-
       if (this.nearLocation) {
-        console.log('going to ' + this.need)
-        this.$router.push({ path: this.need, query: { near: this.nearLocation} })
+        this.$router.push({ path: this.need, query: { near: this.nearLocation } })
         this.initialSearch = false
-      } 
-
+      }
       // window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
     },
-    nearLocationSelected: function(val) {
+    nearLocationSelected: function (val) {
       this.nearLocation = val
-      console.log("nearLocationSelected:")
-      console.log(val)
-
       if (this.nearLocation && this.need) {
-        console.log('going to ' + this.need)
-        this.$router.push({ path: this.need, query: { near: this.nearLocation} })
+        this.$router.push({ path: this.need, query: { near: this.nearLocation } })
         this.initialSearch = false
       }
     },
@@ -103,7 +94,6 @@ export default {
   },
   watch: {
     $route(to) {
-      console.log(to)
       // update need based on route
       if (to.path == '/') {
         this.initialSearch = true
@@ -135,7 +125,6 @@ h5 {
 
 .home {
   height: 100vh;
-  /*border: 1px solid blue;*/
   display: flex;
   flex-direction: column;
 }
@@ -144,7 +133,5 @@ h5 {
   position: relative;
   width: 100%;
   flex: 1 1 auto;
-  /*border: 1px solid black;*/
 }
-
 </style>

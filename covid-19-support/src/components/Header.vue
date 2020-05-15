@@ -39,8 +39,8 @@ export default {
         { iso: 'ja', name: '日本人' },
         { iso: 'zh', name: '中文' },
         { iso: 'ms', name: 'ဗမာ' },
-        { iso: 'vi', name: 'Tiếng Việt'},
-        { iso: 'tl', name: 'Tagalog'}
+        { iso: 'vi', name: 'Tiếng Việt' },
+        { iso: 'tl', name: 'Tagalog' }
       ]
     }
   }

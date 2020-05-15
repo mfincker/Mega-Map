@@ -13,7 +13,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': [
-      'off',
+      'error',
       {
         endOfLine: 'auto',
         excludeFiles: ['**/src/ExtraMarkers/**/*.*']

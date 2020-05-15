@@ -11,7 +11,6 @@ import { BootstrapVue } from 'bootstrap-vue' // IconsPlugin
 import i18n from './i18n'
 import App from './App.vue'
 
-
 import router from './router'
 
 // The following line imports our custom SCSS file, inside that file
@@ -42,13 +41,12 @@ Vue.use(BootstrapVue)
 Vue.config.productionTip = true
 
 new Vue({
-    router,
-    i18n,
-    render: (h) => h(App),
-    methods: {
-        updateLang(iso) {
-            i18n.locale = iso
+  router,
+  i18n,
+  render: (h) => h(App),
+  methods: {
+    updateLang(iso) {
+      i18n.locale = iso
     }
   }
 }).$mount('#app')
-

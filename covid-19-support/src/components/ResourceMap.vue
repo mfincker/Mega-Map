@@ -98,9 +98,6 @@ export default {
     this.$nextTick(() => {
       this.$emit('bounds', this.$refs.covidMap.mapObject.getBounds())
     })
-    // console.log("in ResourceMap mounted")
-    // console.log(this.userLocation)
-    // this.centerOnUserLocation()
   },
   methods: {
     centerUpdated(center) {
@@ -126,19 +123,11 @@ export default {
         icon: iconClasses,
         prefix: 'fa',
         svg: true
-        // ,
-        // name: item.marker.provider_name,
-        // nameClasses: 'markerName'
       })
       return markerIcon
     }
-    // eslint-disable-next-line no-console
-    // click: (e) => console.log('clusterclick', e),
-    // eslint-disable-next-line no-console
-    // ready: (e) => console.log('ready', e)
   },
   watch: {
-    // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
     resource: function (newResource) {
       if (newResource.isSetByMap || !newResource.resourceId) {
         return
@@ -153,10 +142,9 @@ export default {
 
       this.$refs.covidMap.mapObject.setView(latLng(newVal.lat, newVal.lon), newVal.zoom, { duration: 1 })
     },
-    zoomDiff: function(val) {
+    zoomDiff: function (val) {
       if (val > 0) {
-        console.log("zoomDiff")
-        this.$refs.covidMap.mapObject.zoomOut( val, { duration: 1 })
+        this.$refs.covidMap.mapObject.zoomOut(val, { duration: 1 })
       }
     }
   }

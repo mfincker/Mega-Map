@@ -76,7 +76,6 @@ export default {
     }, //,
     markers: function (newMarkers) {
       // some location is selected and there are displayed markers
-      console.log('in markers watch - resultList')
       if (this.resource.resourceId && newMarkers) {
         // is the selected location still in the map view
         const selectedLocationInView =
@@ -106,10 +105,8 @@ export default {
     },
     resourceClicked(item) {
       if (!this.resource.resourceId || item.cartodb_id != this.resource.resourceId) {
-        console.log('new resource clicked in list')
         this.$emit('resource-selected', { resourceId: item.cartodb_id, isSetByMap: false })
       } else {
-        console.log('toggle show details in list after clicking on result')
         this.showDetails = !this.showDetails
       }
     },
