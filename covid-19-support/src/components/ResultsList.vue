@@ -23,6 +23,10 @@
                   {{ item.city }}
                 </span>
                 <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
+                <!-- Legal resource description -->
+                <span v-if="legalResources && !!item.notes">
+                  <b>{{ $t('label.notes') }}:</b> {{ getTranslation(item, 'notes') }}
+                </span>
               </div>
               <!-- Badges -->
               <span v-if="!item.isOpen" class="badge closed">{{ getClosedMessage() }}</span>
@@ -40,10 +44,8 @@
     </div>
   </div>
 </template>
-
 <script>
 import BusinessDetails from '@/components/BusinessDetails.vue'
-
 export default {
   name: 'ResultsList',
   data() {
@@ -103,6 +105,12 @@ export default {
     getOpenMessage() {
       return this.$t('label.open-today')
     },
+    getTranslation(item, field) {
+      if (this.$i18n.locale != 'en' && item[field + '_' + this.$i18n.locale]) {
+        return item[field + '_' + this.$i18n.locale]
+      }
+      return item[field]
+    },
     resourceClicked(item) {
       if (!this.resource.resourceId || item.cartodb_id != this.resource.resourceId) {
         this.$emit('resource-selected', { resourceId: item.cartodb_id, isSetByMap: false })
@@ -118,11 +126,16 @@ export default {
   computed: {
     isEmpty() {
       return !this.markers || this.markers.length == 0
+    },
+    legalResources() {
+      return this.$route.params.need.startsWith('legal')
+    },
+    foodResources() {
+      return ['meal', 'snap_wic_retailer', 'free_grocery'].includes(this.$route.params.need)
     }
   }
 }
 </script>
-
 <style lang="scss">
 .resultWrapper {
   flex: 1 1 100%;
@@ -133,7 +146,6 @@ export default {
   padding: 8px;
   background-color: $gray-200;
 }
-
 .resultTop {
   display: flex;
   flex-direction: row;
@@ -141,26 +153,21 @@ export default {
   justify-content: space-between;
   background: inherit;
 }
-
 .rotated {
   color: red;
 }
-
 .addloc {
   padding-bottom: 3px;
   color: $gray-600;
   font-size: 0.8rem;
 }
-
 .resultList {
   z-index: 2000;
   width: 100%;
 }
-
 .more-info {
   padding-right: 10px;
 }
-
 .resultItem {
   padding: 16px;
   width: 100%;
@@ -171,17 +178,14 @@ export default {
   font-size: 0.8rem;
   background: white;
   margin-bottom: 8px;
-
   @media (prefers-color-scheme: dark) {
     color: $gray-100;
     background: $gray-800;
   }
-
   &.selected {
     background: white !important;
     border-color: $gray-500;
   }
-
   &:hover {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
     cursor: pointer;
@@ -190,24 +194,20 @@ export default {
     }
   }
 }
-
 .resultTitle {
   font-size: 1rem;
   font-weight: 600;
   display: inline-block;
   margin: 0 0 4px;
 }
-
 .resultMetadata {
   margin-bottom: 12px;
 }
-
 .resultAddress {
   display: block;
   max-width: 300px;
   margin-bottom: 4px;
 }
-
 .badge {
   display: inline-block;
   border-radius: 100px;
@@ -219,19 +219,16 @@ export default {
   margin-right: 5px;
   font-size: 0.7rem;
 }
-
 .closed {
   border-color: $gray-700;
   background-color: $gray-700;
   color: white;
 }
-
 .no-result {
   margin-top: 10px;
   text-align: center;
   font-size: 0.75rem;
 }
-
 .more-result {
   padding: 8px 0;
   text-align: center;
@@ -245,7 +242,6 @@ export default {
   width: 100%;
   box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.125);
 }
-
 .more-info {
   align-content: flex-end;
 }

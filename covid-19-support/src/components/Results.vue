@@ -90,7 +90,7 @@ export default {
         : null
     },
     displayMap() {
-      const needWithMap = ['meal', 'free_grocery', 'snap_wic_retailer']
+      const needWithMap = ['meal', 'free_grocery', 'snap_wic_retailer', 'medical_in_person', 'mental_health_in_person']
       return needWithMap.includes(this.$route.params.need)
     },
     markers() {

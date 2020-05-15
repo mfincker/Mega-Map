@@ -80,7 +80,8 @@ export const sqlQueries = {
   snap_wic_retailer: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 0 AND status = 1",
   // legal_general_info: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_general_info'",
   legal_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_assistance' AND status = 1",
-  mental_health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND status = 1",
+  mental_health_in_person: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND status = 1",
+  mental_health_telehealth: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND status = 1",
   medical_in_person: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical_in_person' AND status = 1",
   medical_telehealth: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical_telehealth' AND status = 1"
 }
