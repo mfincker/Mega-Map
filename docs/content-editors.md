@@ -29,7 +29,7 @@ The dev team on this project is led by [Maeva Fincker](https://github.com/mfinck
 
 ## Project Lead
 
-[Joyce Tagal](https://github.com/jayktee) is the project lead for this work and questions or feedback should be directed to her
+[Joyce Tagal](https://github.com/jayktee) is the project lead for this project. Any questions or feedback should be directed to her.
 
 
 
