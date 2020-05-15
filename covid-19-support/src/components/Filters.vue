@@ -13,29 +13,9 @@
 </template>
 
 <script>
-// import ValueBox from '@/components/ValueBox.vue'
-import { complexFilters } from '@/constants'
-
-export const countFeature = (markers = [], feature) =>
-  (markers || []).reduce((total, c) => (c.accesstype.indexOf(feature) && c.isOpen > -1 ? total + 1 : total), 0)
-
-export const countBoolean = (markers, fieldName) =>
-  (markers || []).reduce((total, c) => (c[fieldName] == '1' && c.isOpen ? total + 1 : total), 0)
-
-export const countComplexFilter = (markers, complexFilter) => {
-  const ct = (markers || []).reduce((total, c) => {
-    const boolFiltersArray = complexFilter.columns.map((d) => c['' + d] == '1')
-    const keepMarker = complexFilter.combine(boolFiltersArray)
-    return keepMarker && c.isOpen ? total + 1 : total
-  }, 0)
-  return ct
-}
 
 export default {
   name: 'Filters',
-  components: {
-    // ValueBox
-  },
   props: {
     need: String,
     markers: Array,
@@ -49,18 +29,6 @@ export default {
   methods: {
     boxSelected: function (content) {
       this.$emit('box-selected', content)
-    },
-    buildBoxValue(labelId, icon, count, pluralize = false) {
-      const label = `label.${labelId}`
-      var selected = this.activeFilters !== undefined ? this.activeFilters.includes(labelId) : ''
-
-      return {
-        icon,
-        value: count,
-        title: pluralize ? this.$tc(label, count) : this.$t(label),
-        need: labelId,
-        selected: selected
-      }
     }
   },
   watch: {
@@ -71,153 +39,7 @@ export default {
     }
   },
   computed: {
-    // Counts
-    countPickup() {
-      return countBoolean(this.markers, 'pay_at_pickup')
-    },
-    countCurbside() {
-      return countBoolean(this.markers, 'curbside_pickup')
-    },
-    countDeliveryOrCurbside() {
-      // Location that offer either delivery or curbside
-      const complexFilter = complexFilters.filter((c) => c.name == 'curbside_or_delivery')[0]
-      return countComplexFilter(this.markers, complexFilter)
-    },
-    countSeniors() {
-      return countBoolean(this.markers, 'seniors')
-    },
-    countChildren() {
-      return countBoolean(this.markers, 'children')
-    },
-    countPublic() {
-      return countBoolean(this.markers, 'public')
-    },
-    countSeniorHours() {
-      return countBoolean(this.markers, 'special_hours')
-    },
-    countFreeStudentMeal() {
-      return countBoolean(this.markers, 'meal_student')
-    },
-    countPublicMeal() {
-      return countBoolean(this.markers, 'meal_public')
-    },
-    countFamilyMeal() {
-      // Family meal kits to purchase
-      return countBoolean(this.markers, 'family_meal')
-    },
-    countOrderOnline() {
-      return countBoolean(this.markers, 'pay_phone')
-    },
-    countPayOnline() {
-      return countBoolean(this.markers, 'pay_online')
-    },
-    countMustPreOrder() {
-      return countBoolean(this.markers, 'must_preorder')
-    },
-    countDiscountMedical() {
-      return countBoolean(this.markers, 'discount_medical')
-    },
-    countDelivery() {
-      return countBoolean(this.markers, 'delivery')
-    },
-    countProduce() {
-      return countBoolean(this.markers, 'free_produce')
-    },
-    countGroceries() {
-      return countBoolean(this.markers, 'free_groceries')
-    },
-    countFarmPickUp() {
-      return countBoolean(this.markers, 'farm_pick_up')
-    },
-    countFarmersMarket() {
-      return countBoolean(this.markers, 'farmers_market')
-    },
-    countFreeResource() {
-      return countBoolean(this.markers, 'free')
-    },
-    countSnap() {
-      return countBoolean(this.markers, 'snap')
-    },
-    countWic() {
-      return countBoolean(this.markers, 'wic')
-    },
-    countCallInAdvance() {
-      return countBoolean(this.markers, 'call_in_advance')
-    },
-    // Value Boxes
-    callInAdvanceValueBox() {
-      return this.buildBoxValue('call_in_advance', 'fa-phone', this.countCallInAdvance)
-    },
-    freeResourceValueBox() {
-      return this.buildBoxValue('free', 'fa-shopping-basket', this.countFreeResource)
-    },
-    snapValueBox() {
-      return this.buildBoxValue('snap', 'fa-users', this.countSnap, true)
-    },
-    wicValueBox() {
-      return this.buildBoxValue('wic', 'fa-users', this.countWic, true)
-    },
-    orderOnlineValueBox() {
-      return this.buildBoxValue('pay_phone', 'fa-mouse', this.countOrderOnline)
-    },
-    curbsidePickupValueBox() {
-      return this.buildBoxValue('curbside_pickup', 'fa-car', this.countCurbside, true)
-    },
-    deliveryValueBox() {
-      return this.buildBoxValue('delivery', 'fa-shipping-fast', this.countDelivery)
-    },
-    onFarmPickupValueBox() {
-      return this.buildBoxValue('farm_pick_up', 'fa-tractor', this.countFarmPickUp, true)
-    },
-    farmersMarketValueBox() {
-      return this.buildBoxValue('farmers_market', 'fa-store', this.countFarmersMarket, true)
-    },
-    seniorShoppingValueBox() {
-      return this.buildBoxValue('special_hours', 'fa-history', this.countSeniorHours)
-    },
-    medicalDiscountsValueBox() {
-      return this.buildBoxValue('discount_medical', 'fa-user-md', this.countDiscountMedical, true)
-    },
-    openToPublicValueBox() {
-      return this.buildBoxValue('meal_public', 'fa-users', this.countPublicMeal, true)
-    },
-    freeStudentMealsValueBox() {
-      return this.buildBoxValue('meal_student', 'fa-school', this.countFreeStudentMeal, true)
-    },
-    freeProduceValueBox() {
-      return this.buildBoxValue('free_produce', 'fa-apple-alt', this.countProduce, true)
-    },
-    freeGroceryValueBox() {
-      return this.buildBoxValue('free_groceries', 'fa-shopping-basket', this.countGroceries, true)
-    },
-    mustPreOrderValueBox() {
-      return this.buildBoxValue('must_preorder', 'fa-phone', this.countMustPreOrder, true)
-    },
-    curbsideOrDeliveryValueBox() {
-      return this.buildBoxValue('curbside_or_delivery', 'fa-shipping-fast', this.countDeliveryOrCurbside)
-    },
-    seniorsValueBox() {
-      return this.buildBoxValue('seniors', '', this.countSeniors)
-    },
-    childrenValueBox() {
-      return this.buildBoxValue('children', '', this.countChildren)
-    },
-    publicValueBox() {
-      return this.buildBoxValue('public', '', this.countPublic)
-    },
-    // Displayed boxes
-    valueBoxes() {
-      switch (this.need) {
-        case 'free_grocery':
-          return [this.seniorsValueBox, this.childrenValueBox, this.publicValueBox, this.curbsideOrDeliveryValueBox]
-        case 'snap_wic_retailer':
-          return [this.wicValueBox, this.seniorShoppingValueBox, this.curbsideOrDeliveryValueBox, this.farmersMarketValueBox]
-        case 'meal': // Prepared Meals
-          return [this.seniorsValueBox, this.childrenValueBox, this.publicValueBox, this.curbsideOrDeliveryValueBox]
-        default:
-          return [null, null, null, null, null]
-      }
-    },
+    // Displayed filters
     filterList() {
       switch (this.need) {
         case 'free_grocery':

@@ -1,30 +1,13 @@
 <template>
   <div id="search">
-    <!-- <p v-if="$route.path != '/'">{{ $tc('SEARCH') }}</p> -->
     <b-list-group horizontal class="need-location-group">
-      <!-- <b-list-group-item> -->
-      <!-- <h6>{{ $t('sidebar.what') }}</h6> -->
       <div class="searchDropdown">
         <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
       </div>
-      <!-- </b-list-group-item> -->
-      <!-- <b-list-group-item> -->
-      <!-- <h6>{{ $t('sidebar.where') }}</h6> -->
       <div class="searchDropdown">
         <b-form-select :value="nearLocation" :options="locationOptions" @change="(opt) => $emit('near-location-selected', opt)" />
       </div>
-      <!-- </b-list-group-item> -->
     </b-list-group>
-    <!--     <b-list-group class="need-location-group">
-      <b-list-group-item variant="sideNav">
-        <h6>{{ $t('searchbar.what-do-you-need') }}</h6>
-        <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
-      </b-list-group-item>
-      <b-list-group-item variant="sideNav">
-        <h6>{{ $t('searchbar.where') }}</h6>
-        <b-form-select :value="day" :options="dayOptions" @change="(opt) => $emit('day-selected', opt)" />
-      </b-list-group-item>
-    </b-list-group> -->
   </div>
 </template>
 
@@ -90,7 +73,6 @@ export default {
         { value: 'solano', text: this.$tc('county.solano', 1) },
         { value: 'sonoma', text: this.$tc('county.sonoma', 1) }
       ]
-
       // uncomment to enable user current location
       // if (this.userLocation && this.userLocation.lat && this.userLocation.lon) {
       //   locations.splice(1, 0, { value: 'current-location', text: this.$tc('sidebar.current_location', 1) })
@@ -133,32 +115,15 @@ export default {
 }
 
 #search > p {
-  /*padding-left: 3px !important;*/
   margin: 0 auto !important;
-  /*text-decoration: underline;*/
-}
-
-.list-group-item {
-  /*border: none !important;*/
-  /*padding: 0 1.25rem;*/
-  /*border-bottom: none;*/
-  /*min-width: 100px;*/
-  /*width: 50%;*/
-  /*justify-content: center;*/
-  /*display: flex;*/
-  /*margin: auto;*/
 }
 
 .need-location-group {
-  /* padding: 1rem 0 0 0 !important; */
-  /*align-items: center;*/
-  /*justify-content: center;*/
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  /* border-bottom: solid 1px rgba(0, 0, 0, 0.125); */
   padding: 0;
 }
 </style>

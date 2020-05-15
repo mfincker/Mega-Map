@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     getClosedMessage() {
-      return this.$t(`label.closed-today`)
+      return this.$t('label.closed-today')
     },
     getOpenMessage() {
       return this.$t('label.open-today')

@@ -1,8 +1,7 @@
 <template>
   <div class="home">
-    <app-header :language="language.name" @language-selected="changeLanguage" />
+    <app-header :language="language.name" @language-selected="changeLanguage"/>
     <h5 v-if="initialSearch">{{ $tc('sidebar.what-are-you-looking-for', 1) }}</h5>
-    <!-- <div id="search-result"> -->
       <search 
       :need="need" 
       :nearLocation="nearLocation"
@@ -11,25 +10,6 @@
       @near-location-selected="nearLocationSelected"
     />
      <router-view/>
-
-    <!-- </div> -->
-    <!-- <about-us-modal /> -->
-
-    <!-- <div class="d-flex" id="wrapper" :class="{ toggled: isFilterOpen }" v-if="!!entries">
-      <search-filter
-        :isFilterOpen="isFilterOpen"
-        :need="need"
-        :day="day"
-        :filteredMarkers="filteredMarkers"
-        :highlightFilteredMarkers="highlightFilteredMarkers"
-        :location="locationData"
-        :show-list="showList"
-        @location-selected="passLocation"
-        @toggle="isFilterOpen = !isFilterOpen"
-        @need-selected="needSelected"
-        @day-selected="daySelected"
-      />
-    </div> -->
   </div>
 </template>
 
