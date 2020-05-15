@@ -6,7 +6,7 @@
         v-for="item in markers"
         v-bind:key="item.cartodb_id"
         class="resultItem"
-        :class="{ selected: item.cartodb_id == resource.resourceId && showDetails, closedOne: item.isOpen == false }"
+        :class="{ selected: item.cartodb_id == resource.resourceId, closedOne: item.isOpen == false }"
         :ref="'result' + item.cartodb_id"
         @click="resourceClicked(item)"
       >
