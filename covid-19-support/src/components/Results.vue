@@ -13,7 +13,7 @@
         :zoomDiff="zoomDiff"
       />
       <filters :need="$route.params.need" :markers="markers" :activeFilters="activeFilters" @box-selected="boxSelected" />
-      <results-list :markers="markers" :resource="resourceData" @resource-selected="passSelectedMarker" @zoom-out="zoomOut"/>
+      <results-list :markers="markers" :resource="resourceData" @resource-selected="passSelectedMarker" @zoom-out="zoomOut" />
     </div>
   </div>
 </template>
@@ -83,7 +83,7 @@ export default {
     },
     zoomOut() {
       this.zoomDiff = 2
-      this.$nextTick(() => this.zoomDiff = 0)
+      this.$nextTick(() => (this.zoomDiff = 0))
     }
   },
   computed: {
