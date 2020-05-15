@@ -13,7 +13,7 @@
           <icon-list-item v-if="business.drive_thru == 1" icon="fas fa-car-side" :title="$t('label.drive_thru')" />
           <icon-list-item v-if="business.order_online == 1" icon="fas fa-mouse" :title="$t('label.order_online')" />
           <icon-list-item v-if="business.delivery == 1" icon="fas fa-shipping-fast" :title="$t('label.delivery')" />
-          <icon-list-item v-if="!!business.web_link" icon="fas fa-globe" :title="getDomain(business.web_link)" :link="business.web_link" />
+          <icon-list-item v-if="!!business.web_link" icon="fas fa-globe" :title="getDomain(getTranslation(business, 'web_link'))" :link="getTranslation(business, 'web_link')" />
           <icon-list-item
             v-if="!!business.email"
             icon="fas fa-envelope"
@@ -24,11 +24,11 @@
         <p>
           <opening-hours :business="business" :title="$t('label.openinghours')"></opening-hours>
           <opening-hours :business="business" :title="$t('label.seniorhours')" :senior="true"></opening-hours>
-          <template v-if="!!business.instructions">
+<!--           <template v-if="!!business.instructions">
             <p>
               <b>{{ $t('label.instructions') }}:</b> {{ business.instructions }}
             </p>
-          </template>
+          </template> -->
           <template v-if="!!business.offers">
             <p>
               <b>{{ $t('label.offers') }}:</b> {{ business.offers }}
@@ -36,7 +36,7 @@
           </template>
           <template v-if="!!business.notes">
             <p>
-              <b>{{ $t('label.notes') }}:</b> {{ business.notes }}
+              <b>{{ $t('label.notes') }}:</b> {{ getTranslation(business, 'notes') }}
             </p>
           </template>
         </p>
@@ -69,6 +69,13 @@ export default {
     getDomain: function (url) {
       var urlParts = url.replace('http://', '').replace('https://', '').replace('www.', '').split(/[/?#]/)
       return urlParts[0]
+    },
+    getTranslation(business, field) {
+      console.log(field + '_' + this.$i18n.locale)
+      if (this.$i18n.locale != 'en' && business[field + '_' + this.$i18n.locale]) {
+        return business[field + '_' + this.$i18n.locale]
+      }
+      return business[field]
     },
     businessIcon: businessIcon
   },
