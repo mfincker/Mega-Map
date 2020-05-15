@@ -36,6 +36,6 @@ The dev team on this project is led by [Maeva Fincker](https://github.com/mfinck
 
 ### Content Ambassadors
 
-Are you able to spare some time to become a volunteer  and help improve / keep the resources or map up to date? We are looking for people to join our enthusiastic team of ambassadors so that we are able to keep this resource up to date through the covid-19 pandemic.  
+Are you able to spare some time to become a volunteer  and help improve / keep the resources or map up to date? We are looking for people to join our enthusiastic team of ambassadors so that we are able to keep this resource up to date through the Covid-19 pandemic.  
 
 If you are interested in becoming a volunteer, please drop us an email to [Charlie Hoffs](mailto:chuck99@stanford.edu) and one of us will get back to you with more details.
