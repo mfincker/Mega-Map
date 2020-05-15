@@ -37,13 +37,13 @@ export const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map
 export const seniorDayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `sp_${attr}`)
 
 export const booleanFilters = [
-  'in_store_pickup',
-  'curbside',
+  'pay_at_pickup',
+  'curbside_pickup',
   'special_hours',
   'meal_student',
   'meal_public',
   'family_meal',
-  'order_online',
+  'pay_phone',
   'pay_online',
   'must_preorder',
   'discount_medical',
@@ -63,8 +63,8 @@ export const booleanFilters = [
 
 // Combination of boolean filters
 export const complexFilters = [
-  { name: 'curbside_or_delivery', columns: ['curbside', 'delivery'], combine: ([a, b]) => a || b },
-  { name: 'safe_pick_up', columns: ['curbside', 'delivery'], combine: ([a, b]) => a || b },
+  { name: 'curbside_or_delivery', columns: ['curbside_pickup', 'delivery'], combine: ([a, b]) => a || b },
+  { name: 'safe_pick_up', columns: ['curbside_pickup', 'delivery'], combine: ([a, b]) => a || b },
 ]
 
 // CARTO DB VARIABLES

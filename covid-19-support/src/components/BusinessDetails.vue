@@ -9,9 +9,9 @@
           <icon-list-item v-if="business.meal_public == 1" icon="fas fa-users" :title="$tc('label.meal_public', 1)" />
           <icon-list-item v-if="business.free_produce == 1" icon="fas fa-apple-alt" :title="$tc('label.free_produce', 1)" />
           <icon-list-item v-if="business.free_groceries == 1" icon="fas fa-shopping-basket" :title="$tc('label.free_groceries', 1)" />
-          <icon-list-item v-if="business.curbside == 1" icon="fas fa-car" :title="$tc('label.curbside', 1)" />
+          <icon-list-item v-if="business.curbside_pickup == 1" icon="fas fa-car" :title="$tc('label.curbside_pickup', 1)" />
           <icon-list-item v-if="business.drive_thru == 1" icon="fas fa-car-side" :title="$t('label.drive_thru')" />
-          <icon-list-item v-if="business.order_online == 1" icon="fas fa-mouse" :title="$t('label.order_online')" />
+          <icon-list-item v-if="business.pay_phone == 1" icon="fas fa-mouse" :title="$t('label.pay_phone')" />
           <icon-list-item v-if="business.delivery == 1" icon="fas fa-shipping-fast" :title="$t('label.delivery')" />
           <icon-list-item v-if="!!business.web_link" icon="fas fa-globe" :title="getDomain(getTranslation(business, 'web_link'))" :link="getTranslation(business, 'web_link')" />
           <icon-list-item

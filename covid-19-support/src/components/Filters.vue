@@ -73,10 +73,10 @@ export default {
   computed: {
     // Counts
     countPickup() {
-      return countBoolean(this.markers, 'in_store_pickup')
+      return countBoolean(this.markers, 'pay_at_pickup')
     },
     countCurbside() {
-      return countBoolean(this.markers, 'curbside')
+      return countBoolean(this.markers, 'curbside_pickup')
     },
     countDeliveryOrCurbside() {
       // Location that offer either delivery or curbside
@@ -106,7 +106,7 @@ export default {
       return countBoolean(this.markers, 'family_meal')
     },
     countOrderOnline() {
-      return countBoolean(this.markers, 'order_online')
+      return countBoolean(this.markers, 'pay_phone')
     },
     countPayOnline() {
       return countBoolean(this.markers, 'pay_online')
@@ -158,10 +158,10 @@ export default {
       return this.buildBoxValue('wic', 'fa-users', this.countWic, true)
     },
     orderOnlineValueBox() {
-      return this.buildBoxValue('order_online', 'fa-mouse', this.countOrderOnline)
+      return this.buildBoxValue('pay_phone', 'fa-mouse', this.countOrderOnline)
     },
     curbsidePickupValueBox() {
-      return this.buildBoxValue('curbside', 'fa-car', this.countCurbside, true)
+      return this.buildBoxValue('curbside_pickup', 'fa-car', this.countCurbside, true)
     },
     deliveryValueBox() {
       return this.buildBoxValue('delivery', 'fa-shipping-fast', this.countDelivery)
