@@ -6,7 +6,7 @@ Pieces of this code has been adapted from [Code for Chapel Hill](http://www.code
 
 ## Introduction <!-- omit in toc -->
 
-Thank you for your interest in helping to add content to the Bay Area Mega Map website, we really appreciate everyone who is able to volunteer their time, wether that be to update a single entry or to manage a whole section of our database.
+Thank you for your interest in helping to add content to the Bay Area Community Resources website, we really appreciate everyone who is able to volunteer their time, whether that be to update a single entry or to manage a whole section of our database.
 
 ## Code of conduct <!-- omit in toc -->
 
