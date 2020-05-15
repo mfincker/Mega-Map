@@ -77,7 +77,7 @@ The short version goes like this:
 - **Create a new branch** - it would help us if you can always name your branch after the issue you're fixing and follow the format: `issue-12345`. In this case you would be working on issue `12345`.
 
 - **Change** - make your changes, fix a bug 🐛, add a feature 🆕, correct our spelling 🤦
-♂️, and don't be afraid to break something. We welcome all contributions and will [happily give feedback](#questions)
+, and don't be afraid to break something. We welcome all contributions and will [happily give feedback](#questions)
 
 - **Commit** - done? Yay! 🎉 **Important:** Don't commit to the `master` branch, make sure you have created a new branch as mentioned above.
 
