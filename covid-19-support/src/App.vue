@@ -1,13 +1,14 @@
 <template>
   <div class="home">
-    <app-header :language="language.name" @language-selected="changeLanguage" />
-    <h5 v-if="initialSearch">{{ $tc('sidebar.what-are-you-looking-for', 1) }}</h5>
+    <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleSearchBar" />
+    <h5 v-if="initialSearch && showSearchBar">{{ $tc('sidebar.what-are-you-looking-for', 1) }}</h5>
     <search
       :need="need"
       :nearLocation="nearLocation"
       :userLocation="userLocation"
       @need-selected="needSelected"
       @near-location-selected="nearLocationSelected"
+      v-if="showSearchBar"
     />
     <router-view />
   </div>
@@ -48,7 +49,8 @@ export default {
       nearLocation: null,
       userLocation: { lat: null, lon: null },
       errorStr: null,
-      initialSearch: true
+      initialSearch: true,
+      showSearchBar: true
     }
   },
   methods: {
@@ -71,7 +73,6 @@ export default {
       this.language = item
       this.$root.updateLang(item.iso)
     },
-
     async getUserLocation() {
       try {
         const location = await this.requestUserLocation()
@@ -90,6 +91,9 @@ export default {
           (err) => reject(err)
         )
       })
+    },
+    toggleSearchBar(navBarState) {
+      this.showSearchBar = !navBarState
     }
   },
   watch: {

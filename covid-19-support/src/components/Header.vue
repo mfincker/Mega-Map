@@ -5,7 +5,7 @@
       <span v-html="language" class="language" />
       <i class="fas fa-caret-down" aria-hidden="true" />
     </b-navbar-toggle>
-    <b-collapse id="nav-collapse" is-nav>
+    <b-collapse id="nav-collapse" v-model="navState" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#" v-for="item in languages" v-bind:key="item.iso" class="d-lg-block d-xl-block">
           <span :title="$t('languages.' + item.iso)"
@@ -30,6 +30,7 @@ export default {
   },
   data() {
     return {
+      navState: false,
       languages: [
         { iso: 'en', name: 'English' },
         { iso: 'es', name: 'Espa&#241;ol' },
@@ -42,6 +43,11 @@ export default {
         { iso: 'vi', name: 'Tiếng Việt' },
         { iso: 'tl', name: 'Tagalog' }
       ]
+    }
+  },
+  watch: {
+    navState: function (val) {
+      this.$emit('toggled-nav-bar', val)
     }
   }
 }
