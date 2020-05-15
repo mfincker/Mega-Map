@@ -1,54 +1,54 @@
 <template>
-  <b-container class="bv-example-row px-0" fluid>
-    <div class="map">
-      <l-map
-        ref="covidMap"
-        v-if="showMap"
-        :zoom="zoom"
-        :center="center"
-        :options="mapOptions"
-        style="height: 100%; width: 100%;"
-        @update:center="centerUpdated"
-        @update:zoom="(val) => (zoom = val)"
-        @update:bounds="boundsUpdated"
-      >
-        <l-control position="topright">
-          <div class="mapkey" :class="{ 'show-key': showKey }">
-            <div class="title-block">
-              <h6 class="title">{{ $t('label.mapkey') }}</h6>
-              <i @click="showKey = !showKey" class="fas fa-info-circle" />
-            </div>
-            <div class="keys" :class="{ 'show-key': showKey }">
-              <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link="" />
-              <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link="" />
-              <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link="" />
-            </div>
+  <div class="map">
+    <l-map
+      ref="covidMap"
+      v-if="showMap"
+      :zoom="zoom"
+      :center="center"
+      :options="mapOptions"
+      style="height: 100%; width: 100%;"
+      @update:center="centerUpdated"
+      @update:zoom="(val) => (zoom = val)"
+      @update:bounds="boundsUpdated"
+    >
+      <l-control position="bottomleft">
+        <div class="mapkey" :class="{ 'show-key': showKey }">
+          <div class="title-block">
+            <h6 class="title">{{ $t('label.mapkey') }}</h6>
+            <i @click="showKey = !showKey" class="fas fa-info-circle" />
           </div>
-        </l-control>
-        <l-tile-layer :url="mapUrl" :attribution="attribution" />
+          <div class="keys" :class="{ 'show-key': showKey }">
+            <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link="" />
+            <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link="" />
+            <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link="" />
+          </div>
+        </div>
+      </l-control>
+      <l-tile-layer :url="mapUrl" :attribution="attribution" />
 
-        <v-marker-cluster ref="marks" :options="clusterOptions">
-          <!-- @clusterclick="click()" @ready="ready" -->
-          <l-marker
-            :lat-lng="latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t)"
-            :icon="selectedIcon(index === location.locValue, item)"
-            v-for="(item, index) in filteredMarkers"
-            v-bind:key="index"
-            @click="$emit('location-selected', { locValue: index, isSetByMap: true })"
-          ></l-marker>
-        </v-marker-cluster>
-      </l-map>
-    </div>
-  </b-container>
+      <v-marker-cluster ref="marks" :options="clusterOptions">
+        <!-- @clusterclick="click()" @ready="ready" -->
+        <l-marker
+          :lat-lng="latLng(item.lat, item.lon)"
+          :icon="selectedIcon(item.cartodb_id === resource.resourceId, item)"
+          v-for="item in markers"
+          v-bind:key="item.cartodb_id"
+          @click="$emit('marker-selected', { resourceId: item.cartodb_id, isSetByMap: true })"
+        >
+        </l-marker>
+      </v-marker-cluster>
+    </l-map>
+  </div>
 </template>
 
 <script>
 import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
+// import { LMap, LTileLayer, LControl } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
-import { openStreetMapAttribution as attribution } from '../constants'
-import IconListItem from './IconListItem.vue'
-import { businessIcon } from '../utilities'
+import { openStreetMapAttribution as attribution } from '@/constants'
+import IconListItem from '@/components/IconListItem.vue'
+import { businessIcon } from '@/utilities'
 
 delete Icon.Default.prototype._getIconUrl
 Icon.Default.mergeOptions({
@@ -68,10 +68,11 @@ export default {
     IconListItem
   },
   props: {
-    filteredMarkers: Array,
-    location: { locValue: Number, isSetByMap: Boolean },
+    markers: Array,
     mapUrl: String,
-    userLocation: { lon: Number, lat: Number }
+    nearLatLonZoom: { lat: Number, lon: Number, zoom: Number },
+    resource: { resourceId: Number, isSetByMap: Boolean },
+    zoomDiff: Number
   },
   data() {
     return {
@@ -87,9 +88,9 @@ export default {
     }
   },
   created() {
-    if (!!this.userLocation.lat && !!this.userLocation.lon) {
-      this.center = latLng(this.userLocation.lat, this.userLocation.lon)
-      this.zoom = 13
+    if (!!this.nearLatLonZoom.lat && !!this.nearLatLonZoom.lon) {
+      this.center = latLng(this.nearLatLonZoom.lat, this.nearLatLonZoom.lon)
+      this.zoom = this.nearLatLonZoom.zoom
     }
   },
   mounted() {
@@ -111,13 +112,12 @@ export default {
     },
     editZoomControl() {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
-      zoomControl.className = 'leaflet-bottom leaflet-right'
+      zoomControl.className = 'leaflet-bottom leaflet-left'
     },
     latLng,
     selectedIcon(selected, item) {
-      const isOpen = item.oc
-      let markerColor = isOpen ? '#566ca9' : '#999'
-      const iconClasses = businessIcon(item.marker)
+      let markerColor = item.isOpen ? '#566ca9' : '#999'
+      const iconClasses = businessIcon(item)
       if (selected) {
         markerColor = '#ff3d3d'
       }
@@ -126,59 +126,55 @@ export default {
         icon: iconClasses,
         prefix: 'fa',
         svg: true
-        // ,
-        // name: item.marker.gsx$providername.$t,
-        // nameClasses: 'markerName'
       })
       return markerIcon
     }
-    // eslint-disable-next-line no-console
-    // click: (e) => console.log('clusterclick', e),
-    // eslint-disable-next-line no-console
-    // ready: (e) => console.log('ready', e)
   },
   watch: {
-    // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
-    location: function (locationVal) {
-      if (locationVal.isSetByMap) {
+    resource: function (newResource) {
+      if (newResource.isSetByMap || !newResource.resourceId) {
         return
       }
-      var item = this.filteredMarkers[locationVal.locValue]
-      this.$refs.covidMap.mapObject.setView(latLng(item.marker.gsx$lat.$t, item.marker.gsx$lon.$t), 16, { duration: 1 })
+      var item = this.markers.filter((c) => c.cartodb_id == newResource.resourceId)[0]
+      this.$refs.covidMap.mapObject.setView(latLng(item.lat, item.lon), 16, { duration: 1 })
     },
-    userLocation: function (newVal) {
-      if (!newVal.lat || !newVal.lon) {
+    nearLatLonZoom: function (newVal, oldVal) {
+      if (!newVal || !newVal.lat || !newVal.lon || (newVal.lat == oldVal.lat && newVal.lon == oldVal.lon)) {
         return
       }
-      this.$refs.covidMap.mapObject.setView(latLng(newVal.lat, newVal.lon), 13, { duration: 1 })
+      this.$refs.covidMap.mapObject.setView(latLng(newVal.lat, newVal.lon), newVal.zoom, { duration: 1 })
+    },
+    zoomDiff: function (val) {
+      if (val > 0) {
+        this.$refs.covidMap.mapObject.zoomOut(val, { duration: 1 })
+      }
     }
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="css">
 .map {
-  width: auto;
+  flex: 1 1 100%;
   height: 100%;
-  top: 0;
+  width: 100%;
   padding: 0;
-  /* margin-left: 8px;
-    margin-right: 8px; */
+  z-index: 1;
 }
 
-.bv-example-row {
+/*.bv-example-row {
   height: calc(100% - 124px);
-}
+}*/
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .bv-example-row {
     height: calc(100% - 116px);
   }
-}
+}*/
 
-.noselection.bv-example-row {
+/*.noselection.bv-example-row {
   height: 100%;
-}
+}*/
 
 .mapkey {
   padding: 16px;
@@ -204,6 +200,8 @@ export default {
 .title-block {
   width: 100%;
   text-align: right;
+  bottom: 18px;
+  position: absolute;
 }
 
 .mapkey .title {
@@ -221,5 +219,9 @@ export default {
 }
 .mapkey.show-key .title {
   display: inline;
+}
+
+.tooltip {
+  font-size: 2rem;
 }
 </style>

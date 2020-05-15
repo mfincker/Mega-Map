@@ -51,16 +51,14 @@ export default {
     display: inline-block;
     line-height: 1.2rem;
     vertical-align: middle;
-    margin: 0.25rem 0;
-  }
-  a {
-    color: #ee8842 !important;
+    margin: 4px 0;
   }
 }
 
 .ilIcon {
-  font-size: 1.2rem;
-  width: 33px;
+  font-size: 1rem;
+  width: 28px;
+  color: $teal;
 }
 
 .ilTitle {

@@ -1,88 +1,123 @@
 <template>
-  <div class="resultWrapper">
-    <div ref="results" class="resultList">
+  <div class="resultWrapper" ref="results">
+    <div class="resultList">
+      <div v-if="isEmpty" class="no-result">{{ $tc('no_location_in_this_area') }}</div>
       <div
-        v-for="(item, index) in filteredMarkers"
-        v-bind:key="index"
+        v-for="item in markers"
+        v-bind:key="item.cartodb_id"
         class="resultItem"
-        :class="{ selected: index == location.locValue, closedOne: item.oc == false }"
-        :ref="'result' + index"
-        @click="$emit('location-selected', { locValue: index, isSetByMap: false })"
+        :class="{ selected: item.cartodb_id == resource.resourceId, closedOne: item.isOpen == false }"
+        :ref="'result' + item.cartodb_id"
+        @click="resourceClicked(item)"
       >
-        <h5 class="resultTitle">{{ item.marker.gsx$providername.$t }}</h5>
-        <template v-if="!!item.marker.gsx$provideraddloc.$t"
-          ><div class="addloc">{{ item.marker.gsx$provideraddloc.$t }}</div></template
-        >
-        <div v-if="!item.oc" class="closed">{{ getClosedMessage() }}</div>
-        <span class="resultAddress">
-          <span v-if="!!item.marker.gsx$cuisine.$t">{{ item.marker.gsx$cuisine.$t }}<br /></span>
-          {{ item.marker.gsx$address.$t }},
-          {{ item.marker.gsx$city.$t }}
-        </span>
-        <template v-if="item.marker.gsx$discountmedical.$t == 1"
-          ><span :title="$tc('label.discountmedical', 1)"><i class="fas fa-user-md" /></span
-        ></template>
-        <template v-if="item.marker.gsx$familymeal.$t == 1"
-          ><span :title="$tc('category.family', 2)"><i class="fas fa-user-friends" /></span
-        ></template>
-        <template v-if="item.marker.gsx$mealstudent.$t == 1"
-          ><span :title="$tc('label.mealstudent', 1)"><i class="fas fa-school" /></span
-        ></template>
-        <!-- <template v-if="item.marker.gsx$mealstudent.$t == 1"
-          ><span :title="$tc('label.mealpublic', 1)"><i class="fas fa-users" /></span
-        ></template> -->
-        <template v-if="item.marker.gsx$public.$t == 1"
-          ><span :title="$tc('label.mealpublic', 1)"><i class="fas fa-users" /></span
-        ></template>
-        <template v-if="item.marker.gsx$drivethru.$t == 1"
-          ><span :title="$t('label.drivethru')"><i class="fas fa-car-side" /></span
-        ></template>
-        <template v-if="item.marker.gsx$curbside.$t == 1"
-          ><span :title="$tc('label.curbside', 1)"><i class="fas fa-car" /></span
-        ></template>
-        <template v-if="item.marker.gsx$orderonline.$t == 1"
-          ><span :title="$t('label.orderonline')"><i class="fas fa-mouse" /></span
-        ></template>
-        <template v-if="item.marker.gsx$delivery.$t == 1"
-          ><span :title="$t('label.delivery')"><i class="fas fa-shipping-fast" /></span
-        ></template>
+        <div>
+          <div class="resultTop">
+            <div>
+              <template v-if="!!item.provider_addloc">
+                <div class="addloc">{{ item.provider_addloc }}</div>
+              </template>
+              <div class="resultMetadata">
+                <span class="resultTitle">{{ item.provider_name }} </span>
+                <span class="resultAddress">
+                  {{ item.address }},
+                  {{ item.city }}
+                </span>
+                <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
+              </div>
+              <!-- Badges -->
+              <span v-if="!item.isOpen" class="badge closed">{{ getClosedMessage() }}</span>
+              <span v-if="item.isOpen" class="badge open">{{ getOpenMessage(item) }}</span>
+              <span v-if="item.call_in_advance == 1" class="badge">{{ $tc('label.call_in_advance') }}</span>
+              <span v-if="item.special_hours == 1" class="badge">{{ $tc('label.special_hours') }}</span>
+              <!-- End Badges -->
+            </div>
+            <i class="fas fa-chevron-right fa-lg" :class="{ 'fa-rotate-90': showDetails && item.cartodb_id == resource.resourceId }"></i>
+          </div>
+          <business-details v-if="item.cartodb_id == resource.resourceId && showDetails" :business="item" />
+        </div>
       </div>
+      <a class="more-result" href="#" @click="zoomOut">{{ $tc('label.zoom_out_for_more_results') }}</a>
     </div>
   </div>
 </template>
 
 <script>
-import { weekdaysJs } from '../constants'
+import BusinessDetails from '@/components/BusinessDetails.vue'
 
 export default {
   name: 'ResultsList',
   data() {
     return {
       selected: false,
-      today: new Date().getDay()
+      today: new Date().getDay(),
+      showDetails: false
     }
   },
-  components: {},
+  components: {
+    BusinessDetails
+  },
   props: {
-    filteredMarkers: Array,
-    location: { locValue: Number, isSetByMap: Boolean },
-    selectedDay: Number
+    markers: Array,
+    resource: { resourceId: Number, isSetByMap: Boolean }
   },
   watch: {
-    location: function (locationVal) {
-      if (locationVal.isSetByMap) {
-        var top = this.$refs['result' + locationVal.locValue][0].offsetTop - 330
-        this.$refs['results'].scrollTo(0, top)
+    resource: function (val) {
+      // if no resource are selected, hide location details
+      if (!val.resourceId) {
+        this.showDetails = false
+        // a location is selected, keep the list scrolled to that location
+      } else {
+        this.showDetails = true
+        this.$nextTick(() => {
+          const top = this.$refs['result' + val.resourceId][0].offsetTop - this.$refs['result' + this.markers[0].cartodb_id][0].offsetTop
+          this.$refs['results'].scrollTo(0, top)
+        })
+      }
+    }, //,
+    markers: function (newMarkers) {
+      // some location is selected and there are displayed markers
+      if (this.resource.resourceId && newMarkers) {
+        // is the selected location still in the map view
+        const selectedLocationInView =
+          newMarkers.filter((c) => {
+            return c.cartodb_id == this.resource.resourceId
+          }).length > 0
+        // if it's not in view, clear selection
+        if (!selectedLocationInView) {
+          this.$emit('resource-selected', { resourceId: null, isSetByMap: false })
+          // if it's in view, scroll to it after the update on the markers
+        } else {
+          this.$nextTick(() => {
+            const top =
+              this.$refs['result' + this.resource.resourceId][0].offsetTop - this.$refs['result' + newMarkers[0].cartodb_id][0].offsetTop
+            this.$refs['results'].scrollTo(0, top)
+          })
+        }
       }
     }
   },
   methods: {
-    getClosedMessage: function () {
-      if (this.selectedDay > 6) {
-        return this.$t(`label.closed-today`)
+    getClosedMessage() {
+      return this.$t('label.closed-today')
+    },
+    getOpenMessage() {
+      return this.$t('label.open-today')
+    },
+    resourceClicked(item) {
+      if (!this.resource.resourceId || item.cartodb_id != this.resource.resourceId) {
+        this.$emit('resource-selected', { resourceId: item.cartodb_id, isSetByMap: false })
+      } else {
+        this.showDetails = !this.showDetails
       }
-
-      return `${this.$t('label.closed-on')} ${this.$t(`dayofweek.${weekdaysJs[this.selectedDay].day}`)}`
+    },
+    zoomOut() {
+      this.$emit('zoom-out')
+      this.showDetails = false
+    }
+  },
+  computed: {
+    isEmpty() {
+      return !this.markers || this.markers.length == 0
     }
   }
 }
@@ -90,60 +125,128 @@ export default {
 
 <style lang="scss">
 .resultWrapper {
+  flex: 1 1 100%;
+  overflow-y: scroll;
   scrollbar-color: $gray-900 $gray-700;
+  width: 100%;
+  z-index: 2000;
+  padding: 8px;
+  background-color: $gray-200;
+}
+
+.resultTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: inherit;
+}
+
+.rotated {
+  color: red;
 }
 
 .addloc {
-  margin-bottom: 8px;
-}
-.resultList {
-  max-height: calc(100vh - 294px);
-  overflow-y: auto;
-}
-.resultItem {
-  padding: 10px;
-  display: block;
-  min-height: 100px;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.125);
+  padding-bottom: 3px;
+  color: $gray-600;
   font-size: 0.8rem;
-  max-width: 282px;
-  background: theme-color('secondary');
+}
+
+.resultList {
+  z-index: 2000;
+  width: 100%;
+}
+
+.more-info {
+  padding-right: 10px;
+}
+
+.resultItem {
+  padding: 16px;
+  width: 100%;
+  display: block;
+  flex: 1 1 auto;
+  border: solid 1px rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  background: white;
+  margin-bottom: 8px;
 
   @media (prefers-color-scheme: dark) {
     color: $gray-100;
     background: $gray-800;
   }
 
+  &.selected {
+    background: white !important;
+    border-color: $gray-500;
+  }
+
   &:hover {
-    background: #f8f9fa;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     @media (prefers-color-scheme: dark) {
       background: $gray-900;
     }
   }
-
-  a {
-    color: #000;
-  }
-
-  & > span > i {
-    margin-right: 8px;
-    color: #2eb7cb;
-    font-size: 1rem;
-    margin-top: 6px;
-  }
 }
 
 .resultTitle {
-  font-size: 0.9rem;
-  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0 0 4px;
 }
+
+.resultMetadata {
+  margin-bottom: 12px;
+}
+
 .resultAddress {
-  font-size: 0.8rem;
   display: block;
-  max-width: 262px;
+  max-width: 300px;
+  margin-bottom: 4px;
 }
-.closedOne {
-  /* background: #f9f9f9 !important; */
+
+.badge {
+  display: inline-block;
+  border-radius: 100px;
+  background-color: white;
+  border: 1px solid $gray-400;
+  color: grey;
+  padding: 2px 6px;
+  margin-bottom: 8px;
+  margin-right: 5px;
+  font-size: 0.7rem;
+}
+
+.closed {
+  border-color: $gray-700;
+  background-color: $gray-700;
+  color: white;
+}
+
+.no-result {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.more-result {
+  padding: 8px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.125);
+}
+
+.more-info {
+  align-content: flex-end;
 }
 </style>
