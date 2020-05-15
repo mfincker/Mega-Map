@@ -36,7 +36,7 @@
           <business-details v-if="item.cartodb_id == resource.resourceId && showDetails" :business="item" />
         </div>
       </div>
-      <a v-if="!isEmpty" class="more-result" href="#" @click="zoomOut">{{ $tc('label.zoom_out_for_more_results') }}</a>
+      <a class="more-result" href="#" @click="zoomOut">{{ $tc('label.zoom_out_for_more_results') }}</a>
     </div>
   </div>
 </template>
