@@ -61,7 +61,6 @@ export default {
 
 <style lang="scss">
 .filters {
-  display: flex;
   position: relative;
   justify-content: space-evenly;
   z-index: 3000;
@@ -76,6 +75,10 @@ export default {
 @media (min-width: 1024px) {
   .filters {
     width: 50%;
+  }
+
+  .filters.noMap {
+    width: 100%;
   }
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div id="results" :class="{ noMap: !displayMap }">
-    <div id="map-details">
+    <div id="map-details" :class="{ noMap: !displayMap }">
       <resource-map
         v-if="displayMap"
         :markers="markers"
@@ -13,8 +13,20 @@
         :zoomDiff="zoomDiff"
       />
       <div id="result-details">
-        <filters :need="$route.params.need" :markers="markers" :activeFilters="activeFilters" @box-selected="boxSelected" />
-        <results-list :markers="markers" :resource="resourceData" @resource-selected="passSelectedMarker" @zoom-out="zoomOut" />
+        <filters
+          :class="{ noMap: !displayMap }"
+          :need="$route.params.need"
+          :markers="markers"
+          :activeFilters="activeFilters"
+          @box-selected="boxSelected"
+        />
+        <results-list
+          :class="{ noMap: !displayMap }"
+          :markers="markers"
+          :resource="resourceData"
+          @resource-selected="passSelectedMarker"
+          @zoom-out="zoomOut"
+        />
       </div>
     </div>
   </div>
@@ -174,6 +186,10 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+#map-details.noMap {
+  padding-top: 8px;
 }
 
 @media (min-width: 1024px) {

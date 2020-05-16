@@ -149,6 +149,10 @@ export default {
   .resultWrapper {
     width: 50%;
   }
+
+  .resultWrapper.noMap {
+    width: 100%;
+  }
 }
 
 .resultTop {
