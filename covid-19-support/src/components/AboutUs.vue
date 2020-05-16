@@ -1,5 +1,6 @@
 <template>
-  <b-modal id="about-us" size="xl" dialog-class="m-0 m-md-auto" centered scrollable hide-header-close>
+  <h1>About us</h1>
+  <!-- <b-m odal id="about-us" size="xl" dialog-class="m-0 m-md-auto" centered scrollable hide-header-close>
     <template v-slot:modal-title>
       {{ $t('about.title') }}
     </template>
@@ -53,12 +54,12 @@
     <template v-slot:modal-footer>
       <b-button @click="$bvModal.hide('about-us')" right>{{ $t('label.close') }}</b-button>
     </template>
-  </b-modal>
+  </b-modal> -->
 </template>
 
 <script>
 export default {
-  name: 'about-us-modal'
+  name: 'about-us'
 }
 </script>
 

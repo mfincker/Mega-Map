@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleSearchBar" />
+    <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleNavBar" />
     <h5 v-if="initialSearch && showSearchBar">{{ $tc('sidebar.what-are-you-looking-for', 1) }}</h5>
     <search
       :need="need"
@@ -49,7 +49,7 @@ export default {
       userLocation: { lat: null, lon: null },
       errorStr: null,
       initialSearch: true,
-      showSearchBar: true
+      isNavBarOpen: false
     }
   },
   methods: {
@@ -91,8 +91,16 @@ export default {
         )
       })
     },
-    toggleSearchBar(navBarState) {
-      this.showSearchBar = !navBarState
+    toggleNavBar(navBarState) {
+      this.isNavBarOpen = navBarState
+    }
+  },
+  computed: {
+    showSearchBar() {
+      if (this.$route.name == 'AboutUs') {
+        return false
+      }
+      return !this.isNavBarOpen
     }
   },
   watch: {
