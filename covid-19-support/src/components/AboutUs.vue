@@ -1,78 +1,40 @@
 <template>
-  <h1>About us</h1>
-  <!-- <b-m odal id="about-us" size="xl" dialog-class="m-0 m-md-auto" centered scrollable hide-header-close>
-    <template v-slot:modal-title>
-      {{ $t('about.title') }}
-    </template>
-    <b-card class="h-100" no-body>
-      <b-tabs card>
-        <b-tab :title="$t('about.getinvolved')">
-          <p>{{ $t('about.devhelp.info') }}</p>
-          <b>{{ $t('about.devhelp.support') }}</b>
-          <i18n path="about.devhelp.addinfo" tag="p">
-            <a href="https://forms.gle/fWiCg2z5CRx9ukGu7">{{ $t('about.devhelp.addbusiness') }}</a>
-            <a href="https://forms.gle/G2wrUd4TE3yqrW1FA">{{ $t('about.devhelp.updatebusiness') }}</a>
-          </i18n>
-          <b>{{ $t('about.devhelp.becomeambassador') }}</b>
-          <i18n path="about.devhelp.ambassadorinfo" tag="p">
-            <a href="emailto:contact@nccovidsupport.org">contact@nccovidsupport.org</a>
-          </i18n>
-          <b>{{ $t('about.devhelp.dupsite') }}</b>
-          <i18n path="about.devhelp.devnote" tag="p">
-            <a href="https://github.com/code-for-chapel-hill/COVID-Support-For-CH">{{ $t('about.devhelp.source') }}</a>
-            <a href="https://github.com/codeforamerica/codeofconduct">{{ $t('about.devhelp.conduct') }}</a>
-          </i18n>
-        </b-tab>
-
-        <b-tab :title="$t('about.partners')">
-          <p>{{ $t('about.info') }}</p>
-          <ul>
-            <li>
-              <a href="https://www.orangecountync.gov/1710/Visitors-Bureau">{{ $t('about.orgs.bureau') }}</a>
-            </li>
-            <li>
-              <a href="http://www.downtownchapelhill.com/">{{ $t('about.orgs.partnership') }}</a>
-            </li>
-            <li>
-              <a href="https://locallistnc.com/">{{ $t('about.orgs.localistnc') }}</a>
-            </li>
-            <li>
-              <a href="https://www.carolinafarmstewards.org/on-farm-pickups/">{{ $t('about.orgs.farmstewards') }}</a>
-            </li>
-          </ul>
-        </b-tab>
-
-        <b-tab :title="$t('about.contact')">
-          <i18n path="about.contactus.info" tag="p">
-            <a href="https://www.meetup.com/Triangle-Code-for-America/">{{ $t('about.orgs.chb') }}</a>
-            <a href="https://www.codeforamerica.org/">{{ $t('about.orgs.cfa') }}</a>
-            <a href="mailto:contact@nccovidsupport.org">contact@nccovidsupport.org</a>
-          </i18n>
-        </b-tab>
-      </b-tabs>
-    </b-card>
-    <template v-slot:modal-footer>
-      <b-button @click="$bvModal.hide('about-us')" right>{{ $t('label.close') }}</b-button>
-    </template>
-  </b-modal> -->
+<!-- About Us -->
+<div id="#about-us">
+  <h1>{{ $t('about.about-us.header') }}</h1>
+  <i18n path="about.about-us.p1.text" tag="p">
+  <a href="https://www.google.com/maps/d/u/0/viewer?mid=1xfWfgbjULao-rlKJFfWT07hR-StV4Zx9&ll=37.46071505887045%2C-121.93017180578084&z=11">{{ $t('about.about-us.p1.link') }}</a>
+  </i18n>
+  <i18n path="about.about-us.p2.text" tag="p">
+  <a href="https://nccovidsupport.org/">NC Covid Support</a>
+  </i18n>
+  <i18n path="about.about-us.p3.text" tag="p">
+  <a href="https://github.com/dcl-covid-19/mega-map-dev">{{ $t('about.about-us.p3.link') }}</a>
+  </i18n>
+  <!-- Info sources -->
+  <h1>{{ $t('about.info-sources.header') }}</h1>
+  <p>{{ $t('about.info-sources.p1')}}</p>
+  <ul>
+    <li><a href="https://www.ebt.ca.gov/locator/index.html">{{ $t('about.info-source.link1')}}</a></li>
+    <li><a href="https://www.wicstorelocator.com/address_geo.php">{{ $t('about.info-source.link2')}}</a></li>
+    <li><a href="https://www.shfb.org/">{{ $t('about.info-source.link3')}}</a></li>
+    <li><a href="http://med.stanford.edu/pedsadvocacy.html">{{ $t('about.info-source.link4')}}</a></li>
+  </ul>
+  <p>{{ $t('about.info-sources.p2')}}</p>
+  <!-- Contact Us -->
+  <h1>{{ $t('about.contact-us.header') }}</h1>
+  <i18n path="about.contact-us.p1.text" tag="p">
+  <a href="mailto:hi@bayareacommunity.org">hi@bayareacommunity.org</a>.
+  </i18n>
+  <!-- Disclaimer -->
+  <h1>{{ $t('about.disclaimer.header') }}</h1>
+  <p>{{ $t('about.disclaimer.p')}}</p>
+</div>
 </template>
-
 <script>
 export default {
   name: 'about-us'
 }
 </script>
-
 <style lang="scss">
-@media (max-width: 991px) {
-  #about-us > .modal-dialog {
-    justify-content: normal;
-    max-width: 100%;
-
-    & > .modal-content {
-      min-height: 100vh;
-      height: 100vh;
-    }
-  }
-}
 </style>

@@ -19,6 +19,12 @@
         </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
+    <b-nav-item to="/">
+      Home
+    </b-nav-item>
+    <b-nav-item to="/about-us">
+      About us
+    </b-nav-item>
   </b-navbar>
 </template>
 

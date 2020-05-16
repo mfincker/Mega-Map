@@ -9,7 +9,7 @@
     "devhelp": {
       "addbusiness": "添加业务",
       "addinfo": "使用我们的在线表格填写 {0} 或 {1}。",
-      "ambassadorinfo": "帮助我们扩大在北卡罗来纳州的覆盖范围。大使将与当地政府和商业协会合作，为社区提供NC COVID支持。给我们发电子邮件，地址为 {0} ，以获取入门所需的工具和资源。",
+      "ambassadorinfo": "帮助我们扩大湾区覆盖范围。大使将会与当地政府部门和企业合作把我们的湾区社区资源地图带到他们的社区里。发邮件{0}来获取工具及资源。",
       "becomeambassador": "成为社区大使",
       "conduct": "行为守则",
       "devnote": "开发人员-在GitHub上找到我们的 {0} 和 {1} 。",
@@ -28,7 +28,9 @@
       "chb": "教堂山大队",
       "farmstewards": "卡罗来纳州农场管理协会",
       "localistnc": "#LocalListNC",
-      "partnership": "教堂山市中心合作伙伴"
+      "partnership": "教堂山市中心合作伙伴",
+      "dcl": "数据挑战实验室",
+      "bln": "重大当地新闻"
     },
     "partners": "信息来源",
     "title": "关于本网站"
@@ -37,12 +39,19 @@
     "childcare": "育儿",
     "family": "家庭准备饭|家庭准备饭",
     "farm": "农场或农贸市场|农场与农贸市场",
+    "food_bev": "特殊食物及饮品",
+    "free_grocery": "免费超市",
     "grocery": "杂货|杂货",
     "meal": "免费餐|免费餐",
     "petsupplies": "宠物用品",
     "pharmacy": "药房|药房",
     "restaurant": "餐厅|餐厅",
-    "school": "学校餐|学校餐"
+    "school": "学校餐|学校餐",
+    "snap_wic_retailer": "营养/妇幼保健商店",
+    "food_resources": "食物资源",
+    "legal_resources": "法律资源",
+    "medical_resources": "医疗资源",
+    "mental_health_resources": "心理健康资源"
   },
   "dayofweek": {
     "any": "任何",
@@ -58,20 +67,24 @@
     "address": "地址",
     "allweek": "整个星期",
     "backtolist": "返回目录",
+    "call_in_advance": "必须提前电话咨询",
+    "children": "给孩子",
     "close": "关",
     "closed": "关闭",
     "closed-on": "封闭于",
     "closed-today": "今天休息",
     "closedonday": "休馆（当前选定日期）",
-    "curbside": "路边捡拾",
+    "curbside_pickup": "路边捡拾",
+    "curbside_or_delivery": "送餐或者路边提餐",
     "delivery": "交货",
     "discount_medical": "医务人员折扣|医务人员折扣",
-    "discounts": "",
+    "discounts": "折扣",
     "drive_thru": "得来速",
     "email": "电子邮件",
     "email_lowercase": "电子邮件",
     "farmers_market": "农贸市场|农贸市场",
     "farm_pick_up": "农场接送",
+    "free": "免费资源",
     "free_groceries": "免费杂货店|免费杂货店",
     "freemeals": "免费用餐地点|免费用餐地点",
     "free_produce": "免费产品位置|免费产品位置",
@@ -87,11 +100,21 @@
     "openinghours": "营业时间",
     "order_online": "在线订购和付款",
     "phone": "电话",
+    "public": "面向大众",
     "selectacategory": "选择一个类别...",
     "selected": "选",
     "seniorhours": "高级时间",
+    "seniors": "给老人",
+    "snap": "营养供给接受地区",
     "special_hours": "高级购物时间",
-    "website": "网站"
+    "website": "网站",
+    "wic": "妇幼保健接受地区",
+    "ebt_pay_phone": "通过电话用EBT支付",
+    " ebt_pay_online": "线上EBT支付",
+    "open-today": "今日开放",
+    "pay_phone": "通过电话用EBT支付",
+    "safe_pick_up": "安全\b取物\b\b选择",
+    "zoom_out_for_more_results": "缩小以获取更多结果"
   },
   "languages": {
     "ar": "阿拉伯",
@@ -101,11 +124,13 @@
     "ja": "日本",
     "ko": "朝鲜的",
     "ms": "缅甸语",
-    "zh": "简体中文"
+    "zh": "简体中文",
+    "vi": "越南的",
+    "tl": "他加禄的"
   },
   "sidebar": {
     "close-panel": "关闭搜索面板",
-    "info-about-us": "当前，此站点支持北卡罗来纳州奥兰治县。用",
+    "info-about-us": "目前，这项服务支持湾区。",
     "info-end-text": "，我们可以扩大覆盖范围。",
     "info-link-text": "你的帮助",
     "open-panel": "打开搜索面板",
@@ -116,5 +141,17 @@
     "what-do-you-need": "你需要什么？",
     "when-do-you-need-it": "您什么时候需要它？"
   },
-  "title": "{0} COVID支持"
+  "title": "{0} COVID支持",
+  "county": {
+    "alameda": "阿拉米达县",
+    "anywhere": "任何地方",
+    "contra-costa": "康特拉克斯塔县",
+    "marin": "马林县",
+    "napa": "纳帕县",
+    "san-francisco": "旧金山县",
+    "san-mateo": "圣马刁县",
+    "santa-clara": "圣克拉拉县",
+    "solano": "索拉诺县",
+    "sonoma": "索诺玛县"
+  }
 }
