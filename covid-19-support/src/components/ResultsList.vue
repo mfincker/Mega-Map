@@ -138,13 +138,23 @@ export default {
 <style lang="scss">
 .resultWrapper {
   flex: 1 1 100%;
-  overflow-y: scroll;
   scrollbar-color: $gray-900 $gray-700;
   width: 100%;
   z-index: 2000;
   padding: 8px;
   background-color: $gray-200;
 }
+
+@media (min-width: 1024px) {
+  .resultWrapper {
+    width: 50%;
+  }
+
+  .resultWrapper.noMap {
+    width: 100%;
+  }
+}
+
 .resultTop {
   display: flex;
   flex-direction: row;
@@ -163,6 +173,7 @@ export default {
 .resultList {
   z-index: 2000;
   width: 100%;
+  padding-bottom: 28px;
 }
 .more-info {
   padding-right: 10px;
