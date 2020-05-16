@@ -156,25 +156,18 @@ export default {
 <style scoped lang="css">
 .map {
   flex: 1 1 100%;
-  height: 100%;
   width: 100%;
   padding: 0;
   z-index: 1;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-/*.bv-example-row {
-  height: calc(100% - 124px);
-}*/
-
-/*@media (min-width: 768px) {
-  .bv-example-row {
-    height: calc(100% - 116px);
+@media (min-width: 1024px) {
+  .map {
+    height: 100%;
+    width: 50%;
   }
-}*/
-
-/*.noselection.bv-example-row {
-  height: 100%;
-}*/
+}
 
 .mapkey {
   padding: 16px;

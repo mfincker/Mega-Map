@@ -130,6 +130,7 @@ h5 {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #e9ecef;
 }
 
 #search-result {

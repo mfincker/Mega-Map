@@ -12,8 +12,10 @@
         :resource="resourceData"
         :zoomDiff="zoomDiff"
       />
-      <filters :need="$route.params.need" :markers="markers" :activeFilters="activeFilters" @box-selected="boxSelected" />
-      <results-list :markers="markers" :resource="resourceData" @resource-selected="passSelectedMarker" @zoom-out="zoomOut" />
+      <div id="result-details">
+        <filters :need="$route.params.need" :markers="markers" :activeFilters="activeFilters" @box-selected="boxSelected" />
+        <results-list :markers="markers" :resource="resourceData" @resource-selected="passSelectedMarker" @zoom-out="zoomOut" />
+      </div>
     </div>
   </div>
 </template>
@@ -171,5 +173,21 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+@media (min-width: 1024px) {
+  #map-details {
+    flex-wrap: wrap;
+    padding-top: 104px;
+  }
+}
+
+#result-details {
+  flex: 1 1 100%;
+  overflow-y: scroll;
+  scrollbar-color: $gray-900 $gray-700;
+  width: 100%;
+  z-index: 2000;
+  background-color: $gray-200;
 }
 </style>

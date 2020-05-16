@@ -71,8 +71,15 @@ export default {
   width: 100%;
   font-size: 0.7em;
   padding: 8px 16px;
+  background-color: white;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
+}
+
+@media (min-width: 1024px) {
+  .filters {
+    width: 50%;
+  }
 }
 
 .custom-checkbox {
