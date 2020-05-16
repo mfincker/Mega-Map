@@ -19,14 +19,12 @@
 </template>
 
 <script>
-import { cartoBaseURL, sqlQueries, dayFilters, booleanFilters, complexFilters, countyLatLon } from '@/constants'
+import { cartoBaseURL, sqlQueries, countyLatLon, booleanFilters, complexFilters, dayFilters } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
-// import BusinessDetails from '@/components/BusinessDetails.vue'
 import Filters from '@/components/Filters.vue'
-// import { haversineDistance, sortByDistance, addOrRemove } from '@/utilities'
-import { haversineDistance, addOrRemove } from '@/utilities'
-// import { haversineDistance } from '@/utilities'
+import { addOrRemove } from '@/utilities'
+import { haversineDistance } from '@/utilities'
 import { latLng } from 'leaflet'
 
 export default {
@@ -55,6 +53,7 @@ export default {
   methods: {
     async fetchData(query) {
       try {
+        console.log(cartoBaseURL + '&q=' + query)
         const res = await fetch(cartoBaseURL + '&q=' + query)
         const entries = await res.json()
         this.entries = entries.rows
@@ -90,8 +89,8 @@ export default {
         : null
     },
     displayMap() {
-      const needWithMap = ['meal', 'free_grocery', 'snap_wic_retailer', 'medical_in_person', 'mental_health_in_person']
-      return needWithMap.includes(this.$route.params.need)
+      const needWithMap = ['meal', 'free_grocery', 'snap_wic_retailer']
+      return needWithMap.includes(this.$route.params.need) || this.activeFilters.includes('in_person')
     },
     markers() {
       if (!this.entries) {
@@ -99,24 +98,26 @@ export default {
       }
       var today = new Date().getDay()
       const dayFilter = dayFilters[today]
-
       let markers = this.entries
-        .filter((c) => c.lat && c.lon)
-        .filter((c) => {
-          return this.bounds.contains(latLng(c.lat, c.lon))
-        })
-
-      // Filter out the boolean items
+      // Filter out markers based on map bounds
+      if (this.displayMap) {
+        markers = markers
+          .filter((c) => c.lat && c.lon)
+          .filter((c) => {
+            return this.bounds.contains(latLng(c.lat, c.lon))
+          })
+      }
+      // Filter out results based on boolean filters
       this.activeFilters.forEach((element) => {
         if (booleanFilters.includes(element)) {
-          markers = markers.filter((c) => c[element] == '1')
+          markers = markers.filter((c) => c[element] == 1)
         }
       })
       // Filter out items based on complexFilters
       complexFilters.forEach((f) => {
         if (this.activeFilters.includes(f.name)) {
           markers = markers.filter((c) => {
-            const bools = f.columns.map((d) => c[d] == '1')
+            const bools = f.columns.map((d) => c[d] == 1)
             return f.combine(bools)
           })
         }
