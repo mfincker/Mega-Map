@@ -2,9 +2,9 @@ html,
 body {
   overflow: hidden;
   height: 100%;
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     background-color: #000;
-  }
+  } */
 }
 #wrapper {
   height: 100%;
@@ -23,16 +23,16 @@ h6,
 // .bg-dialogs {
 //   color: #666;
 //   background-color: theme-color('secondary');
-//   @media (prefers-color-scheme: dark) {
+//   /* @media (prefers-color-scheme: dark) {
 //     // color: #ccc !important;
 //     background-color: theme-color-('secondary');
 //     &:hover {
 //       // color: #ccc !important;
 //     }
-//   }
+//   } */
 // }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .border-left,
   .border-right,
   .border-top,
@@ -45,7 +45,7 @@ h6,
     border: 1px solid #676a6d;
     color: #ccc;
   }
-}
+} */
 
 // button.btn-secondary {
 //   &,

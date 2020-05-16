@@ -188,10 +188,10 @@ export default {
   font-size: 0.8rem;
   background: white;
   margin-bottom: 8px;
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     color: $gray-100;
     background: $gray-800;
-  }
+  } */
   &.selected {
     background: white !important;
     border-color: $gray-500;
@@ -199,9 +199,9 @@ export default {
   &:hover {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
     cursor: pointer;
-    @media (prefers-color-scheme: dark) {
+    /* @media (prefers-color-scheme: dark) {
       background: $gray-900;
-    }
+    } */
   }
 }
 .resultTitle {
