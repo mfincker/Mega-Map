@@ -33,7 +33,8 @@
     },
     "partners": "Fuentes de información",
     "title": "Sobre este sitio",
-    "front-page": "Hola! 👋\r\nBrindamos información sobre los recursos como comidas gratis, alimentos, asistencia legal, y ayuda médica. Comienza al seleccionar dónde estás y lo qué estás buscando. ",
+    "front-page-1": "Hola! 👋",
+    "front-page-2": "Brindamos información sobre los recursos como comidas gratis, alimentos, asistencia legal, y ayuda médica. Comienza al seleccionar dónde estás y lo qué estás buscando.",
     "about-us": {
       "p1": {
         "text": "Somos un proyecto de código abierto mantenido por voluntarios para ayudar a las comunidades a navegar la crisis COVID al proporcionar información sobre recursos públicos. Este proyecto comenzó como un {0}, y ahora proporciona información sobre más recursos, como ubicaciones y horarios para comidas gratis, asistencia alimentaria, asistencia legal y asistencia médica.",

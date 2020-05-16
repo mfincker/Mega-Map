@@ -34,7 +34,8 @@
     },
     "partners": "Info Sources",
     "title": "About this site",
-    "front-page": "Hi! 👋\r\nWe provide information on resources such as free meals, food and legal assistance, and medical help. Start by selecting where you are and what you’re looking for.",
+    "front-page-1": "Hi! 👋",
+    "front-page-2": "We provide information on resources such as free meals, food and legal assistance, and medical help. Start by selecting where you are and what you’re looking for.",
     "about-us": {
       "header": "About Us",
       "p1": {

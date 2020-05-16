@@ -1,7 +1,11 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleNavBar" />
-    <h5 v-if="initialSearch && showSearchBar">{{ $tc('sidebar.what-are-you-looking-for', 1) }}</h5>
+    <template v-if="initialSearch">
+      <h5 v-if="initialSearch && showSearchBar">{{ $tc('sidebar.what-are-you-looking-for', 1) }}</h5>
+      <span>{{ $t('about.front-page-1') }}</span>
+      <span>{{ $t('about.front-page-2') }}</span>
+    </template>
     <search
       :need="need"
       :nearLocation="nearLocation"
@@ -124,8 +128,9 @@ export default {
 }
 </script>
 
-<style scope>
-h5 {
+<style scoped>
+h5,
+span {
   text-align: center;
   width: 300px;
   margin: 0 auto;
