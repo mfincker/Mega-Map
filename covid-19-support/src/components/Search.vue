@@ -43,20 +43,22 @@ export default {
             { value: 'legal_assistance', text: this.$tc('legal.legal_assistance', 1) }
           ]
         },
-        {
-          label: this.$tc('category.mental_health_resources', 1),
-          options: [
-            { value: 'mental_health_in_person', text: this.$tc('mental.in_person', 1) },
-            { value: 'mental_health_telehealth', text: this.$tc('mental.telehealth', 1) }
-          ]
-        },
-        {
-          label: this.$tc('category.medical_resources', 1),
-          options: [
-            { value: 'medical_in_person', text: this.$tc('medical.in_person_clinic', 1) },
-            { value: 'medical_telehealth', text: this.$tc('medical.telehealth', 1) }
-          ]
-        }
+        { value: 'mental_health', text: this.$t('category.mental_health_resources') },
+        // {
+        //   label: this.$tc('category.mental_health_resources', 1),
+        //   options: [
+        //     { value: 'mental_health_in_person', text: this.$tc('mental.in_person', 1) },
+        //     { value: 'mental_health_telehealth', text: this.$tc('mental.telehealth', 1) }
+        //   ]
+        // },
+        { value: 'medical', text: this.$t('category.medical_resources') }
+        // {
+        //   label: this.$tc('category.medical_resources', 1),
+        //   options: [
+        //     { value: 'medical_in_person', text: this.$tc('medical.in_person_clinic', 1) },
+        //     { value: 'medical_telehealth', text: this.$tc('medical.telehealth', 1) }
+        //   ]
+        // }
       ]
     },
     locationOptions() {

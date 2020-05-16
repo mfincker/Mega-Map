@@ -58,7 +58,9 @@ export const booleanFilters = [
   'call_in_advance',
   'seniors',
   'children',
-  'public'
+  'public',
+  'telehealth',
+  'in_person'
 ]
 
 // Combination of boolean filters
@@ -70,20 +72,18 @@ export const complexFilters = [
 // CARTO DB VARIABLES
 export const cartoBaseURL =
   // 'https://mfincker.carto.com/api/v2/sql?api_key=' + process.env.VUE_APP_CARTO_API_KEY
-  'https://mfincker.carto.com/api/v2/sql?'
+  'https://dcl-mega-map.carto.com/api/v2/sql?'
 
-export const cartoDBName = 'mega_map_db'
+export const cartoDBName = 'mega_map_database'
 
 export const sqlQueries = {
   free_grocery: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 1 AND status = 1",
   meal: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal'",
   snap_wic_retailer: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 0 AND status = 1",
   // legal_general_info: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_general_info'",
-  legal_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_assistance' AND status = 1",
-  mental_health_in_person: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND status = 1",
-  mental_health_telehealth: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND status = 1",
-  medical_in_person: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical_in_person' AND status = 1",
-  medical_telehealth: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical_telehealth' AND status = 1"
+  legal_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_services' AND status = 1",
+  medical: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical' AND status = 1",
+  mental_health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND status = 1"
 }
 
 export const countyLatLon = {

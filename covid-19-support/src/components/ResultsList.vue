@@ -18,13 +18,15 @@
               </template>
               <div class="resultMetadata">
                 <span class="resultTitle">{{ item.provider_name }} </span>
-                <span class="resultAddress">
+                <span v-if="!!item.address" class="resultAddress">
                   {{ item.address }},
                   {{ item.city }}
                 </span>
-                <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
+                <span>
+                  <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
+                </span>
                 <!-- Legal resource description -->
-                <span v-if="legalResources && !!item.notes">
+                <span v-if="legalResources && !!item.notes" class="resultNotes">
                   <b>{{ $t('label.notes') }}:</b> {{ getTranslation(item, 'notes') }}
                 </span>
               </div>
@@ -129,9 +131,6 @@ export default {
     },
     legalResources() {
       return this.$route.params.need.startsWith('legal')
-    },
-    foodResources() {
-      return ['meal', 'snap_wic_retailer', 'free_grocery'].includes(this.$route.params.need)
     }
   }
 }
@@ -213,6 +212,11 @@ export default {
 .resultAddress {
   display: block;
   max-width: 300px;
+  margin-bottom: 4px;
+}
+.resultNotes {
+  display: block;
+  /* max-width: 300px; */
   margin-bottom: 4px;
 }
 .badge {

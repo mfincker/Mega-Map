@@ -47,14 +47,10 @@ export default {
           return ['wic', 'special_hours', 'safe_pick_up', 'farmers_market']
         case 'meal':
           return ['seniors', 'children', 'open_today', 'safe_pick_up']
-        case 'mental_health_telehealth':
-          return ['free']
-        case 'mental_health_in_person':
-          return ['free']
-        case 'medical_in_person':
-          return ['free']
-        case 'medical_telehealth':
-          return ['free']
+        case 'mental_health':
+          return ['free', 'in_person', 'telehealth']
+        case 'medical':
+          return ['free', 'in_person', 'telehealth']
         default:
           return [null]
       }
@@ -63,8 +59,9 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 .filters {
+  display: flex;
   position: relative;
   justify-content: space-evenly;
   z-index: 3000;
