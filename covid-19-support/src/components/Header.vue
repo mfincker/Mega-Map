@@ -1,8 +1,41 @@
 <template>
-  <b-navbar sticky="true" toggleable="lg" type="dark" variant="primary" id="topnav">
-    <b-navbar-toggle target="nav-collapse" />
-    <b-collapse id="nav-collapse" v-model="navState" is-nav>
-      <b-navbar-nav>
+  <div>
+    <b-navbar :sticky="true" toggleable="lg" type="dark" variant="primary" id="topnav" class="d-lg-none">
+      <!-- mobile menu -->
+      <b-navbar-toggle target="nav-collapse" />
+      <b-collapse id="nav-collapse" v-model="navState" is-nav>
+        <b-navbar-nav>
+          <b-nav-item to="/">
+            Home
+          </b-nav-item>
+          <b-nav-item to="/about-us">
+            About us
+          </b-nav-item>
+        </b-navbar-nav>
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item-dropdown right>
+            <template v-slot:button-content>
+              <i class="fas fa-globe-americas" aria-hidden="true" />
+              <span v-html="language" class="language" />
+            </template>
+            <b-dropdown-item href="#" v-for="item in languages" v-bind:key="item.iso" class="d-lg-block d-xl-block">
+              <span :title="$t('languages.' + item.iso)"
+                ><div
+                  v-html="item.name"
+                  :lang="item.iso"
+                  @click="$emit('language-selected', item)"
+                  :class="{ selected: item.name == language }"
+                ></div
+              ></span>
+            </b-dropdown-item>
+          </b-nav-item-dropdown>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+
+    <!-- desktop menu -->
+    <b-navbar :sticky="true" type="dark" variant="primary" id="topnav" class="d-none d-lg-flex">
+      <b-navbar-nav class="mr-auto">
         <b-nav-item to="/">
           Home
         </b-nav-item>
@@ -11,25 +44,19 @@
         </b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item-dropdown right>
-          <template v-slot:button-content>
-            <i class="fas fa-globe-americas" aria-hidden="true" />
-            <span v-html="language" class="language" />
-          </template>
-          <b-dropdown-item href="#" v-for="item in languages" v-bind:key="item.iso" class="d-lg-block d-xl-block">
-            <span :title="$t('languages.' + item.iso)"
-              ><div
-                v-html="item.name"
-                :lang="item.iso"
-                @click="$emit('language-selected', item)"
-                :class="{ selected: item.name == language }"
-              ></div
-            ></span>
-          </b-dropdown-item>
-        </b-nav-item-dropdown>
+        <b-nav-item href="#" v-for="item in languages" v-bind:key="item.iso" class="d-lg-block d-xl-block">
+          <span :title="$t('languages.' + item.iso)"
+            ><div
+              v-html="item.name"
+              :lang="item.iso"
+              @click="$emit('language-selected', item)"
+              :class="{ selected: item.name == language }"
+            ></div
+          ></span>
+        </b-nav-item>
       </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
+    </b-navbar>
+  </div>
 </template>
 
 <script>
