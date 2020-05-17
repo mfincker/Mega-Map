@@ -65,9 +65,10 @@ export default {
 
 <style lang="css" scoped>
 .navbar {
-  z-index: 9000;
+  z-index: 99999 !important;
   padding: 8px 16px;
   font-size: 1rem;
+  display: block;
 }
 
 .navbar-toggler {
