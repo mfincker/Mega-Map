@@ -72,16 +72,6 @@ export default {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
 }
 
-@media (min-width: 1024px) {
-  .filters {
-    width: 50%;
-  }
-
-  .filters.noMap {
-    width: 100%;
-  }
-}
-
 .custom-checkbox {
   color: #495057;
   background: white;

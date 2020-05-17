@@ -146,14 +146,6 @@ export default {
 }
 
 @media (min-width: 1024px) {
-  .resultWrapper {
-    width: 50%;
-  }
-
-  .resultWrapper.noMap {
-    width: 100%;
-  }
-
   .more-result {
     width: 50% !important;
     left: 50% !important;
