@@ -1,19 +1,23 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleNavBar" />
-    <template v-if="initialSearch">
-      <h5 v-if="initialSearch && showSearchBar">{{ $tc('sidebar.what-are-you-looking-for', 1) }}</h5>
-      <span>{{ $t('about.front-page-1') }}</span>
-      <span>{{ $t('about.front-page-2') }}</span>
-    </template>
-    <search
-      :need="need"
-      :nearLocation="nearLocation"
-      :userLocation="userLocation"
-      @need-selected="needSelected"
-      @near-location-selected="nearLocationSelected"
-      v-if="showSearchBar"
-    />
+    <div class="intro">
+      <template v-if="initialSearch">
+        <h4 class="introParagraph">{{ $t('about.front-page-1') }}</h4>
+        <p class="introParagraph">{{ $t('about.front-page-2') }}</p>
+      </template>
+      <search
+        :need="need"
+        :nearLocation="nearLocation"
+        :userLocation="userLocation"
+        @need-selected="needSelected"
+        @near-location-selected="nearLocationSelected"
+        v-if="showSearchBar"
+      />
+      <template v-if="initialSearch">
+        <p class="introParagraph introParagraph-light">{{ $t('about.front-page-3') }}</p>
+      </template>
+    </div>
     <router-view />
   </div>
 </template>
@@ -128,7 +132,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 h5,
 span {
   text-align: center;
@@ -144,6 +148,22 @@ span {
   display: flex;
   flex-direction: column;
   background-color: #e9ecef;
+  overflow-y: scroll;
+}
+
+.intro {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 12px;
+  z-index: 99998;
+}
+
+.introParagraph {
+  padding: 24px 8px 0;
+}
+
+.introParagraph-light {
+  color: $gray-600;
 }
 
 #search-result {

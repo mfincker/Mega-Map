@@ -1,12 +1,49 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="primary" id="topnav">
-    <b-navbar-toggle target="nav-collapse">
-      <i class="fas fa-globe-americas" aria-hidden="true" />
-      <span v-html="language" class="language" />
-      <i class="fas fa-caret-down" aria-hidden="true" />
-    </b-navbar-toggle>
-    <b-collapse id="nav-collapse" v-model="navState" is-nav>
-      <b-navbar-nav>
+  <div>
+    <b-navbar :sticky="true" toggleable="lg" type="dark" variant="primary" id="topnav" class="d-lg-none">
+      <!-- mobile menu -->
+      <b-navbar-toggle target="nav-collapse" />
+      <b-collapse id="nav-collapse" v-model="navState" is-nav>
+        <b-navbar-nav>
+          <b-nav-item to="/">
+            Home
+          </b-nav-item>
+          <b-nav-item to="/about-us">
+            About us
+          </b-nav-item>
+        </b-navbar-nav>
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item-dropdown right>
+            <template v-slot:button-content>
+              <i class="fas fa-globe-americas" aria-hidden="true" />
+              <span v-html="language" class="language" />
+            </template>
+            <b-dropdown-item href="#" v-for="item in languages" v-bind:key="item.iso" class="d-lg-block d-xl-block">
+              <span :title="$t('languages.' + item.iso)"
+                ><div
+                  v-html="item.name"
+                  :lang="item.iso"
+                  @click="$emit('language-selected', item)"
+                  :class="{ selected: item.name == language }"
+                ></div
+              ></span>
+            </b-dropdown-item>
+          </b-nav-item-dropdown>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+
+    <!-- desktop menu -->
+    <b-navbar :sticky="true" type="dark" variant="primary" id="topnav" class="d-none d-lg-flex">
+      <b-navbar-nav class="mr-auto">
+        <b-nav-item to="/">
+          Home
+        </b-nav-item>
+        <b-nav-item to="/about-us">
+          About us
+        </b-nav-item>
+      </b-navbar-nav>
+      <b-navbar-nav class="ml-auto">
         <b-nav-item href="#" v-for="item in languages" v-bind:key="item.iso" class="d-lg-block d-xl-block">
           <span :title="$t('languages.' + item.iso)"
             ><div
@@ -18,14 +55,8 @@
           ></span>
         </b-nav-item>
       </b-navbar-nav>
-    </b-collapse>
-    <b-nav-item to="/">
-      Home
-    </b-nav-item>
-    <b-nav-item to="/about-us">
-      About us
-    </b-nav-item>
-  </b-navbar>
+    </b-navbar>
+  </div>
 </template>
 
 <script>
@@ -61,19 +92,16 @@ export default {
 
 <style lang="css" scoped>
 .navbar {
-  z-index: 9000;
+  z-index: 99999 !important;
   padding: 8px 16px;
   font-size: 1rem;
+  display: block;
 }
 
 .navbar-toggler {
   padding: 0.15rem;
   border: none;
   font-size: 1rem;
-}
-
-.selected {
-  color: rgba(255, 255, 255, 1);
 }
 
 .language {

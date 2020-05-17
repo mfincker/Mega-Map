@@ -166,6 +166,7 @@ export default {
   .map {
     height: 100%;
     width: 50%;
+    border-right: 1px solid rgba(0, 0, 0, 0.125);
   }
 }
 

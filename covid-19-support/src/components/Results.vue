@@ -12,7 +12,7 @@
         :resource="resourceData"
         :zoomDiff="zoomDiff"
       />
-      <div id="result-details">
+      <div id="result-details" :class="{ noMap: !displayMap }">
         <filters
           :class="{ noMap: !displayMap }"
           :need="$route.params.need"
@@ -196,6 +196,14 @@ export default {
   #map-details {
     flex-wrap: wrap;
     padding-top: 104px;
+  }
+
+  #result-details {
+    width: 50% !important;
+  }
+
+  #result-details.noMap {
+    width: 100% !important;
   }
 }
 
