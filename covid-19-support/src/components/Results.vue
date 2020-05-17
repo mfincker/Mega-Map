@@ -26,6 +26,7 @@
           :resource="resourceData"
           @resource-selected="passSelectedMarker"
           @zoom-out="zoomOut"
+          :displayMap="displayMap"
         />
       </div>
     </div>

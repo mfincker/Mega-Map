@@ -42,7 +42,7 @@
           <business-details v-if="item.cartodb_id == resource.resourceId && showDetails" :business="item" />
         </div>
       </div>
-      <a class="more-result" href="#" @click="zoomOut">{{ $tc('label.zoom_out_for_more_results') }}</a>
+      <a class="more-result" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
     </div>
   </div>
 </template>
@@ -62,7 +62,8 @@ export default {
   },
   props: {
     markers: Array,
-    resource: { resourceId: Number, isSetByMap: Boolean }
+    resource: { resourceId: Number, isSetByMap: Boolean },
+    displayMap: Boolean
   },
   watch: {
     resource: function (val) {
