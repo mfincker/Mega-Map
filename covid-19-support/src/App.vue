@@ -151,7 +151,7 @@ span {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #e9ecef;
+  background-color: theme-color(secondary);
   overflow-y: scroll;
 }
 

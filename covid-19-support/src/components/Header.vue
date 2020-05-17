@@ -91,6 +91,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 .navbar {
   z-index: 99999 !important;
   padding: 8px 16px;

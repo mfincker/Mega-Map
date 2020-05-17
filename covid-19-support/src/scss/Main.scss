@@ -59,16 +59,24 @@ h6,
 //   }
 // }
 
-// .navbar-dark .navbar-nav .nav-item.addbus .nav-link {
+/*// .navbar-dark .navbar-nav .nav-item.addbus .nav-link {
 //   &,
 //   &:focus {
-//     color: rgba(237, 201, 167, 1) !important;
+//     color: white !important;
 //   }
 
 //   &:hover {
 //     color: rgba(238, 136, 66, 1) !important;
 //   }
-// }
+// }*/
+
+.navbar-dark .navbar-nav .nav-link {
+  color: theme-color(secondary);
+}
+
+.nav.navbar-nav a:hover {
+  color: white;
+}
 
 #search-filter-wrapper,
 #page-content-wrapper {
