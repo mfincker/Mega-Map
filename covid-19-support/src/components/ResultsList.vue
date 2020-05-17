@@ -19,8 +19,8 @@
               <div class="resultMetadata">
                 <span class="resultTitle">{{ item.provider_name }} </span>
                 <span v-if="!!item.address" class="resultAddress">
-                  {{ item.address }},
-                  {{ item.city }}
+                  {{ item.address }}
+                  <span v-if="!!item.city">, {{ item.city }}</span>
                 </span>
                 <span>
                   <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
@@ -213,6 +213,10 @@ export default {
 .resultAddress {
   display: block;
   max-width: 300px;
+  margin-bottom: 4px;
+}
+.resultContact {
+  display: block;
   margin-bottom: 4px;
 }
 .resultNotes {
