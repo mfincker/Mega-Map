@@ -1,7 +1,8 @@
 <template>
   <div class="resultWrapper" ref="results">
     <div class="resultList">
-      <div v-if="isEmpty" class="no-result">{{ $tc('no_location_in_this_area') }}</div>
+      <div v-if="isEmpty && displayMap" class="no-result">{{ $tc('no_location_in_this_area') }}</div>
+      <div v-if="isEmpty && !displayMap" class="no-result">{{ $tc('no_location_meet_these_criteria') }}</div>
       <div
         v-for="item in markers"
         v-bind:key="item.cartodb_id"
@@ -244,12 +245,12 @@ export default {
 .no-result {
   margin-top: 10px;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
 }
 .more-result {
   padding: 8px 0;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
   display: inline-block;
   position: absolute;
