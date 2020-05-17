@@ -34,9 +34,13 @@ export default {
   created() {
     // Get user location
     this.getUserLocation()
+    if (this.$route.path == '/') {
+      this.initialSearch = true
+    } else {
+      this.initialSearch = false
+    }
     if (this.$route.params && this.$route.params.need) {
       this.need = this.$route.params.need
-      this.initialSearch = false
     }
     if (this.$route.query && this.$route.query.near) {
       this.nearLocation = this.$route.query.near
@@ -56,7 +60,7 @@ export default {
       nearLocation: null,
       userLocation: { lat: null, lon: null },
       errorStr: null,
-      initialSearch: true,
+      initialSearch: false,
       isNavBarOpen: false
     }
   },
