@@ -115,11 +115,10 @@ export default {
       let markers = this.entries
       // Filter out markers based on map bounds
       if (this.displayMap) {
-        markers = markers
-          .filter((c) => c.lat && c.lon)
-          .filter((c) => {
-            return this.bounds.contains(latLng(c.lat, c.lon))
-          })
+        console.log('entries')
+        console.log(this.entries)
+        console.log('markers')
+        console.log(markers)
       }
       // Filter out results based on boolean filters
       this.activeFilters.forEach((element) => {
@@ -145,6 +144,13 @@ export default {
 
       if (this.activeFilters.includes('open_today')) {
         markers = markers.filter((c) => c.isOpen)
+      }
+      if (this.displayMap && this.bounds) {
+        markers = markers
+          .filter((c) => c.lat && c.lon)
+          .filter((c) => {
+            return this.bounds.contains(latLng(c.lat, c.lon))
+          })
       }
       return markers
     },
