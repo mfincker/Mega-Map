@@ -99,3 +99,11 @@ h6,
   width: 120px;
   color: #333;
 }
+
+a {
+  color: theme-color(primary);
+}
+
+a:hover {
+  color: theme-color(primaryDark);
+}

@@ -81,6 +81,11 @@ export default {
   line-height: 2;
 }
 
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: theme-color(primary);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
 .highlights {
   position: absolute;
   top: 0;

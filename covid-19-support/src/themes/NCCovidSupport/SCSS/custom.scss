@@ -22,13 +22,19 @@ $orange: #fd7e14;
 $red: #ff2b1c;
 $teal: #2eb7cb;
 $yellow: #ffb71c;
+$coral: #f48171;
+$peach: #fdba5e;
+$purple: #53509f;
+$lilac: #A568AB;
+ 
 
 $warning: $yellow;
 $danger: $red;
 // 46c4d7
 $theme-colors: (
-  'primary': $blue,
-  'secondary': $gray-100,
+  'primary': $purple,
+  'primaryDark': $lilac,
+  'secondary': white,
   'buttons': $orange,
   'warning': $warning,
   'danger': $danger,
@@ -50,7 +56,7 @@ $navbar-padding-y: 0;
 // );
 $bv-enable-table-stacked: false;
 
-@include list-group-item-variant('sideNav', theme-color('secondary'), theme-color('secondaryDark'));
+@include list-group-item-variant('sideNav', theme-color('primary'), theme-color('secondaryDark'));
 /* @media (prefers-color-scheme: dark) {
   @include list-group-item-variant('sideNav', theme-color('secondaryDark'), theme-color('secondary'));
   .bg-secondary {
