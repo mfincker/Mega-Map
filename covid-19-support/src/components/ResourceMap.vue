@@ -136,7 +136,7 @@ export default {
         return
       }
       var item = this.markers.filter((c) => c.cartodb_id == newResource.resourceId)[0]
-      this.$refs.covidMap.mapObject.flyTo(latLng(item.lat, item.lon), 16, { animate: true, duration: 3 })
+      this.$refs.covidMap.mapObject.flyTo(latLng(item.lat, item.lon), 16, { animate: true, duration: 1 })
     },
     nearLatLonZoom: function (newVal, oldVal) {
       if (!newVal || !newVal.lat || !newVal.lon || (newVal.lat == oldVal.lat && newVal.lon == oldVal.lon)) {
