@@ -153,6 +153,11 @@ export default {
   .resultWrapper.noMap {
     width: 100%;
   }
+
+  .more-result {
+    width: 50% !important;
+    left: 50% !important;
+  }
 }
 
 .resultTop {
@@ -256,6 +261,7 @@ export default {
   background-color: white;
   width: 100%;
   box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.125);
+  z-index: 99997;
 }
 .more-info {
   align-content: flex-end;
