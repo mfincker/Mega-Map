@@ -1,7 +1,7 @@
 <template>
   <!-- About Us -->
-  <div id="#about-us">
-    <h1>{{ $t('about.about-us.header') }}</h1>
+  <div id="about-us">
+    <h3>{{ $t('about.about-us.header') }}</h3>
     <i18n path="about.about-us.p1.text" tag="p">
       <a
         href="https://www.google.com/maps/d/u/0/viewer?mid=1xfWfgbjULao-rlKJFfWT07hR-StV4Zx9&ll=37.46071505887045%2C-121.93017180578084&z=11"
@@ -15,7 +15,7 @@
       <a href="https://github.com/dcl-covid-19/mega-map-dev">{{ $t('about.about-us.p3.link') }}</a>
     </i18n>
     <!-- Info sources -->
-    <h1>{{ $t('about.info-sources.header') }}</h1>
+    <h3>{{ $t('about.info-sources.header') }}</h3>
     <p>{{ $t('about.info-sources.p1') }}</p>
     <ul>
       <li>
@@ -33,10 +33,10 @@
     </ul>
     <p>{{ $t('about.info-sources.p2') }}</p>
     <!-- Contact Us -->
-    <h1>{{ $t('about.contact-us.header') }}</h1>
+    <h3>{{ $t('about.contact-us.header') }}</h3>
     <i18n path="about.contact-us.p1.text" tag="p"> <a href="mailto:hi@bayareacommunity.org">hi@bayareacommunity.org</a>. </i18n>
     <!-- Disclaimer -->
-    <h1>{{ $t('about.disclaimer.header') }}</h1>
+    <h3>{{ $t('about.disclaimer.header') }}</h3>
     <p>{{ $t('about.disclaimer.p') }}</p>
   </div>
 </template>
@@ -45,4 +45,10 @@ export default {
   name: 'about-us'
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+#about-us {
+  max-width: 1024px;
+  padding: 24px 12px 0;
+  margin: 0 auto;
+}
+</style>

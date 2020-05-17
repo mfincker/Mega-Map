@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="primary" id="topnav">
+  <b-navbar sticky="true" toggleable="lg" type="dark" variant="primary" id="topnav">
     <b-navbar-toggle target="nav-collapse" />
     <b-collapse id="nav-collapse" v-model="navState" is-nav>
       <b-navbar-nav>
