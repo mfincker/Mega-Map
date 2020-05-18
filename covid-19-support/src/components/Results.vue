@@ -96,11 +96,9 @@ export default {
       this.$nextTick(() => (this.zoomDiff = 0))
     },
     scroll(offset) {
-      console.log('in results.scroll')
-      console.log(offset)
-      console.log(this.$refs['filters'].$el.offsetHeight)
-      console.log(this.$refs['result-details'])
-      this.$refs['result-details'].scrollTo(0, offset + this.$refs['filters'].$el.offsetHeight)
+      if (this.displayMap) {
+        this.$refs['result-details'].scrollTo(0, offset + this.$refs['filters'].$el.offsetHeight)
+      }
     }
   },
   computed: {
