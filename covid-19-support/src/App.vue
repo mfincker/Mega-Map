@@ -33,7 +33,7 @@ export default {
   },
   created() {
     // Get user location
-    this.getUserLocation()
+    // this.getUserLocation()
     if (this.$route.path == '/') {
       this.initialSearch = true
     } else {
