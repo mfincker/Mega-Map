@@ -76,7 +76,7 @@ export default {
         this.showDetails = true
         this.$nextTick(() => {
           const top = this.$refs['result' + val.resourceId][0].offsetTop - this.$refs['result' + this.markers[0].cartodb_id][0].offsetTop
-          this.$refs['results'].scrollTo(0, top)
+          this.$emit('scroll', top)
         })
       }
     }, //,
@@ -96,7 +96,7 @@ export default {
           this.$nextTick(() => {
             const top =
               this.$refs['result' + this.resource.resourceId][0].offsetTop - this.$refs['result' + newMarkers[0].cartodb_id][0].offsetTop
-            this.$refs['results'].scrollTo(0, top)
+            this.$emit('scroll', top)
           })
         }
       }
@@ -141,6 +141,7 @@ export default {
 .resultWrapper {
   flex: 1 1 100%;
   scrollbar-color: $gray-900 $gray-700;
+  overflow-y: scroll;
   width: 100%;
   z-index: 2000;
   padding: 8px;

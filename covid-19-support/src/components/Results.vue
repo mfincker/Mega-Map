@@ -12,8 +12,9 @@
         :resource="resourceData"
         :zoomDiff="zoomDiff"
       />
-      <div id="result-details" :class="{ noMap: !displayMap }">
+      <div id="result-details" ref="result-details" :class="{ noMap: !displayMap }">
         <filters
+          ref="filters"
           :class="{ noMap: !displayMap }"
           :need="$route.params.need"
           :markers="markers"
@@ -27,6 +28,7 @@
           @resource-selected="passSelectedMarker"
           @zoom-out="zoomOut"
           :displayMap="displayMap"
+          @scroll="scroll"
         />
       </div>
     </div>
@@ -68,7 +70,7 @@ export default {
   methods: {
     async fetchData(query) {
       try {
-        console.log(cartoBaseURL + '&q=' + query)
+        // console.log(cartoBaseURL + '&q=' + query)
         const res = await fetch(cartoBaseURL + '&q=' + query)
         const entries = await res.json()
         this.entries = entries.rows
@@ -92,6 +94,13 @@ export default {
     zoomOut() {
       this.zoomDiff = 2
       this.$nextTick(() => (this.zoomDiff = 0))
+    },
+    scroll(offset) {
+      console.log('in results.scroll')
+      console.log(offset)
+      console.log(this.$refs['filters'].$el.offsetHeight)
+      console.log(this.$refs['result-details'])
+      this.$refs['result-details'].scrollTo(0, offset + this.$refs['filters'].$el.offsetHeight)
     }
   },
   computed: {
@@ -114,13 +123,7 @@ export default {
       var today = new Date().getDay()
       const dayFilter = dayFilters[today]
       let markers = this.entries
-      // Filter out markers based on map bounds
-      if (this.displayMap) {
-        console.log('entries')
-        console.log(this.entries)
-        console.log('markers')
-        console.log(markers)
-      }
+
       // Filter out results based on boolean filters
       this.activeFilters.forEach((element) => {
         if (booleanFilters.includes(element)) {
@@ -146,6 +149,7 @@ export default {
       if (this.activeFilters.includes('open_today')) {
         markers = markers.filter((c) => c.isOpen)
       }
+      // Filter out markers based on map bounds
       if (this.displayMap && this.bounds) {
         markers = markers
           .filter((c) => c.lat && c.lon)
@@ -216,7 +220,7 @@ export default {
 
 #result-details {
   flex: 1 1 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-color: $gray-900 $gray-700;
   width: 100%;
   z-index: 2000;
