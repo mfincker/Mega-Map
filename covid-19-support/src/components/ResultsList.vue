@@ -50,7 +50,11 @@
             </div>
             <i class="fas fa-chevron-right fa-lg" :class="{ 'fa-rotate-90': showDetails && item.cartodb_id == resource.resourceId }"></i>
           </div>
-          <business-details v-if="item.cartodb_id == resource.resourceId && showDetails" :business="item" />
+          <business-details
+            v-if="item.cartodb_id == resource.resourceId && showDetails"
+            :business="item"
+            :legalResources="legalResources"
+          />
         </div>
       </div>
       <a class="more-result" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>

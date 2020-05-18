@@ -39,7 +39,7 @@
               <b>{{ $t('label.offers') }}:</b> {{ business.offers }}
             </p>
           </template>
-          <template v-if="!!business.notes">
+          <template v-if="!!business.notes && !legalResources">
             <p>
               <b>{{ $t('label.notes') }}:</b> {{ getTranslation(business, 'notes') }}
             </p>
@@ -68,7 +68,8 @@ export default {
   props: {
     infotype: { type: String },
     icon: { type: String },
-    business: Object
+    business: Object,
+    legalResources: Boolean
   },
   methods: {
     getDomain: function (url) {

@@ -41,7 +41,7 @@
     "about-us": {
       "header": "Về chúng tôi",
       "p1": {
-        "text": "Đây là một dự án mở và hoàn toàn tình nguyện nhằm giúp cộng đồng vượt qua khủng hoảng COVID thông qua việc cung cấp thông tin về các nguồn lực công cộng. Dự án này bắt đầu từ một {}, và nay cung cấp thông tin về các nguồn hỗ trợ khác như địa điểm và thời gian cung cấp bữa ăn miễn phí, hỗ trợ thực phẩm, hỗ trợ pháp lý và hỗ trợ y tế.",
+        "text": "Đây là một dự án mở và hoàn toàn tình nguyện nhằm giúp cộng đồng vượt qua khủng hoảng COVID thông qua việc cung cấp thông tin về các nguồn lực công cộng. Dự án này bắt đầu từ một {0}, và nay cung cấp thông tin về các nguồn hỗ trợ khác như địa điểm và thời gian cung cấp bữa ăn miễn phí, hỗ trợ thực phẩm, hỗ trợ pháp lý và hỗ trợ y tế.",
         "link": "Bản đồ bữa ăn trường học khu vực Bay Area"
       },
       "p2": {

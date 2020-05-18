@@ -41,11 +41,11 @@
     "about-us": {
       "header": "Projek Ini",
       "p1": {
-        "text": "Project ini adalah sumber terbuka dan sukarelawan untuk membantu masyarakat Bay Area menavigasi krisis COVID dengan memberikan maklumat penting. Projek ini dimulakan sebagai {peta makan sekolah Bay Area}, dan kini memberikan maklumat lebih lanjut seperti jadual dan lokasi untuk bantuan makanan, bantuan undang-undang, dan bantuan perubatan.",
+        "text": "Project ini adalah sumber terbuka dan sukarelawan untuk membantu masyarakat Bay Area menavigasi krisis COVID dengan memberikan maklumat penting. Projek ini dimulakan sebagai {0}, dan kini memberikan maklumat lebih lanjut seperti jadual dan lokasi untuk bantuan makanan, bantuan undang-undang, dan bantuan perubatan.",
         "link": "peta makan sekolah Bay Area"
       },
       "p2": {
-        "text": "Pembangunan untuk projek ini diadaptasi dari {}."
+        "text": "Pembangunan untuk projek ini diadaptasi dari {0}."
       },
       "p3": {
         "text": "Anda boleh mendapatkan lebih banyak maklumat mengenai projek, termasuk kod sumber untuk meniru projek, dari halaman {0} kami.",
