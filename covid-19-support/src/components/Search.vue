@@ -36,13 +36,14 @@ export default {
             { value: 'snap_wic_retailer', text: this.$tc('category.snap_wic_retailer', 2) }
           ]
         },
-        {
-          label: this.$tc('category.legal_resources', 1),
-          options: [
-            // { value: 'legal_general_info', text: this.$tc('legal.general_info', 1) },
-            { value: 'legal_assistance', text: this.$tc('legal.legal_assistance', 1) }
-          ]
-        },
+        { value: 'legal_assistance', text: this.$tc('category.legal_resources', 1) },
+        // {
+        //   label: this.$tc('category.legal_resources', 1),
+        //   options: [
+        //     // { value: 'legal_general_info', text: this.$tc('legal.general_info', 1) },
+        //     { value: 'legal_assistance', text: this.$tc('legal.legal_assistance', 1) }
+        //   ]
+        // },
         { value: 'mental_health', text: this.$t('category.mental_health_resources') },
         // {
         //   label: this.$tc('category.mental_health_resources', 1),
