@@ -9,6 +9,7 @@
     "devhelp": {
       "addbusiness": "agregar un negocio",
       "addinfo": "Utilice nuestros formularios en línea para {0} o {1}.",
+      "ambassadorinfo": "",
       "becomeambassador": "Conviértase en embajador de la comunidad",
       "conduct": "Código de Conducta",
       "devnote": "Desarrolladores: encuentre nuestros {0} y {1} en GitHub.",
@@ -33,26 +34,29 @@
     },
     "partners": "Fuentes de información",
     "title": "Sobre este sitio",
-    "front-page-1": "Hola! 👋",
-    "front-page-2": "Brindamos información sobre los recursos como comidas gratis, alimentos, asistencia legal, y ayuda médica.",
-    "front-page-3": "Comienza al seleccionar dónde estás y lo qué estás buscando.",
+    "front-page": {
+      "p1": "Hola! 👋\n",
+      "p2": "Brindamos información sobre los recursos como comidas gratis, alimentos, asistencia legal, y ayuda médica. Comienza al seleccionar dónde estás y lo qué estás buscando. "
+    },
     "about-us": {
+      "header": "Acerca de nosotros",
       "p1": {
-        "text": "Somos un proyecto de código abierto mantenido por voluntarios para ayudar a las comunidades a navegar la crisis COVID al proporcionar información sobre recursos públicos. Este proyecto comenzó como un {0}, y ahora proporciona información sobre más recursos, como ubicaciones y horarios para comidas gratis, asistencia alimentaria, asistencia legal y asistencia médica.",
+        "text": "Somos un proyecto de código abierto mantenido por voluntarios para ayudar a las comunidades a navegar la crisis COVID al proporcionar información sobre recursos públicos. Este proyecto comenzó como un { 0 }, y ahora proporciona información sobre más recursos, como ubicaciones y horarios para comidas gratis, asistencia alimentaria, asistencia legal y asistencia médica.",
         "link": "mapa de comidas escolares del Área de la Bahía"
       },
       "p2": {
-        "text": "El desarrollo de este proyecto fue adaptado de {0}."
+        "text": "El desarrollo de este proyecto fue adaptado de { 0 }."
       },
       "p3": {
-        "text": "Puede encontrar más información sobre el proyecto, incluido el código fuente para replicar el proyecto, en nuestra {0}.",
+        "text": "Puede encontrar más información sobre el proyecto, incluido el código fuente para replicar el proyecto, en nuestra { 0 }.",
         "link": "página de Github"
       }
     },
-    "about-us-sources": "Nuestro base de datos se beneficia de los datos recogidos por las siguientes organizaciones:\r\nLocalizador de las tiendas de USDA SNAP \r\nLocalizador de las tiendas de USDA WIC \r\nSecond Harvest de Silicon Valley\r\nStanford Pediatric Advocacy\r\n\r\nTenemos un equipo de voluntarios increíbles que verifican los datos y recopilan cualquier información adicional, como horas adicionales de Covid-19 para adultos mayores, opciones de recogida segura en la acera, etc.\r\n\r\n\r\n",
+    "about-us-sources": "Nuestro base de datos se beneficia de los datos recogidos por las siguientes organizaciones:\nLocalizador de las tiendas de USDA SNAP \nLocalizador de las tiendas de USDA WIC \nSecond Harvest de Silicon Valley\nStanford Pediatric Advocacy\n\nTenemos un equipo de voluntarios increíbles que verifican los datos y recopilan cualquier información adicional, como horas adicionales de Covid-19 para adultos mayores, opciones de recogida segura en la acera, etc.\n\n\n",
     "about-us-contact": "Si usted tiene preguntas sobre cualquier adición de datos o inexactitudes, o para cualquier otra pregunta, comuníquese con {0}.",
     "about-us-disclaimer": "Este proyecto de Recursos del Área de la Bahía es puramente voluntario. Tenemos un equipo de humanos que recopila y verifica los datos de diversas fuentes. Hacemos nuestro mejor esfuerzo para mantener toda la información en el sitio lo más actualizada posible, sin embargo, no podemos garantizar que la información sea 100% precisa.",
     "info-sources": {
+      "header": "Fuentes de Información",
       "p1": "Nuestro base de datos se beneficia de los datos recogidos por las siguientes organizaciones:",
       "p2": "Tenemos un equipo de voluntarios increíbles que verifican los datos y recopilan cualquier información adicional, como horas adicionales de Covid-19 para adultos mayores, opciones de recogida segura en la acera, etc."
     },
@@ -63,12 +67,14 @@
       "link4": "Stanford Pediatric Advocacy"
     },
     "contact-us": {
+      "header": "Contactenos",
       "p1": {
         "text": "Si usted tiene preguntas sobre cualquier adición de datos o inexactitudes, o para cualquier otra pregunta, comuníquese con {0}.",
-        "link": ""
+        "link": "Contactenos aqui"
       }
     },
     "disclaimer": {
+      "header": "Renuncia",
       "p": "Este proyecto de Recursos del Área de la Bahía es puramente voluntario. Tenemos un equipo de humanos que recopila y verifica los datos de diversas fuentes. Hacemos nuestro mejor esfuerzo para mantener toda la información en el sitio lo más actualizada posible, sin embargo, no podemos garantizar que la información sea 100% precisa."
     }
   },
@@ -147,7 +153,7 @@
     "wic": "Lugar que acepta WIC|Lugares que aceptan WIC",
     "ebt_pay_phone": "Pague con EBT por el telefono",
     " ebt_pay_online": "Pague con EBT en línea",
-    "open_today": "Abierto hoy",
+    "open-today": "Abierto hoy",
     "pay_phone": "Pague con EBT por el telefono",
     "safe_pick_up": "Opciones para recogida segura",
     "zoom_out_for_more_results": "Aleja el imagen para más resultados",
@@ -205,9 +211,12 @@
     "legal_housing": "Ayuda con cuestiones de vivienda",
     "legal_immigration": "Apoyo con cuestiones de inmigración"
   },
-  "ms": "Clínicas de Telesalud",
+  "medical": {
+    "telehealth": "Clínicas de Telesalud"
+  },
   "mental": {
     "in_person": "Asistencia en persona"
   },
-  "no_location_in_this_area": "No hay resultado en esta zona. "
+  "no_location_in_this_area": "No hay resultado en esta zona. ",
+  "no_location_meet_these_criteria": "No hay resultado con este criterio."
 }

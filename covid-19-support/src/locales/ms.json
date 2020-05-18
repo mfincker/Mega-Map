@@ -33,7 +33,50 @@
       "bln": "Big Local News"
     },
     "partners": "Sumber Maklumat",
-    "title": "Mengenai laman web ini"
+    "title": "Mengenai laman web ini",
+    "front-page": {
+      "p1": "Hai! 👋",
+      "p2": "Website ini mengandungi maklumat mengenai sumber seperti makanan percuma, barangan runcit, bantuan undang-undang, dan bantuan perubatan. Mulakan dengan memilih lokasi dan keperluan anda."
+    },
+    "about-us": {
+      "header": "Projek Ini",
+      "p1": {
+        "text": "Project ini adalah sumber terbuka dan sukarelawan untuk membantu masyarakat Bay Area menavigasi krisis COVID dengan memberikan maklumat penting. Projek ini dimulakan sebagai {peta makan sekolah Bay Area}, dan kini memberikan maklumat lebih lanjut seperti jadual dan lokasi untuk bantuan makanan, bantuan undang-undang, dan bantuan perubatan.",
+        "link": "peta makan sekolah Bay Area"
+      },
+      "p2": {
+        "text": "Pembangunan untuk projek ini diadaptasi dari {}."
+      },
+      "p3": {
+        "text": "Anda boleh mendapatkan lebih banyak maklumat mengenai projek, termasuk kod sumber untuk meniru projek, dari halaman {0} kami.",
+        "link": "website Github"
+      }
+    },
+    "about-us-sources": "Pangkalan data maklumat kami menggunakan data yang dikumpulkan oleh organisasi berikut:\nPencari Kedai USDA SNAP\nPencari Kedai USDA WIC\nSecond Harvest Silicon Valley\nProgram Advokasi Pediatrik Stanford\n\nKumpulan sukarelawan kami lanjutnya mengesahkan data dan mengumpulkan maklumat tambahan seperti waktu senior Covid-19, pilihan pengambilan tepi jalan yang selamat dan lain-lain. ",
+    "about-us-contact": "Untuk pertanyaan lanjut atau untuk melaporkan masalah, hubungi {0}.",
+    "about-us-disclaimer": "Projek Bay Area Resources adalah projek sukarelawan. Sukarelawan kami mengumpulkan dan mengesahkan data dari pelbagai sumber. Kami cuba dengan sedaya upaya untuk memastikan semua maklumat di laman web ini tepat. Namun kami tidak dapat menjamin maklumat tersebut sepenuhnya.",
+    "info-sources": {
+      "header": "Sumber maklumat",
+      "p1": "Pangkalan data maklumat kami menggunakan data yang dikumpulkan oleh organisasi berikut:",
+      "p2": "Kumpulan sukarelawan kami lanjutnya mengesahkan data dan mengumpulkan maklumat tambahan seperti waktu senior Covid-19, pilihan pengambilan tepi jalan yang selamat dan lain-lain."
+    },
+    "info-source": {
+      "link1": "Pencari Kedai USDA SNAP",
+      "link2": "Pencari Kedai USDA WIC",
+      "link3": "Second Harvest Silicon Valley",
+      "link4": "Program Advokasi Pediatrik Stanford"
+    },
+    "contact-us": {
+      "header": "Hubungi kami",
+      "p1": {
+        "text": "Untuk pertanyaan lanjut atau untuk melaporkan masalah, hubungi {0}.",
+        "link": "hubungi kami di sini"
+      }
+    },
+    "disclaimer": {
+      "header": "Penafian",
+      "p": "Projek Bay Area Resources adalah projek sukarelawan. Sukarelawan kami mengumpulkan dan mengesahkan data dari pelbagai sumber. Kami cuba dengan sedaya upaya untuk memastikan semua maklumat di laman web ini tepat. Namun kami tidak dapat menjamin maklumat tersebut sepenuhnya."
+    }
   },
   "category": {
     "childcare": "Penjagaan kanak-kanak",
@@ -111,7 +154,7 @@
     "wic": "Kedai yang mengambil bayaran WIC",
     "ebt_pay_phone": "Bayar dengan EBT melalui telepon",
     " ebt_pay_online": "Bayar dengan EBT melalui internet",
-    "open_today": "Buka hari ini",
+    "open-today": "Buka hari ini",
     "pay_phone": "Bayar dengan EBT melalui telepon",
     "safe_pick_up": "Cara pengambilan selamat",
     "zoom_out_for_more_results": "Zoom keluar untuk lebih pilihan",
@@ -170,9 +213,12 @@
     "legal_housing": "Sokongan isu perumahan",
     "legal_immigration": "Sokongan isu imigrasi"
   },
-  "ms": "Klinik telehealth",
+  "medical": {
+    "telehealth": "Klinik telehealth"
+  },
   "mental": {
     "in_person": "Perkhidmatan kesihatan mental"
   },
-  "no_location_in_this_area": "Tiada pilihan di kawasan ini"
+  "no_location_in_this_area": "Tiada pilihan di kawasan ini",
+  "no_location_meet_these_criteria": "Tiada hasil di sini."
 }

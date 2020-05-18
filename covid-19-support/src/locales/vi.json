@@ -33,7 +33,50 @@
       "bln": "Những tin tức địa phương"
     },
     "partners": "Nguồn thông tin",
-    "title": "Về trang này"
+    "title": "Về trang này",
+    "front-page": {
+      "p1": "Xin chào!",
+      "p2": "Chúng tôi cung cấp thông tin về những trợ giúp cộng đồng như bữa ăn miễn phí, thức ăn, pháp lý và y tế. Hãy bắt đầu bằng việc chọn vị trí của bạn và cái bạn đang tìm kiếm"
+    },
+    "about-us": {
+      "header": "Về chúng tôi",
+      "p1": {
+        "text": "Đây là một dự án mở và hoàn toàn tình nguyện nhằm giúp cộng đồng vượt qua khủng hoảng COVID thông qua việc cung cấp thông tin về các nguồn lực công cộng. Dự án này bắt đầu từ một {}, và nay cung cấp thông tin về các nguồn hỗ trợ khác như địa điểm và thời gian cung cấp bữa ăn miễn phí, hỗ trợ thực phẩm, hỗ trợ pháp lý và hỗ trợ y tế.",
+        "link": "Bản đồ bữa ăn trường học khu vực Bay Area"
+      },
+      "p2": {
+        "text": "Dự án này được mô phỏng dựa trên {0}"
+      },
+      "p3": {
+        "text": "Bạn có thể tìm thêm thông tin về dự án, bao gồm mã nguồn để tái thiết lập dự án từ {0}",
+        "link": "Trang Github"
+      }
+    },
+    "about-us-sources": "Cơ sở dữ liệu của chúng tôi dựa trên thông tin từ các tổ chức như: Định vị cửa hàng USDA SNAP Định vị cửa hàng USDA WIXTổ chức Second Harvest khu vực Silicon ValleyTổ chức vận đồng cho bệnh nhi StanfordCác tình nguyện viên phi thường của chúng tôi là người kiểm chứng và thu thập các thông tin như giờ hoạt động COVID-19 dành riêng cho người lớn tuổi, các lựa chọn lấy hàng an toàn từ bên lề đường..vv",
+    "about-us-contact": "Nếu bạn muốn đóng góp thông tin, phát hiện thông tin không chính xác hoặc có bất kỳ câu hỏi gì, vui lòng liên lạc {0}",
+    "about-us-disclaimer": "Dự án hỗ trợ cộng đồng trong khu vực Bay Area này là hoàn toàn tình nguyện. Chúng tôi có một đội ngũ thu thập và kiểm chứng thông tin từ nhiều nguồn khác nhau. Chúng tôi nỗ lực hết sức để cập nhật thông tin nhanh nhất. Tuy vậy chúng tôi không thể đảm bảo các thông tin này luôn chính xác 100%",
+    "info-sources": {
+      "header": "Nguồn thông tin",
+      "p1": "Cơ sở dữ liệu của chúng tôi dựa trên thông tin từ những tổ chức sau:",
+      "p2": "Các tình nguyện viên phi thường của chúng tôi là người kiểm chứng và thu thập các thông tin như giờ hoạt động COVID-19 dành riêng cho người lớn tuổi, các lựa chọn lấy hàng an toàn từ bên lề đường..vv"
+    },
+    "info-source": {
+      "link1": "Định vị cửa hàng USDA SNAP ",
+      "link2": "Định vị cửa hàng USDA WIX ",
+      "link3": "Tổ chức Second Harvest khu vực Silicon Valley ",
+      "link4": "Tổ chức vận đồng cho bệnh nhi Stanford"
+    },
+    "contact-us": {
+      "header": "Liên lạc với chúng tôi",
+      "p1": {
+        "text": "Nếu bạn muốn đóng góp thông tin, phát hiện thông tin không chính xác hoặc có bất kỳ câu hỏi gì, vui lòng liên lạc {0}",
+        "link": "Liên lạc với chúng tôi tại đây"
+      }
+    },
+    "disclaimer": {
+      "header": "Miễn trừ trách nhiệm",
+      "p": "Dự án hỗ trợ cộng đồng trong khu vực Bay Area này là hoàn toàn tình nguyện. Chúng tôi có một đội ngũ thu thập và kiểm chứng thông tin từ nhiều nguồn khác nhau. Chúng tôi nỗ lực hết sức để cập nhật thông tin nhanh nhất. Tuy vậy chúng tôi không thể đảm bảo các thông tin này luôn chính xác 100%"
+    }
   },
   "category": {
     "childcare": "Đồ chăm sóc trẻ em",
@@ -47,7 +90,11 @@
     "pharmacy": "Tiệm thuốc|Những tiệm thuốc",
     "restaurant": "Nhà hàng|Những nhà hàng",
     "school": "Bữa ăn trong trường|Những bữa ăn trong trường",
-    "snap_wic_retailer": "Nhà bán lẻ SNAP/WIC|Những nhà bán lẻ SNAP/WIC"
+    "snap_wic_retailer": "Nhà bán lẻ SNAP/WIC|Những nhà bán lẻ SNAP/WIC",
+    "food_resources": "Hỗ trợ thực phẩm",
+    "legal_resources": "Hỗ trợ pháp lý",
+    "medical_resources": "Hỗ trợ y tế",
+    "mental_health_resources": "Hỗ trợ sức khóe tinh thần"
   },
   "dayofweek": {
     "any": "Ngày bất kỳ",
@@ -74,9 +121,10 @@
     "curbside_or_delivery": "Giao hàng tận nơi hoặc nhận hàng tại điểm hẹn",
     "delivery": "Giao hàng tận nơi",
     "discount_medical": "Ưu đãi cho nhân viên y tế",
+    "discounts": "Giảm giá",
     "drive_thru": "Lái xe tạt qua",
-    "email": "\r\nEmail",
-    "email_lowercase": "\r\nemail",
+    "email": "Email",
+    "email_lowercase": "email",
     "farmers_market": "Chợ nông sản",
     "farm_pick_up": "Lấy hàng tại nông trại",
     "free": "Tài nguyên miễn phí",
@@ -103,7 +151,15 @@
     "snap": "Địa điểm chấp nhận SNAP",
     "special_hours": "Giờ mua hàng cho người cao tuổi",
     "website": "Trang web",
-    "wic": "Địa điểm chấp nhận WIC"
+    "wic": "Địa điểm chấp nhận WIC",
+    "ebt_pay_phone": "Thanh toán bằng EBT qua điện thoại",
+    " ebt_pay_online": "Thanh toán bằng EBT trực tuyến",
+    "open-today": "Mở cửa hôm nay",
+    "pay_phone": "Thanh toán bằng EBT qua điện thoại",
+    "safe_pick_up": "Các lựa chọn lấy hàng an toàn",
+    "zoom_out_for_more_results": "Thu nhỏ để có nhiều kết quả hơn",
+    "in_person": "Phòng khám ",
+    "telehealth": "Hỗ trợ y tế trực tuyến "
   },
   "languages": {
     "ar": "Tiếng Ả Rập",
@@ -128,7 +184,41 @@
     "stayhome": "Nếu bạn ốm, hãy ở nhà.",
     "washhands": "Hãy rửa tay thường xuyên",
     "what-do-you-need": "Bạn cần gì?",
-    "when-do-you-need-it": "Khi nào bạn cần?"
+    "when-do-you-need-it": "Khi nào bạn cần?",
+    "current_location": "Vị trí hiện tại",
+    "what": "Nguồn lực",
+    "what-are-you-looking-for": "Bạn đang tìm gì?",
+    "where": "Gần..."
   },
-  "title": "{0} Hỗ trợ COVID"
+  "title": "{0} Hỗ trợ COVID",
+  "county": {
+    "alameda": "Hạt Alameda",
+    "anywhere": "Bất kỳ đâu",
+    "contra-costa": "Địa hạt Contra Costa",
+    "marin": "Địa hạt Marin",
+    "napa": "Địa hạt Napa",
+    "san-francisco": "Địa hạt San Francisco",
+    "san-mateo": "Địa hạt San Mateo",
+    "santa-clara": "Địa hạt Santa Clara",
+    "solano": "Địa hạt Solano",
+    "sonoma": "Địa hạt Sonoma"
+  },
+  "legal": {
+    "general_info": "Thông tin chung",
+    "legal_assistance": "Hỗ trợ pháp lý",
+    "legal_criminal": "Hỗ trợ pháp lý hình sự",
+    "legal_domviolence": "Hỗ trợ bạo hành gia đình",
+    "legal_worker_protection": "Quyền công nhân",
+    "legal_healthcare": "Hỗ trợ điền đơn chăm sóc sức khỏa",
+    "legal_housing": "Trợ giúp về các vấn đề nhà ở",
+    "legal_immigration": "Trợ giúp về các vấn đề nhập cư"
+  },
+  "medical": {
+    "telehealth": "Phòng khám trực tuyến"
+  },
+  "mental": {
+    "in_person": "Hỗ trợ trực tiếp "
+  },
+  "no_location_in_this_area": "Không có kết quả trong khu vực này",
+  "no_location_meet_these_criteria": "Không có kết quả cho lựa chọn này."
 }
