@@ -1,7 +1,10 @@
 <template>
   <div class="resultWrapper" ref="results">
     <div class="resultList">
-      <div v-if="isEmpty && displayMap" class="no-result">{{ $tc('no_location_in_this_area') }}</div>
+      <div v-if="isEmpty && displayMap" class="no-result">
+        {{ $tc('no_location_in_this_area') }}
+        <a class="more-result" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
+      </div>
       <div v-if="isEmpty && !displayMap" class="no-result">{{ $tc('no_location_meet_these_criteria') }}</div>
       <div
         v-for="item in markers"
@@ -57,7 +60,7 @@
           />
         </div>
       </div>
-      <a class="more-result" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
+      <a class="more-result bottom" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
     </div>
   </div>
 </template>
@@ -263,18 +266,21 @@ export default {
   font-size: 0.9rem;
 }
 .more-result {
-  padding: 8px 0;
-  text-align: center;
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+.bottom {
   display: inline-block;
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: white;
   width: 100%;
   box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.125);
   z-index: 99997;
+  padding: 8px 0;
+  text-align: center;
+  background-color: white;
 }
 .more-info {
   align-content: flex-end;

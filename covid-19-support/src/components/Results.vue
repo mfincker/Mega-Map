@@ -222,6 +222,6 @@ export default {
   scrollbar-color: $gray-900 $gray-700;
   width: 100%;
   z-index: 2000;
-  background-color: $gray-200;
+  background-color: #e9ecef;
 }
 </style>
