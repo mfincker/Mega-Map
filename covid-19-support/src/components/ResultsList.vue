@@ -30,12 +30,22 @@
                 <span v-if="legalResources && !!item.notes" class="resultNotes">
                   <b>{{ $t('label.notes') }}:</b> {{ getTranslation(item, 'notes') }}
                 </span>
+                <!-- End Legal resource description -->
               </div>
               <!-- Badges -->
               <span v-if="!item.isOpen" class="badge closed">{{ getClosedMessage() }}</span>
               <span v-if="item.isOpen" class="badge open">{{ getOpenMessage(item) }}</span>
               <span v-if="item.call_in_advance == 1" class="badge">{{ $tc('label.call_in_advance') }}</span>
               <span v-if="item.special_hours == 1" class="badge">{{ $tc('label.special_hours') }}</span>
+              <span v-if="item.ebt_pay_phone == 1" class="badge">{{ $tc('label.ebt_pay_phone') }}</span>
+              <span v-if="item.ebt_pay_online == 1" class="badge">{{ $tc('label.ebt_pay_online') }}</span>
+              <!-- Legal badges -->
+              <span v-if="item.legal_criminal == 1" class="badge">{{ $tc('legal.legal_criminal') }}</span>
+              <span v-if="item.legal_domviolence == 1" class="badge">{{ $tc('legal.legal_domviolence') }}</span>
+              <span v-if="item.legal_worker_protection == 1" class="badge">{{ $tc('legal.legal_worker_protection') }}</span>
+              <span v-if="item.legal_healthcare == 1" class="badge">{{ $tc('legal.legal_healthcare') }}</span>
+              <span v-if="item.legal_housing == 1" class="badge">{{ $tc('legal.legal_housing') }}</span>
+              <span v-if="item.legal_housing == 1" class="badge">{{ $tc('legal.legal_immigration') }}</span>
               <!-- End Badges -->
             </div>
             <i class="fas fa-chevron-right fa-lg" :class="{ 'fa-rotate-90': showDetails && item.cartodb_id == resource.resourceId }"></i>
@@ -107,7 +117,7 @@ export default {
       return this.$t('label.closed-today')
     },
     getOpenMessage() {
-      return this.$t('label.open-today')
+      return this.$t('label.open_today')
     },
     getTranslation(item, field) {
       if (this.$i18n.locale != 'en' && item[field + '_' + this.$i18n.locale]) {

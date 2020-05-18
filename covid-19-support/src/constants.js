@@ -60,7 +60,13 @@ export const booleanFilters = [
   'children',
   'public',
   'telehealth',
-  'in_person'
+  'in_person',
+  'legal_criminal',
+  'legal_domviolence',
+  'legal_worker_protection',
+  'legal_healthcare',
+  'legal_housing',
+  'legal_immigration'
 ]
 
 // Combination of boolean filters

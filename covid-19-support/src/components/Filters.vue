@@ -4,10 +4,10 @@
       v-for="(item, index) in filterList"
       v-model="selected"
       v-bind:key="index"
-      :value="item"
-      @change="$emit('box-selected', item)"
+      :value="item.var"
+      @change="$emit('box-selected', item.var)"
     >
-      {{ $tc(`label.${item}`) }}
+      {{ $t(item.label) }}
     </b-form-checkbox>
   </div>
 </template>
@@ -42,15 +42,47 @@ export default {
     filterList() {
       switch (this.need) {
         case 'free_grocery':
-          return ['children', 'seniors', 'open_today', 'safe_pick_up']
+          return [
+            { var: 'children', label: 'label.children' },
+            { var: 'seniors', label: 'label.seniors' },
+            { var: 'open_today', label: 'label.open_today' },
+            { var: 'safe_pick_up', label: 'label.safe_pick_up' }
+          ]
         case 'snap_wic_retailer':
-          return ['wic', 'special_hours', 'safe_pick_up', 'farmers_market']
+          return [
+            { var: 'wic', label: 'label.wic' },
+            { var: 'special_hours', label: 'label.special_hours' },
+            { var: 'safe_pick_up', label: 'label.safe_pick_up' },
+            { var: 'farmers_market', label: 'label.farmers_market' }
+          ]
         case 'meal':
-          return ['seniors', 'children', 'open_today', 'safe_pick_up']
+          return [
+            { var: 'children', label: 'label.children' },
+            { var: 'seniors', label: 'label.seniors' },
+            { var: 'open_today', label: 'label.open_today' },
+            { var: 'safe_pick_up', label: 'label.safe_pick_up' }
+          ]
         case 'mental_health':
-          return ['free', 'in_person', 'telehealth']
+          return [
+            { var: 'free', label: 'label.free' },
+            { var: 'in_person', label: 'label.in_person' },
+            { var: 'telehealth', label: 'label.telehealth' }
+          ]
         case 'medical':
-          return ['free', 'in_person', 'telehealth']
+          return [
+            { var: 'free', label: 'label.free' },
+            { var: 'in_person', label: 'label.in_person' },
+            { var: 'telehealth', label: 'label.telehealth' }
+          ]
+        case 'legal_assistance':
+          return [
+            { var: 'legal_criminal', label: 'legal.legal_criminal' },
+            { var: 'legal_domviolence', label: 'legal.legal_domviolence' },
+            { var: 'legal_worker_protection', label: 'legal.legal_worker_protection' },
+            { var: 'legal_healthcare', label: 'legal.legal_healthcare' },
+            { var: 'legal_housing', label: 'legal.legal_housing' },
+            { var: 'legal_immigration', label: 'legal.legal_immigration' }
+          ]
         default:
           return [null]
       }
