@@ -114,7 +114,7 @@
     "wic": "妇幼保健接受地区",
     "ebt_pay_phone": "通过电话用EBT支付",
     " ebt_pay_online": "线上EBT支付",
-    "open-today": "今日开放",
+    "open_today": "今日开放",
     "pay_phone": "通过电话用EBT支付",
     "safe_pick_up": "安全\b取物\b\b选择",
     "zoom_out_for_more_results": "缩小以获取更多结果"

@@ -147,7 +147,7 @@
     "wic": "Lugar que acepta WIC|Lugares que aceptan WIC",
     "ebt_pay_phone": "Pague con EBT por el telefono",
     " ebt_pay_online": "Pague con EBT en línea",
-    "open-today": "Abierto hoy",
+    "open_today": "Abierto hoy",
     "pay_phone": "Pague con EBT por el telefono",
     "safe_pick_up": "Opciones para recogida segura",
     "zoom_out_for_more_results": "Aleja el imagen para más resultados",

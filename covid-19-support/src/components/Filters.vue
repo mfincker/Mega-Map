@@ -85,37 +85,4 @@ export default {
   background-color: theme-color(primary);
   border-color: rgba(0, 0, 0, 0.3);
 }
-
-.highlights {
-  position: absolute;
-  top: 0;
-  margin: 0 !important;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 1px !important;
-  z-index: 10;
-  background: white;
-  box-sizing: border-box;
-
-  transition: height 0.25s ease-out;
-  /*height: 116px;*/
-
-  div.col-md-3 {
-    padding: 0 !important;
-  }
-}
-
-#wrapper.toggled .highlights {
-  transition: margin-left 0.25s ease-out;
-  @media (min-width: 768px) {
-    margin-left: 294px !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .highlights {
-    /*height: 108px;*/
-  }
-}
 </style>

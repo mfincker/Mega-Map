@@ -11,15 +11,14 @@
       @update:zoom="(val) => (zoom = val)"
       @update:bounds="boundsUpdated"
     >
-      <l-control position="bottomleft">
+      <l-control position="bottomright">
         <div class="mapkey" :class="{ 'show-key': showKey }">
           <div class="title-block">
-            <h6 class="title">{{ $t('label.mapkey') }}</h6>
             <i @click="showKey = !showKey" class="fas fa-info-circle" />
           </div>
           <div class="keys" :class="{ 'show-key': showKey }">
-            <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open')" link="" />
-            <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closedonday')" link="" />
+            <icon-list-item :image="require('../images/Blue.png')" :title="$t('label.open_today')" link="" />
+            <icon-list-item :image="require('../images/Grey.png')" :title="$t('label.closed-today')" link="" />
             <icon-list-item :image="require('../images/Red.png')" :title="$t('label.selected')" link="" />
           </div>
         </div>
@@ -153,7 +152,7 @@ export default {
 }
 </script>
 
-<style scoped lang="css">
+<style scoped lang="scss">
 .map {
   flex: 1 1 100%;
   width: 100%;
@@ -171,30 +170,33 @@ export default {
 }
 
 .mapkey {
-  padding: 16px;
+  padding: 2px;
 
   &.show-key {
     background-color: #f8f9fa !important;
+    border-radius: 4px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   }
 
   i {
-    font-size: 2rem;
-    opacity: 0.4;
+    font-size: 1rem;
+    opacity: 0.6;
     color: #000;
     cursor: pointer;
     vertical-align: middle;
   }
 
   &.show-key i {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
 .title-block {
-  width: 100%;
+  width: 16px;
+  height: 16px;
   text-align: right;
-  bottom: 18px;
+  bottom: 4px;
+  right: 2px;
   position: absolute;
 }
 
@@ -211,11 +213,8 @@ export default {
 .show-key {
   display: block;
 }
-.mapkey.show-key .title {
-  display: inline;
-}
 
-.tooltip {
-  font-size: 2rem;
+.mapkey.show-key .title {
+  /* display: inline; */
 }
 </style>

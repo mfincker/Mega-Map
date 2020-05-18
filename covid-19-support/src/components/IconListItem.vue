@@ -49,19 +49,23 @@ export default {
 .iconListItem {
   div {
     display: inline-block;
-    line-height: 1.2rem;
+    line-height: 1rem;
     vertical-align: middle;
-    margin: 4px 0;
+    margin: 4px 2px;
   }
 }
 
 .ilIcon {
   font-size: 1rem;
-  width: 28px;
+  width: 15px;
   color: $teal;
 }
 
+.ilIcon > img {
+  width: 15px;
+}
+
 .ilTitle {
-  width: 210px;
+  width: 80px;
 }
 </style>
