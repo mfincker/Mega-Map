@@ -1,16 +1,16 @@
 export function businessIcon(business) {
   switch (business.resource) {
-    case 'free_grocery':
-      return 'fas fa-shopping-basket'
-    case 'pharmacy':
-      return 'fas fa-prescription'
-    case 'pet':
-      return 'fas fa-paw'
-    case 'farm':
+    case 'mental_health':
+      return 'fas fa-hand-holding-heart'
+    case 'legal_services':
+      return 'fas fa-balance-scale-left'
+    case 'medical':
+      return 'fas fa-briefcase-medical'
+    case 'grocery':
       if (business.farmers_market == 1) {
         return 'fas fa-store'
       }
-      return 'fas fa-tractor'
+      return 'fas fa-shopping-basket'
     default:
   }
 

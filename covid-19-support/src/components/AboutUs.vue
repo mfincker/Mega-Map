@@ -19,7 +19,10 @@
     <p>{{ $t('about.info-sources.p1') }}</p>
     <ul>
       <li>
-        <a href="https://www.ebt.ca.gov/locator/index.html">{{ $t('about.info-source.link1') }}</a>
+        <a
+          href="https://usda-fns.hub.arcgis.com/datasets/USDA-FNS::snap-store-locations/data?geometry=41.839%2C-10.004%2C-171.911%2C74.154&page=5"
+          >{{ $t('about.info-source.link1') }}</a
+        >
       </li>
       <li>
         <a href="https://www.wicstorelocator.com/address_geo.php">{{ $t('about.info-source.link2') }}</a>
