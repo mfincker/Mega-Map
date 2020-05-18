@@ -7,7 +7,7 @@
       :value="item.var"
       @change="$emit('box-selected', item.var)"
     >
-      {{ $t(item.label) }}
+      {{ $tc(item.label, 2) }}
     </b-form-checkbox>
   </div>
 </template>
