@@ -25,7 +25,7 @@
 <script>
 import AppHeader from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
-
+import { needs } from '@/constants'
 export default {
   name: 'app',
   props: {
@@ -123,12 +123,16 @@ export default {
         this.need = null
         this.nearLocation = null
       } else {
-        this.initialSearch = false
-        if (to.params.need) {
-          this.need = to.params.need
-        }
-        if (to.query.near) {
-          this.nearLocation = to.query.near
+        if (!needs.includes(to.params.need)) {
+          this.$router.push('/')
+        } else {
+          this.initialSearch = false
+          if (to.params.need) {
+            this.need = to.params.need
+          }
+          if (to.query.near) {
+            this.nearLocation = to.query.near
+          }
         }
       }
     }

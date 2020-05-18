@@ -82,6 +82,8 @@ export const cartoBaseURL =
 
 export const cartoDBName = 'mega_map_database'
 
+export const needs = ['free_grocery', 'meal', 'snap_wic_retailer', 'legal_assistance', 'medical', 'mental_health']
+
 export const sqlQueries = {
   free_grocery: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 1 AND status = 1",
   meal: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal'",
