@@ -41,14 +41,14 @@
     "about-us": {
       "header": "Acerca de nosotros",
       "p1": {
-        "text": "Somos un proyecto de código abierto mantenido por voluntarios para ayudar a las comunidades a navegar la crisis COVID al proporcionar información sobre recursos públicos. Este proyecto comenzó como un { 0 }, y ahora proporciona información sobre más recursos, como ubicaciones y horarios para comidas gratis, asistencia alimentaria, asistencia legal y asistencia médica.",
+        "text": "Somos un proyecto de código abierto mantenido por voluntarios para ayudar a las comunidades a navegar la crisis COVID al proporcionar información sobre recursos públicos. Este proyecto comenzó como un {0}, y ahora proporciona información sobre más recursos, como ubicaciones y horarios para comidas gratis, asistencia alimentaria, asistencia legal y asistencia médica.",
         "link": "mapa de comidas escolares del Área de la Bahía"
       },
       "p2": {
-        "text": "El desarrollo de este proyecto fue adaptado de { 0 }."
+        "text": "El desarrollo de este proyecto fue adaptado de {0}."
       },
       "p3": {
-        "text": "Puede encontrar más información sobre el proyecto, incluido el código fuente para replicar el proyecto, en nuestra { 0 }.",
+        "text": "Puede encontrar más información sobre el proyecto, incluido el código fuente para replicar el proyecto, en nuestra {0}.",
         "link": "página de Github"
       }
     },
