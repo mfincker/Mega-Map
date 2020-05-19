@@ -36,8 +36,13 @@
     "title": "About this site",
     "front-page": {
       "p1": "Hi! 👋",
-      "p2": "We provide information on resources such as free meals, food and legal assistance, and medical help.",
-      "p3": "Start by selecting where you are and what you are looking for."
+      "p2": "We provide information on resources such as free meals, food and legal assistance, and medical help. Start by selecting where you are and what you’re looking for.",
+      "p3": "Start by selecting where you are and what you're looking for.",
+      "p4": {
+        "text": "We are affiliated with Stanford's {0} and {1} and are extremely grateful to Bill Behrman, Sara Altman, and Cheryl Phillips for their ongoing support and advice.",
+        "link0": "Data Challenge Lab",
+        "link1": "Big Local News"
+      }
     },
     "about-us": {
       "header": "About Us",
@@ -46,7 +51,8 @@
         "link": "Bay Area school meals map"
       },
       "p2": {
-        "text": "The development for this project was adapted from {0}."
+        "text": "The development for this project was adapted from {0}.",
+        "link": "NCCovid Support"
       },
       "p3": {
         "text": "You can find more information on the project, including the source code for replicating the project, from our {0}.",
@@ -54,7 +60,9 @@
       }
     },
     "about-us-sources": "Our database of information benefits from data collected by the following organizations:\nUSDA SNAP Store locator\nUSDA WIC Store locator\nSecond Harvest of Silicon Valley\nStanford Pediatric Advocacy\n\nWe have a team of amazing volunteers who verify the data and collect any additional information such as additional Covid-19 senior hours, safe curbside pick-up options etc. ",
-    "about-us-contact": "For questions on any data additions or inaccuracies, or for any other questions, please contact {0}.\n",
+    "about-us-contact": {
+      "link0": "hi@bayareacommunity.org"
+    },
     "about-us-disclaimer": "This Bay Area Resources project is purely volunteer-driven. We have a team of humans collecting and verifying data from diverse sources. We do our best to keep all the information on the site as up-to-date as possible, however we cannot guarantee that the information is 100% accurate.",
     "info-sources": {
       "header": "Info Sources",
@@ -70,8 +78,8 @@
     "contact-us": {
       "header": "Contact Us",
       "p1": {
-        "text": "For questions on any data additions or inaccuracies, or for any other questions, please {0}.",
-        "link": "contact us here"
+        "text": "For questions on any data additions or inaccuracies, or for any other questions, please contact {0}.",
+        "link": "hi@bayareacommunity.org"
       }
     },
     "disclaimer": {
@@ -154,7 +162,7 @@
     "website": "Website",
     "wic": "WIC-accepting location|WIC-accepting locations",
     "ebt_pay_phone": "Pay with EBT over the phone",
-    "ebt_pay_online": "Pay with EBT online",
+    " ebt_pay_online": "Pay with EBT online",
     "open_today": "Open today",
     "pay_phone": "Pay with EBT over the phone",
     "safe_pick_up": "Safe pick-up options",
@@ -202,17 +210,18 @@
     "san-mateo": "San Mateo county",
     "santa-clara": "Santa Clara county",
     "solano": "Solano county",
-    "sonoma": "Sonoma county"
+    "sonoma": "Sonoma county",
+    "monterey": "Monterey county"
   },
   "legal": {
     "general_info": "General information",
     "legal_assistance": "Legal assistance",
     "legal_criminal": "Criminal justice support",
     "legal_domviolence": "Domestic violence support",
-    "legal_worker_protection": "Workers' rights",
-    "legal_healthcare": "Healthcare application support",
-    "legal_housing": "Help with housing issues",
-    "legal_immigration": "Immigration issues support"
+    "legal_worker_protection": "Workers' rights support",
+    "legal_healthcare": "Healthcare benefits support",
+    "legal_housing": "Housing support",
+    "legal_immigration": "Immigration support"
   },
   "medical": {
     "telehealth": "Telehealth clinics"

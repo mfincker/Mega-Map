@@ -33,7 +33,55 @@
       "bln": "Malaking Lokal ng Balita"
     },
     "partners": "Pinagmulan ng Impormasyon",
-    "title": "Tungkol sa site na ito "
+    "title": "Tungkol sa site na ito ",
+    "front-page": {
+      "p1": "Kumusta! 👋",
+      "p2": "Nagbibigay kami ng impormasyon tungkol sa mga mapagkukunan tulad ng libreng pagkain, tulong sa pagkain, legal na tulong, at tulong medikal. Magsimula sa pamamagitan ng pagpili kung nasaan ka at kung ano ang hinahanap mo.",
+      "p3": "Magsimula sa pamamagitan ng pagpili kung nasaan ka at kung ano ang hinahanap mo.",
+      "p4": {
+        "text": "Kami ay kaakibat sa {0} at {1} ng Stanford at lubos na nagpapasalamat kay Bill Behrman, Sara Altman, at Cheryl Phillips para sa kanilang patuloy na suporta at payo. ",
+        "link0": "Laboratoryo ng Hamon ng Data",
+        "link1": "Malaking Lokal ng Balita"
+      }
+    },
+    "about-us": {
+      "header": "Tungkol sa amin",
+      "p1": {
+        "link": "Mapa ng pagkain sa paaralan ng Bay Area"
+      },
+      "p2": {
+        "text": "Ang pag-unlad para sa proyektong ito ay inangkop mula sa {0}.",
+        "link": "NCCovid Support"
+      },
+      "p3": {
+        "text": "Maaari kang maghanap ng karagdagang impormasyon sa proyekto, kasama ang pinagmulan kodigo para sa pagtitiklop ng proyekto, mula sa aming {0}.",
+        "link": "pahina ng Github"
+      }
+    },
+    "about-us-contact": {
+      "link0": "hi@bayareacommunity.org"
+    },
+    "info-sources": {
+      "header": "Pinagmulan ng Impormasyon",
+      "p1": "Ang aming database ng impormasyon ay nakikinabang mula sa data na nakolekta ng mga sumusunod na samahan:"
+    },
+    "info-source": {
+      "link1": "tagahanap ng tindahan ng USDA SNAP",
+      "link2": "tagahanap ng tindahan ng USDA WIC",
+      "link3": "Pangalawang Pag-aani ng Silicon Valley",
+      "link4": "Advocacy ng Stanford Pediatric"
+    },
+    "contact-us": {
+      "header": "Makipag-ugnayan sa amin",
+      "p1": {
+        "text": "Para sa mga katanungan sa anumang mga pagdaragdag ng data o kamalian, o para sa anumang iba pang mga katanungan, mangyaring makipag-ugnay sa {0}.",
+        "link": "hi@bayareacommunity.org"
+      }
+    },
+    "disclaimer": {
+      "header": "Pagtanggi",
+      "p": "Ang proyektong Bay Area Resources na ito ay puro boluntaryo na hinihimok. Mayroon kaming isang koponan ng mga tao na nangolekta at nagpapatunay ng data mula sa magkakaibang mapagkukunan. Ginagawa namin ang aming makakaya upang mapanatili ang lahat ng impormasyon sa site kamakailan hangga't maaari, subalit hindi namin masiguro na ang impormasyon ay tumpak na 100%."
+    }
   },
   "category": {
     "childcare": "Pangangalaga sa mga kabataan",
@@ -110,7 +158,7 @@
     "website": "Website",
     "wic": "Lugar na tintanggap ng WIC | Mga lugar na tinatanggap ng WIC",
     "ebt_pay_phone": "Magbayad gamit ang EBT sa telepono.",
-    "ebt_pay_online": "Magbayad gamit ang EBT online.",
+    " ebt_pay_online": "Magbayad gamit ang EBT online.",
     "open_today": "Bukas ngayon",
     "pay_phone": "Magbayad gamit ang EBT sa telepono.",
     "safe_pick_up": "Ligtas na pagpipilian ng pick-up",
@@ -158,7 +206,8 @@
     "san-mateo": "county ng San Mateo",
     "santa-clara": "county ng Santa Clara",
     "solano": "county ng Solano",
-    "sonoma": "county ng Sonoma"
+    "sonoma": "county ng Sonoma",
+    "monterey": "county ng Monterey"
   },
   "legal": {
     "general_info": "Pangkalahatang impormasyon",
@@ -177,5 +226,5 @@
     "in_person": "Tulong sa tao"
   },
   "no_location_in_this_area": "Walang resulta sa lugar na ito.",
-  "no_location_meet_these_criteria": ""
+  "no_location_meet_these_criteria": "Walang resulta para sa mga pamantayang ito."
 }
