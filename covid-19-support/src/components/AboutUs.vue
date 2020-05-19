@@ -51,7 +51,7 @@ export default {
 <style lang="scss">
 #about-us {
   max-width: 1024px;
-  padding: 24px 12px 0;
+  padding: 24px 24px 0;
   margin: 0 auto;
 }
 </style>

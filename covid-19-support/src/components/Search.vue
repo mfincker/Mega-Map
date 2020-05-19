@@ -2,9 +2,11 @@
   <div id="search">
     <b-list-group horizontal class="need-location-group">
       <div class="searchDropdown">
+        <div class="searchDropdown-label" v-if="isInitialSearch">Looking for:</div>
         <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
       </div>
       <div class="searchDropdown">
+        <div class="searchDropdown-label" v-if="isInitialSearch">County:</div>
         <b-form-select :value="nearLocation" :options="locationOptions" @change="(opt) => $emit('near-location-selected', opt)" />
       </div>
     </b-list-group>
@@ -22,7 +24,8 @@ export default {
   props: {
     need: String,
     nearLocation: String,
-    userLocation: { lat: Number, lon: Number }
+    userLocation: { lat: Number, lon: Number },
+    isInitialSearch: Boolean
   },
   computed: {
     needOptions() {
@@ -87,11 +90,16 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .searchDropdown {
   width: 50%;
   padding: 0 8px;
   display: inline-block;
+}
+
+.searchDropdown-label {
+  color: $gray-600;
+  margin-bottom: 4px;
 }
 
 .custom-select {

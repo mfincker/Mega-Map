@@ -97,7 +97,7 @@ export default {
   justify-content: space-evenly;
   z-index: 3000;
   width: 100%;
-  font-size: 0.85em;
+  font-size: 0.8em;
   padding: 8px 16px;
   background-color: white;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
