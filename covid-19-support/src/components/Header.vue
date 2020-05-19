@@ -1,11 +1,13 @@
 <template>
   <div class="navbar-container">
-    <b-navbar :sticky="true" toggleable="lg" type="dark" variant="primary" id="topnav" class="d-lg-none">
+    <b-navbar :sticky="true" toggleable="lg" type="dark" variant="primary" id="topnav" class="d-flex d-lg-none">
       <!-- mobile menu -->
-      <b-navbar-toggle target="nav-collapse">
+      <b-navbar-brand to="/" class="logo">
         <img :src="require('../images/logo.svg')" width="24" />
-      </b-navbar-toggle>
-      <b-collapse id="nav-collapse" v-model="navState" is-nav>
+        Bay Community
+      </b-navbar-brand>
+      <b-navbar-toggle target="nav-collapse" class="ml-auto" />
+      <b-collapse id="nav-collapse" v-model="navState" is-nav class="text-right">
         <b-navbar-nav>
           <b-nav-item to="/">
             Home
@@ -38,11 +40,9 @@
     <!-- desktop menu -->
     <b-navbar :sticky="true" type="dark" variant="primary" id="topnav" class="d-none d-lg-flex">
       <b-navbar-nav class="mr-auto">
-        <b-nav-item to="/">
+        <b-nav-item to="/" class="logo">
           <img :src="require('../images/logo.svg')" width="24" />
-        </b-nav-item>
-        <b-nav-item to="/">
-          Home
+          Bay Community
         </b-nav-item>
         <b-nav-item to="/about-us">
           About us
@@ -95,7 +95,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .navbar-container {
   width: 100%;
 }
@@ -111,6 +111,16 @@ export default {
   padding: 0.15rem;
   border: none;
   font-size: 1rem;
+}
+
+.logo {
+  font-size: 1rem;
+  line-height: 0;
+
+  img {
+    display: inline-block;
+    margin-right: 4px;
+  }
 }
 
 .language {
