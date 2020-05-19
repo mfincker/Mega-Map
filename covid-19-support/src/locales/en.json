@@ -155,7 +155,7 @@
     "wic": "WIC-accepting location|WIC-accepting locations",
     "ebt_pay_phone": "Pay with EBT over the phone",
     " ebt_pay_online": "Pay with EBT online",
-    "open-today": "Open today",
+    "open_today": "Open Today",
     "pay_phone": "Pay with EBT over the phone",
     "safe_pick_up": "Safe pick-up options",
     "zoom_out_for_more_results": "Zoom out for more results.",
