@@ -70,12 +70,13 @@ export default {
         { value: null, text: this.$tc('sidebar.where', 1), disabled: true },
         { value: 'anywhere', text: this.$tc('county.anywhere', 1) },
         { value: 'alameda', text: this.$tc('county.alameda', 1) },
-        { value: 'contra-costa', text: this.$tc('county.contra-costa', 1) },
+        { value: 'contra_costa', text: this.$tc('county.contra-costa', 1) },
         { value: 'marin', text: this.$tc('county.marin', 1) },
+        { value: 'monterey', text: this.$t('county.monterey') },
         { value: 'napa', text: this.$tc('county.napa', 1) },
-        { value: 'san-francisco', text: this.$tc('county.san-francisco', 1) },
-        { value: 'san-mateo', text: this.$tc('county.san-mateo', 1) },
-        { value: 'santa-clara', text: this.$tc('county.santa-clara', 1) },
+        { value: 'san_francisco', text: this.$tc('county.san-francisco', 1) },
+        { value: 'san_mateo', text: this.$tc('county.san-mateo', 1) },
+        { value: 'santa_clara', text: this.$tc('county.santa-clara', 1) },
         { value: 'solano', text: this.$tc('county.solano', 1) },
         { value: 'sonoma', text: this.$tc('county.sonoma', 1) }
       ]

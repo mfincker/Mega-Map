@@ -97,12 +97,13 @@ export const sqlQueries = {
 export const countyLatLon = {
   anywhere: { lat: 37.594, lon: -122.223, zoom: 8 },
   alameda: { lat: 37.8097, lon: -122.25328, zoom: 11 },
-  'contra-costa': { lat: 37.897914, lon: -122.070408, zoom: 11 },
+  contra_costa: { lat: 37.897914, lon: -122.070408, zoom: 11 },
   marin: { lat: 38.0319, lon: -122.665367, zoom: 11 },
+  monterey: { lat: 36.625121, lon: -121.765207, zoom: 10 },
   napa: { lat: 38.417836, lon: -122.380023, zoom: 11 },
-  'san-francisco': { lat: 37.7749, lon: -122.4194, zoom: 11 },
-  'san-mateo': { lat: 37.529076, lon: -122.308764, zoom: 11 },
-  'santa-clara': { lat: 37.308325, lon: -121.859261, zoom: 11 },
+  san_francisco: { lat: 37.7749, lon: -122.4194, zoom: 11 },
+  san_mateo: { lat: 37.529076, lon: -122.308764, zoom: 11 },
+  santa_clara: { lat: 37.308325, lon: -121.859261, zoom: 11 },
   solano: { lat: 38.258686, lon: -122.014371, zoom: 11 },
   sonoma: { lat: 38.481106, lon: -122.797838, zoom: 11 }
 }
