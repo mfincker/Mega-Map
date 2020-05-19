@@ -169,7 +169,13 @@ span {
 }
 
 .intro-centered {
-  margin-top: 20vh;
+  margin: 10vh auto;
+}
+
+@media (min-width: 600px) {
+  .intro-centered {
+    margin: 15vh auto;
+  }
 }
 
 .introParagraph {

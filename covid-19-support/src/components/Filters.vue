@@ -110,7 +110,11 @@ export default {
   margin-bottom: 4px;
   width: 50%;
   display: inline-block !important;
-  line-height: 2;
+  line-height: 1;
+}
+
+.custom-control-label {
+  padding-top: 5px;
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
