@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { cartoBaseURL, sqlQueries, countyLatLon, booleanFilters, complexFilters, dayFilters } from '@/constants'
+import { cartoBaseURL, sqlQueries, countyLatLon, booleanFilters, complexFilters, dayFilters, needsWithGeoFilter } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
 import Filters from '@/components/Filters.vue'
@@ -64,7 +64,7 @@ export default {
     }
   },
   created() {
-    const query = encodeURI(sqlQueries[this.$route.params.need])
+    const query = this.buildQuery(this.$route)
     this.fetchData(query)
   },
   methods: {
@@ -99,6 +99,14 @@ export default {
       if (this.displayMap) {
         this.$refs['result-details'].scrollTo(0, offset + this.$refs['filters'].$el.offsetHeight)
       }
+    },
+    buildQuery(route) {
+      let query = sqlQueries[route.params.need]
+      if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined') && route.query.near != 'anywhere') {
+        query = query + ' AND ' + route.query.near + ' = 1'
+      }
+      console.log(query)
+      return encodeURI(query)
     }
   },
   computed: {
@@ -166,12 +174,16 @@ export default {
   },
   watch: {
     $route: function (to, from) {
-      // update entries based on need
-      if (to.params && to.params.need && to.params.need != from.params.need) {
-        const query = encodeURI(sqlQueries[to.params.need])
+      // has need changed?
+      if (!(typeof to.params.need === 'undefined') && to.params.need != from.params.need) {
         this.activeFilters = []
-        this.fetchData(query)
+        this.fetchData(this.buildQuery(to))
+        // has near changed?
+      } else {
+        this.buildQuery(to) != this.buildQuery(from) && this.fetchData(this.buildQuery(to))
       }
+
+      // update entries for needs that are geographically filtered
     }
   }
 }

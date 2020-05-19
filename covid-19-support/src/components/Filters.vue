@@ -64,7 +64,7 @@ export default {
           ]
         case 'mental_health':
           return [
-            { var: 'free', label: 'label.free' },
+            // { var: 'free', label: 'label.free' },
             { var: 'in_person', label: 'label.in_person' },
             { var: 'telehealth', label: 'label.telehealth' }
           ]
