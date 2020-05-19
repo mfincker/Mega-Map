@@ -30,7 +30,7 @@
                   <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
                 </span>
                 <!-- Legal resource description -->
-                <span v-if="legalResources && !!item.notes" class="resultNotes">
+                <span v-if="(legalResources || medicalResources || mentalResources) && !!item.notes" class="resultNotes">
                   <b>{{ $t('label.notes') }}:</b> {{ getTranslation(item, 'notes') }}
                 </span>
                 <!-- End Legal resource description -->
@@ -57,6 +57,8 @@
             v-if="item.cartodb_id == resource.resourceId && showDetails"
             :business="item"
             :legalResources="legalResources"
+            :medicalResources="medicalResources"
+            :mentalResources="mentalResources"
           />
         </div>
       </div>
@@ -150,6 +152,12 @@ export default {
     },
     legalResources() {
       return this.$route.params.need.startsWith('legal')
+    },
+    medicalResources() {
+      return this.$route.params.need.startsWith('medical')
+    },
+    mentalResources() {
+      return this.$route.params.need.startsWith('mental')
     }
   }
 }
