@@ -75,6 +75,7 @@ export default {
         const entries = await res.json()
         this.entries = entries.rows
       } catch (e) {
+        window.gtag('event', 'Data fetch error', { event_category: 'data_fetch', event_label: 'error', value: e })
         console.log(e)
       }
     },
@@ -100,12 +101,25 @@ export default {
         this.$refs['result-details'].scrollTo(0, offset + this.$refs['filters'].$el.offsetHeight)
       }
     },
-    buildQuery(route) {
+    buildQuery(route, log = true) {
       let query = sqlQueries[route.params.need]
+      log &&
+        window.gtag('event', 'Resource selection', {
+          event_category: 'resource - (' + this.$i18n.locale + ')',
+          event_label: route.params.need
+        })
       if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined') && route.query.near != 'anywhere') {
         query = query + ' AND ' + route.query.near + ' = 1'
+        log &&
+          window.gtag('event', 'Location selection', {
+            event_category: 'county - (' + this.$i18n.locale + ')',
+            value: route.query.near
+          })
+      } else {
+        log &&
+          window.gtag('event', 'Location selection', { event_category: 'county - (' + this.$i18n.locale + ')', event_label: 'anywhere' })
       }
-      console.log(query)
+
       return encodeURI(query)
     }
   },
@@ -180,7 +194,7 @@ export default {
         this.fetchData(this.buildQuery(to))
         // has near changed?
       } else {
-        this.buildQuery(to) != this.buildQuery(from) && this.fetchData(this.buildQuery(to))
+        this.buildQuery(to, false) != this.buildQuery(from, false) && this.fetchData(this.buildQuery(to))
       }
 
       // update entries for needs that are geographically filtered
