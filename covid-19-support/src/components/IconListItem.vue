@@ -6,7 +6,7 @@
           <i class="fas" v-bind:class="icon" v-if="icon != ''"></i>
           <img :src="image" v-if="icon == null || icon == ''" />
         </div>
-        <div class="ilTitle">
+        <div class="ilTitle" :class="{ 'map-legend': map }">
           <a :href="link" v-if="link != null && link != ''">
             <span class="title">{{ title }}</span>
           </a>
@@ -20,7 +20,7 @@
           <i class="fas" v-bind:class="icon" v-if="icon != ''"></i>
           <img :src="image" v-if="icon == null || icon == ''" />
         </div>
-        <div class="ilTitle">
+        <div class="ilTitle" :class="{ 'map-legend': map }">
           <span class="title">{{ title }}</span>
         </div>
       </div>
@@ -40,7 +40,8 @@ export default {
     title: { type: String },
     link: { type: String },
     icon: { type: String },
-    image: { type: String }
+    image: { type: String },
+    map: Boolean
   }
 }
 </script>
@@ -66,6 +67,12 @@ export default {
 }
 
 .ilTitle {
+  width: 240px;
+  padding-left: 10px;
+}
+
+.map-legend {
   width: 80px;
+  padding-left: 5px;
 }
 </style>
