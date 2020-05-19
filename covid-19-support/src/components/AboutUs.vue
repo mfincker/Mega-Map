@@ -53,5 +53,6 @@ export default {
   max-width: 1024px;
   padding: 24px 24px 0;
   margin: 0 auto;
+  padding-bottom: 40px;
 }
 </style>
