@@ -154,7 +154,7 @@
     "wic": "Kedai yang mengambil bayaran WIC",
     "ebt_pay_phone": "Bayar dengan EBT melalui telepon",
     " ebt_pay_online": "Bayar dengan EBT melalui internet",
-    "open-today": "Buka hari ini",
+    "open_today": "Buka hari ini",
     "pay_phone": "Bayar dengan EBT melalui telepon",
     "safe_pick_up": "Cara pengambilan selamat",
     "zoom_out_for_more_results": "Zoom keluar untuk lebih pilihan",
