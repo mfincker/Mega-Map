@@ -213,8 +213,8 @@ export default {
   position: absolute;
 }
 
-.noMap {
-  position: relative !important;
+#results.noMap {
+  padding-top: 96px;
 }
 
 #map-details {
@@ -225,6 +225,7 @@ export default {
 
 #map-details.noMap {
   padding-top: 8px;
+  position: relative !important;
 }
 
 @media (min-width: 1024px) {
