@@ -102,24 +102,31 @@ export default {
       }
     },
     buildQuery(route, log = true) {
+      // query building
       let query = sqlQueries[route.params.need]
+      if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined') && route.query.near != 'anywhere') {
+        query = query + ' AND ' + route.query.near + ' = 1'
+      }
+      // log resource selection
       log &&
         window.gtag('event', 'Resource selection', {
           event_category: 'resource - (' + this.$i18n.locale + ')',
           event_label: route.params.need
         })
-      if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined') && route.query.near != 'anywhere') {
-        query = query + ' AND ' + route.query.near + ' = 1'
-        log &&
+      // log location selection
+      if (log) {
+        if (!(typeof route.query.near === 'undefined')) {
           window.gtag('event', 'Location selection', {
             event_category: 'county - (' + this.$i18n.locale + ')',
-            value: route.query.near
+            event_label: route.query.near
           })
-      } else {
-        log &&
-          window.gtag('event', 'Location selection', { event_category: 'county - (' + this.$i18n.locale + ')', event_label: 'anywhere' })
+        } else {
+          window.gtag('event', 'Location selection', {
+            event_category: 'county - (' + this.$i18n.locale + ')',
+            event_label: 'undefined'
+          })
+        }
       }
-
       return encodeURI(query)
     }
   },
