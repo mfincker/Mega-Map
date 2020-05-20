@@ -22,13 +22,13 @@ export const weekdaysJs = [
 ]
 
 export const weekdayHours = [
+  { day: 'sunday' },
   { day: 'monday' },
   { day: 'tuesday' },
   { day: 'wednesday' },
   { day: 'thursday' },
   { day: 'friday' },
-  { day: 'saturday' },
-  { day: 'sunday' }
+  { day: 'saturday' }
 ]
 
 export const openStreetMapAttribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
