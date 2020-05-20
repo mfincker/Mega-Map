@@ -36,16 +36,22 @@
     "title": "Mengenai laman web ini",
     "front-page": {
       "p1": "Hai! 👋",
-      "p2": "Website ini mengandungi maklumat mengenai sumber seperti makanan percuma, barangan runcit, bantuan undang-undang, dan bantuan perubatan. Mulakan dengan memilih lokasi dan keperluan anda."
+      "p2": "Website ini mengandungi maklumat mengenai sumber seperti makanan percuma, barangan runcit, bantuan undang-undang, dan bantuan perubatan. Mulakan dengan memilih lokasi dan keperluan anda.",
+      "p4": {
+        "text": "Kami amat berbesar hati kepada Bill Behrman, Sara Altman dan Cheryl Phillips dari program {0} dan {1} di universiti Stanford atas nasihat dan sokongan mereka yang berterusan.",
+        "link0": "Makmal Digital Stanford",
+        "link1": "Big Local News"
+      }
     },
     "about-us": {
       "header": "Projek Ini",
       "p1": {
-        "text": "Project ini adalah sumber terbuka dan sukarelawan untuk membantu masyarakat Bay Area menavigasi krisis COVID dengan memberikan maklumat penting. Projek ini dimulakan sebagai {0}, dan kini memberikan maklumat lebih lanjut seperti jadual dan lokasi untuk bantuan makanan, bantuan undang-undang, dan bantuan perubatan.",
+        "text": "Project ini adalah sumber terbuka dan sukarelawan untuk membantu masyarakat Bay Area menavigasi krisis COVID dengan memberikan maklumat penting. Projek ini dimulakan sebagai {peta makan sekolah Bay Area}, dan kini memberikan maklumat lebih lanjut seperti jadual dan lokasi untuk bantuan makanan, bantuan undang-undang, dan bantuan perubatan.",
         "link": "peta makan sekolah Bay Area"
       },
       "p2": {
-        "text": "Pembangunan untuk projek ini diadaptasi dari {0}."
+        "text": "Pembangunan untuk projek ini diadaptasi dari {0}.",
+        "link": "NCCovid Support"
       },
       "p3": {
         "text": "Anda boleh mendapatkan lebih banyak maklumat mengenai projek, termasuk kod sumber untuk meniru projek, dari halaman {0} kami.",
@@ -53,7 +59,9 @@
       }
     },
     "about-us-sources": "Pangkalan data maklumat kami menggunakan data yang dikumpulkan oleh organisasi berikut:\nPencari Kedai USDA SNAP\nPencari Kedai USDA WIC\nSecond Harvest Silicon Valley\nProgram Advokasi Pediatrik Stanford\n\nKumpulan sukarelawan kami lanjutnya mengesahkan data dan mengumpulkan maklumat tambahan seperti waktu senior Covid-19, pilihan pengambilan tepi jalan yang selamat dan lain-lain. ",
-    "about-us-contact": "Untuk pertanyaan lanjut atau untuk melaporkan masalah, hubungi {0}.",
+    "about-us-contact": {
+      "link0": "hi@bayareacommunity.org"
+    },
     "about-us-disclaimer": "Projek Bay Area Resources adalah projek sukarelawan. Sukarelawan kami mengumpulkan dan mengesahkan data dari pelbagai sumber. Kami cuba dengan sedaya upaya untuk memastikan semua maklumat di laman web ini tepat. Namun kami tidak dapat menjamin maklumat tersebut sepenuhnya.",
     "info-sources": {
       "header": "Sumber maklumat",
@@ -70,8 +78,9 @@
       "header": "Hubungi kami",
       "p1": {
         "text": "Untuk pertanyaan lanjut atau untuk melaporkan masalah, hubungi {0}.",
-        "link": "hubungi kami di sini"
-      }
+        "link": "hi@bayareacommunity.org"
+      },
+      "contact-us-header": "hubungi kami di sini"
     },
     "disclaimer": {
       "header": "Penafian",
@@ -154,7 +163,7 @@
     "wic": "Kedai yang mengambil bayaran WIC",
     "ebt_pay_phone": "Bayar dengan EBT melalui telepon",
     " ebt_pay_online": "Bayar dengan EBT melalui internet",
-    "open-today": "Buka hari ini",
+    "open_today": "Buka hari ini",
     "pay_phone": "Bayar dengan EBT melalui telepon",
     "safe_pick_up": "Cara pengambilan selamat",
     "zoom_out_for_more_results": "Zoom keluar untuk lebih pilihan",
@@ -201,7 +210,8 @@
     "san-mateo": "Daerah San Mateo",
     "santa-clara": "Daerah Santa Clara",
     "solano": "Daerah Solano",
-    "sonoma": "Daerah Sonoma"
+    "sonoma": "Daerah Sonoma",
+    "monterey": "Daerah Monterey"
   },
   "legal": {
     "general_info": "Maklumat am",

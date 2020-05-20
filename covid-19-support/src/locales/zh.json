@@ -36,7 +36,13 @@
     "title": "关于本网站",
     "front-page": {
       "p1": "你好！👋 ",
-      "p2": "我们提供包括免费餐，食物，法律协助和医疗协助资源的有关信息。请选在你的位置和你在寻找的资源。"
+      "p2": "我们提供包括免费餐，食物，法律协助和医疗协助资源的有关信息。请选在你的位置和你在寻找的资源。",
+      "p3": "开始检索，请选择你的位置和你想要找的资源。",
+      "p4": {
+        "text": "我们隶属于斯坦福  {0} 和 {1} , 我们很感谢Bill Behrman, Sara Altman, and Cheryl Phillips 对我们给予的帮助和指导。",
+        "link0": "数据挑战实验室",
+        "link1": "重大当地新闻"
+      }
     },
     "about-us": {
       "header": "关于我们",
@@ -45,19 +51,41 @@
         "link": "湾区学校用餐地图"
       },
       "p2": {
-        "text": "我们项目最初借鉴了 {0} 。"
+        "text": "我们项目最初借鉴了 {0} 。",
+        "link": "NCCovid Support"
       },
       "p3": {
         "text": "你也在 {0} 上寻找到更多关于我们项目的信息，包括我们的程序编码。",
         "link": "github网页"
       }
     },
-    "about-us-sources": "我们的资源库受益于以下机构收集来的信息：USDA SNAP Store locator USDA WIC Store locator Second Harvest of Silicon Valley Stanford Pediatric Advocacy 我们有一支志愿者队伍来核对和收集更多跟COVID-19有关的信息，包括老人时间段，街边递送服务等。",
-    "about-us-contact": "如果有任何关于增添数据或者数据不准确的信息，请联系 {0}.",
+    "about-us-sources": "我们的资源库受益于以下机构收集来的信息：USDA SNAP 商店位置检索\nUSDA WIC 商店位置检索\n硅谷 Second Harvest\n斯坦福 Pediatric Advocacy\n我们有一支志愿者队伍来核对和收集更多跟COVID-19有关的信息，包括老人时间段，街边递送服务等。",
+    "about-us-contact": {
+      "link0": "hi@bayareacommunity.org"
+    },
     "about-us-disclaimer": "这个湾区资源项目全部是有志愿者完成的。我们有一支志愿者队伍搜集和核对信息。我们尽最大能力确保信息时效性，但是我们无法保证信息100%准确。",
     "info-sources": {
       "header": "信息资源",
-      "p1": "我们的资源库受益于以下机构收集来的信息"
+      "p1": "我们的资源库受益于以下机构收集来的信息",
+      "p2": "我们有一支志愿者队伍进行资源的征集和核对，其中包裹跟Covid-19 有关信息，比如老人时间段，街边安全递送等信息。"
+    },
+    "info-source": {
+      "link1": "USDA SNAP 商店位置检索",
+      "link2": "USDA WIC 商店位置检索",
+      "link3": "硅谷 Second Harvest",
+      "link4": "斯坦福 Pediatric Advocacy"
+    },
+    "contact-us": {
+      "header": "联系我们",
+      "p1": {
+        "text": "如果有关于数据增添和准确性方面的问题，或者任何其他方面的问题，请{0}。",
+        "link": "hi@bayareacommunity.org"
+      },
+      "contact-us-header": "这里联系我们"
+    },
+    "disclaimer": {
+      "header": "免责声明",
+      "p": "这个湾区资源项目全部是有志愿者完成的。我们有一支志愿者队伍搜集和核对信息。我们尽最大能力确保信息时效性，但是我们无法保证信息100%准确。"
     }
   },
   "category": {
@@ -136,7 +164,7 @@
     "wic": "妇幼保健接受地区",
     "ebt_pay_phone": "通过电话用EBT支付",
     " ebt_pay_online": "线上EBT支付",
-    "open-today": "今日开放",
+    "open_today": "今日开放",
     "pay_phone": "通过电话用EBT支付",
     "safe_pick_up": "安全\b取物\b\b选择",
     "zoom_out_for_more_results": "缩小以获取更多结果",
@@ -183,7 +211,8 @@
     "san-mateo": "圣马刁县",
     "santa-clara": "圣克拉拉县",
     "solano": "索拉诺县",
-    "sonoma": "索诺玛县"
+    "sonoma": "索诺玛县",
+    "monterey": "蒙特雷县"
   },
   "legal": {
     "general_info": "综合信息",
@@ -202,5 +231,5 @@
     "in_person": "当面帮助"
   },
   "no_location_in_this_area": "这个区域没有结果",
-  "no_location_meet_these_criteria": ""
+  "no_location_meet_these_criteria": "这些标准哪没有结果。"
 }

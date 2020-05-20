@@ -2,9 +2,11 @@
   <div id="search">
     <b-list-group horizontal class="need-location-group">
       <div class="searchDropdown">
+        <div class="searchDropdown-label" v-if="isInitialSearch">Looking for:</div>
         <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
       </div>
       <div class="searchDropdown">
+        <div class="searchDropdown-label" v-if="isInitialSearch">County:</div>
         <b-form-select :value="nearLocation" :options="locationOptions" @change="(opt) => $emit('near-location-selected', opt)" />
       </div>
     </b-list-group>
@@ -22,7 +24,8 @@ export default {
   props: {
     need: String,
     nearLocation: String,
-    userLocation: { lat: Number, lon: Number }
+    userLocation: { lat: Number, lon: Number },
+    isInitialSearch: Boolean
   },
   computed: {
     needOptions() {
@@ -67,12 +70,13 @@ export default {
         { value: null, text: this.$tc('sidebar.where', 1), disabled: true },
         { value: 'anywhere', text: this.$tc('county.anywhere', 1) },
         { value: 'alameda', text: this.$tc('county.alameda', 1) },
-        { value: 'contra-costa', text: this.$tc('county.contra-costa', 1) },
+        { value: 'contra_costa', text: this.$tc('county.contra-costa', 1) },
         { value: 'marin', text: this.$tc('county.marin', 1) },
+        { value: 'monterey', text: this.$t('county.monterey') },
         { value: 'napa', text: this.$tc('county.napa', 1) },
-        { value: 'san-francisco', text: this.$tc('county.san-francisco', 1) },
-        { value: 'san-mateo', text: this.$tc('county.san-mateo', 1) },
-        { value: 'santa-clara', text: this.$tc('county.santa-clara', 1) },
+        { value: 'san_francisco', text: this.$tc('county.san-francisco', 1) },
+        { value: 'san_mateo', text: this.$tc('county.san-mateo', 1) },
+        { value: 'santa_clara', text: this.$tc('county.santa-clara', 1) },
         { value: 'solano', text: this.$tc('county.solano', 1) },
         { value: 'sonoma', text: this.$tc('county.sonoma', 1) }
       ]
@@ -87,11 +91,16 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .searchDropdown {
   width: 50%;
   padding: 0 8px;
   display: inline-block;
+}
+
+.searchDropdown-label {
+  color: $gray-600;
+  margin-bottom: 4px;
 }
 
 .custom-select {

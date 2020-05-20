@@ -115,3 +115,20 @@ a {
 a:hover {
   color: theme-color(primaryDark);
 }
+
+.attributions,
+.mapbox-wordmark {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .attributions,
+  .mapbox-wordmark {
+    display: block;
+  }
+}
+
+.attributions.show-key,
+.mapbox-wordmark.show-key {
+  display: block;
+}

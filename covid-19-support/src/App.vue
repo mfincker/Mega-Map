@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleNavBar" />
-    <div class="intro">
+    <div class="intro" :class="{ 'intro-centered': initialSearch }">
       <template v-if="initialSearch">
         <h4 class="introParagraph">{{ $t('about.front-page.p1') }}</h4>
         <p class="introParagraph">{{ $t('about.front-page.p2') }}</p>
@@ -10,6 +10,7 @@
         :need="need"
         :nearLocation="nearLocation"
         :userLocation="userLocation"
+        :isInitialSearch="initialSearch"
         @need-selected="needSelected"
         @near-location-selected="nearLocationSelected"
         v-if="showSearchBar"
@@ -112,7 +113,7 @@ export default {
       if (this.$route.name == 'AboutUs') {
         return false
       }
-      return !this.isNavBarOpen
+      return !this.isNavBarOpen || this.initialSearch
     }
   },
   watch: {
@@ -165,6 +166,16 @@ span {
   margin: 0 auto;
   padding: 0 12px;
   z-index: 99998;
+}
+
+.intro-centered {
+  margin: 10vh auto;
+}
+
+@media (min-width: 600px) {
+  .intro-centered {
+    margin: 15vh auto;
+  }
 }
 
 .introParagraph {
