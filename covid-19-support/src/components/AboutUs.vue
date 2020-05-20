@@ -14,6 +14,14 @@
     <i18n path="about.about-us.p3.text" tag="p">
       <a href="https://github.com/dcl-covid-19/mega-map-dev">{{ $t('about.about-us.p3.link') }}</a>
     </i18n>
+    <i18n path="about.about-us.p4.text" tag="p">
+      <a href="https://datalab.stanford.edu/challenge-lab">{{ $t('about.about-us.p4.link0') }}</a>
+      <a href="https://biglocalnews.org/">{{ $t('about.about-us.p4.link1') }}</a>
+    </i18n>
+    <i18n path="about.spthanks.p" tag="p">
+      <a href="https://carto.com/">{{ $t('about.spthanks.link0') }}</a>
+      <a href="http://mapbox.com/">{{ $t('about.spthanks.link1') }}</a>
+    </i18n>
     <!-- Info sources -->
     <h3>{{ $t('about.info-sources.header') }}</h3>
     <p>{{ $t('about.info-sources.p1') }}</p>
