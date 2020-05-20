@@ -45,7 +45,7 @@ import { LMap, LTileLayer, LMarker, LControl } from 'vue2-leaflet'
 // import { LMap, LTileLayer, LControl } from 'vue2-leaflet'
 import { latLng, Icon, ExtraMarkers } from 'leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
-import { openStreetMapAttribution as attribution } from '@/constants'
+import { mapBoxAttribution as attribution } from '@/constants'
 import IconListItem from '@/components/IconListItem.vue'
 import { businessIcon } from '@/utilities'
 
