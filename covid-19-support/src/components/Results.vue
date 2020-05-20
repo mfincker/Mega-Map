@@ -57,7 +57,7 @@ export default {
       entries: null,
       // mapUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
       mapUrl:
-        'https://api.mapbox.com/styles/v1/stanford-datalab/ckad39evg02u11ijqeghbn0u0/tiles/{z}/{x}/{y}?access_token=' +
+        'https://api.mapbox.com/styles/v1/stanford-datalab/ckafnfegn0lk81ip9g57l8ogq/tiles/{z}/{x}/{y}?access_token=' +
         process.env.VUE_APP_MAPBOX_TOKEN,
       bounds: null,
       centroid: [null, null],
