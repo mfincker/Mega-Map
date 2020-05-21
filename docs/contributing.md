@@ -1,18 +1,20 @@
-# Contributing to NC COVID Support
+# Contributing to the Bay Community website
 
-Created by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
+Created by the Bay Community team.
+
+This code has been adapted from the [NC Covid Support repository](https://github.com/code-for-chapel-hill/NC-COVID-Support/), designed by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/).
 
 ## Introduction
 
-Thank you for your interest in contributing to the [NC COVID Support](https://www.nccovidsupport.org) website, we really appreciate any help we can get to improve the site for all those who use it. 👍
+Thank you for your interest in contributing to the Bay Community website, we really appreciate any help we can get to improve the site for all those who use it.
 
-The following is a set of guidelines, to help you contribute to the NC COVID Support project. Use your best judgement, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines, to help you contribute to this project. Use your best judgement, and feel free to propose changes to this document in a pull request.
 
 We are a friendly group and are happy with whatever contributions you might be able to make.
 
 ## Code of conduct
 
-This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [contact@nccovidsupport.org](mailto:contact@nccovidsupport.org).
+This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org).
 
 ## Table of contents
 
@@ -27,7 +29,7 @@ This project and everyone participating in it, is governed by our [Code of Condu
 
 - [Our current PR process](#our-current-pr-process)
 - [Making changes after the PR is open](#making-changes-after-the-pr-is-open)
-- [Keeping your NC COVID Support fork in sync with the main repository](#keeping-your-nc-covid-support-fork-in-sync-with-the-main-repository)
+- [Keeping your Bay Community website fork in sync with the main repository](#keeping-your-nc-covid-support-fork-in-sync-with-the-main-repository)
 - [Style guidelines](#style-guidelines)
 
 [How to get started with our code](#How-to-get-started-with-our-code)
@@ -56,17 +58,13 @@ Not all changes are wanted, so on occasion we might close a PR without merging i
 
 Make sure to talk to us before making large changes, so we can ensure that you don't put all your hard work into something we would not be able to merge.
 
-Remember, it is always worth working on an issue from the [`Up for grabs`](https://github.com/code-for-chapel-hill/NC-COVID-Support/labels/Up%20for%20grabs) list or even asking for some feedback before you send us a PR. This way, your PR will not be closed as unwanted.
-
-### New developers and good first issues
-
-If you are a new developer or simply looking for an easy first ticket to work on, try taking a look at any tickets with the [`good first issue`](https://github.com/code-for-chapel-hill/NC-COVID-Support/labels/good%20first%20issue) label.
+If you want to be part of the team please email [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org).
 
 ### How to begin
 
 The short version goes like this:
 
-- **Fork** - create a fork of [`NC-COVID-SUPPORT` on GitHub](https://github.com/code-for-chapel-hill/NC-COVID-Support)
+- **Fork** - create a fork of [`mega-map-dev` on GitHub](https://github.com/dcl-covid-19/mega-map-dev)
 
   ![Fork the repository](/covid-19-support/src/images/Fork.png)
 
@@ -74,11 +72,12 @@ The short version goes like this:
 
 - **Switch to the correct branch** - switch to the `master` branch
 
-- **Build** - build your fork of NC COVID Support locally as described in [building from source code](BUILD.md)
+- **Build** - build your fork of the Bay Community website locally as described in [building from source code](BUILD.md)
 
-- **Create a new branch** - it would help us if you can always name your branch after the issue you're fixing and follow the format: `issue-12345`. In this case you would be working on issue `12345`.
+- **Create a new branch** - it would help us if you can always name your branch after the issue you're fixing.
 
-- **Change** - make your changes, fix a bug 🐛, add a feature 🆕, correct our spelling 🤦‍♂️, and don't be afraid to break something. We welcome all contributions and will [happily give feedback](#questions)
+- **Change** - make your changes, fix a bug 🐛, add a feature 🆕, correct our spelling 🤦
+, and don't be afraid to break something. We welcome all contributions and will [happily give feedback](#questions)
 
 - **Commit** - done? Yay! 🎉 **Important:** Don't commit to the `master` branch, make sure you have created a new branch as mentioned above.
 
@@ -94,7 +93,7 @@ The short version goes like this:
 
 The most successful pull requests usually look like this:
 
-- Fill in the required template (shown when starting a PR on GitHub), and link your pull request to an issue on our [issue tracker,](https://github.com/code-for-chapel-hill/NC-COVID-Support/issues) if applicable.
+- Fill in the required template (shown when starting a PR on GitHub), and link your pull request to an issue on our [issue tracker,](https://github.com/dcl-covid-19/mega-map-dev/issues) if applicable.
 - Include screenshots and animated GIFs in your pull request whenever possible to highlight what you have changed.
 - Ensure you have run [Prettier](#prettier-code-style) against your code
 
@@ -106,18 +105,11 @@ You've sent us your first contribution - congratulations! Now what?
 
 We can now start reviewing your proposed changes and give you feedback on them. If it's not perfect, we'll either fix up what we need or we may request that you make some additional changes.
 
-### Our current PR process
-
-- Your PR will get a reply within 24 hours
-- An in-depth reply will be added within 72 hours
-- The PR will be either merged or rejected within at most 1 week
-- Sometimes it is difficult to meet these timelines and we'll talk to you if this is the case.
-
 ### Making changes after the PR is open
 
 If you make changes to your PR, please push them to the same branch in your fork again, the pull request automatically updates with the additional commit(s) so we can review it again. If all is well, we'll merge the code :)
 
-### Keeping your NC COVID Support fork in sync with the main repository
+### Keeping your fork in sync with the main repository
 
 We recommend you sync with our repository before you submit your pull request. That way, you can fix any potential merge conflicts and make our lives a little bit easier.
 
@@ -126,7 +118,7 @@ If you have submitted a pull request weeks ago and want to work on something new
 To sync your fork with the original one, you'll have to add the upstream url. You only have to do this once:
 
 ```
-git remote add upstream https://github.com/code-for-chapel-hill/NC-COVID-Support.git
+git remote add upstream https://github.com/dcl-covid-19/mega-map-dev/
 ```
 
 Then when you want to get the changes from the main repository:
@@ -162,17 +154,11 @@ BootstrapVue - Responsive Layout - ( Version of Bootstrap that works well with V
 
 #### NodeJS
 
-Make sure you have the latest stable version of NodeJS ( Currently 12.16.1 ) it can be downloaded from here: https://nodejs.org/en/
-
-Once installed you can check at the command line using:
-
-`node --version`
+Make sure you have the latest stable version of NodeJS. It can be downloaded from here: https://nodejs.org/en/
 
 #### NPM
 
-You should also have version 6.14.3 of NPM, again you can check this using the following command:
-
-`npm --version`
+You should also have NPM installed.
 
 If you need to update the NPM version on Windows, use the accepted instructions found here:
 
@@ -187,29 +173,6 @@ Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 npm install -g npm-windows-upgrade
 npm-windows-upgrade
 ```
-
-#### Backend Requirements
-
-Currently not applicable for this solution as it's currently all front end code.
-
-### Visual Studio Setup (Optional)
-
-If you use Visual Studio it has its own version of NodeJS which will be quite out of date, you can easily set it up to use your default version by adding it's location in the options here:
-
-`Options > Projects and Solutions > Web Package Management > External Web Tools`
-
-You will need to add: `C:\Program Files\nodejs` and then move it to the top of the list so that it's chosen above the current default.
-
-### VS Code Setup (Optional)
-
-If you use Visual Studio code I recommend installing the following plugins:
-
-- ESLint
-- Prettier - Code formatter
-
-A good blog post explaining how to set this up can be found here:
-
-[Setting up Prettier on VS Code](https://travishorn.com/setting-up-prettier-on-vs-code-1fd5e5a43523)
 
 ### Prettier Code Style
 
@@ -244,6 +207,6 @@ The `/covid-19-support` directory is where all the client side development files
 
 ## Other ways to contribute
 
-We welcome all kinds of contributions to our repository. If you don't feel you'd like to make code changes you can use your experience to improving this documentation, or you can join our [content editing team](content-editors.md) to help add more content to the [NC COVID Support](https://nccovidsupport.org) site.
+We welcome all kinds of contributions to our repository. If you don't feel you'd like to make code changes you can use your experience to improving this documentation, or you can join our [content editing team](content-editors.md) to help add more content to the [Bay Community](https://bayareacommunity.org) site.
 
-We also encourage you to feel free to comment on others' pull requests and issues. If you see something on our [issue tracker](https://github.com/code-for-chapel-hill/NC-COVID-Support/issues) or [pull requests](https://github.com/code-for-chapel-hill/NC-COVID-Support/pulls) you feel you can add to, please don't be shy.
+We also encourage you to feel free to comment on others' pull requests and issues. If you see something on our [issue tracker](https://github.com/dcl-covid-19/mega-map-dev/issues) or [pull requests](https://github.com/dcl-covid-19/mega-map-dev/pulls) you feel you can add to, please don't be shy.
