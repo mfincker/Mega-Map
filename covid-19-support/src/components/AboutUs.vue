@@ -9,7 +9,7 @@
       >
     </i18n>
     <i18n path="about.about-us.p2.text" tag="p">
-      <a href="https://nccovidsupport.org/">NC Covid Support</a>
+      <a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/">NC Covid Support</a>
     </i18n>
     <i18n path="about.about-us.p3.text" tag="p">
       <a href="https://github.com/dcl-covid-19/mega-map-dev">{{ $t('about.about-us.p3.link') }}</a>
@@ -50,27 +50,28 @@
     <!-- Disclaimer -->
     <h3>{{ $t('about.disclaimer.header') }}</h3>
     <p>
-      Bay Area Community Resources is a volunteer-driven project. We are working to keep the information on this site as up-to-date and
-      accurate as possible. Due to the uncertainty surrounding the rapid spread of COVID-19, information is changing frequently. Please make
-      sure to contact the resource directly for the latest updates.
+      Bay Area Community Resources (“BACR” or “we”) is a volunteer-driven project. We are working to keep the information on this site as
+      up-to-date and accurate as possible. Due to the uncertainty surrounding the rapid spread of COVID-19, information is changing
+      frequently. Please make sure to contact the resource directly for the latest updates.
     </p>
     <p>
-      Bay Area Community Resources does not provide any of the services listed on this site, nor are we affiliated with any of the
-      organizations listed. Bay Area Community Resources makes no claims, promises or guarantees about the accuracy, completeness, or
-      adequacy of the contents of this website and expressly disclaims liability for errors and omissions in the contents of this website.
-      No warranty of any kind, implied, expressed or statutory, including but not limited to the warranties of non-infringement of third
-      party rights, title, merchantability, fitness for a particular purpose and freedom from computer virus, is given with respect to the
-      contents of this website or its hyperlinks to other Internet resources. Reference in this website to any specific commercial products,
-      processes, or services, or the use of any trade, firm or corporation name is for the information and convenience of the public, and
-      does not constitute endorsement, recommendation, or favoring by the project or its volunteers or agents.
+      BACR does not provide any of the services listed on this site, nor are we affiliated with any of the organizations listed. BACR makes
+      no claims, promises or guarantees about the accuracy, completeness, or adequacy of the contents of this website and expressly
+      disclaims liability for errors and omissions in the contents of this website. No warranty of any kind, implied, expressed or statutory
+      is given with respect to the contents of this website or its hyperlinks to other Internet resources. References in this application or
+      website to any specific services or the use of any trade, entity or corporation name is for the information and convenience of the
+      public, and does not constitute endorsement or recommendation.
     </p>
     <p>
-      Bay Area Community Resources shall assume no liability for any errors, omissions, or inaccuracies in the information provided
-      regardless of their cause. Bay Area Community Resources shall assume no liability for any decisions made or actions taken or not taken
-      by the user of this application in reliance upon any information or data furnished hereunder. By using this website, you agree to
-      indemnify and hold harmless Bay Area Community Resources and its volunteers, representatives, and agents from any claims or demands
-      arising out of or in connection with your use of this website. The use of this information indicates your unconditional acceptance of
-      the above disclaimer.
+      BACR shall assume no liability for any errors, omissions, or inaccuracies in the information provided, regardless of their cause, or
+      for any decisions made or actions taken or not taken by the user of this application or website (“you”) in reliance upon any
+      information or data furnished hereunder. By using this application or website, you agree to indemnify and hold harmless BACR and its
+      volunteers, representatives, and agents from any claims or demands arising out of or in connection with your use of this application
+      or website.
+    </p>
+    <p>
+      BACR may modify this disclaimer at any time without notice to you by posting revised disclaimer on this application or website. The
+      use of this information indicates your unconditional acceptance of the above disclaimer.
     </p>
   </div>
 </template>
