@@ -1,16 +1,16 @@
 # Replicating the NC COVID Support project
 
-Created by the Bay Area Mega Map team 
+Created by the Bay Community team.
 
-Pieces of this code has been adapted from [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
+This code has been adapted from the [NC Covid Support repository](https://github.com/code-for-chapel-hill/NC-COVID-Support/), designed by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
 
 ## Introduction
 
-Thank you for your interest in replicating the Bay Area Mega Map Support project to enable you to create a new site for your own state / area.
+Thank you for your interest in replicating the Bay Community project to enable you to create a new site for your own state / area.
 
 ## Code of conduct
 
-This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By cloning the project and working with us, you are expected to uphold this code. Please report unacceptable behavior to [contact@nccovidsupport.org](mailto:contact@nccovidsupport.org).
+This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By cloning the project and working with us, you are expected to uphold this code. Please report unacceptable behavior to [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org).
 
 ## Table of contents
 
@@ -27,27 +27,24 @@ This project and everyone participating in it, is governed by our [Code of Condu
 
 ## How to replicate the project
 
-Clearly you could just fork our project, copy the spreadsheet mentioned below and go on your merry way, but we hope that you would like to work together so that we can jointly continue to develop this project and both end up benefiting from all future development.
+You can always fork our project and contact us about our underlying data sctructe. But we hope that you would like to work together so that we can jointly continue to develop this project and both end up benefiting from all future development.
 
 ### Get in touch
 
-Please do get in touch with us, we'd love to chat with you to discuss how we can best work together. From a technical perspective it's probably best to first chat with [Maeva Fincker](https://github.com/mfincker) who is currently the lead developer on this project. 
+Please do get in touch with us, we'd love to chat with you to discuss how we can best work together. You can email us at [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org).
 
 ## Project Structure
 
-Our site is currently a VueJS website (think frontend code) backed by JSON data that is pulled from a Google Spreadsheet.
-
-### Data source - Google Spreadsheet
-
-Our current data source for the site is a Google Spreadsheet, the following link [here](https://docs.google.com/spreadsheets/d/1SOUonPM40Si4LrPoGrkUnujbmLBxCQe1SdxydH2dVI4/edit?usp=sharing) is this database so that you can utilize this data for your own needs. 
+Our site is a VueJS website (think frontend code) backed by a [CARTO](https://carto.com/) SQL database.
 
 ### Frontend Code
 
 - VueJS - The Progressive JavaScript Framework - https://vuejs.org/
 - Vue I18n - Internationalization Plugin - https://kazupon.github.io/vue-i18n/
 - Vue Leaflet - Mapping - ( Version of Leaflet that works with VueJS ) - https://vue2-leaflet.netlify.com/
+- MapBox - Basemap - https://www.mapbox.com/
 - BootstrapVue - Responsive Layout - ( Version of Bootstrap that works well with VueJS ) - https://bootstrap-vue.js.org/
 
 ## Current Hosting
 
-The Bay Area Mega Map website is currently hosted as a GitHub Pages site, however this may well change as we are intending to add a "back end".
+The Bay Community website is currently hosted on AWS S3.
