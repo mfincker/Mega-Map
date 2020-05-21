@@ -51,8 +51,8 @@
     <h3>{{ $t('about.disclaimer.header') }}</h3>
     <p>
       Bay Area Community Resources is a volunteer-driven project. We are working to keep the information on this site as up-to-date and
-      accurate as possible. Due to the rapid spread of COVID-19, information is changing frequently. Please make sure to contact the
-      resource directly for the latest updates.
+      accurate as possible. Due to the uncertainty surrounding the rapid spread of COVID-19, information is changing frequently. Please make
+      sure to contact the resource directly for the latest updates.
     </p>
     <p>
       Bay Area Community Resources does not provide any of the services listed on this site, nor are we affiliated with any of the
@@ -69,8 +69,8 @@
       regardless of their cause. Bay Area Community Resources shall assume no liability for any decisions made or actions taken or not taken
       by the user of this application in reliance upon any information or data furnished hereunder. By using this website, you agree to
       indemnify and hold harmless Bay Area Community Resources and its volunteers, representatives, and agents from any claims or demands
-      arising out of in connection with your use of this website. The use of this information indicates your unconditional acceptance of the
-      above disclaimer.
+      arising out of or in connection with your use of this website. The use of this information indicates your unconditional acceptance of
+      the above disclaimer.
     </p>
   </div>
 </template>
