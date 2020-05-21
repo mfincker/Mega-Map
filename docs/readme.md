@@ -40,6 +40,9 @@ The development for this project was adapted from
 Special thanks to [CARTO](https://carto.com/) and [Mapbox](http://mapbox.com) 
 for powering our site.
 
+Thank you to Melanie Ramirez and Jesus Pineda-Ramirez for inspiring us to do
+this.
+
 ## Contact us
 
 For questions on any data additions or inaccuracies, or for any other questions, 
