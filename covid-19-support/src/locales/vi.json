@@ -35,7 +35,7 @@
     "partners": "Nguồn thông tin",
     "title": "Về trang này",
     "front-page": {
-      "p1": "Xin chào! 👋",
+      "p1": "Xin chào!",
       "p2": "Chúng tôi cung cấp thông tin về những trợ giúp cộng đồng như bữa ăn miễn phí, thức ăn, pháp lý và y tế. Hãy bắt đầu bằng việc chọn vị trí của bạn và cái bạn đang tìm kiếm",
       "p3": "Bắt đầu bằng việc chọn vị trí của bạn và cái bạn cần tìm",
       "p4": {
@@ -86,6 +86,11 @@
     "disclaimer": {
       "header": "Miễn trừ trách nhiệm",
       "p": "Dự án hỗ trợ cộng đồng trong khu vực Bay Area này là hoàn toàn tình nguyện. Chúng tôi có một đội ngũ thu thập và kiểm chứng thông tin từ nhiều nguồn khác nhau. Chúng tôi nỗ lực hết sức để cập nhật thông tin nhanh nhất. Tuy vậy chúng tôi không thể đảm bảo các thông tin này luôn chính xác 100%"
+    },
+    "spthanks": {
+      "p": "Chân thành cảm ơn {0} và {1} đã hỗ trợ cho trang này.",
+      "link0": "CARTO",
+      "link1": "Mapbox"
     }
   },
   "category": {

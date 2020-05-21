@@ -2,11 +2,11 @@
   <div id="search">
     <b-list-group horizontal class="need-location-group">
       <div class="searchDropdown">
-        <div class="searchDropdown-label" v-if="isInitialSearch">Looking for:</div>
+        <!-- <div class="searchDropdown-label" v-if="isInitialSearch">Looking for:</div> -->
         <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
       </div>
       <div class="searchDropdown">
-        <div class="searchDropdown-label" v-if="isInitialSearch">County:</div>
+        <!-- <div class="searchDropdown-label" v-if="isInitialSearch">County:</div> -->
         <b-form-select :value="nearLocation" :options="locationOptions" @change="(opt) => $emit('near-location-selected', opt)" />
       </div>
     </b-list-group>

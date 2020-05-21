@@ -35,8 +35,8 @@
     "partners": "Info Sources",
     "title": "About this site",
     "front-page": {
-      "p1": "Hi! 👋",
-      "p2": "We provide information on resources such as free meals, food and legal assistance, and medical help. Start by selecting where you are and what you’re looking for.",
+      "p1": "Welcome! ",
+      "p2": "We provide information on resources such as free meals, food, legal assistance, and medical help. Start by selecting where you are and what you’re looking for.",
       "p3": "Start by selecting where you are and what you're looking for.",
       "p4": {
         "text": "We are affiliated with Stanford's {0} and {1} and are extremely grateful to Bill Behrman, Sara Altman, and Cheryl Phillips for their ongoing support and advice.",
@@ -85,6 +85,11 @@
     "disclaimer": {
       "header": "Disclaimer",
       "p": "This Bay Area Resources project is purely volunteer-driven. We have a team of humans collecting and verifying data from diverse sources. We do our best to keep all the information on the site as up-to-date as possible, however we cannot guarantee that the information is 100% accurate."
+    },
+    "spthanks": {
+      "p": "Special thanks to {0} and {1} for powering our site.",
+      "link0": "CARTO",
+      "link1": "Mapbox"
     }
   },
   "category": {
