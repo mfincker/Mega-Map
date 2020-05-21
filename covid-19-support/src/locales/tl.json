@@ -35,7 +35,7 @@
     "partners": "Pinagmulan ng Impormasyon",
     "title": "Tungkol sa site na ito ",
     "front-page": {
-      "p1": "Kumusta! 👋",
+      "p1": "Kumusta! ",
       "p2": "Nagbibigay kami ng impormasyon tungkol sa mga mapagkukunan tulad ng libreng pagkain, tulong sa pagkain, legal na tulong, at tulong medikal. Magsimula sa pamamagitan ng pagpili kung nasaan ka at kung ano ang hinahanap mo.",
       "p3": "Magsimula sa pamamagitan ng pagpili kung nasaan ka at kung ano ang hinahanap mo.",
       "p4": {
@@ -47,6 +47,7 @@
     "about-us": {
       "header": "Tungkol sa amin",
       "p1": {
+        "text": "Kami ay isang boluntaryo na hinihimok, bukas na mapagkukunan upang matulungan ang mga komunidad na mag-navigate sa krisis sa COVID sa pamamagitan ng pagbibigay ng impormasyon sa mga pampublikong mapagkukunan. Ang proyektong ito ay nagsimula bilang isang {0}, at ngayon ay nagbibigay ng impormasyon sa higit pang mga mapagkukunan tulad ng mga lokasyon at iskedyul para sa libreng pagkain, tulong sa pagkain, tulong sa legal, at tulong medikal.",
         "link": "Mapa ng pagkain sa paaralan ng Bay Area"
       },
       "p2": {
@@ -58,12 +59,15 @@
         "link": "pahina ng Github"
       }
     },
+    "about-us-sources": "Ang aming database ng impormasyon ay nakikinabang mula sa data na nakolekta ng mga sumusunod na samahan:\ntagahanap ng tindahan ng USDA SNAP\ntagahanap ng tindahan ng USDA WIC\nPangalawang Pag-aani ng Silicon Valley\nAdvocacy ng Stanford Pediatric\n\nMayroon kaming isang koponan ng mga kamangha-manghang mga boluntaryo na nagpapatunay sa data at nangongolekta ng anumang karagdagang impormasyon tulad ng karagdagang Covid-19 na mga oras para sa mga nakatatanda, ligtas na pagpipilian ng curbside pick-up, etc.",
     "about-us-contact": {
       "link0": "hi@bayareacommunity.org"
     },
+    "about-us-disclaimer": "Ang proyektong Bay Area Resources na ito ay puro boluntaryo na hinihimok. Mayroon kaming isang koponan ng mga tao na nangolekta at nagpapatunay ng data mula sa magkakaibang mapagkukunan. Ginagawa namin ang aming makakaya upang mapanatili ang lahat ng impormasyon sa site kamakailan hangga't maaari, subalit hindi namin masiguro na ang impormasyon ay tumpak na 100%.",
     "info-sources": {
       "header": "Pinagmulan ng Impormasyon",
-      "p1": "Ang aming database ng impormasyon ay nakikinabang mula sa data na nakolekta ng mga sumusunod na samahan:"
+      "p1": "Ang aming database ng impormasyon ay nakikinabang mula sa data na nakolekta ng mga sumusunod na samahan:",
+      "p2": "Mayroon kaming isang koponan ng mga kamangha-manghang mga boluntaryo na nagpapatunay sa data at nangongolekta ng anumang karagdagang impormasyon tulad ng karagdagang Covid-19 na mga oras para sa mga nakatatanda, ligtas na pagpipilian ng curbside pick-up, etc."
     },
     "info-source": {
       "link1": "tagahanap ng tindahan ng USDA SNAP",
@@ -81,6 +85,11 @@
     "disclaimer": {
       "header": "Pagtanggi",
       "p": "Ang proyektong Bay Area Resources na ito ay puro boluntaryo na hinihimok. Mayroon kaming isang koponan ng mga tao na nangolekta at nagpapatunay ng data mula sa magkakaibang mapagkukunan. Ginagawa namin ang aming makakaya upang mapanatili ang lahat ng impormasyon sa site kamakailan hangga't maaari, subalit hindi namin masiguro na ang impormasyon ay tumpak na 100%."
+    },
+    "spthanks": {
+      "p": "Espesyal na pasasalamat sa {0} at {1} para sa kapangyarihan ng aming site.",
+      "link0": "CARTO",
+      "link1": "Mapbox"
     }
   },
   "category": {

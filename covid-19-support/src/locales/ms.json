@@ -35,8 +35,9 @@
     "partners": "Sumber Maklumat",
     "title": "Mengenai laman web ini",
     "front-page": {
-      "p1": "Hai! 👋",
+      "p1": "Selamat Datang!",
       "p2": "Website ini mengandungi maklumat mengenai sumber seperti makanan percuma, barangan runcit, bantuan undang-undang, dan bantuan perubatan. Mulakan dengan memilih lokasi dan keperluan anda.",
+      "p3": "Cuba pilih apa yang dicari dengan lokasi anda.",
       "p4": {
         "text": "Kami amat berbesar hati kepada Bill Behrman, Sara Altman dan Cheryl Phillips dari program {0} dan {1} di universiti Stanford atas nasihat dan sokongan mereka yang berterusan.",
         "link0": "Makmal Digital Stanford",
@@ -85,6 +86,11 @@
     "disclaimer": {
       "header": "Penafian",
       "p": "Projek Bay Area Resources adalah projek sukarelawan. Sukarelawan kami mengumpulkan dan mengesahkan data dari pelbagai sumber. Kami cuba dengan sedaya upaya untuk memastikan semua maklumat di laman web ini tepat. Namun kami tidak dapat menjamin maklumat tersebut sepenuhnya."
+    },
+    "spthanks": {
+      "p": "Ribuan terima kasih kepada {0} dan {1} yang membekalkan laman web ini.",
+      "link0": "CARTO",
+      "link1": "Mapbox"
     }
   },
   "category": {

@@ -34,7 +34,7 @@
     "partners": "Fuentes de información",
     "title": "Sobre este sitio",
     "front-page": {
-      "p1": "Hola! 👋\n",
+      "p1": "Hola! ",
       "p2": "Brindamos información sobre los recursos como comidas gratis, alimentos, asistencia legal, y ayuda médica. Comienza al seleccionar dónde estás y lo qué estás buscando. ",
       "p3": "Empieza al seleccionar donde esta usted y lo que esta buscando.",
       "p4": {
@@ -85,6 +85,11 @@
     "disclaimer": {
       "header": "Renuncia",
       "p": "Este proyecto de Recursos del Área de la Bahía es puramente voluntario. Tenemos un equipo de humanos que recopila y verifica los datos de diversas fuentes. Hacemos nuestro mejor esfuerzo para mantener toda la información en el sitio lo más actualizada posible, sin embargo, no podemos garantizar que la información sea 100% precisa."
+    },
+    "spthanks": {
+      "p": "Agradecimiento especial a {0} y {1}  por potenciar nuestro sitio",
+      "link0": "CARTO",
+      "link1": "Mapbox"
     }
   },
   "category": {
