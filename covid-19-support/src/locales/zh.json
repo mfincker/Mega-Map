@@ -36,7 +36,7 @@
     "title": "关于本网站",
     "front-page": {
       "p1": "你好！",
-      "p2": "我们提供包括免费餐，食物，法律协助和医疗协助资源的有关信息。请选在你的位置和你在寻找的资源。",
+      "p2": "我们提供包括免费餐，食物，法律协助和医疗协助资源的有关信息。",
       "p3": "开始检索，请选择你的位置和你想要找的资源。",
       "p4": {
         "text": "我们隶属于斯坦福  {0} 和 {1} , 我们很感谢Bill Behrman, Sara Altman, and Cheryl Phillips 对我们给予的帮助和指导。",
@@ -73,7 +73,8 @@
       "link1": "USDA SNAP 商店位置检索",
       "link2": "USDA WIC 商店位置检索",
       "link3": "硅谷 Second Harvest",
-      "link4": "斯坦福 Pediatric Advocacy"
+      "link4": "斯坦福 Pediatric Advocacy",
+      "link5": "伯克利生态环保中心"
     },
     "contact-us": {
       "header": "联系我们",
@@ -189,6 +190,7 @@
     "tl": "他加禄的"
   },
   "sidebar": {
+    "home": "主页",
     "close-panel": "关闭搜索面板",
     "info-about-us": "目前，这项服务支持湾区。",
     "info-end-text": "，我们可以扩大覆盖范围。",

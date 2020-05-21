@@ -36,7 +36,7 @@
     "title": "About this site",
     "front-page": {
       "p1": "Welcome! ",
-      "p2": "We provide information on resources such as free meals, food, legal assistance, and medical help. Start by selecting where you are and what you’re looking for.",
+      "p2": "We provide information on resources such as free meals, food, legal assistance, and medical help.",
       "p3": "Start by selecting where you are and what you're looking for.",
       "p4": {
         "text": "We are affiliated with Stanford's {0} and {1} and are extremely grateful to Bill Behrman, Sara Altman, and Cheryl Phillips for their ongoing support and advice.",
@@ -73,7 +73,8 @@
       "link1": "USDA SNAP Store locator",
       "link2": "USDA WIC Store locator",
       "link3": "Second Harvest of Silicon Valley",
-      "link4": "Stanford Pediatric Advocacy"
+      "link4": "Stanford Pediatric Advocacy",
+      "link5": "Berkeley Ecology Center"
     },
     "contact-us": {
       "header": "Contact Us",
@@ -104,7 +105,7 @@
     "pharmacy": "Pharmacy|Pharmacies",
     "restaurant": "Restaurant|Restaurants",
     "school": "School meal|School meals",
-    "snap_wic_retailer": "SNAP/WIC retailer|SNAP/WIC retailers",
+    "snap_wic_retailer": "CalFresh/WIC retailer|CalFresh/WIC retailers",
     "food_resources": "Food resources",
     "legal_resources": "Legal resources",
     "medical_resources": "Medical resources",
@@ -162,7 +163,7 @@
     "selected": "Selected",
     "seniorhours": "Senior hours",
     "seniors": "For seniors",
-    "snap": "SNAP-accepting location|SNAP-accepting locations",
+    "snap": "CalFresh-accepting location|CalFresh-accepting locations",
     "special_hours": "Senior shopping hours",
     "website": "Website",
     "wic": "WIC-accepting location|WIC-accepting locations",
@@ -188,6 +189,7 @@
     "tl": "Tagalog"
   },
   "sidebar": {
+    "home": "Home",
     "close-panel": "Close search panel",
     "info-about-us": "Currently, this site supports the Bay Area, CA. With",
     "info-end-text": ", we can expand our coverage.",

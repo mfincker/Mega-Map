@@ -36,7 +36,7 @@
     "title": "Tungkol sa site na ito ",
     "front-page": {
       "p1": "Kumusta! ",
-      "p2": "Nagbibigay kami ng impormasyon tungkol sa mga mapagkukunan tulad ng libreng pagkain, tulong sa pagkain, legal na tulong, at tulong medikal. Magsimula sa pamamagitan ng pagpili kung nasaan ka at kung ano ang hinahanap mo.",
+      "p2": "Nagbibigay kami ng impormasyon tungkol sa mga mapagkukunan tulad ng libreng pagkain, tulong sa pagkain, legal na tulong, at tulong medikal.",
       "p3": "Magsimula sa pamamagitan ng pagpili kung nasaan ka at kung ano ang hinahanap mo.",
       "p4": {
         "text": "Kami ay kaakibat sa {0} at {1} ng Stanford at lubos na nagpapasalamat kay Bill Behrman, Sara Altman, at Cheryl Phillips para sa kanilang patuloy na suporta at payo. ",
@@ -73,7 +73,8 @@
       "link1": "tagahanap ng tindahan ng USDA SNAP",
       "link2": "tagahanap ng tindahan ng USDA WIC",
       "link3": "Pangalawang Pag-aani ng Silicon Valley",
-      "link4": "Advocacy ng Stanford Pediatric"
+      "link4": "Advocacy ng Stanford Pediatric",
+      "link5": "Sentro ng Ekolohiya ng Berkeley"
     },
     "contact-us": {
       "header": "Makipag-ugnayan sa amin",
@@ -104,7 +105,7 @@
     "pharmacy": "Parmasya|Mga Parmasya",
     "restaurant": "Restawran|Mga Restawran",
     "school": "Pagkain sa paaralan|Mga pagkain sa paaralan",
-    "snap_wic_retailer": "Nagtitinda ng SNAP/WIC|Mga nagtitinda ng SNAP/WIC",
+    "snap_wic_retailer": "Nagtitinda ng CalFresh/WIC|Mga nagtitinda ng CalFresh/WIC",
     "food_resources": "Mga mapagkukunan ng pagkain",
     "legal_resources": "Mga mapagkukunan ng legal",
     "medical_resources": "Mga mapagkukunan ng medikal",
@@ -162,7 +163,7 @@
     "selected": "Napili",
     "seniorhours": "Mga oras para sa mga nakatatanda",
     "seniors": "Para sa mga nakatatanda",
-    "snap": "Lugar na tinatanggap ng SNAP | Mga lugar na tinatanggap ng SNAP",
+    "snap": "Lugar na tinatanggap ng CalFresh | Mga lugar na tinatanggap ng CalFresh",
     "special_hours": "Mga oras ng pamimili para sa mga nakatatanda",
     "website": "Website",
     "wic": "Lugar na tintanggap ng WIC | Mga lugar na tinatanggap ng WIC",
@@ -188,6 +189,7 @@
     "tl": "Tagalog"
   },
   "sidebar": {
+    "home": "Homepage",
     "close-panel": "Isara ang panel ng paghahanap",
     "info-about-us": "Sa kasalukuyan, sinusuportahan ng site na ito ang Bay Area, CA. Sa",
     "info-end-text": ", maaari naming mapalawak ang aming saklaw.",

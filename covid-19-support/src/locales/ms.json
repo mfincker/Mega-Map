@@ -36,8 +36,8 @@
     "title": "Mengenai laman web ini",
     "front-page": {
       "p1": "Selamat Datang!",
-      "p2": "Website ini mengandungi maklumat mengenai sumber seperti makanan percuma, barangan runcit, bantuan undang-undang, dan bantuan perubatan. Mulakan dengan memilih lokasi dan keperluan anda.",
-      "p3": "Cuba pilih apa yang dicari dengan lokasi anda.",
+      "p2": "Website ini mengandungi maklumat mengenai sumber seperti makanan percuma, barangan runcit, bantuan undang-undang, dan bantuan perubatan.",
+      "p3": "Mulakan dengan memilih lokasi dan keperluan anda.",
       "p4": {
         "text": "Kami amat berbesar hati kepada Bill Behrman, Sara Altman dan Cheryl Phillips dari program {0} dan {1} di universiti Stanford atas nasihat dan sokongan mereka yang berterusan.",
         "link0": "Makmal Digital Stanford",
@@ -73,7 +73,8 @@
       "link1": "Pencari Kedai USDA SNAP",
       "link2": "Pencari Kedai USDA WIC",
       "link3": "Second Harvest Silicon Valley",
-      "link4": "Program Advokasi Pediatrik Stanford"
+      "link4": "Program Advokasi Pediatrik Stanford",
+      "link5": "Pusat Ekologi Berkeley"
     },
     "contact-us": {
       "header": "Hubungi kami",
@@ -105,7 +106,7 @@
     "pharmacy": "Farmasi | Farmasi",
     "restaurant": "Restoran | Restoran",
     "school": "Makan sekolah | Makanan sekolah",
-    "snap_wic_retailer": "Kedai mengambil bayaran SNAP/WIC | Kedai mengambil bayaran SNAP/WIC",
+    "snap_wic_retailer": "Kedai mengambil bayaran CalFresh/WIC | Kedai mengambil bayaran CalFresh/WIC",
     "food_resources": "Makanan dan barangan runcit",
     "legal_resources": "Perkhidmatan peguam",
     "medical_resources": "Perkhidmatan perubatan",
@@ -163,7 +164,7 @@
     "selected": "Dipilih",
     "seniorhours": "Waktu membeli-belah warga emas",
     "seniors": "Untuk warga emas",
-    "snap": "Kedai yang mengambil bayaran SNAP",
+    "snap": "Kedai yang mengambil bayaran CalFresh",
     "special_hours": "Waktu membeli-belah warga emas",
     "website": "Laman web",
     "wic": "Kedai yang mengambil bayaran WIC",
@@ -189,6 +190,7 @@
     "tl": "Bahasa Tagalog"
   },
   "sidebar": {
+    "home": "Laman utama",
     "close-panel": "Tutup panel carian",
     "info-about-us": "Pada masa ini, laman web ini menyokong Bay Area, CA. Dengan",
     "info-end-text": ", kami boleh mengembangkan liputan kami.",
