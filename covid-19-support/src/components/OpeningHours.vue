@@ -49,7 +49,7 @@ export default {
               // }
               break
             default:
-              myDays.push({ name: dayName, val: this.business[attr].replace(',', '<br/>') })
+              myDays.push({ name: dayName, val: this.business[attr].replace(/,/g, '<br/>') })
               cnt++
               break
           }
@@ -72,7 +72,7 @@ export default {
               cnt++
               break
             default:
-              myDays.push({ name: dayName, val: this.business[attr].replace(',', '<br/>') })
+              myDays.push({ name: dayName, val: this.business[attr].replace(/,/g, '<br/>') })
               cnt++
               break
           }
