@@ -77,7 +77,7 @@ export default {
         const entries = await res.json()
         this.entries = entries.rows
       } catch (e) {
-        window.gtag('event', 'Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e})
+        window.gtag('event', 'Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
         console.log(e)
       }
     },
