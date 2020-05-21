@@ -13,7 +13,7 @@
             Home
           </b-nav-item>
           <b-nav-item to="/about-us">
-            About us
+            {{ $t('about.linktext') }}
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
@@ -45,7 +45,7 @@
           Bay Community
         </b-nav-item>
         <b-nav-item to="/about-us">
-          About us
+          {{ $t('about.linktext') }}
         </b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
