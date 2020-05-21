@@ -35,7 +35,7 @@
     "title": "Sobre este sitio",
     "front-page": {
       "p1": "Hola! ",
-      "p2": "Brindamos información sobre los recursos como comidas gratis, alimentos, asistencia legal, y ayuda médica. Comienza al seleccionar dónde estás y lo qué estás buscando. ",
+      "p2": "Brindamos información sobre los recursos como comidas gratis, alimentos, asistencia legal, y ayuda médica.",
       "p3": "Empieza al seleccionar donde esta usted y lo que esta buscando.",
       "p4": {
         "text": "Estamos afiliados a {0} y {1} de Stanford y estamos extremadamente agradecidos con Bill Behrman, Sara Altman y Cheryl Phillips por su continuo apoyo y asesoramiento.",
@@ -72,7 +72,8 @@
       "link1": "Localizador de las tiendas de USDA SNAP",
       "link2": "Localizador de las tiendas de USDA WIC",
       "link3": "Second Harvest de Silicon Valley",
-      "link4": "Stanford Pediatric Advocacy"
+      "link4": "Stanford Pediatric Advocacy",
+      "link5": "Centro de ecología de Berkeley"
     },
     "contact-us": {
       "header": "Contactenos",
@@ -104,7 +105,7 @@
     "pharmacy": "Farmacia | Farmacias",
     "restaurant": "Restaurante | Restaurantes",
     "school": "Comida escolar | Comidas escolares",
-    "snap_wic_retailer": "Comerciante SNAP/WIC|Comerciantes SNAP/WIC",
+    "snap_wic_retailer": "Comerciante CalFresh/WIC|Comerciantes CalFresh/WIC",
     "food_resources": "Recursos Alimenticios",
     "legal_resources": "Recursos Legales",
     "medical_resources": "Recursos Médicos",
@@ -162,7 +163,7 @@
     "selected": "Seleccionado",
     "seniorhours": "Horas para gente mayor de edad",
     "seniors": "Para los mayores de edad",
-    "snap": "Lugar que acepta SNAP|Lugares que aceptan SNAP",
+    "snap": "Lugar que acepta CalFresh|Lugares que aceptan CalFresh",
     "special_hours": "Horario comercial para gente mayor de edad",
     "website": "Sitio web",
     "wic": "Lugar que acepta WIC|Lugares que aceptan WIC",
@@ -188,6 +189,7 @@
     "tl": "Tagalo"
   },
   "sidebar": {
+    "home": "Página de inicio",
     "close-panel": "Cerrar panel de búsqueda",
     "info-about-us": "Actualmente, este sitio apoya el Area de la Bahía en CA. Con",
     "info-end-text": ", podemos ampliar nuestra cobertura.",

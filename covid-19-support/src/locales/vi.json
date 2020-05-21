@@ -36,8 +36,8 @@
     "title": "Về trang này",
     "front-page": {
       "p1": "Xin chào!",
-      "p2": "Chúng tôi cung cấp thông tin về những trợ giúp cộng đồng như bữa ăn miễn phí, thức ăn, pháp lý và y tế. Hãy bắt đầu bằng việc chọn vị trí của bạn và cái bạn đang tìm kiếm",
-      "p3": "Bắt đầu bằng việc chọn vị trí của bạn và cái bạn cần tìm",
+      "p2": "Chúng tôi cung cấp thông tin về những trợ giúp cộng đồng như bữa ăn miễn phí, thức ăn, pháp lý và y tế. ",
+      "p3": "Bắt đầu bằng việc chọn vị trí của bạn và cái bạn cần tìm.",
       "p4": {
         "text": "Chúng tôi có liên kết với {0} và {1} từ Stanford và thật sự cảm ơn Bill Behrman, Sara Altman và Cheryl Phillips vì những đóng góp và tư vấn của họ",
         "link0": "Cuộc thi về dữ liệu",
@@ -73,7 +73,8 @@
       "link1": "Định vị cửa hàng USDA SNAP ",
       "link2": "Định vị cửa hàng USDA WIX ",
       "link3": "Tổ chức Second Harvest khu vực Silicon Valley ",
-      "link4": "Tổ chức vận đồng cho bệnh nhi Stanford"
+      "link4": "Tổ chức vận đồng cho bệnh nhi Stanford",
+      "link5": "Trung tâm nghiên cứu hệ sinh thái Berkeley"
     },
     "contact-us": {
       "header": "Liên lạc với chúng tôi",
@@ -105,7 +106,7 @@
     "pharmacy": "Tiệm thuốc|Những tiệm thuốc",
     "restaurant": "Nhà hàng|Những nhà hàng",
     "school": "Bữa ăn trong trường|Những bữa ăn trong trường",
-    "snap_wic_retailer": "Nhà bán lẻ SNAP/WIC|Những nhà bán lẻ SNAP/WIC",
+    "snap_wic_retailer": "Nhà bán lẻ CalFresh/WIC|Những nhà bán lẻ CalFresh/WIC",
     "food_resources": "Hỗ trợ thực phẩm",
     "legal_resources": "Hỗ trợ pháp lý",
     "medical_resources": "Hỗ trợ y tế",
@@ -163,7 +164,7 @@
     "selected": "\bĐã chọn",
     "seniorhours": "Giờ cho người cao tuổi",
     "seniors": "Cho người cao tuổi",
-    "snap": "Địa điểm chấp nhận SNAP",
+    "snap": "Địa điểm chấp nhận CalFresh",
     "special_hours": "Giờ mua hàng cho người cao tuổi",
     "website": "Trang web",
     "wic": "Địa điểm chấp nhận WIC",
@@ -189,6 +190,7 @@
     "tl": "Tiếng Philippines"
   },
   "sidebar": {
+    "home": "Trang chủ",
     "close-panel": "Đóng khung tìm kiếm",
     "info-about-us": "Trang web này hiện hỗ trợ khu vực Bay Area, CA",
     "info-end-text": ", chúng tôi có thể mở rộng phạm vi",

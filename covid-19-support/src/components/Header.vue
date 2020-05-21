@@ -10,10 +10,10 @@
       <b-collapse id="nav-collapse" v-model="navState" is-nav class="text-right">
         <b-navbar-nav>
           <b-nav-item to="/">
-            Home
+            {{ $t('sidebar.home') }}
           </b-nav-item>
           <b-nav-item to="/about-us">
-            About us
+            {{ $t('about.about-us.header') }}
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
@@ -45,7 +45,7 @@
           Bay Community
         </b-nav-item>
         <b-nav-item to="/about-us">
-          About us
+          {{ $t('about.about-us.header') }}
         </b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">

@@ -119,6 +119,7 @@ a:hover {
 .attributions,
 .mapbox-wordmark {
   display: none;
+  z-index: 1000;
 }
 
 @media (min-width: 600px) {
@@ -131,4 +132,8 @@ a:hover {
 .attributions.show-key,
 .mapbox-wordmark.show-key {
   display: block;
+}
+
+.top-layer {
+  z-index: 999999;
 }

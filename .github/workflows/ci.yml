@@ -41,9 +41,9 @@ jobs:
       #  working-directory: covid-19-support
 
       # Runs the linter
-      - name: lint
-        run: npm run lint
-        working-directory: covid-19-support
+      #- name: lint
+      #  run: npm run lint
+      #  working-directory: covid-19-support
 
       # Runs the build "smoke test"
       - name: Smoke test

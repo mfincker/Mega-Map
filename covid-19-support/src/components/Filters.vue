@@ -43,10 +43,10 @@ export default {
       switch (this.need) {
         case 'free_grocery':
           return [
-            { var: 'children', label: 'label.children' },
-            { var: 'seniors', label: 'label.seniors' },
-            { var: 'open_today', label: 'label.open_today' },
-            { var: 'safe_pick_up', label: 'label.safe_pick_up' }
+            // { var: 'children', label: 'label.children' },
+            // { var: 'seniors', label: 'label.seniors' },
+            { var: 'open_today', label: 'label.open_today' }
+            // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
           ]
         case 'snap_wic_retailer':
           return [
@@ -58,9 +58,9 @@ export default {
         case 'meal':
           return [
             { var: 'children', label: 'label.children' },
-            { var: 'seniors', label: 'label.seniors' },
-            { var: 'open_today', label: 'label.open_today' },
-            { var: 'safe_pick_up', label: 'label.safe_pick_up' }
+            // { var: 'seniors', label: 'label.seniors' },
+            { var: 'open_today', label: 'label.open_today' }
+            // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
           ]
         case 'mental_health':
           return [
@@ -70,7 +70,7 @@ export default {
           ]
         case 'medical':
           return [
-            { var: 'free', label: 'label.free' },
+            // { var: 'free', label: 'label.free' },
             { var: 'in_person', label: 'label.in_person' },
             { var: 'telehealth', label: 'label.telehealth' }
           ]
