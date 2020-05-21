@@ -1,4 +1,4 @@
-# Contributing to NC COVID Support
+# Contributing to the Bay Community website
 
 Created by the Bay Community team.
 
@@ -29,7 +29,7 @@ This project and everyone participating in it, is governed by our [Code of Condu
 
 - [Our current PR process](#our-current-pr-process)
 - [Making changes after the PR is open](#making-changes-after-the-pr-is-open)
-- [Keeping your NC COVID Support fork in sync with the main repository](#keeping-your-nc-covid-support-fork-in-sync-with-the-main-repository)
+- [Keeping your Bay Community website fork in sync with the main repository](#keeping-your-nc-covid-support-fork-in-sync-with-the-main-repository)
 - [Style guidelines](#style-guidelines)
 
 [How to get started with our code](#How-to-get-started-with-our-code)

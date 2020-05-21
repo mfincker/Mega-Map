@@ -1,8 +1,8 @@
-# Replicating the NC COVID Support project
+# Replicating the Bay Community website
 
 Created by the Bay Community team.
 
-This code has been adapted from the [NC Covid Support repository](https://github.com/code-for-chapel-hill/NC-COVID-Support/), designed by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/)
+This code has been adapted from the [NC Covid Support repository](https://github.com/code-for-chapel-hill/NC-COVID-Support/), designed by [Code for Chapel Hill](http://www.codeforchapelhill.com/) part of [Code for America](https://www.codeforamerica.org/).
 
 ## Introduction
 
