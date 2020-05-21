@@ -77,7 +77,7 @@ export default {
         const entries = await res.json()
         this.entries = entries.rows
       } catch (e) {
-        window.gtag('event', 'Data fetch error', { event_category: 'data_fetch', event_label: 'error', value: e })
+        window.gtag('event', 'Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e})
         console.log(e)
       }
     },
@@ -112,19 +112,19 @@ export default {
       // log resource selection
       log &&
         window.gtag('event', 'Resource selection', {
-          event_category: 'resource - (' + this.$i18n.locale + ')',
-          event_label: route.params.need
+          event_category: 'language - (' + this.$i18n.locale + ')',
+          event_label: 'resource - ' + route.params.need
         })
       // log location selection
       if (log) {
         if (!(typeof route.query.near === 'undefined')) {
           window.gtag('event', 'Location selection', {
-            event_category: 'county - (' + this.$i18n.locale + ')',
-            event_label: route.query.near
+            event_category: 'language - (' + this.$i18n.locale + ')',
+            event_label: 'county - ' + route.query.near
           })
         } else {
           window.gtag('event', 'Location selection', {
-            event_category: 'county - (' + this.$i18n.locale + ')',
+            event_category: 'language - (' + this.$i18n.locale + ')',
             event_label: 'undefined'
           })
         }
