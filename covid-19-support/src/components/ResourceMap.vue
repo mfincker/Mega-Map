@@ -114,7 +114,7 @@ export default {
     },
     editZoomControl() {
       const zoomControl = this.$el.querySelector('.leaflet-top.leaflet-left')
-      zoomControl.className = 'leaflet-bottom leaflet-left'
+      zoomControl.className = 'leaflet-bottom leaflet-left top-layer'
     },
     editAttributionDisplay() {
       const attributionControl = this.$el.querySelector('.leaflet-control-attribution')
