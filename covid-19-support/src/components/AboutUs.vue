@@ -42,6 +42,9 @@
       <li>
         <a href="http://med.stanford.edu/pedsadvocacy.html">{{ $t('about.info-source.link4') }}</a>
       </li>
+      <li>
+        <a href="https://ecologycenter.org/fmfinder/">{{ $t('about.info-source.link5') }}</a>
+      </li>
     </ul>
     <p>{{ $t('about.info-sources.p2') }}</p>
     <!-- Contact Us -->
