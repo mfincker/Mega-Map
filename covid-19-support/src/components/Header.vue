@@ -15,7 +15,7 @@
           <b-nav-item to="/about-us">
             {{ $t('about.about-us.header') }}
           </b-nav-item>
-          <b-nav-item href="https://docs.google.com/forms/d/1SeUbGizIq6adA8RZ8Yk4PhWITZV6jsKlM4NVUCxH1l4/edit" target="_blank"
+          <b-nav-item href="https://forms.gle/dPVK8Pd8XKAiQ3Ti9" target="_blank"
             >{{ $t('sidebar.feedback') }}
           </b-nav-item>
         </b-navbar-nav>
@@ -50,7 +50,7 @@
         <b-nav-item to="/about-us">
           {{ $t('about.about-us.header') }}
         </b-nav-item>
-        <b-nav-item href="https://docs.google.com/forms/d/1SeUbGizIq6adA8RZ8Yk4PhWITZV6jsKlM4NVUCxH1l4/edit" target="_blank">
+        <b-nav-item href="https://forms.gle/dPVK8Pd8XKAiQ3Ti9" target="_blank">
           {{ $t('sidebar.feedback') }}
         </b-nav-item>
       </b-navbar-nav>
