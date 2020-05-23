@@ -10,7 +10,7 @@ Thank you for your interest in replicating the Bay Community project to enable y
 
 ## Code of conduct
 
-This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By cloning the project and working with us, you are expected to uphold this code. Please report unacceptable behavior to [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org).
+This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By cloning the project and working with us, you are expected to uphold this code. Please report unacceptable behavior to [baycommunityresource@gmail.com](mailto:baycommunityresource@gmail.com).
 
 ## Table of contents
 
@@ -31,7 +31,7 @@ You can always fork our project and contact us about our underlying data sctruct
 
 ### Get in touch
 
-Please do get in touch with us, we'd love to chat with you to discuss how we can best work together. You can email us at [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org).
+Please do get in touch with us, we'd love to chat with you to discuss how we can best work together. You can email us at [baycommunityresource@gmail.com](mailto:baycommunityresource@gmail.com).
 
 ## Project Structure
 

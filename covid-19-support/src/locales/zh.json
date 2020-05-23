@@ -61,7 +61,7 @@
     },
     "about-us-sources": "我们的资源库受益于以下机构收集来的信息：USDA SNAP 商店位置检索\nUSDA WIC 商店位置检索\n硅谷 Second Harvest\n斯坦福 Pediatric Advocacy\n我们有一支志愿者队伍来核对和收集更多跟COVID-19有关的信息，包括老人时间段，街边递送服务等。",
     "about-us-contact": {
-      "link0": "hi@bayareacommunity.org"
+      "link0": "baycommunityresource@gmail.com"
     },
     "about-us-disclaimer": "这个湾区资源项目全部是有志愿者完成的。我们有一支志愿者队伍搜集和核对信息。我们尽最大能力确保信息时效性，但是我们无法保证信息100%准确。",
     "info-sources": {
@@ -80,7 +80,7 @@
       "header": "联系我们",
       "p1": {
         "text": "如果有关于数据增添和准确性方面的问题，或者任何其他方面的问题，请{0}。",
-        "link": "hi@bayareacommunity.org"
+        "link": "baycommunityresource@gmail.com"
       },
       "contact-us-header": "这里联系我们"
     },

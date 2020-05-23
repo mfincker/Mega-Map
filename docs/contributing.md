@@ -14,7 +14,7 @@ We are a friendly group and are happy with whatever contributions you might be a
 
 ## Code of conduct
 
-This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org).
+This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [baycommunityresource@gmail.com](mailto:baycommunityresource@gmail.com).
 
 ## Table of contents
 
@@ -58,7 +58,7 @@ Not all changes are wanted, so on occasion we might close a PR without merging i
 
 Make sure to talk to us before making large changes, so we can ensure that you don't put all your hard work into something we would not be able to merge.
 
-If you want to be part of the team please email [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org).
+If you want to be part of the team please email [baycommunityresource@gmail.com](mailto:baycommunityresource@gmail.com).
 
 ### How to begin
 

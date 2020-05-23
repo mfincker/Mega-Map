@@ -60,7 +60,7 @@
     },
     "about-us-sources": "Nuestro base de datos se beneficia de los datos recogidos por las siguientes organizaciones:\nLocalizador de las tiendas de USDA SNAP \nLocalizador de las tiendas de USDA WIC \nSecond Harvest de Silicon Valley\nStanford Pediatric Advocacy\n\nTenemos un equipo de voluntarios increíbles que verifican los datos y recopilan cualquier información adicional, como horas adicionales de Covid-19 para adultos mayores, opciones de recogida segura en la acera, etc.\n\n\n",
     "about-us-contact": {
-      "link0": "hi@bayareacommunity.org"
+      "link0": "baycommunityresource@gmail.com"
     },
     "about-us-disclaimer": "Este proyecto de Recursos del Área de la Bahía es puramente voluntario. Tenemos un equipo de humanos que recopila y verifica los datos de diversas fuentes. Hacemos nuestro mejor esfuerzo para mantener toda la información en el sitio lo más actualizada posible, sin embargo, no podemos garantizar que la información sea 100% precisa.",
     "info-sources": {
@@ -79,7 +79,7 @@
       "header": "Contactenos",
       "p1": {
         "text": "Si usted tiene preguntas sobre cualquier adición de datos o inexactitudes, o para cualquier otra pregunta, comuníquese con {0}.",
-        "link": "hi@bayareacommunity.org"
+        "link": "baycommunityresource@gmail.com"
       },
       "contact-us-header": "Contactenos aqui"
     },

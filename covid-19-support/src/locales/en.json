@@ -61,7 +61,7 @@
     },
     "about-us-sources": "Our database of information benefits from data collected by the following organizations:\nUSDA SNAP Store locator\nUSDA WIC Store locator\nSecond Harvest of Silicon Valley\nStanford Pediatric Advocacy\n\nWe have a team of amazing volunteers who verify the data and collect any additional information such as additional Covid-19 senior hours, safe curbside pick-up options etc. ",
     "about-us-contact": {
-      "link0": "hi@bayareacommunity.org"
+      "link0": "baycommunityresource@gmail.com"
     },
     "about-us-disclaimer": "This Bay Area Resources project is purely volunteer-driven. We have a team of humans collecting and verifying data from diverse sources. We do our best to keep all the information on the site as up-to-date as possible, however we cannot guarantee that the information is 100% accurate.",
     "info-sources": {
@@ -95,7 +95,7 @@
       "header": "Contact Us",
       "p1": {
         "text": "For questions on any data additions or inaccuracies, or for any other questions, please contact {0}.",
-        "link": "hi@bayareacommunity.org"
+        "link": "baycommunityresource@gmail.com"
       }
     },
     "disclaimer": {

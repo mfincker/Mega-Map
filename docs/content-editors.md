@@ -10,7 +10,7 @@ Thank you for your interest in helping to add content to the Bay Community websi
 
 ## Code of conduct <!-- omit in toc -->
 
-This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org).
+This project and everyone participating in it, is governed by our [Code of Conduct](code_of_conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [baycommunityresource@gmail.com](mailto:baycommunityresource@gmail.com).
 
 ## Table of contents <!-- omit in toc -->
 
@@ -29,7 +29,7 @@ The dev team on this project is led by [Maeva Fincker](https://github.com/mfinck
 
 ## Project Lead
 
-[Joyce Tagal](https://github.com/jayktee) is the project lead for this project. Any questions or feedback should be directed to her at [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org)..
+[Joyce Tagal](https://github.com/jayktee) is the project lead for this project. Any questions or feedback should be directed to her at [baycommunityresource@gmail.com](mailto:baycommunityresource@gmail.com)..
 
 
 
@@ -38,4 +38,4 @@ The dev team on this project is led by [Maeva Fincker](https://github.com/mfinck
 
 Are you able to spare some time to become a volunteer and help improve / keep the resources or map up to date? We are looking for people to join our enthusiastic team of ambassadors so that we are able to keep this resource up to date through the Covid-19 pandemic.  
 
-If you are interested in becoming a volunteer, please drop us an email at [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org) and one of us will get back to you with more details.
+If you are interested in becoming a volunteer, please drop us an email at [baycommunityresource@gmail.com](mailto:baycommunityresource@gmail.com) and one of us will get back to you with more details.

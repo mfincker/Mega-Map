@@ -55,7 +55,9 @@
     </i18n>
     <!-- Contact Us -->
     <h3>{{ $t('about.contact-us.header') }}</h3>
-    <i18n path="about.contact-us.p1.text" tag="p"> <a href="mailto:hi@bayareacommunity.org">hi@bayareacommunity.org</a>. </i18n>
+    <i18n path="about.contact-us.p1.text" tag="p">
+      <a href="mailto:baycommunityresource@gmail.com">baycommunityresource@gmail.com</a>.
+    </i18n>
     <!-- Our Team -->
     <h3>{{ $t('about.our-team.header') }}</h3>
     <h6>{{ $t('about.our-team.sourcing') }}</h6>

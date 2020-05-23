@@ -48,7 +48,7 @@ this.
 ## Contact us
 
 For questions on any data additions or inaccuracies, or for any other questions, 
-please contact [hi@bayareacommunity.org](mailto:hi@bayareacommunity.org).
+please contact [baycommunityresource@gmail.com](mailto:baycommunityresource@gmail.com).
 
 ## Volunteers 
 
