@@ -205,6 +205,7 @@
   },
   "sidebar": {
     "home": "Home",
+    "feedback": "Feedback",
     "close-panel": "Close search panel",
     "info-about-us": "Currently, this site supports the Bay Area, CA. With",
     "info-end-text": ", we can expand our coverage.",

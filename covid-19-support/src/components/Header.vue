@@ -15,6 +15,9 @@
           <b-nav-item to="/about-us">
             {{ $t('about.about-us.header') }}
           </b-nav-item>
+          <b-nav-item href="https://docs.google.com/forms/d/1SeUbGizIq6adA8RZ8Yk4PhWITZV6jsKlM4NVUCxH1l4/edit" target="_blank"
+            >{{ $t('sidebar.feedback') }}
+          </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right>
@@ -46,6 +49,9 @@
         </b-nav-item>
         <b-nav-item to="/about-us">
           {{ $t('about.about-us.header') }}
+        </b-nav-item>
+        <b-nav-item href="https://docs.google.com/forms/d/1SeUbGizIq6adA8RZ8Yk4PhWITZV6jsKlM4NVUCxH1l4/edit" target="_blank">
+          {{ $t('sidebar.feedback') }}
         </b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
@@ -125,5 +131,9 @@ export default {
 
 .language {
   padding: 0 5px;
+}
+
+.external {
+  color: white;
 }
 </style>
