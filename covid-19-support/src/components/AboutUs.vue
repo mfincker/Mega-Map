@@ -47,15 +47,36 @@
       </li>
     </ul>
     <p>{{ $t('about.info-sources.p2') }}</p>
+    <!-- Accessing our data -->
+    <h3>{{ $t('about.dataaccess.header') }}</h3>
+    <i18n path="about.dataaccess.p" tag="p">
+      <a href="https://biglocalnews.org/">{{ $t('about.dataaccess.link') }}</a
+      >.
+    </i18n>
     <!-- Contact Us -->
     <h3>{{ $t('about.contact-us.header') }}</h3>
     <i18n path="about.contact-us.p1.text" tag="p"> <a href="mailto:hi@bayareacommunity.org">hi@bayareacommunity.org</a>. </i18n>
+    <!-- Our Team -->
+    <h3>{{ $t('about.our-team.header') }}</h3>
+    <h6>{{ $t('about.our-team.sourcing') }}</h6>
+    <p>
+      Brandon Bergsneider, Rachel Chang, Trillium Chang, Taylor Evensen, Anna Greene, Ngozi Nezianya, Melanie Ramirez, Micah Trautwein,
+      Songnan Wang, Angela Zhao ({{ $t('about.our-team.resource') }}).
+    </p>
+    <p>Angela Chau, Celine Gadingco, Heather Nguyen, Ashwin Reddy ({{ $t('about.our-team.translate') }}).</p>
+    <h6>{{ $t('about.our-team.dev') }}</h6>
+    <p>
+      Joyce Tagal ({{ $t('about.our-team.projl') }}), Maeva Fincker ({{ $t('about.our-team.devlead') }}), Charlie Hoffs ({{
+        $t('about.our-team.dqlead')
+      }}), Chris Auyeung, Patrick Chan, Charles Cho, Claire Huang, Anjali Katta, Christopher Leboa, Jina Lee, Jen Ren, Lawrence Wu.
+    </p>
     <!-- Disclaimer -->
     <h3>{{ $t('about.disclaimer.header') }}</h3>
     <p>
-      Bay Area Community Resources (“BACR” or “we”) is a volunteer-driven project. We are working to keep the information on this site as
-      up-to-date and accurate as possible. Due to the uncertainty surrounding the rapid spread of COVID-19, information is changing
-      frequently. Please make sure to contact the resource directly for the latest updates.
+      Bay Area Community Resources (“BACR” or “we”) is a volunteer-driven project. Although we work hard to keep this site as up-to-date and
+      accurate as possible, the information on this website is provided “as is,” “as available,” and “with all faults.” Your access to, any
+      reliance upon, and/or use of the information is at your sole risk. Please make sure to contact the resource directly for the latest
+      updates. Due to the uncertainty surrounding the rapid spread of COVID-19, information is changing frequently.
     </p>
     <p>
       BACR does not provide any of the services listed on this site, nor are we affiliated with any of the organizations listed. BACR makes
@@ -69,12 +90,18 @@
       BACR shall assume no liability for any errors, omissions, or inaccuracies in the information provided, regardless of their cause, or
       for any decisions made or actions taken or not taken by the user of this application or website (“you”) in reliance upon any
       information or data furnished hereunder. By using this application or website, you agree to indemnify and hold harmless BACR and its
-      volunteers, representatives, and agents from any claims or demands arising out of or in connection with your use of this application
-      or website.
+      volunteers, employees, representatives, agents, and affiliates from any claims or demands arising out of or in connection with your
+      use of this application or website.
     </p>
     <p>
-      BACR may modify this disclaimer at any time without notice to you by posting revised disclaimer on this application or website. The
+      BACR may modify this disclaimer at any time without notice to you by posting a revised disclaimer on this application or website. The
       use of this information indicates your unconditional acceptance of the above disclaimer.
+    </p>
+    <p>
+      Note on data sharing: The information on the BACR website has been gathered from public web sources by volunteers or entered by
+      business owners/resource providers. The data is provided to assist the public, local businesses, government partners, and non-profits
+      during the COVID-19 pandemic. The data should not be used for commercial ventures or other purposes without the express permission of
+      BACR.
     </p>
   </div>
 </template>

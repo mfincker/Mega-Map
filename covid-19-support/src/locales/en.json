@@ -76,6 +76,21 @@
       "link4": "Stanford Pediatric Advocacy",
       "link5": "Berkeley Ecology Center"
     },
+    "dataaccess": {
+      "header": "Accessing our Data",
+      "p": "You can access our data via an open project at {0} (login required).",
+      "link": "Big Local News"
+    },
+    "our-team": {
+      "header": "Our team",
+      "sourcing": "Data sourcing and translation:",
+      "dev": "Data engineering and development:",
+      "resource": "resource coordinators",
+      "translate": "translators",
+      "projl": "project lead",
+      "devlead": "development lead",
+      "dqlead": "data quality lead"
+    },
     "contact-us": {
       "header": "Contact Us",
       "p1": {
