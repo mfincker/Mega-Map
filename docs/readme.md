@@ -74,6 +74,7 @@ here are only a few of your names. Thank you.
 - Songnan Wang
 - Angela Zhao
 - Danyang Zhang
+- Heather Nguyen
 
 ## Contributors
 
@@ -94,12 +95,9 @@ Thanks also to our tireless data and development teams:
    <td align="center"><a href="https://github.com/chanishere149"><img src="https://avatars1.githubusercontent.com/u/8195324?s=400&u=17d8ad8634720c9e9fc01253253db8570f4972ff&v=4" width="100px;" alt=""/><br /><sub><b>Patrick Chan</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/topherauyeung"><img src="https://avatars2.githubusercontent.com/u/1114632?s=400&u=3e99b16048901f4580cb3cd60fa5680e8b86de72&v=4" width="100px;" alt=""/><br /><sub><b>Chris Auyeung</b></sub></a><br /></td>
   <td align="center"><a href="https://github.com/llwu"><img src="https://avatars0.githubusercontent.com/u/5601392?s=400&u=fa7c04edf4c6d0d8021884410d54f45567772f56&v=4" width="100px;" alt=""/><br /><sub><b>Lawrence Wu</b></sub></a><br /></td>
+  <td align="center"><sub><b>Charles Cho</b></sub><br /></td>
+  <td align="center"><sub><b>Ngozi Nezianya</b></sub><br /></td>
   
 
 </table>
 
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
