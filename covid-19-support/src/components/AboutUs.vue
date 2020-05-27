@@ -84,13 +84,13 @@
     <!-- Disclaimer -->
     <h3>{{ $t('about.disclaimer.header') }}</h3>
     <p>
-      Bay Area Community Resources (“BACR” or “we”) is a volunteer-driven project. Although we work hard to keep this site as up-to-date and
+      Bay Area Community Resources (“BAC” or “we”) is a volunteer-driven project. Although we work hard to keep this site as up-to-date and
       accurate as possible, the information on this website is provided “as is,” “as available,” and “with all faults.” Your access to, any
       reliance upon, and/or use of the information is at your sole risk. Please make sure to contact the resource directly for the latest
       updates. Due to the uncertainty surrounding the rapid spread of COVID-19, information is changing frequently.
     </p>
     <p>
-      BACR does not provide any of the services listed on this site, nor are we affiliated with any of the organizations listed. BACR makes
+      BAC does not provide any of the services listed on this site, nor are we affiliated with any of the organizations listed. BAC makes
       no claims, promises or guarantees about the accuracy, completeness, or adequacy of the contents of this website and expressly
       disclaims liability for errors and omissions in the contents of this website. No warranty of any kind, implied, expressed or statutory
       is given with respect to the contents of this website or its hyperlinks to other Internet resources. References in this application or
@@ -98,21 +98,21 @@
       public, and does not constitute endorsement or recommendation.
     </p>
     <p>
-      BACR shall assume no liability for any errors, omissions, or inaccuracies in the information provided, regardless of their cause, or
+      BAC shall assume no liability for any errors, omissions, or inaccuracies in the information provided, regardless of their cause, or
       for any decisions made or actions taken or not taken by the user of this application or website (“you”) in reliance upon any
-      information or data furnished hereunder. By using this application or website, you agree to indemnify and hold harmless BACR and its
+      information or data furnished hereunder. By using this application or website, you agree to indemnify and hold harmless BAC and its
       volunteers, employees, representatives, agents, and affiliates from any claims or demands arising out of or in connection with your
       use of this application or website.
     </p>
     <p>
-      BACR may modify this disclaimer at any time without notice to you by posting a revised disclaimer on this application or website. The
+      BAC may modify this disclaimer at any time without notice to you by posting a revised disclaimer on this application or website. The
       use of this information indicates your unconditional acceptance of the above disclaimer.
     </p>
     <p>
-      Note on data sharing: The information on the BACR website has been gathered from public web sources by volunteers or entered by
+      Note on data sharing: The information on the BAC website has been gathered from public web sources by volunteers or entered by
       business owners/resource providers. The data is provided to assist the public, local businesses, government partners, and non-profits
       during the COVID-19 pandemic. The data should not be used for commercial ventures or other purposes without the express permission of
-      BACR.
+      BAC.
     </p>
   </div>
 </template>
