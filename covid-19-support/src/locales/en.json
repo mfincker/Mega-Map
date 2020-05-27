@@ -89,7 +89,8 @@
       "translate": "translators",
       "projl": "project lead",
       "devlead": "development lead",
-      "dqlead": "data quality lead"
+      "dqlead": "data quality lead",
+      "dqual": "data quality"
     },
     "contact-us": {
       "header": "Contact Us",

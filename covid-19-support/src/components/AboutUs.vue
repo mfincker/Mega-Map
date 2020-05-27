@@ -65,7 +65,16 @@
       Brandon Bergsneider, Rachel Chang, Trillium Chang, Taylor Evensen, Anna Greene, Ngozi Nezianya, Melanie Ramirez, Micah Trautwein,
       Songnan Wang, Angela Zhao ({{ $t('about.our-team.resource') }}).
     </p>
-    <p>Angela Chau, Celine Gadingco, Heather Nguyen, Ashwin Reddy ({{ $t('about.our-team.translate') }}).</p>
+    <p>Angela Chau, Celine Gadingco, Rachel Koo, Heather Nguyen, Ashwin Reddy ({{ $t('about.our-team.translate') }}).</p>
+    <p>
+      Aneeqa Abid, Fahdah AlSubaihin, Michael Alisky, Kat Anderson, Sarahi Arevalo, Sofia Avila, Akhilesh Balasingam, Kashika Bharol, Adyant
+      Bhavsar, Giulia Caetano-Ferrara, Nancy Chang, Annie Chang, Ri Chen, Andy Chen, Jimin Choi, Justin Cortez, Amy DiPierro, Aulden Foltz,
+      Courtney Gao, Stanley Gu, Grace Hung, Andreea Jitaru, Grace Johnson, Justin Kong, Sandra Kong, Maria Lee, Jiwoo Lee, Aidan Lee, Matt
+      Liao, Ximena Martinez Sanchez, Nova Meurice, Jenna Miles, Madeleine Morales, Rachel Oh, Leila Orszag, Jenn Parker, Sue Pelosi Purdy,
+      Lauren Pitzer, Jade Riopelle, Rachel Rivera, Maggie Rosenthal, Hannah Russell, Kayla Ryan, Penny Shi, Imaan Sidhu, Sophia Sidhu, Maria
+      Suarez-Nieto, Emily Swinth, Kevin Tang, Eliana Vasquez, Jennifer Wang, Grace Wang, Emily Yang, Kane Zha, Katherine Zhang, Danyang
+      Zhang, Catherine Zhu ({{ $t('about.our-team.dqual') }}).
+    </p>
     <h6>{{ $t('about.our-team.dev') }}</h6>
     <p>
       Joyce Tagal ({{ $t('about.our-team.projl') }}), Maeva Fincker ({{ $t('about.our-team.devlead') }}), Charlie Hoffs ({{
