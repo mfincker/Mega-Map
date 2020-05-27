@@ -59,16 +59,20 @@
             </div>
             <i class="fas fa-chevron-right fa-lg" :class="{ 'fa-rotate-90': showDetails && item.cartodb_id == resource.resourceId }"></i>
           </div>
-          <business-details
-            v-if="item.cartodb_id == resource.resourceId && showDetails"
-            :business="item"
-            :legalResources="legalResources"
-            :medicalResources="medicalResources"
-            :mentalResources="mentalResources"
-          />
+          <template v-if="item.cartodb_id == resource.resourceId && showDetails">
+            <business-details
+              :business="item"
+              :legalResources="legalResources"
+              :medicalResources="medicalResources"
+              :mentalResources="mentalResources"
+            />
+            <p>
+              <a href="#" v-on:click.stop="$emit('show-edit-form', item)">{{ $t('suggest_an_edit') }}</a>
+            </p>
+          </template>
         </div>
       </div>
-      <a class="more-result bottom" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
+      <a class="more-result bottom" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
     </div>
   </div>
 </template>
