@@ -15,9 +15,7 @@
           <b-nav-item to="/about-us">
             {{ $t('about.about-us.header') }}
           </b-nav-item>
-          <b-nav-item href="https://forms.gle/dPVK8Pd8XKAiQ3Ti9" target="_blank"
-            >{{ $t('sidebar.feedback') }}
-          </b-nav-item>
+          <b-nav-item href="https://forms.gle/dPVK8Pd8XKAiQ3Ti9" target="_blank">{{ $t('sidebar.feedback') }} </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right>
