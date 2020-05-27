@@ -29,9 +29,11 @@
           @zoom-out="zoomOut"
           :displayMap="displayMap"
           @scroll="scroll"
+          @show-edit-form="displayEditForm"
         />
       </div>
     </div>
+    <edit-form v-if="showEditForm" @closed-edit-form="closeEditForm" :location="editedLocation" />
   </div>
 </template>
 
@@ -39,6 +41,7 @@
 import { cartoBaseURL, sqlQueries, countyLatLon, booleanFilters, complexFilters, dayFilters, needsWithGeoFilter } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
+import EditForm from '@/components/EditForm.vue'
 import Filters from '@/components/Filters.vue'
 import { addOrRemove } from '@/utilities'
 import { haversineDistance } from '@/utilities'
@@ -49,20 +52,23 @@ export default {
   components: {
     ResourceMap,
     ResultsList,
-    // BusinessDetails,
-    Filters
+    Filters,
+    EditForm
   },
   data() {
     return {
       entries: null,
       // mapUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
       mapUrl:
-        'https://api.mapbox.com/styles/v1/stanford-datalab/ckafqd6k80vmc1jmoyy9hswlu/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RhbmZvcmQtZGF0YWxhYiIsImEiOiJja2FmanA0bnMwZG9rMnJvNzAyY3Q5bXRkIn0.utHFnJ3XvT1_0Shoaio5Zw',
+        // 'https://api.mapbox.com/styles/v1/stanford-datalab/ckafqd6k80vmc1jmoyy9hswlu/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RhbmZvcmQtZGF0YWxhYiIsImEiOiJja2FmanA0bnMwZG9rMnJvNzAyY3Q5bXRkIn0.utHFnJ3XvT1_0Shoaio5Zw',
+        'https://api.mapbox.com/styles/v1/stanford-datalab/ckafqd6k80vmc1jmoyy9hswlu/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RhbmZvcmQtZGF0YWxhYiIsImEiOiJja2FmaHhtN2IwYTk4MnNsYm5uaXloa3JjIn0.53J4UZKkccFsouYNXXLCIg',
       bounds: null,
       centroid: [null, null],
       resourceData: { resourceId: null, isSetByMap: false },
       activeFilters: [],
-      zoomDiff: 0
+      zoomDiff: 0,
+      showEditForm: false,
+      editedLocation: null
     }
   },
   created() {
@@ -80,6 +86,13 @@ export default {
         window.gtag('event', 'Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
         console.log(e)
       }
+    },
+    closeEditForm() {
+      this.showEditForm = false
+    },
+    displayEditForm(item) {
+      this.showEditForm = true
+      this.editedLocation = item
     },
     boxSelected: function (filter) {
       this.activeFilters = addOrRemove(this.activeFilters, filter)
