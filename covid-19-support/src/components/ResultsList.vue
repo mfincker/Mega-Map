@@ -67,7 +67,11 @@
               :mentalResources="mentalResources"
             />
             <p>
+<<<<<<< HEAD
               <a v-on:click.stop="$emit('show-edit-form', item)">{{ $t('suggest_an_edit') }}</a>
+=======
+              <a href="#" v-on:click.stop="$emit('show-edit-form', item)">{{ $t('suggest_an_edit') }}</a>
+>>>>>>> open/close edit form
             </p>
           </template>
         </div>
