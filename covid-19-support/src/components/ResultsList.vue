@@ -2,13 +2,13 @@
   <div class="resultWrapper" ref="results">
     <div class="resultList">
       <div v-if="isLoading" class="no-result">
-        {{ $t('label.loading') }}
+        {{ $t('message.loading') }}
       </div>
       <div v-if="isEmpty && displayMap" class="no-result">
-        {{ $tc('no_location_in_this_area') }}
+        {{ $tc('message.no_location_in_this_area') }}
         <a class="more-result" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
       </div>
-      <div v-if="isEmpty && !displayMap" class="no-result">{{ $tc('no_location_meet_these_criteria') }}</div>
+      <div v-if="isEmpty && !displayMap" class="no-result">{{ $tc('message.no_location_meet_these_criteria') }}</div>
       <div
         v-for="item in markers"
         v-bind:key="item.cartodb_id"

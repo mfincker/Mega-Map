@@ -35,6 +35,7 @@ export default {
   created() {
     // Get user location
     // this.getUserLocation()
+    // Set up search from url
     if (this.$route.path == '/') {
       this.initialSearch = true
     } else {
@@ -50,6 +51,14 @@ export default {
   components: {
     AppHeader,
     Search
+  },
+  mounted() {
+    // Check if IE
+    const ua = navigator.userAgent
+    const ie = ua.indexOf('MSIE') > 0 || ua.indexOf('Trident/') > 0
+    if (ie) {
+      alert(this.$t('message.ie_compatibility'))
+    }
   },
   data() {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')

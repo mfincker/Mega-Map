@@ -254,6 +254,10 @@
   "mental": {
     "in_person": "In-person assistance"
   },
-  "no_location_in_this_area": "No result in this area.",
-  "no_location_meet_these_criteria": "No result for these criteria."
+  "message": {
+    "no_location_in_this_area": "No result in this area.",
+    "no_location_meet_these_criteria": "No result for these criteria.",
+    "loading": "Loading ...",
+    "ie_compatibility": "This website was not optimized for Internet Explorer and you may not have acces to all functionalities. For a better experience, please use a different browser (for example Mozilla Firefox)."
+  }
 }
