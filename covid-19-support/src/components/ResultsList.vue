@@ -1,6 +1,9 @@
 <template>
   <div class="resultWrapper" ref="results">
     <div class="resultList">
+      <div v-if="isLoading" class="no-result">
+        {{ $t('label.loading') }}
+      </div>
       <div v-if="isEmpty && displayMap" class="no-result">
         {{ $tc('no_location_in_this_area') }}
         <a class="more-result" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
@@ -147,8 +150,11 @@ export default {
     }
   },
   computed: {
+    isLoading() {
+      return this.markers == null
+    },
     isEmpty() {
-      return !this.markers || this.markers.length == 0
+      return this.markers != null && this.markers.length == 0
     },
     legalResources() {
       return this.$route.params.need.startsWith('legal')
