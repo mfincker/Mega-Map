@@ -1,6 +1,8 @@
+const CompressionPlugin = require('compression-webpack-plugin');
+
 module.exports = {
 
-  publicPath: process.env.NODE_ENV === 'production' && process.env.VUE_APP_THEME === 'NCCovidSupport' ? '/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' && process.env.VUE_APP_DEPLOY == 'GITHUB' ? '/mega-map-dev/' : '/',
 
   pluginOptions: {
     i18n: {
@@ -16,7 +18,8 @@ module.exports = {
         // create alias for white label SCSS variable files
         vueAppTheme: '../themes/' + process.env.VUE_APP_THEME
       }
-    }
+    },
+    plugins: [new CompressionPlugin()],
   },
   css: {
     loaderOptions: {
