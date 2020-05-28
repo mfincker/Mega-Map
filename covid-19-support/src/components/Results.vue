@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import 'whatwg-fetch'
 import { cartoBaseURL, sqlQueries, countyLatLon, booleanFilters, complexFilters, dayFilters, needsWithGeoFilter } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
