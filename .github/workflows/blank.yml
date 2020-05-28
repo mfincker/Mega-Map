@@ -41,7 +41,7 @@ jobs:
     - run: npm run build
       env:
         VUE_APP_THEME: ${{ secrets.VUE_APP_THEME }}
-        VUE_APP_DEPLOY: ${{ secrets.VUE_APP_DEPLOY }}  
+        VUE_APP_DEPLOY: 'GITHUB'  
       working-directory: covid-19-support
 
     - name: Deploy 🚀
