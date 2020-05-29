@@ -37,7 +37,16 @@
 
 <script>
 import 'whatwg-fetch'
-import { cartoBaseURL, sqlQueries, countyLatLon, booleanFilters, complexFilters, dayFilters, needsWithGeoFilter } from '@/constants'
+import {
+  cartoBaseURL,
+  sqlQueries,
+  zipQuery,
+  // countyLatLon,
+  booleanFilters,
+  complexFilters,
+  dayFilters,
+  needsWithGeoFilter
+} from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
 import Filters from '@/components/Filters.vue'
@@ -63,14 +72,26 @@ export default {
       centroid: [null, null],
       resourceData: { resourceId: null, isSetByMap: false },
       activeFilters: [],
-      zoomDiff: 0
+      zoomDiff: 0,
+      nearLatLonZoom: null
     }
   },
   created() {
+    this.fetchMapCenter()
+    // Get resource data
     const query = this.buildQuery(this.$route)
     this.fetchData(query)
   },
   methods: {
+    async fetchMapCenter() {
+      try {
+        const res = await fetch(cartoBaseURL + '&q=' + zipQuery + encodeURI(this.$route.query.near))
+        const row = await res.json()
+        this.nearLatLonZoom = { lat: row.rows[0].lat, lon: row.rows[0].lon, zoom: 13 }
+      } catch (e) {
+        console.log(e)
+      }
+    },
     async fetchData(query) {
       try {
         // console.log(cartoBaseURL + '&q=' + query)
@@ -188,22 +209,24 @@ export default {
           })
       }
       return markers
-    },
-    nearLatLonZoom() {
-      if (this.$route.query.near) {
-        return countyLatLon[this.$route.query.near]
-      }
-      return countyLatLon['anywhere']
     }
+    // nearLatLonZoom() {
+    //   if (this.$route.query.near) {
+    //     return countyLatLon[this.$route.query.near]
+    //   }
+    //   return countyLatLon['anywhere']
+    // }
   },
   watch: {
     $route: function (to, from) {
       // has need changed?
       if (!(typeof to.params.need === 'undefined') && to.params.need != from.params.need) {
         this.activeFilters = []
+        // this.fetchMapCenter()
         this.fetchData(this.buildQuery(to))
         // has near changed?
       } else {
+        // this.fetchMapCenter()
         this.buildQuery(to, false) != this.buildQuery(from, false) && this.fetchData(this.buildQuery(to))
       }
 
