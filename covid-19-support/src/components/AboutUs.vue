@@ -65,7 +65,7 @@
       Brandon Bergsneider, Rachel Chang, Trillium Chang, Taylor Evensen, Anna Greene, Ngozi Nezianya, Melanie Ramirez, Micah Trautwein,
       Songnan Wang, Angela Zhao ({{ $t('about.our-team.resource') }}).
     </p>
-    <p>Angela Chau, Celine Gadingco, Rachel Koo, Heather Nguyen, Ashwin Reddy ({{ $t('about.our-team.translate') }}).</p>
+    <p>Angela Chau, Celine Gandingco, Rachel Koo, Heather Nguyen, Ashwin Reddy ({{ $t('about.our-team.translate') }}).</p>
     <p>
       Aneeqa Abid, Fahdah AlSubaihin, Michael Alisky, Kat Anderson, Sarahi Arevalo, Sofia Avila, Akhilesh Balasingam, Kashika Bharol, Adyant
       Bhavsar, Giulia Caetano-Ferrara, Nancy Chang, Annie Chang, Ri Chen, Andy Chen, Jimin Choi, Justin Cortez, Amy DiPierro, Aulden Foltz,
