@@ -1,14 +1,17 @@
 <template>
   <div class="resultWrapper" ref="results">
-    <div class="resultList">
-      <div v-if="isLoading" class="no-result">
-        {{ $t('message.loading') }}
-      </div>
-      <div v-if="isEmpty && displayMap" class="no-result">
-        {{ $tc('message.no_location_in_this_area') }}
-        <a class="more-result" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
-      </div>
-      <div v-if="isEmpty && !displayMap" class="no-result">{{ $tc('message.no_location_meet_these_criteria') }}</div>
+    <div v-if="fetchDataState === StatusEnum.loading" class="no-result">
+      {{ $tc('message.loading') }}
+    </div>
+    <div v-if="fetchDataState === StatusEnum.error" class="no-result">
+      {{ $tc('message.error_loading_results') }}
+    </div>
+    <div v-if="isEmpty && displayMap" class="no-result">
+      {{ $tc('message.no_location_in_this_area') }}
+      <a class="more-result" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
+    </div>
+    <div v-if="isEmpty && !displayMap" class="no-result">{{ $tc('message.no_location_meet_these_criteria') }}</div>
+    <div v-if="fetchDataState === StatusEnum.loaded" class="resultList">
       <div
         v-for="item in markers"
         v-bind:key="item.cartodb_id"
@@ -71,10 +74,13 @@
 </template>
 <script>
 import BusinessDetails from '@/components/BusinessDetails.vue'
+import { StatusEnum } from '@/components/Results.vue'
+
 export default {
   name: 'ResultsList',
   data() {
     return {
+      StatusEnum,
       selected: false,
       today: new Date().getDay(),
       showDetails: false
@@ -84,6 +90,7 @@ export default {
     BusinessDetails
   },
   props: {
+    fetchDataState: Number, // enum
     markers: Array,
     resource: { resourceId: Number, isSetByMap: Boolean },
     displayMap: Boolean
@@ -150,11 +157,8 @@ export default {
     }
   },
   computed: {
-    isLoading() {
-      return this.markers == null
-    },
     isEmpty() {
-      return this.markers != null && this.markers.length == 0
+      return this.fetchDataState === StatusEnum.loaded && this.markers.length == 0
     },
     legalResources() {
       return this.$route.params.need.startsWith('legal')

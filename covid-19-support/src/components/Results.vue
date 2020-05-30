@@ -23,6 +23,7 @@
         />
         <results-list
           :class="{ noMap: !displayMap }"
+          :fetchDataState="fetchDataState"
           :markers="markers"
           :resource="resourceData"
           @resource-selected="passSelectedMarker"
@@ -45,6 +46,8 @@ import { addOrRemove } from '@/utilities'
 import { haversineDistance } from '@/utilities'
 import { latLng } from 'leaflet'
 
+export const StatusEnum = Object.freeze({ loading: 1, error: 2, loaded: 3 })
+
 export default {
   name: 'results',
   components: {
@@ -63,7 +66,8 @@ export default {
       centroid: [null, null],
       resourceData: { resourceId: null, isSetByMap: false },
       activeFilters: [],
-      zoomDiff: 0
+      zoomDiff: 0,
+      fetchDataState: StatusEnum.loading
     }
   },
   created() {
@@ -74,10 +78,13 @@ export default {
     async fetchData(query) {
       try {
         // console.log(cartoBaseURL + '&q=' + query)
+        this.fetchDataState = StatusEnum.loading
         const res = await fetch(cartoBaseURL + '&q=' + query)
         const entries = await res.json()
         this.entries = entries.rows
+        this.fetchDataState = StatusEnum.loaded
       } catch (e) {
+        this.fetchDataState = StatusEnum.error
         window.gtag('event', 'Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
         console.log(e)
       }
