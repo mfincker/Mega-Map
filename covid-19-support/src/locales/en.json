@@ -191,7 +191,8 @@
     "safe_pick_up": "Safe pick-up options",
     "zoom_out_for_more_results": "Zoom out for more results.",
     "in_person": "In-person clinics",
-    "telehealth": "Telehealth assistance"
+    "telehealth": "Telehealth assistance",
+    "zipcode": "Zipcode ..."
   },
   "languages": {
     "ar": "Arabic",
@@ -258,6 +259,9 @@
     "no_location_in_this_area": "No result in this area.",
     "no_location_meet_these_criteria": "No result for these criteria.",
     "loading": "Loading ...",
+    "provide_zip": "Provide a zipcode.",
+    "select_resource": "Select a resource.",
+    "error_getting_zip": "There was an error with the provided zipcode. Please try again.",
     "ie_compatibility": "This website was not optimized for Internet Explorer and you may not have acces to all functionalities. For a better experience, please use a different browser (for example Mozilla Firefox)."
   }
 }
