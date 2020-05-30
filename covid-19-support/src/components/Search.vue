@@ -115,7 +115,7 @@ export default {
     },
     nearLocation(v) {
       // doesn't handle invalid zipcode
-      if (this.nearZip != v && validZipcodes.includes(v)) {
+      if (validZipcodes.includes(v)) {
         this.nearZip = v
       } else {
         this.nearZip = null
@@ -149,6 +149,14 @@ export default {
   border-radius: 4px;
   font-weight: 600 !important;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
+  background-color: white !important;
+}
+
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill {
+  background-color: #fff !important;
 }
 
 @media (min-width: 768px) {

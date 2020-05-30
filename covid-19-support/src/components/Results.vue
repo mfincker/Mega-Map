@@ -11,6 +11,7 @@
         :nearLatLonZoom="nearLatLonZoom"
         :resource="resourceData"
         :zoomDiff="zoomDiff"
+        :resetMap="resetMap"
       />
       <div id="result-details" ref="result-details" :class="{ noMap: !displayMap }">
         <filters
@@ -65,30 +66,48 @@ export default {
   data() {
     return {
       entries: null,
-      // mapUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
-      mapUrl:
-        'https://api.mapbox.com/styles/v1/stanford-datalab/ckafqd6k80vmc1jmoyy9hswlu/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RhbmZvcmQtZGF0YWxhYiIsImEiOiJja2FmanA0bnMwZG9rMnJvNzAyY3Q5bXRkIn0.utHFnJ3XvT1_0Shoaio5Zw',
+      mapUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
+      // mapUrl:
+      // 'https://api.mapbox.com/styles/v1/stanford-datalab/ckafqd6k80vmc1jmoyy9hswlu/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RhbmZvcmQtZGF0YWxhYiIsImEiOiJja2FmanA0bnMwZG9rMnJvNzAyY3Q5bXRkIn0.utHFnJ3XvT1_0Shoaio5Zw',
+      // process.env.VUE_APP_MAPBOX_DEV_TOKEN,
       bounds: null,
       centroid: [null, null],
       resourceData: { resourceId: null, isSetByMap: false },
       activeFilters: [],
       zoomDiff: 0,
-      nearLatLonZoom: null
+      nearLatLonZoom: { lat: null, lon: null, zoom: null },
+      resetMap: false,
+      county: {}
     }
   },
   created() {
-    this.fetchMapCenter()
-    // Get resource data
-    const query = this.buildQuery(this.$route)
-    this.fetchData(query)
+    this.setUpMap(this.$route)
   },
   methods: {
-    async fetchMapCenter() {
+    async setUpMap(route) {
+      // Get map center
+      await this.fetchMapCenter(this.$route)
+      const query = this.buildQuery(route)
+      this.fetchData(query)
+    },
+    async fetchMapCenter(route) {
       try {
-        const res = await fetch(cartoBaseURL + '&q=' + zipQuery + encodeURI(this.$route.query.near))
+        const res = await fetch(cartoBaseURL + '&q=' + zipQuery + encodeURI(route.query.near))
         const row = await res.json()
-        this.nearLatLonZoom = { lat: row.rows[0].lat, lon: row.rows[0].lon, zoom: 13 }
+        if (row.rows.length == 1) {
+          this.nearLatLonZoom = { lat: row.rows[0].lat, lon: row.rows[0].lon, zoom: 13 }
+          this.county = Object.keys(row.rows[0]).filter((attr) => {
+            return row.rows[0][attr] == 1 && attr != 'cartodb_id'
+          })
+        } else {
+          alert(this.$t('message.error_getting_zip'))
+          this.$router.push('/')
+        }
       } catch (e) {
+        console.log(e)
+        alert(this.$t('message.error_getting_zip'))
+        this.$router.push('/')
+        window.gtag('event', 'Zip fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
         console.log(e)
       }
     },
@@ -128,8 +147,15 @@ export default {
     buildQuery(route, log = true) {
       // query building
       let query = sqlQueries[route.params.need]
-      if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined') && route.query.near != 'anywhere') {
-        query = query + ' AND ' + route.query.near + ' = 1'
+      if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined')) {
+        let countyFilter =
+          this.county
+            .reduce((s, c) => {
+              return s + c + ' = 1 OR '
+            }, '(')
+            .slice(0, -4) + ')'
+
+        query = query + ' AND ' + countyFilter
       }
       // log resource selection
       log &&
@@ -142,7 +168,11 @@ export default {
         if (!(typeof route.query.near === 'undefined')) {
           window.gtag('event', 'Location selection', {
             event_category: 'language - (' + this.$i18n.locale + ')',
-            event_label: 'county - ' + route.query.near
+            event_label:
+              'county - ' +
+              this.county.reduce((a, c) => {
+                return a + c + ' '
+              }, '')
           })
         } else {
           window.gtag('event', 'Location selection', {
@@ -210,27 +240,21 @@ export default {
       }
       return markers
     }
-    // nearLatLonZoom() {
-    //   if (this.$route.query.near) {
-    //     return countyLatLon[this.$route.query.near]
-    //   }
-    //   return countyLatLon['anywhere']
-    // }
   },
   watch: {
-    $route: function (to, from) {
-      // has need changed?
-      if (!(typeof to.params.need === 'undefined') && to.params.need != from.params.need) {
-        this.activeFilters = []
-        // this.fetchMapCenter()
-        this.fetchData(this.buildQuery(to))
-        // has near changed?
+    $route: async function (to, from) {
+      const old_query = this.buildQuery(from, false)
+      // has near changed?
+      if (!(typeof to.query.near === 'undefined') && to.query.near == from.query.near) {
+        this.resetMap = true
+        this.$nextTick(() => {
+          this.resetMap = false
+        })
       } else {
-        // this.fetchMapCenter()
-        this.buildQuery(to, false) != this.buildQuery(from, false) && this.fetchData(this.buildQuery(to))
+        await this.fetchMapCenter(to)
       }
-
-      // update entries for needs that are geographically filtered
+      const new_query = this.buildQuery(to, false)
+      old_query != new_query && this.fetchData(this.buildQuery(to))
     }
   }
 }

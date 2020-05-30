@@ -104,7 +104,6 @@ export default {
         this.need = null
         this.nearLocation = null
       } else {
-        console.log(to)
         // catch all - redirect to '/'
         if (!needs.includes(to.params.need) && to.path != '/about-us') {
           this.$router.push('/')

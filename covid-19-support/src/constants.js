@@ -92,7 +92,7 @@ export const needsWithGeoFilter = ['legal_assistance', 'medical', 'mental_health
 
 export const sqlQueries = {
   free_grocery: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 1 AND status = 1",
-  meal: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal'",
+  meal: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal' AND status = '1'",
   snap_wic_retailer: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 0 AND status = 1",
   // legal_general_info: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_general_info'",
   legal_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_services' AND status = 1",
