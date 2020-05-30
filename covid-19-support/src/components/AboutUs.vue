@@ -90,12 +90,12 @@
       updates. Due to the uncertainty surrounding the rapid spread of COVID-19, information is changing frequently.
     </p>
     <p>
-      BAC does not provide any of the services listed on this site, nor are we affiliated with any of the organizations listed. BAC makes
-      no claims, promises or guarantees about the accuracy, completeness, or adequacy of the contents of this website and expressly
-      disclaims liability for errors and omissions in the contents of this website. No warranty of any kind, implied, expressed or statutory
-      is given with respect to the contents of this website or its hyperlinks to other Internet resources. References in this application or
-      website to any specific services or the use of any trade, entity or corporation name is for the information and convenience of the
-      public, and does not constitute endorsement or recommendation.
+      BAC does not provide any of the services listed on this site, nor are we affiliated with any of the organizations listed. BAC makes no
+      claims, promises or guarantees about the accuracy, completeness, or adequacy of the contents of this website and expressly disclaims
+      liability for errors and omissions in the contents of this website. No warranty of any kind, implied, expressed or statutory is given
+      with respect to the contents of this website or its hyperlinks to other Internet resources. References in this application or website
+      to any specific services or the use of any trade, entity or corporation name is for the information and convenience of the public, and
+      does not constitute endorsement or recommendation.
     </p>
     <p>
       BAC shall assume no liability for any errors, omissions, or inaccuracies in the information provided, regardless of their cause, or
