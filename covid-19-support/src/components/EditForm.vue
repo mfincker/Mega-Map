@@ -1,6 +1,5 @@
 <template>
   <div id="edit-form">
-    <div id="close-button" @click="closeForm"><i class="fas fa-times"></i></div>
     <p v-if="show">
       Please update the information for this location in the form below. We really appreciate your help in maintaining these resources up to
       date.
@@ -9,59 +8,71 @@
     <b-form v-if="show" @submit="onSubmit" @reset="onReset">
       <!-- Location -->
       <b-form-group id="input-group-1" label="Location:" label-for="input-1">
-        <!-- name -->
-        <b-form-text>Resource name:</b-form-text>
-        <b-form-input id="input-1-1" v-model="form.provider_name"></b-form-input>
-        <!-- additional location details -->
-        <template v-if="!!form.provider_addloc">
-          <b-form-text>Additional name:</b-form-text>
-          <b-form-input id="input-1-2" v-model="form.provider_addloc"></b-form-input>
-        </template>
+        <div class="row mb-2">
+          <div class="col">
+            <!-- name -->
+            <b-form-text class="mb-1">Provider name:</b-form-text>
+            <b-form-input id="input-1-1" v-model="form.provider_name"></b-form-input>
+          </div>
+          <div class="col">
+            <!-- additional location details -->
+            <template v-if="!!form.provider_addloc">
+              <b-form-text class="mb-1">Location name:</b-form-text>
+              <b-form-input id="input-1-2" v-model="form.provider_addloc"></b-form-input>
+            </template>
+          </div>
+        </div>
         <!-- address -->
         <template v-if="!!form.address">
-          <b-form-text>Address:</b-form-text>
+          <b-form-text class="mb-1">Address:</b-form-text>
           <b-form-input id="input-1-3" v-model="form.address"></b-form-input>
           <b-form-input v-if="!!form.city" id="input-1-3" v-model="form.city"></b-form-input>
         </template>
       </b-form-group>
       <!-- Contact -->
       <b-form-group id="input-group-2" label="Contact:" label-for="input-2">
-        <!-- phone number -->
-        <template v-if="!!form.contact">
-          <b-form-text>Phone number:</b-form-text>
-          <b-form-input id="input-2-1" v-model="form.contact"></b-form-input>
-        </template>
-        <!-- website -->
-        <template v-if="!!form.web_link">
-          <b-form-text>Website:</b-form-text>
-          <b-form-input id="input-2-1" v-model="form.web_link"></b-form-input>
-        </template>
+        <div class="row mb-2">
+          <div class="col">
+            <!-- phone number -->
+            <template v-if="!!form.contact">
+              <b-form-text class="mb-1">Phone number:</b-form-text>
+              <b-form-input id="input-2-1" v-model="form.contact"></b-form-input>
+            </template>
+          </div>
+          <div class="col">
+            <!-- website -->
+            <template v-if="!!form.web_link">
+              <b-form-text class="mb-1">Website:</b-form-text>
+              <b-form-input id="input-2-1" v-model="form.web_link"></b-form-input>
+            </template>
+          </div>
+        </div>
       </b-form-group>
       <!-- Opening hours -->
       <b-form-group id="input-group-3" label="Opening hours:" label-for="input-3">
-        <div v-for="(d, index) in dayFilters" :key="index">
-          <b-form-text>{{ $t(`dayofweek.${weekdayHours[index].day}`) }}:</b-form-text>
+        <div v-for="(d, index) in dayFilters" :key="index" class="mb-2">
+          <b-form-text class="mb-1">{{ $t(`dayofweek.${weekdayHours[index].day}`) }}:</b-form-text>
           <b-form-input v-model="form[d]"></b-form-input>
         </div>
       </b-form-group>
       <!-- Senior hours -->
       <b-form-group id="input-group-4" label="Senior hours:" label-for="input-4" v-if="form.senior">
         <div v-for="(d, index) in seniorDayFilters" :key="index">
-          <b-form-text>{{ $t(`dayofweek.${weekdayHours[index].day}`) }}:</b-form-text>
+          <b-form-text class="mb-1">{{ $t(`dayofweek.${weekdayHours[index].day}`) }}:</b-form-text>
           <b-form-input v-model="form[d]"></b-form-input>
         </div>
       </b-form-group>
       <!-- Additional information -->
       <b-form-group id="input-group-5" label="Additional information:" label-for="input-1">
-        <b-form-text>Anything else that is missing, needs changing or should be displayed?</b-form-text>
+        <b-form-text class="mb-1">Anything else that is missing, needs changing or should be displayed?</b-form-text>
         <b-form-textarea
           id="input-5"
           v-model="form.other"
           placeholder="New service, location permanently closed, senior shopping hours ..."
         ></b-form-textarea>
       </b-form-group>
-      <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button type="submit" variant="primary" class="float-right">Submit</b-button>
       <b-form-invalid-feedback v-if="submitted" :state="edited">Nothing has changed.</b-form-invalid-feedback>
     </b-form>
   </div>
@@ -103,10 +114,6 @@ export default {
       seniorDayFilters.forEach((d) => {
         this.form[d] = this.form[d] == '0' ? 'Closed' : this.form[d]
       })
-    },
-    closeForm() {
-      this.form = {}
-      this.$emit('closed-edit-form')
     },
     async postForm(arr) {
       const urlbase = 'https://docs.google.com/forms/d/e/1FAIpQLSeV-PdW2XC4XWt78TfdmE8xcJ2JXga1Xr5mRKe0D8JPbp_NTA/formResponse'
@@ -165,7 +172,6 @@ export default {
           method: 'post',
           mode: 'no-cors'
         })
-        setTimeout(this.closeForm, 1250)
       } catch (e) {
         alert('There was an error during the form submission. Please try again or contact us at baycommunityresource@gmail.com.')
       }
@@ -224,28 +230,6 @@ export default {
 </script>
 
 <style type="text/css">
-#edit-form {
-  position: absolute;
-  top: 10%;
-  left: 0;
-  width: 100%;
-  height: 90%;
-  background-color: white;
-  z-index: 999999;
-  border-radius: 4px;
-  border: solid 1px rgba(0, 0, 0, 0.125);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
-  overflow-y: scroll;
-  padding: 56px;
-}
-
-@media (min-width: 650px) {
-  #edit-form {
-    width: 80%;
-    left: 10%;
-  }
-}
-
 #close-button {
   position: absolute;
   top: 0;

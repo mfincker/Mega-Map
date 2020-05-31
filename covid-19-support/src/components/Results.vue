@@ -31,11 +31,9 @@
           @zoom-out="zoomOut"
           :displayMap="displayMap"
           @scroll="scroll"
-          @show-edit-form="displayEditForm"
         />
       </div>
     </div>
-    <edit-form v-if="showEditForm" @closed-edit-form="closeEditForm" :location="editedLocation" />
   </div>
 </template>
 
@@ -53,7 +51,6 @@ import {
 } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
-import EditForm from '@/components/EditForm.vue'
 import Filters from '@/components/Filters.vue'
 import { addOrRemove } from '@/utilities'
 import { haversineDistance } from '@/utilities'
@@ -66,8 +63,7 @@ export default {
   components: {
     ResourceMap,
     ResultsList,
-    Filters,
-    EditForm
+    Filters
   },
   data() {
     return {
@@ -330,7 +326,7 @@ export default {
   overflow-y: auto;
   scrollbar-color: $gray-900 $gray-700;
   width: 100%;
-  z-index: 2000;
+  z-index: 500;
   background-color: #e9ecef;
 }
 </style>

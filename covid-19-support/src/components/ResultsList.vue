@@ -27,7 +27,7 @@
                 <div class="addloc">{{ item.provider_addloc }}</div>
               </template>
               <div class="resultMetadata">
-                <span class="resultTitle">{{ item.provider_name }} </span>
+                <span class="resultTitle">{{ item.provider_name }}</span>
                 <span v-if="!!item.address" class="resultAddress">
                   {{ item.address }}
                   <span v-if="!!item.city">, {{ item.city }}</span>
@@ -37,7 +37,8 @@
                 </span>
                 <!-- Legal resource description -->
                 <span v-if="(legalResources || medicalResources || mentalResources) && !!item.notes" class="resultNotes">
-                  <b>{{ $t('label.notes') }}:</b> {{ getTranslation(item, 'notes') }}
+                  <b>{{ $t('label.notes') }}:</b>
+                  {{ getTranslation(item, 'notes') }}
                 </span>
                 <!-- End Legal resource description -->
               </div>
@@ -66,16 +67,25 @@
               :medicalResources="medicalResources"
               :mentalResources="mentalResources"
             />
+            <p>
+              <b-button v-on:click="(e) => e.preventDefault(e)" class="btn btn-outline-primary btn-sm" v-b-modal.suggest-edit-modal>
+                {{ $t('suggest_an_edit') }}
+              </b-button>
+            </p>
           </template>
         </div>
       </div>
       <a class="more-result bottom" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
     </div>
+    <b-modal id="suggest-edit-modal" title="Suggest an edit">
+      <edit-form :location="locationToEdit" />
+    </b-modal>
   </div>
 </template>
 <script>
 import BusinessDetails from '@/components/BusinessDetails.vue'
 import { StatusEnum } from '@/components/Results.vue'
+import EditForm from '@/components/EditForm.vue'
 
 export default {
   name: 'ResultsList',
@@ -84,11 +94,13 @@ export default {
       StatusEnum,
       selected: false,
       today: new Date().getDay(),
-      showDetails: false
+      showDetails: false,
+      locationToEdit: null
     }
   },
   components: {
-    BusinessDetails
+    BusinessDetails,
+    EditForm
   },
   props: {
     fetchDataState: Number, // enum
@@ -151,6 +163,7 @@ export default {
       } else {
         this.showDetails = !this.showDetails
       }
+      this.locationToEdit = item
     },
     zoomOut() {
       this.$emit('zoom-out')
@@ -303,5 +316,9 @@ export default {
 }
 .more-info {
   align-content: flex-end;
+}
+
+.modal-footer {
+  display: none !important;
 }
 </style>
