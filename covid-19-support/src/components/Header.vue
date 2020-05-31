@@ -9,13 +9,9 @@
       <b-navbar-toggle target="nav-collapse" class="ml-auto" />
       <b-collapse id="nav-collapse" v-model="navState" is-nav class="text-right">
         <b-navbar-nav>
-          <b-nav-item to="/">
-            {{ $t('sidebar.home') }}
-          </b-nav-item>
-          <b-nav-item to="/about-us">
-            {{ $t('about.about-us.header') }}
-          </b-nav-item>
-          <b-nav-item href="https://forms.gle/dPVK8Pd8XKAiQ3Ti9" target="_blank">{{ $t('sidebar.feedback') }} </b-nav-item>
+          <b-nav-item to="/">{{ $t('sidebar.home') }}</b-nav-item>
+          <b-nav-item to="/about-us">{{ $t('about.about-us.header') }}</b-nav-item>
+          <b-nav-item href="https://forms.gle/dPVK8Pd8XKAiQ3Ti9" target="_blank">{{ $t('sidebar.feedback') }}</b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right>
@@ -24,14 +20,14 @@
               <span v-html="language" class="language" />
             </template>
             <b-dropdown-item href="#" v-for="item in languages" v-bind:key="item.iso" class="d-lg-block d-xl-block">
-              <span :title="$t('languages.' + item.iso)"
-                ><div
+              <span :title="$t('languages.' + item.iso)">
+                <div
                   v-html="item.name"
                   :lang="item.iso"
                   @click="$emit('language-selected', item)"
                   :class="{ selected: item.name == language }"
-                ></div
-              ></span>
+                ></div>
+              </span>
             </b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -45,23 +41,19 @@
           <img :src="require('../images/logo.svg')" width="24" />
           Bay Community
         </b-nav-item>
-        <b-nav-item to="/about-us">
-          {{ $t('about.about-us.header') }}
-        </b-nav-item>
-        <b-nav-item href="https://forms.gle/dPVK8Pd8XKAiQ3Ti9" target="_blank">
-          {{ $t('sidebar.feedback') }}
-        </b-nav-item>
+        <b-nav-item to="/about-us">{{ $t('about.about-us.header') }}</b-nav-item>
+        <b-nav-item href="https://forms.gle/dPVK8Pd8XKAiQ3Ti9" target="_blank">{{ $t('sidebar.feedback') }}</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
         <b-nav-item href="#" v-for="item in languages" v-bind:key="item.iso" class="d-lg-block d-xl-block">
-          <span :title="$t('languages.' + item.iso)"
-            ><div
+          <span :title="$t('languages.' + item.iso)">
+            <div
               v-html="item.name"
               :lang="item.iso"
               @click="$emit('language-selected', item)"
               :class="{ selected: item.name == language }"
-            ></div
-          ></span>
+            ></div>
+          </span>
         </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
@@ -105,7 +97,7 @@ export default {
 }
 
 .navbar {
-  z-index: 99999 !important;
+  z-index: 700;
   padding: 8px 16px;
   font-size: 1rem;
   display: block;
