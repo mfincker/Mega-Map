@@ -132,6 +132,8 @@ export default {
         'entry.2046646524',
         'entry.1270024710',
         'entry.295717420',
+        'entry.783076040',
+        'entry.1241001602',
         'entry.1889172928',
         'entry.1995637968',
         'entry.1327042286',
@@ -168,17 +170,20 @@ export default {
       }, '?')
       // POST to google form
       try {
-        await fetch(urlbase + query.slice(0, -1), {
+        const res = await fetch(urlbase + query.slice(0, -1), {
           method: 'post',
           mode: 'no-cors'
         })
+        if (!res.ok) {
+          throw Error(res.statusText)
+        }
       } catch (e) {
-        alert('There was an error during the form submission. Please try again or contact us at baycommunityresource@gmail.com.')
+        alert(this.$t('edit.submission_error'))
       }
     },
     onSubmit(evt) {
       evt.preventDefault()
-      const col = ['provider_name', 'provider_addloc', 'address', 'city', 'contact', 'web_link']
+      const col = ['provider_name', 'provider_addloc', 'address', 'city', 'contact', 'web_link', 'email']
       const days = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat', 'sp_sun', 'sp_mon', 'sp_tues', 'sp_wed', 'sp_thr', 'sp_fri', 'sp_sat']
       let resp = [this.location['cartodb_id']]
       col.forEach((c) => {
