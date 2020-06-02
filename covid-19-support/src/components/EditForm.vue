@@ -44,6 +44,11 @@
               <b-form-text class="mb-1">{{ $t('edit.website') }}:</b-form-text>
               <b-form-input id="input-2-1" v-model="form.web_link"></b-form-input>
             </template>
+            <!-- email -->
+            <template v-if="!!form.email">
+              <b-form-text class="mb-1">{{ $t('label.email') }}:</b-form-text>
+              <b-form-input id="input-2-1" v-model="form.email"></b-form-input>
+            </template>
           </div>
         </div>
       </b-form-group>
