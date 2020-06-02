@@ -7,12 +7,11 @@
         <p class="introParagraph">{{ $t('about.front-page.p2') }}</p>
       </template>
       <search
-        :need="need"
+        :needFromApp="need"
         :nearLocation="nearLocation"
         :userLocation="userLocation"
         :isInitialSearch="initialSearch"
-        @need-selected="needSelected"
-        @near-location-selected="nearLocationSelected"
+        @search="processSearch"
         v-if="showSearchBar"
       />
       <template v-if="initialSearch">
@@ -75,43 +74,15 @@ export default {
     }
   },
   methods: {
-    needSelected: function (val) {
-      this.need = val
-      if (this.nearLocation) {
-        this.$router.push({ path: this.need, query: { near: this.nearLocation } })
-        this.initialSearch = false
-      }
-      // window.gtag('event', 'What do you need?', { event_category: 'Search - (' + this.language.name + ')', event_label: val })
-    },
-    nearLocationSelected: function (val) {
-      this.nearLocation = val
-      if (this.nearLocation && this.need) {
-        this.$router.push({ path: this.need, query: { near: this.nearLocation } })
-        this.initialSearch = false
-      }
+    processSearch({ need, nearLocation }) {
+      this.need = need
+      this.nearLocation = nearLocation
+      this.$router.push({ path: this.need, query: { near: this.nearLocation } })
+      this.initialSearch = false
     },
     changeLanguage: function (item) {
       this.language = item
       this.$root.updateLang(item.iso)
-    },
-    async getUserLocation() {
-      try {
-        const location = await this.requestUserLocation()
-        this.userLocation = { lon: location.coords.longitude, lat: location.coords.latitude }
-      } catch (e) {
-        this.errorStr = e.message
-      }
-    },
-    async requestUserLocation() {
-      return new Promise((resolve, reject) => {
-        if (!('geolocation' in navigator)) {
-          reject(new Error('Geolocation is not available.'))
-        }
-        navigator.geolocation.getCurrentPosition(
-          (pos) => resolve(pos),
-          (err) => reject(err)
-        )
-      })
     },
     toggleNavBar(navBarState) {
       this.isNavBarOpen = navBarState
@@ -133,7 +104,7 @@ export default {
         this.need = null
         this.nearLocation = null
       } else {
-        console.log(to)
+        // catch all - redirect to '/'
         if (!needs.includes(to.params.need) && to.path != '/about-us') {
           this.$router.push('/')
         } else {

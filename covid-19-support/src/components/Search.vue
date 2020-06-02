@@ -1,33 +1,61 @@
 <template>
-  <div id="search">
+  <b-form id="search" @submit="onSubmit">
     <b-list-group horizontal class="need-location-group">
       <div class="searchDropdown">
         <!-- <div class="searchDropdown-label" v-if="isInitialSearch">Looking for:</div> -->
-        <b-form-select :value="need" :options="needOptions" @change="(opt) => $emit('need-selected', opt)" />
+        <b-form-select v-model="need" :options="needOptions" />
+        <b-form-invalid-feedback v-if="submitted" :state="selectedNeed">{{ $t('message.' + 'select_resource') }}</b-form-invalid-feedback>
       </div>
       <div class="searchDropdown">
-        <!-- <div class="searchDropdown-label" v-if="isInitialSearch">County:</div> -->
-        <b-form-select :value="nearLocation" :options="locationOptions" @change="(opt) => $emit('near-location-selected', opt)" />
+        <!-- <div class="searchDropdown-label" v-if="isInitialSearch">Zipcode:</div> -->
+        <b-form-input v-model="nearZip" :placeholder="$t('label.zipcode')" />
+        <b-form-invalid-feedback v-if="submitted" :state="validZip">{{ $t('message.' + zipErroMessage) }}</b-form-invalid-feedback>
       </div>
+      <b-button type="submit" variant="primary" class="search-btn"><i class="fas fa-search"></i></b-button>
     </b-list-group>
-  </div>
+  </b-form>
 </template>
 
 <script>
+import { validZipcodes } from '@/constants'
 export default {
   name: 'search',
   data() {
     return {
-      location: null
+      need: null,
+      nearZip: null,
+      submitted: false
     }
   },
   props: {
-    need: String,
+    needFromApp: String,
     nearLocation: String,
-    userLocation: { lat: Number, lon: Number },
+    // userLocation: { lat: Number, lon: Number },
     isInitialSearch: Boolean
   },
+  mounted() {
+    this.need = this.needFromApp
+    this.nearZip = this.nearLocation
+  },
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault()
+      this.submitted = true
+      if (this.validZip && this.selectedNeed) {
+        this.$emit('search', { need: this.need, nearLocation: this.nearZip })
+      }
+    }
+  },
   computed: {
+    validZip() {
+      return validZipcodes.includes(this.nearZip)
+    },
+    selectedNeed() {
+      return this.need !== null
+    },
+    zipErroMessage() {
+      return !this.nearZip ? 'provide_zip' : 'area_not_covered'
+    },
     needOptions() {
       return [
         { value: null, text: this.$tc('sidebar.what', 1), disabled: true },
@@ -64,28 +92,34 @@ export default {
         //   ]
         // }
       ]
+    }
+  },
+  watch: {
+    nearZip() {
+      // reset submitted state on nearLocation change
+      if (this.submitted) {
+        this.submitted = false
+      }
     },
-    locationOptions() {
-      let locations = [
-        { value: null, text: this.$tc('sidebar.where', 1), disabled: true },
-        { value: 'anywhere', text: this.$tc('county.anywhere', 1) },
-        { value: 'alameda', text: this.$tc('county.alameda', 1) },
-        { value: 'contra_costa', text: this.$tc('county.contra-costa', 1) },
-        { value: 'marin', text: this.$tc('county.marin', 1) },
-        { value: 'monterey', text: this.$t('county.monterey') },
-        { value: 'napa', text: this.$tc('county.napa', 1) },
-        { value: 'san_francisco', text: this.$tc('county.san-francisco', 1) },
-        { value: 'san_mateo', text: this.$tc('county.san-mateo', 1) },
-        { value: 'santa_clara', text: this.$tc('county.santa-clara', 1) },
-        { value: 'solano', text: this.$tc('county.solano', 1) },
-        { value: 'sonoma', text: this.$tc('county.sonoma', 1) }
-      ]
-      // uncomment to enable user current location
-      // if (this.userLocation && this.userLocation.lat && this.userLocation.lon) {
-      //   locations.splice(1, 0, { value: 'current-location', text: this.$tc('sidebar.current_location', 1) })
-      // }
-
-      return locations
+    need() {
+      // reset submitted state on nearLocation change
+      if (this.submitted) {
+        this.submitted = false
+      }
+    },
+    needFromApp(v) {
+      // if invalid need, already redirect to '/'
+      if (this.need != v) {
+        this.need = v
+      }
+    },
+    nearLocation(v) {
+      // doesn't handle invalid zipcode
+      if (validZipcodes.includes(v)) {
+        this.nearZip = v
+      } else {
+        this.nearZip = null
+      }
     }
   }
 }
@@ -93,9 +127,14 @@ export default {
 
 <style lang="scss" scoped>
 .searchDropdown {
-  width: 50%;
-  padding: 0 8px;
+  width: calc(50% - 16px);
+  padding: 0 2px;
   display: inline-block;
+}
+
+.search-btn {
+  margin-left: 2px;
+  height: 36px;
 }
 
 .searchDropdown-label {
@@ -103,16 +142,26 @@ export default {
   margin-bottom: 4px;
 }
 
-.custom-select {
+.custom-select,
+.form-control {
   font-size: 1rem;
   width: 100%;
   border-radius: 4px;
   font-weight: 600 !important;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
+  background-color: white !important;
+}
+
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill {
+  background-color: #fff !important;
 }
 
 @media (min-width: 768px) {
-  .custom-select {
+  .custom-select,
+  .form-control {
     font-size: 0.95rem;
   }
 }
@@ -122,7 +171,7 @@ export default {
   width: 100%;
   font-size: 0.75rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   z-index: 9999;
 }
 
@@ -131,7 +180,7 @@ export default {
 }
 
 .need-location-group {
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   width: 100%;
   margin: 0 auto;
