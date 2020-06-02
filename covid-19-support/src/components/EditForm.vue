@@ -174,13 +174,10 @@ export default {
       }, '?')
       // POST to google form
       try {
-        const res = await fetch(urlbase + query.slice(0, -1), {
+        await fetch(urlbase + query.slice(0, -1), {
           method: 'post',
           mode: 'no-cors'
         })
-        if (!res.ok) {
-          throw Error(res.statusText)
-        }
       } catch (e) {
         alert(this.$t('edit.submission_error'))
       }
