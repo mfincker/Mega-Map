@@ -165,7 +165,7 @@ span {
   max-width: 600px;
   margin: 0 auto;
   padding: 0 12px;
-  z-index: 99998;
+  z-index: 600;
 }
 
 .intro-centered {
