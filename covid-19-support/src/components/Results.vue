@@ -80,6 +80,7 @@ export default {
         // console.log(cartoBaseURL + '&q=' + query)
         this.fetchDataState = StatusEnum.loading
         const res = await fetch(cartoBaseURL + '&q=' + query)
+        this.handleErrors(res)
         const entries = await res.json()
         this.entries = entries.rows
         this.fetchDataState = StatusEnum.loaded
@@ -87,6 +88,11 @@ export default {
         this.fetchDataState = StatusEnum.error
         window.gtag('event', 'Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
         console.log(e)
+      }
+    },
+    handleErrors(response) {
+      if (!response.ok) {
+        throw Error(response.statusText)
       }
     },
     boxSelected: function (filter) {
