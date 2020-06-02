@@ -53,7 +53,7 @@ import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
 import Filters from '@/components/Filters.vue'
 import { addOrRemove } from '@/utilities'
-import { haversineDistance } from '@/utilities'
+import { haversineDistance, sortByDistance } from '@/utilities'
 import { latLng } from 'leaflet'
 
 export const StatusEnum = Object.freeze({ loading: 1, error: 2, loaded: 3 })
@@ -257,6 +257,11 @@ export default {
           .filter((c) => {
             return this.bounds.contains(latLng(c.lat, c.lon))
           })
+      }
+
+      // Sorting
+      if (this.displayMap) {
+        markers = markers.sort(sortByDistance)
       }
       return markers
     }
