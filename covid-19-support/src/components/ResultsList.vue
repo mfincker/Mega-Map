@@ -303,6 +303,12 @@ export default {
 .more-result {
   font-size: 0.9rem;
   font-weight: 600;
+  color: theme-color(primary) !important;
+  cursor: pointer;
+}
+
+.more-result:hover {
+  text-decoration: underline !important;
 }
 
 .bottom {
