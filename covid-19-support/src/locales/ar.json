@@ -30,25 +30,7 @@
       "partnership": "شراكة وسط تشابل هيل"
     },
     "partners": "مصادر المعلومات",
-    "title": "عن هذا الموقع",
-    "front-page": {},
-    "about-us": {
-      "p2": {
-        "link": "NCCovid Support"
-      }
-    },
-    "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
-    },
-    "contact-us": {
-      "p1": {
-        "link": "baycommunityresource@gmail.com"
-      }
-    },
-    "spthanks": {
-      "link0": "CARTO",
-      "link1": "Mapbox"
-    }
+    "title": "عن هذا الموقع"
   },
   "category": {
     "childcare": "رعاية الطفل",

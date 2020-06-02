@@ -91,6 +91,22 @@
       "p": "Espesyal na pasasalamat sa {0} at {1} para sa kapangyarihan ng aming site.",
       "link0": "CARTO",
       "link1": "Mapbox"
+    },
+    "our-team": {
+      "header": "Ang aming koponan",
+      "sourcing": "Data sourcing at pagsasalin: ",
+      "dev": "Data engineering at pag-unlad",
+      "resource": "mga coordinator ng mapagkukunan",
+      "translate": "tagasalin",
+      "dqual": "kalidad ng data",
+      "projl": "lider ng proyekto",
+      "devlead": "lider ng pag-unlad",
+      "dqlead": "lider ng kalidad ng data"
+    },
+    "dataaccess": {
+      "header": "Pag-access sa aming Data",
+      "p": "Maaari mong ma-access ang aming data sa pamamagitan ng isang bukas na proyekto sa {0} (kailangang mag-login).",
+      "link": "Big Local News"
     }
   },
   "category": {
@@ -204,7 +220,8 @@
     "current_location": "Kasalukuyang lokasyon",
     "what": "Mapagkukunan ...",
     "what-are-you-looking-for": "Ano ang hinahanap mo?",
-    "where": "Malapit sa ..."
+    "where": "Malapit sa ...",
+    "feedback": "Katugunan"
   },
   "title": "{0} Taguyod para sa COVID",
   "county": {

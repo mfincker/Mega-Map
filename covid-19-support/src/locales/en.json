@@ -76,22 +76,6 @@
       "link4": "Stanford Pediatric Advocacy",
       "link5": "Berkeley Ecology Center"
     },
-    "dataaccess": {
-      "header": "Accessing our Data",
-      "p": "You can access our data via an open project at {0} (login required).",
-      "link": "Big Local News"
-    },
-    "our-team": {
-      "header": "Our team",
-      "sourcing": "Data sourcing and translation:",
-      "dev": "Data engineering and development:",
-      "resource": "resource coordinators",
-      "translate": "translators",
-      "projl": "project lead",
-      "devlead": "development lead",
-      "dqlead": "data quality lead",
-      "dqual": "data quality"
-    },
     "contact-us": {
       "header": "Contact Us",
       "p1": {
@@ -107,6 +91,22 @@
       "p": "Special thanks to {0} and {1} for powering our site.",
       "link0": "CARTO",
       "link1": "Mapbox"
+    },
+    "our-team": {
+      "header": "Our team",
+      "sourcing": "Data sourcing and translation:",
+      "dev": "Data engineering and development:",
+      "resource": "resource coordinators",
+      "translate": "translators",
+      "dqual": "data quality",
+      "projl": "project lead",
+      "devlead": "development lead",
+      "dqlead": "data quality lead"
+    },
+    "dataaccess": {
+      "header": "Accessing our Data",
+      "p": "You can access our data via an open project at {0} (login required).",
+      "link": "Big Local News"
     }
   },
   "category": {
@@ -146,7 +146,7 @@
     "close": "Close",
     "closed": "Closed",
     "closed-on": "Closed on",
-    "closed-today": "Closed Today",
+    "closed-today": "Closed today",
     "closedonday": "Closed (on the current selected day)",
     "curbside_pickup": "Curbside pick-up",
     "curbside_or_delivery": "Delivery or curbside pick-up",
@@ -191,7 +191,10 @@
     "zoom_out_for_more_results": "Zoom out for more results.",
     "in_person": "In-person clinics",
     "telehealth": "Telehealth assistance",
-    "zipcode": "Zipcode ..."
+    "zipcode": "Zipcode",
+    "suggest_an_edit": "Suggest an edit",
+    "reset": "Reset",
+    "submit": "Submit"
   },
   "languages": {
     "ar": "Arabic",
@@ -207,7 +210,6 @@
   },
   "sidebar": {
     "home": "Home",
-    "feedback": "Feedback",
     "close-panel": "Close search panel",
     "info-about-us": "Currently, this site supports the Bay Area, CA. With",
     "info-end-text": ", we can expand our coverage.",
@@ -222,7 +224,8 @@
     "current_location": "Current location",
     "what": "Resource ...",
     "what-are-you-looking-for": "What are you looking for?",
-    "where": "Near ..."
+    "where": "Near ...",
+    "feedback": "Feedback"
   },
   "title": "{0} COVID Support",
   "county": {
@@ -254,14 +257,28 @@
   "mental": {
     "in_person": "In-person assistance"
   },
+  "no_location_in_this_area": "No result in this area.",
+  "no_location_meet_these_criteria": "No result for these criteria.",
   "message": {
-    "no_location_in_this_area": "No result in this area.",
-    "no_location_meet_these_criteria": "No result for these criteria.",
     "loading": "Loading ...",
-    "error_loading_results": "Error Loading Results",
-    "provide_zip": "Provide a zipcode.",
+    "ie_compatibility": "This website was not optimized for Internet Explorer and you may not have acces to all functionalities. For a better experience, please use a different browser (for example Mozilla Firefox).",
+    "area_not_covered": "We don't cover this area.",
     "select_resource": "Select a resource.",
-    "error_getting_zip": "There was an error with the provided zipcode. Please try again.",
-    "ie_compatibility": "This website was not optimized for Internet Explorer and you may not have acces to all functionalities. For a better experience, please use a different browser (for example Mozilla Firefox)."
+    "provide_zip": "Provide a zipcode.",
+    "error_getting_zip": "There was an error with the provided zipcode. Please try again."
+  },
+  "edit": {
+    "intro": "Please update the information for this location in the form below. We really appreciate your help in maintaining these resources up to date.",
+    "thanks": "We've received your edits. Thank you!",
+    "provider_name": "Provider name",
+    "location_name": "Location name",
+    "website": "Website",
+    "opening_hours": "Opening hours:",
+    "senior_hours": "Senior hours:",
+    "additional_info": "Additional information:",
+    "additional_info_text": "Anything else that is missing, needs changing or should be displayed?",
+    "additional_info_placeholder": "New service, location permanently closed, senior shopping hours ...",
+    "no_edit": "Nothing has changed.",
+    "submission_error": "There was an error during the form submission. Please try again or contact us at baycommunityresource@gmail.com."
   }
 }

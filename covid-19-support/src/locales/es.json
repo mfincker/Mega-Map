@@ -91,6 +91,22 @@
       "p": "Agradecimiento especial a {0} y {1}  por potenciar nuestro sitio",
       "link0": "CARTO",
       "link1": "Mapbox"
+    },
+    "our-team": {
+      "header": "Nuestro equipo",
+      "sourcing": "Fuentes y traducción de datos: ",
+      "dev": "Ingenería de datos y desarrollo:",
+      "resource": "coordinadores de los recursos",
+      "translate": "traductores",
+      "dqual": "calidad de los datos",
+      "projl": "jefe del proyecto",
+      "devlead": "jefe de desarrollo",
+      "dqlead": "jefe de la calidad de los datos"
+    },
+    "dataaccess": {
+      "header": "Acceso a los datos",
+      "p": "Usted puede acceder a nuestros datos por un proyecto abierto {0} (se requiere login)",
+      "link": "Big Local News"
     }
   },
   "category": {
@@ -204,7 +220,8 @@
     "current_location": "Ubicación actual",
     "what": "Recurso...",
     "what-are-you-looking-for": "¿Qué busca? ",
-    "where": "Cerca de..."
+    "where": "Cerca de...",
+    "feedback": "Reacciones"
   },
   "title": "Soporte de {0} COVID",
   "county": {

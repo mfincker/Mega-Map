@@ -92,6 +92,9 @@
       "p": "特别感谢{0} 和{1} 为我们的网站提供的帮助。",
       "link0": "CARTO",
       "link1": "Mapbox"
+    },
+    "dataaccess": {
+      "link": "Big Local News"
     }
   },
   "category": {
@@ -238,5 +241,6 @@
     "in_person": "当面帮助"
   },
   "no_location_in_this_area": "这个区域没有结果",
+  "": "",
   "no_location_meet_these_criteria": "这些标准哪没有结果。"
 }
