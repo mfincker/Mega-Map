@@ -62,8 +62,8 @@
               :mentalResources="mentalResources"
             />
             <p>
-              <b-button v-on:click="(e) => e.preventDefault(e)" class="btn btn-outline-primary btn-sm" v-b-modal.suggest-edit-modal>
-                {{ $t('suggest_an_edit') }}
+              <b-button @click="(e) => e.stopPropagation()" class="btn btn-outline-primary btn-sm" v-b-modal.suggest-edit-modal>
+                {{ $t('label.suggest_an_edit') }}
               </b-button>
             </p>
           </template>
@@ -71,8 +71,8 @@
       </div>
       <a class="more-result bottom" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
     </div>
-    <b-modal id="suggest-edit-modal" title="Suggest an edit">
-      <edit-form :location="locationToEdit" />
+    <b-modal id="suggest-edit-modal" :title="$t('label.suggest_an_edit')">
+      <edit-form :location="locationToEdit" @close-edit-form="closeEditModal" />
     </b-modal>
   </div>
 </template>
@@ -159,6 +159,9 @@ export default {
     zoomOut() {
       this.$emit('zoom-out')
       this.showDetails = false
+    },
+    closeEditModal() {
+      setTimeout(() => this.$bvModal.hide('suggest-edit-modal'), 1500)
     }
   },
   computed: {

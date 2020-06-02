@@ -1,30 +1,29 @@
 <template>
   <div id="edit-form">
     <p v-if="show">
-      Please update the information for this location in the form below. We really appreciate your help in maintaining these resources up to
-      date.
+      {{ $t('edit.intro') }}
     </p>
-    <p v-else>We've received your edits. Thank you!</p>
+    <p v-else>{{ $t('edit.thanks') }}</p>
     <b-form v-if="show" @submit="onSubmit" @reset="onReset">
       <!-- Location -->
       <b-form-group id="input-group-1" label="Location:" label-for="input-1">
         <div class="row mb-2">
           <div class="col">
             <!-- name -->
-            <b-form-text class="mb-1">Provider name:</b-form-text>
+            <b-form-text class="mb-1">{{ $t('edit.provider_name') }}:</b-form-text>
             <b-form-input id="input-1-1" v-model="form.provider_name"></b-form-input>
           </div>
           <div class="col">
             <!-- additional location details -->
             <template v-if="!!form.provider_addloc">
-              <b-form-text class="mb-1">Location name:</b-form-text>
+              <b-form-text class="mb-1">{{ $t('edit.location_name') }}:</b-form-text>
               <b-form-input id="input-1-2" v-model="form.provider_addloc"></b-form-input>
             </template>
           </div>
         </div>
         <!-- address -->
         <template v-if="!!form.address">
-          <b-form-text class="mb-1">Address:</b-form-text>
+          <b-form-text class="mb-1">{{ $t('label.address') }}:</b-form-text>
           <b-form-input id="input-1-3" v-model="form.address"></b-form-input>
           <b-form-input v-if="!!form.city" id="input-1-3" v-model="form.city"></b-form-input>
         </template>
@@ -35,45 +34,41 @@
           <div class="col">
             <!-- phone number -->
             <template v-if="!!form.contact">
-              <b-form-text class="mb-1">Phone number:</b-form-text>
+              <b-form-text class="mb-1">{{ $t('label.phone') }}:</b-form-text>
               <b-form-input id="input-2-1" v-model="form.contact"></b-form-input>
             </template>
           </div>
           <div class="col">
             <!-- website -->
             <template v-if="!!form.web_link">
-              <b-form-text class="mb-1">Website:</b-form-text>
+              <b-form-text class="mb-1">{{ $t('edit.website') }}:</b-form-text>
               <b-form-input id="input-2-1" v-model="form.web_link"></b-form-input>
             </template>
           </div>
         </div>
       </b-form-group>
       <!-- Opening hours -->
-      <b-form-group id="input-group-3" label="Opening hours:" label-for="input-3">
+      <b-form-group id="input-group-3" :label="$t('edit.opening_hours')" label-for="input-3">
         <div v-for="(d, index) in dayFilters" :key="index" class="mb-2">
           <b-form-text class="mb-1">{{ $t(`dayofweek.${weekdayHours[index].day}`) }}:</b-form-text>
           <b-form-input v-model="form[d]"></b-form-input>
         </div>
       </b-form-group>
       <!-- Senior hours -->
-      <b-form-group id="input-group-4" label="Senior hours:" label-for="input-4" v-if="form.senior">
+      <b-form-group id="input-group-4" :label="$t('edit.senior_hours')" label-for="input-4" v-if="form.special_hours == 1">
         <div v-for="(d, index) in seniorDayFilters" :key="index">
           <b-form-text class="mb-1">{{ $t(`dayofweek.${weekdayHours[index].day}`) }}:</b-form-text>
           <b-form-input v-model="form[d]"></b-form-input>
         </div>
       </b-form-group>
       <!-- Additional information -->
-      <b-form-group id="input-group-5" label="Additional information:" label-for="input-1">
-        <b-form-text class="mb-1">Anything else that is missing, needs changing or should be displayed?</b-form-text>
-        <b-form-textarea
-          id="input-5"
-          v-model="form.other"
-          placeholder="New service, location permanently closed, senior shopping hours ..."
-        ></b-form-textarea>
+      <b-form-group id="input-group-5" :label="$t('edit.additional_info')" label-for="input-1">
+        <b-form-text class="mb-1">{{ $t('edit.additional_info_text') }}</b-form-text>
+        <b-form-textarea id="input-5" v-model="form.other" :placeholder="$t('edit.additional_info_placeholder')"></b-form-textarea>
       </b-form-group>
-      <b-button type="reset" variant="danger">Reset</b-button>
-      <b-button type="submit" variant="primary" class="float-right">Submit</b-button>
-      <b-form-invalid-feedback v-if="submitted" :state="edited">Nothing has changed.</b-form-invalid-feedback>
+      <b-button type="reset" variant="danger">{{ $t('label.reset') }}</b-button>
+      <b-button type="submit" variant="primary" class="float-right">{{ $t('label.submit') }}</b-button>
+      <b-form-invalid-feedback v-if="submitted" :state="edited">{{ $t('edit.no_edit') }}</b-form-invalid-feedback>
     </b-form>
   </div>
 </template>
@@ -209,6 +204,7 @@ export default {
       if (this.edited) {
         this.show = false
         this.postForm(resp)
+        this.$emit('close-edit-form')
       }
       this.submitted = true
     },
@@ -219,11 +215,6 @@ export default {
       this.formatHour()
       this.form.other = ''
       this.submitted = false
-      // // Trick to reset/clear native browser form validation state
-      // this.show = false
-      // this.$nextTick(() => {
-      //   this.show = true
-      // })
     }
   }
 }
