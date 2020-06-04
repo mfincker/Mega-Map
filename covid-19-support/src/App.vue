@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleNavBar" />
+    <banner v-if="initialSearch" />
     <div class="intro" :class="{ 'intro-centered': initialSearch }">
       <template v-if="initialSearch">
         <h4 class="introParagraph">{{ $t('about.front-page.p1') }}</h4>
@@ -25,6 +26,7 @@
 <script>
 import AppHeader from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
+import Banner from '@/components/Banner.vue'
 import { needs } from '@/constants'
 export default {
   name: 'app',
@@ -49,7 +51,8 @@ export default {
   },
   components: {
     AppHeader,
-    Search
+    Search,
+    Banner
   },
   mounted() {
     // Check if IE

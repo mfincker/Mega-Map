@@ -280,5 +280,10 @@
     "additional_info_placeholder": "New service, location permanently closed, senior shopping hours ...",
     "no_edit": "Nothing has changed.",
     "submission_error": "There was an error during the form submission. Please try again or contact us at baycommunityresource@gmail.com."
+  },
+  "pebt": {
+    "header": "Food benefits for kids who get free or reduced meals.",
+    "lead": "Apply for P-EBT by June 30th.",
+    "link": "Apply now"
   }
 }
