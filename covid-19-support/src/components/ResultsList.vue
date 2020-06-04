@@ -113,9 +113,11 @@ export default {
       // if no resource are selected, hide location details
       if (!val.resourceId) {
         this.showDetails = false
+        this.locationToEdit = null
         // a location is selected, keep the list scrolled to that location
       } else {
         this.showDetails = true
+        this.locationToEdit = this.markers.filter((m) => m.cartodb_id == val.resourceId)[0]
         this.$nextTick(() => {
           const top = this.$refs['result' + val.resourceId][0].offsetTop - this.$refs['result' + this.markers[0].cartodb_id][0].offsetTop
           this.$emit('scroll', top)
@@ -163,7 +165,6 @@ export default {
       } else {
         this.showDetails = !this.showDetails
       }
-      this.locationToEdit = item
     },
     zoomOut() {
       this.$emit('zoom-out')

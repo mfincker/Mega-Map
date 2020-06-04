@@ -33,14 +33,14 @@
         <div class="row mb-2">
           <div class="col">
             <!-- phone number -->
-            <template v-if="!!form.contact">
+            <template>
               <b-form-text class="mb-1">{{ $t('label.phone') }}:</b-form-text>
               <b-form-input id="input-2-1" v-model="form.contact"></b-form-input>
             </template>
           </div>
           <div class="col">
             <!-- email -->
-            <template v-if="!!form.email">
+            <template>
               <b-form-text class="mb-1">{{ $t('label.email') }}:</b-form-text>
               <b-form-input id="input-2-1" v-model="form.email"></b-form-input>
             </template>
@@ -49,7 +49,7 @@
         <div class="row mb-2">
           <div class="col">
             <!-- website -->
-            <template v-if="!!form.web_link">
+            <template>
               <b-form-text class="mb-1">{{ $t('edit.website') }}:</b-form-text>
               <b-form-input id="input-2-1" v-model="form.web_link"></b-form-input>
             </template>
@@ -101,7 +101,6 @@ export default {
     }
   },
   created() {
-    console.log('get edit location from created')
     this.dayFilters = dayFilters
     this.weekdayHours = weekdayHours
     this.seniorDayFilters = seniorDayFilters
@@ -211,7 +210,6 @@ export default {
         this.edited = true
       }
       // Submit if something was edited
-      console.log(this.edited)
       if (this.edited) {
         this.show = false
         this.postForm(resp)
