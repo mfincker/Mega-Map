@@ -110,9 +110,8 @@ export default {
       } catch (e) {
         console.log(e)
         alert(this.$t('message.error_getting_zip'))
-        this.$router.push('/')
         window.gtag('event', 'Zip fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
-        console.log(e)
+        this.$router.push('/')
       }
     },
     async fetchData(query) {
