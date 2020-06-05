@@ -156,7 +156,7 @@ span {
 }
 
 .intro-centered {
-  margin: 10vh auto;
+  margin: 8vh auto;
 }
 
 @media (min-width: 600px) {
