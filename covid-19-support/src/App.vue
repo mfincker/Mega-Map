@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleNavBar" />
-    <banner v-if="initialSearch" />
+    <banner v-if="initialSearch && showBanner" @hide-banner="hideBanner" />
     <div class="intro" :class="{ 'intro-centered': initialSearch }">
       <template v-if="initialSearch">
         <h4 class="introParagraph">{{ $t('about.front-page.p1') }}</h4>
@@ -73,10 +73,14 @@ export default {
       userLocation: { lat: null, lon: null },
       errorStr: null,
       initialSearch: false,
-      isNavBarOpen: false
+      isNavBarOpen: false,
+      showBanner: true
     }
   },
   methods: {
+    hideBanner() {
+      this.showBanner = false
+    },
     processSearch({ need, nearLocation }) {
       this.need = need
       this.nearLocation = nearLocation
