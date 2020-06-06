@@ -81,7 +81,8 @@ export default {
       resetMap: false,
       county: {},
       showEditForm: false,
-      editedLocation: null
+      editedLocation: null,
+      cachedEntries: {}
     }
   },
   created() {
@@ -117,11 +118,14 @@ export default {
     async fetchData(query) {
       try {
         // console.log(cartoBaseURL + '&q=' + query)
-        this.fetchDataState = StatusEnum.loading
-        const res = await fetch(cartoBaseURL + '&q=' + query)
-        this.handleErrors(res)
-        const entries = await res.json()
-        this.entries = entries.rows
+        if (!this.cachedEntries[query]) {
+          this.fetchDataState = StatusEnum.loading
+          const res = await fetch(cartoBaseURL + '&q=' + query)
+          this.handleErrors(res)
+          const entries = await res.json()
+          this.cachedEntries[query] = entries.rows
+        }
+        this.entries = this.cachedEntries[query]
         this.fetchDataState = StatusEnum.loaded
       } catch (e) {
         this.fetchDataState = StatusEnum.error
@@ -240,6 +244,15 @@ export default {
         }
       })
 
+      // Filter out markers based on map bounds
+      if (this.displayMap && this.bounds) {
+        markers = markers
+          .filter((c) => c.lat && c.lon)
+          .filter((c) => {
+            return this.bounds.contains(latLng(c.lat, c.lon))
+          })
+      }
+
       markers = markers.map((c) => ({
         ...c,
         isOpen: c[dayFilter] !== '0',
@@ -248,14 +261,6 @@ export default {
 
       if (this.activeFilters.includes('open_today')) {
         markers = markers.filter((c) => c.isOpen)
-      }
-      // Filter out markers based on map bounds
-      if (this.displayMap && this.bounds) {
-        markers = markers
-          .filter((c) => c.lat && c.lon)
-          .filter((c) => {
-            return this.bounds.contains(latLng(c.lat, c.lon))
-          })
       }
 
       // Sorting
