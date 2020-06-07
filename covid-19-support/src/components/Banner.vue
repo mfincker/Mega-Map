@@ -16,7 +16,7 @@ export default {
   name: 'banner'
 }
 </script>
-<style type="scss">
+<style type="scss" scoped>
 #pebt-banner {
   padding: 15px;
   background-color: #f48171;
@@ -26,10 +26,9 @@ export default {
   &.btn-primary {
     background-color: #fdba5e;
   }
-
-  &.container {
-    max-width: 650px !important;
-  }
+}
+.container {
+  max-width: 650px !important;
 }
 
 #close-banner {
