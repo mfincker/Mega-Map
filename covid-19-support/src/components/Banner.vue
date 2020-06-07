@@ -1,5 +1,5 @@
 <template>
-  <b-jumbotron fluid id="pebt-banner" header-level="5" header-tag="h4">
+  <b-jumbotron fluid id="pebt-banner" header-level="5" header-tag="h5">
     <template v-slot:header>
       {{ $t('pebt.header') }}
     </template>
