@@ -26,10 +26,10 @@ export default {
   &.btn-primary {
     background-color: #fdba5e;
   }
+}
 
-  &.container {
-    max-width: 650px !important;
-  }
+.container {
+  max-width: 650px !important;
 }
 
 #close-banner {
