@@ -8,7 +8,7 @@
     </div>
     <div v-if="isEmpty && displayMap" class="no-result">
       {{ $tc('message.no_location_in_this_area') }}
-      <a class="more-result" href="#" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
+      <a class="more-result" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
     </div>
     <div v-if="isEmpty && !displayMap" class="no-result">{{ $tc('message.no_location_meet_these_criteria') }}</div>
     <div v-if="fetchDataState === StatusEnum.loaded" class="resultList">
@@ -182,7 +182,7 @@ export default {
       return this.$route.params.need.startsWith('legal')
     },
     medicalResources() {
-      return this.$route.params.need.startsWith('medical')
+      return this.$route.params.need.startsWith('health')
     },
     mentalResources() {
       return this.$route.params.need.startsWith('mental')

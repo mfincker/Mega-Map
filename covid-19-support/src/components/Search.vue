@@ -83,7 +83,7 @@ export default {
         //     { value: 'mental_health_telehealth', text: this.$tc('mental.telehealth', 1) }
         //   ]
         // },
-        { value: 'medical', text: this.$t('category.medical_resources') }
+        { value: 'health', text: this.$t('category.medical_resources') }
         // {
         //   label: this.$tc('category.medical_resources', 1),
         //   options: [

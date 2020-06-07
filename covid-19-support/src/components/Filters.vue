@@ -68,7 +68,7 @@ export default {
             { var: 'in_person', label: 'label.in_person' },
             { var: 'telehealth', label: 'label.telehealth' }
           ]
-        case 'medical':
+        case 'health':
           return [
             // { var: 'free', label: 'label.free' },
             { var: 'in_person', label: 'label.in_person' },
