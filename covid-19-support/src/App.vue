@@ -108,6 +108,7 @@ export default {
       // update need based on route
       if (to.path == '/') {
         this.initialSearch = true
+        this.showBanner = true
         this.need = null
         this.nearLocation = null
       } else {

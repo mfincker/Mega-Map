@@ -191,7 +191,11 @@
     "safe_pick_up": "Cara pengambilan selamat",
     "zoom_out_for_more_results": "Zoom keluar untuk lebih pilihan",
     "in_person": "Klinik",
-    "telehealth": "Perkhidmatan mental telehealth"
+    "telehealth": "Perkhidmatan mental telehealth",
+    "zipcode": "Zipkod",
+    "suggest_an_edit": "Sila beri cadangan.",
+    "reset": "Kosongkan semula",
+    "submit": "Hantarkan"
   },
   "languages": {
     "ar": "Bahasa Arab",
@@ -254,6 +258,33 @@
   "mental": {
     "in_person": "Perkhidmatan kesihatan mental"
   },
-  "no_location_in_this_area": "Tiada pilihan di kawasan ini",
-  "no_location_meet_these_criteria": "Tiada hasil di sini."
+  "message": {
+    "no_location_in_this_area": "Tiada pilihan di kawasan ini",
+    "no_location_meet_these_criteria": "Tiada hasil di sini.",
+    "loading": "Data sedang dimuatkan..",
+    "ie_compatibility": "Laman web ini tidak dibina untuk Internet Explorer. Untuk pengalaman yang lebih baik, sila gunakan browser internet lain (seperti Mozilla Firefox).",
+    "area_not_covered": "Kawasan ini tidak diliputi.",
+    "select_resource": "Sila memilih bantuan yang diperlukan.",
+    "provide_zip": "Sila memilih zipkod kawasan yang dicari.",
+    "error_getting_zip": "Terdapat ralat dengan zipkod yang diberi. Sila cuba lagi."
+  },
+  "edit": {
+    "intro": "Sila kemas kini maklumat untuk lokasi ini dalam borang di bawah. Kami amat menghargai bantuan anda untuk mengemaskini maklumat kami.",
+    "thanks": "Kami telah mendapatkan cadangan kemas kini anda. Terima kasih!",
+    "provider_name": "Nama penyedia",
+    "location_name": "Nama tempat",
+    "website": "Laman web penyedia",
+    "opening_hours": "Waktu buka",
+    "senior_hours": "Waktu warga emas",
+    "additional_info": "Maklumat tambahan",
+    "additional_info_text": "Ada apa lagi maklumat yang hilang, perlu diubah atau mesti dipaparkan?",
+    "additional_info_placeholder": "Perkhidmatan baru, lokasi ditutup secara kekal, waktu membeli-belah warga emas ...",
+    "no_edit": "Tiada apa yang berubah.",
+    "submission_error": "Terdapat ralat semasa penghantaran borang. Sila cuba lagi atau hubungi kami di baycommunityresource@gmail.com."
+  },
+  "pebt": {
+    "header": "Faedah makanan untuk kanak-kanak yang mendapat makanan percuma atau dengan diskaun di sekolah.",
+    "lead": "Buat permohonan untuk P-EBT selewat-lewatnya pada 30 Jun.",
+    "link": "Mohon sekarang"
+  }
 }

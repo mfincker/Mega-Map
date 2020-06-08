@@ -92,6 +92,22 @@
       "p": "Chân thành cảm ơn {0} và {1} đã hỗ trợ cho trang này.",
       "link0": "CARTO",
       "link1": "Mapbox"
+    },
+    "our-team": {
+      "header": "Đội ngũ của chúng tôi",
+      "sourcing": "Sưu tập và thông dịch dữ liệu :",
+      "dev": "Tạo và phát triển dữ liệu:",
+      "resource": "Người điều phối các nguồn hỗ trợ",
+      "translate": "người thông dịch",
+      "dqual": "chất lượng dữ liệu",
+      "projl": "trưởng dự án",
+      "devlead": "trưởng khâu phát triển",
+      "dqlead": "trưởng khâu chất lượng dữ liệu"
+    },
+    "dataaccess": {
+      "header": "Truy Cập Dữ Liệu của Chúng Tôi",
+      "p": "Quý vị có thể truy cập dữ liệu của chúng tôi thông qua dự án mở tại {0} (yêu cầu đăng nhập)",
+      "link": "Big Local News"
     }
   },
   "category": {
@@ -175,7 +191,11 @@
     "safe_pick_up": "Các lựa chọn lấy hàng an toàn",
     "zoom_out_for_more_results": "Thu nhỏ để có nhiều kết quả hơn",
     "in_person": "Phòng khám ",
-    "telehealth": "Hỗ trợ y tế trực tuyến "
+    "telehealth": "Hỗ trợ y tế trực tuyến ",
+    "zipcode": "Mã zipcode",
+    "suggest_an_edit": "Đề nghị chỉnh sửa một cái gì đó",
+    "reset": "Làm lại",
+    "submit": "Gửi đi"
   },
   "languages": {
     "ar": "Tiếng Ả Rập",
@@ -205,7 +225,8 @@
     "current_location": "Vị trí hiện tại",
     "what": "Nguồn lực",
     "what-are-you-looking-for": "Bạn đang tìm gì?",
-    "where": "Gần..."
+    "where": "Gần...",
+    "feedback": "Góp Ý"
   },
   "title": "{0} Hỗ trợ COVID",
   "county": {
@@ -237,6 +258,33 @@
   "mental": {
     "in_person": "Hỗ trợ trực tiếp "
   },
-  "no_location_in_this_area": "Không có kết quả trong khu vực này",
-  "no_location_meet_these_criteria": "Không có kết quả cho lựa chọn này."
+  "message": {
+    "no_location_in_this_area": "Không có kết quả trong khu vực này",
+    "no_location_meet_these_criteria": "Không có kết quả cho lựa chọn này.",
+    "loading": "Đang Tải ...",
+    "ie_compatibility": "Trang web này không được Internet Explorer hỗ trợ tối đa và quý vị có thể không sử dụng được hết các chức năng. Để có trải nghiệm tốt hơn, vui lòng sử dụng một chương trình duyệt khác (ví dụ: Mozilla Firefox）",
+    "area_not_covered": "Chúng tôi không bao gồm khu vực này.",
+    "select_resource": "Chọn một nguồn hỗ trợ.",
+    "provide_zip": "Cung cấp mã zipcode",
+    "error_getting_zip": "Mã zipcode quý vị cung cấp có lỗi. Xin vui lòng thử lại. "
+  },
+  "edit": {
+    "intro": "Xin cập nhật thông tin cho địa điểm này trong mẫu đơn dưới đây. Chúng tôi thật sự cảm ơn sự giúp đỡ của bạn trong việc giữ cho các nguồn hỗ trợ này luôn được cập nhật.",
+    "thanks": "Chúng tôi đã nhận được các chỉnh sửa của bạn. Xin cảm ơn!",
+    "provider_name": "Tên nhà cung cấp",
+    "location_name": "Tên địa điểm",
+    "website": "Tên trang web",
+    "opening_hours": "Giờ mở cửa:",
+    "senior_hours": "Giờ dành cho người lớn tuổi:",
+    "additional_info": "Thông tin thêm:",
+    "additional_info_text": "Còn bất cứ điều gì khác còn đang thiếu, cần được sửa đổi hoặc nên được hiển thị không?",
+    "additional_info_placeholder": "Dịch vụ mới, địa điểm được đóng cửa vĩnh viễn, giờ mua sắm cho người lớn tuổi ... ",
+    "no_edit": "Không có gì thay đổi.",
+    "submission_error": "Đã có một lỗi trong quá trình gửi biểu mẫu. Vui lòng thử lại hoặc liên hệ với chúng tôi tại baycommunityresource@gmail.com."
+  },
+  "pebt": {
+    "header": "Lợi ích thực phẩm dành cho trẻ em được nhận các bữa ăn miễn phí hoặc giảm giá.",
+    "lead": "Đăng ký xin P-EBT trước ngày 30 tháng 6.",
+    "link": "Đăng ký ngay bây giờ"
+  }
 }

@@ -93,7 +93,20 @@
       "link0": "CARTO",
       "link1": "Mapbox"
     },
+    "our-team": {
+      "header": "我们的队伍",
+      "sourcing": "数据收集和翻译",
+      "dev": "数据工程师",
+      "resource": "资源协调员",
+      "translate": "翻译员",
+      "dqual": "数据质量",
+      "projl": "项目负责人",
+      "devlead": "开发负责人",
+      "dqlead": "数据质量负责人"
+    },
     "dataaccess": {
+      "header": "获取我们的数据",
+      "p": "你可以通过项目共享 {0} 来获取数据（需要登录）。",
       "link": "Big Local News"
     }
   },
@@ -178,7 +191,11 @@
     "safe_pick_up": "安全\b取物\b\b选择",
     "zoom_out_for_more_results": "缩小以获取更多结果",
     "in_person": "当面诊所",
-    "telehealth": "线上帮助"
+    "telehealth": "线上帮助",
+    "zipcode": "邮编",
+    "suggest_an_edit": "提供编辑建议",
+    "reset": "重制",
+    "submit": "提交"
   },
   "languages": {
     "ar": "阿拉伯",
@@ -208,7 +225,8 @@
     "current_location": "当前位置",
     "what": "资源。。。",
     "what-are-you-looking-for": "你在找什么？",
-    "where": "附近。。。"
+    "where": "附近。。。",
+    "feedback": "反馈"
   },
   "title": "{0} COVID支持",
   "county": {
@@ -240,7 +258,33 @@
   "mental": {
     "in_person": "当面帮助"
   },
-  "no_location_in_this_area": "这个区域没有结果",
-  "": "",
-  "no_location_meet_these_criteria": "这些标准哪没有结果。"
+  "message": {
+    "no_location_in_this_area": "这个区域没有结果",
+    "no_location_meet_these_criteria": "这些标准哪没有结果。",
+    "loading": "下载中",
+    "ie_compatibility": "IE 浏览器可能不支持我们的网站。为了更好的体验，请用其他浏览器（比如）",
+    "area_not_covered": "我们不覆盖这个地区",
+    "select_resource": "选择一种资源",
+    "provide_zip": "提供一个邮编",
+    "error_getting_zip": "输入邮编有误，请重试"
+  },
+  "edit": {
+    "intro": "请更新以下的地址的信息。我们非常感谢您能帮助我们确保信息更新。",
+    "thanks": "我们收到了你的编辑。谢谢！",
+    "provider_name": "提供者名称",
+    "location_name": "地点名称",
+    "website": "网页",
+    "opening_hours": "开放时间",
+    "senior_hours": "老年人时间",
+    "additional_info": "其他信息",
+    "additional_info_text": "其他忽略的信息，需要更改或者展示的信息？",
+    "additional_info_placeholder": "新的服务， 地址永久关闭，老年人购买时间",
+    "no_edit": "没有变化",
+    "submission_error": "提交错误，请重试或者通过baycommunityresource@gmail.com.联系我们。"
+  },
+  "pebt": {
+    "header": "为免费或者优惠获取食物的孩子提供的食物福利",
+    "lead": "六月30日前申请P-EBT",
+    "link": "立即申请"
+  }
 }
