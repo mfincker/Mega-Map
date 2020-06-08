@@ -1,14 +1,31 @@
 <template>
-  <div class="filters" v-if="filterList[0] != null">
-    <b-form-checkbox
-      v-for="(item, index) in filterList"
-      v-model="selected"
-      v-bind:key="index"
-      :value="item.var"
-      @change="$emit('box-selected', item.var)"
-    >
-      {{ $tc(item.label, 2) }}
-    </b-form-checkbox>
+  <div v-if="filterList[0] != null" class="filters">
+    <div v-for="(item, index) in filterList" v-bind:key="index" class="filter">
+      <template v-if="!Array.isArray(item)">
+        <b-form-checkbox v-model="selected" :value="item.var" @change="$emit('box-selected', item.var)">
+          {{ $tc(item.label, 2) }}
+        </b-form-checkbox>
+      </template>
+      <template v-else>
+        <div v-b-toggle="item[0]" @click="toggleChevron" class="collaps-toggle">
+          {{ item[0] }}
+          <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <b-collapse :id="item[0]">
+          <b-form-checkbox
+            v-for="(item_sub, index_sub) in item.slice(1)"
+            v-model="selected"
+            v-bind:key="'' + index + '_' + index_sub"
+            :value="item_sub.var"
+            @change="$emit('box-selected', item_sub.var)"
+          >
+            {{ $tc(item_sub.label, 2) }}
+          </b-form-checkbox>
+        </b-collapse>
+      </template>
+    </div>
+    <b-button id="apply" variant="primary">{{ $t('label.apply') }}</b-button>
   </div>
 </template>
 
@@ -28,6 +45,14 @@ export default {
   methods: {
     boxSelected: function (content) {
       this.$emit('box-selected', content)
+    },
+    toggleChevron(evt) {
+      console.log(evt)
+      if (evt.target.tagName == 'I') {
+        evt.target.classList.toggle('fa-rotate-90')
+      } else {
+        evt.target.getElementsByTagName('i')[0].classList.toggle('fa-rotate-90')
+      }
     }
   },
   watch: {
@@ -72,7 +97,18 @@ export default {
           return [
             // { var: 'free', label: 'label.free' },
             { var: 'in_person', label: 'label.in_person' },
-            { var: 'telehealth', label: 'label.telehealth' }
+            { var: 'telehealth', label: 'label.telehealth' },
+            [
+              'Area',
+              { var: 'med_primary_care', label: 'health.primary_care' },
+              { var: 'med_mental_health', label: 'health.mental_health' }
+            ],
+            [
+              'Payment options',
+              { var: 'free', label: 'label.free' },
+              { var: 'sliding_scale', label: 'health.sliding_scale' },
+              { var: 'financial_assistance', label: 'health.financial_assistance' }
+            ]
           ]
         case 'legal_assistance':
           return [
@@ -92,7 +128,7 @@ export default {
 </script>
 
 <style lang="scss">
-.filters {
+.filter {
   position: relative;
   justify-content: space-evenly;
   z-index: 3000;
@@ -104,11 +140,17 @@ export default {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
 }
 
+.filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .custom-checkbox {
   color: #495057;
   background: white;
   margin-bottom: 4px;
-  width: 50%;
+  width: 80%;
   display: inline-block !important;
   line-height: 1;
 }
@@ -120,5 +162,17 @@ export default {
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: theme-color(primary);
   border-color: rgba(0, 0, 0, 0.3);
+}
+
+.collaps-toggle {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#apply {
+  margin-top: 15px;
 }
 </style>

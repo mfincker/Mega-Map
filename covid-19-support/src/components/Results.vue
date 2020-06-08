@@ -14,14 +14,28 @@
         :resetMap="resetMap"
       />
       <div id="result-details" ref="result-details" :class="{ noMap: !displayMap }">
-        <filters
+        <b-modal id="filters-modal" :title="$t('label.filters')">
+          <filters
+            :class="{ noMap: !displayMap }"
+            :need="$route.params.need"
+            :markers="markers"
+            :activeFilters="activeFilters"
+            @box-selected="boxSelected"
+          />
+        </b-modal>
+        <div>
+          <b-button @click="(e) => e.stopPropagation()" class="btn btn-outline-primary btn-sm" v-b-modal.filters-modal>
+            {{ $t('label.filters') }}
+          </b-button>
+        </div>
+        <!--         <filters
           ref="filters"
           :class="{ noMap: !displayMap }"
           :need="$route.params.need"
           :markers="markers"
           :activeFilters="activeFilters"
           @box-selected="boxSelected"
-        />
+        /> -->
         <results-list
           :class="{ noMap: !displayMap }"
           :fetchDataState="fetchDataState"
