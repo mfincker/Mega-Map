@@ -195,7 +195,8 @@
     "zipcode": "Zipcode",
     "suggest_an_edit": "Suggest an edit",
     "reset": "Reset",
-    "submit": "Submit"
+    "submit": "Submit",
+    "last_updated": "Details last updated"
   },
   "languages": {
     "ar": "Arabic",

@@ -41,7 +41,7 @@
           </template>
         </p>
 
-        <p class="updated">Details last updated: {{ business.last_update }}</p>
+        <p class="updated">{{ $t('label.last_updated') }}: {{ business.last_update }}</p>
       </div>
     </b-list-group>
   </span>
