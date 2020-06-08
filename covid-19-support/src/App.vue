@@ -166,7 +166,7 @@ span {
 }
 
 .introParagraph {
-  padding: 24px 8px 0;
+  padding: 24px 8px 50px;
 }
 
 .introParagraph-light {
