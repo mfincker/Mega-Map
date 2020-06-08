@@ -42,7 +42,7 @@
             <!-- email -->
             <template>
               <b-form-text class="mb-1">{{ $t('label.email') }}:</b-form-text>
-              <b-form-input id="input-2-1" v-model="form.email"></b-form-input>
+              <b-form-input id="input-2-2" v-model="form.email"></b-form-input>
             </template>
           </div>
         </div>
@@ -51,29 +51,29 @@
             <!-- website -->
             <template>
               <b-form-text class="mb-1">{{ $t('edit.website') }}:</b-form-text>
-              <b-form-input id="input-2-1" v-model="form.web_link"></b-form-input>
+              <b-form-input id="input-2-3" v-model="form.web_link"></b-form-input>
             </template>
           </div>
         </div>
       </b-form-group>
       <!-- Opening hours -->
-      <b-form-group id="input-group-3" :label="$t('edit.opening_hours')" label-for="input-3">
+      <b-form-group id="input-group-3" :label="$t('edit.opening_hours')" label-for="input-3-1">
         <div v-for="(d, index) in dayFilters" :key="index" class="mb-2">
           <b-form-text class="mb-1">{{ $t(`dayofweek.${weekdayHours[index].day}`) }}:</b-form-text>
-          <b-form-input v-model="form[d]"></b-form-input>
+          <b-form-input :id="'input-3-1-' + index" v-model="form[d]"></b-form-input>
         </div>
       </b-form-group>
       <!-- Senior hours -->
-      <b-form-group id="input-group-4" :label="$t('edit.senior_hours')" label-for="input-4" v-if="form.special_hours == 1">
+      <b-form-group id="input-group-4" :label="$t('edit.senior_hours')" label-for="input-4-1" v-if="form.special_hours == 1">
         <div v-for="(d, index) in seniorDayFilters" :key="index">
           <b-form-text class="mb-1">{{ $t(`dayofweek.${weekdayHours[index].day}`) }}:</b-form-text>
-          <b-form-input v-model="form[d]"></b-form-input>
+          <b-form-input :id="'input-4-1-' + index" v-model="form[d]"></b-form-input>
         </div>
       </b-form-group>
       <!-- Additional information -->
-      <b-form-group id="input-group-5" :label="$t('edit.additional_info')" label-for="input-1">
+      <b-form-group id="input-group-5" :label="$t('edit.additional_info')" label-for="input-5-1">
         <b-form-text class="mb-1">{{ $t('edit.additional_info_text') }}</b-form-text>
-        <b-form-textarea id="input-5" v-model="form.other" :placeholder="$t('edit.additional_info_placeholder')"></b-form-textarea>
+        <b-form-textarea id="input-5-1" v-model="form.other" :placeholder="$t('edit.additional_info_placeholder')"></b-form-textarea>
       </b-form-group>
       <b-button type="reset" variant="danger">{{ $t('label.reset') }}</b-button>
       <b-button type="submit" variant="primary" class="float-right">{{ $t('label.submit') }}</b-button>
