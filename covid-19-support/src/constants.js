@@ -82,7 +82,7 @@ export const cartoBaseURL =
   // 'https://mfincker.carto.com/api/v2/sql?api_key=' + process.env.VUE_APP_CARTO_API_KEY
   'https://dcl-mega-map.carto.com/api/v2/sql?'
 
-export const cartoDBName = 'mega_map_debug'
+export const cartoDBName = 'mega_map_database'
 
 export const zipDBName = 'zipcode_db'
 
