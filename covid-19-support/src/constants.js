@@ -78,15 +78,11 @@ export const complexFilters = [
 ]
 
 // CARTO DB VARIABLES
-export const cartoBaseURL =
-  // 'https://mfincker.carto.com/api/v2/sql?api_key=' + process.env.VUE_APP_CARTO_API_KEY
-  'https://dcl-mega-map.carto.com/api/v2/sql?'
+export const cartoBaseURL = 'https://dcl-mega-map.carto.com/api/v2/sql?'
 
 export const cartoDBName = 'mega_map_debug'
 
 export const zipDBName = 'zipcode_db'
-
-export const needs = ['free_grocery', 'meal', 'snap_wic_retailer', 'legal_assistance', 'health', 'mental_health']
 
 export const needsWithGeoFilter = ['legal_assistance', 'health', 'mental_health']
 
@@ -100,6 +96,8 @@ export const sqlQueries = {
   mental_health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'health' AND med_mental_health = 1 AND status = 1",
   health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'health' AND status = 1"
 }
+
+export const dbQuery = 'SELECT * FROM ' + cartoDBName
 
 export const zipQuery = 'SELECT * FROM ' + zipDBName + ' WHERE zip = '
 

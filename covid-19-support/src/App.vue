@@ -27,7 +27,7 @@
 import AppHeader from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
 import Banner from '@/components/Banner.vue'
-import { needs } from '@/constants'
+import { needs_name } from '@/resources/resources.js'
 export default {
   name: 'app',
   props: {
@@ -112,7 +112,7 @@ export default {
         this.nearLocation = null
       } else {
         // catch all - redirect to '/'
-        if (!needs.includes(to.params.need) && to.path != '/about-us') {
+        if (!needs_name.includes(to.params.need) && to.path != '/about-us') {
           this.$router.push('/')
         } else {
           this.initialSearch = false

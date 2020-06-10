@@ -53,21 +53,13 @@
 
 <script>
 import 'whatwg-fetch'
-import {
-  cartoBaseURL,
-  sqlQueries,
-  zipQuery,
-  // countyLatLon,
-  booleanFilters,
-  complexFilters,
-  dayFilters,
-  needsWithGeoFilter
-} from '@/constants'
+import { cartoBaseURL, dbQuery, zipQuery, needsWithGeoFilter } from '@/constants'
+import { booleanFilters, complexFilters, dayFilters } from '@/resources/filters.js'
+import { needs } from '@/resources/resources.js'
 import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
 import Filters from '@/components/Filters.vue'
-import { addOrRemove } from '@/utilities'
-import { haversineDistance, sortByDistance } from '@/utilities'
+import { addOrRemove, haversineDistance, sortByDistance } from '@/utilities'
 import { latLng } from 'leaflet'
 
 export const StatusEnum = Object.freeze({ loading: 1, error: 2, loaded: 3 })
@@ -183,7 +175,8 @@ export default {
     },
     buildQuery(route, log = true) {
       // query building
-      let query = sqlQueries[route.params.need]
+      let query = dbQuery + needs[route.params.need].sql_query
+
       if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined')) {
         let countyFilter =
           this.county
@@ -222,6 +215,9 @@ export default {
     }
   },
   computed: {
+    need() {
+      return needs[this.$route.params.need]
+    },
     currentBusiness() {
       if (this.resourceData == null || this.markers == null) {
         return null
@@ -230,9 +226,16 @@ export default {
         ? this.markers.filter((c) => c.cartodb_id == this.resourceData.resourceId)[0]
         : null
     },
+    displayMapFromFilter() {
+      if (this.need.filters.length > 0) {
+        return this.need.filters.some((f) => {
+          return Object.prototype.hasOwnProperty.call(f, 'display_map') && f.display_map && this.activeFilters.includes(f.var)
+        })
+      }
+      return false
+    },
     displayMap() {
-      const needWithMap = ['meal', 'free_grocery', 'snap_wic_retailer']
-      return needWithMap.includes(this.$route.params.need) || this.activeFilters.includes('in_person')
+      return this.need.display_map || this.displayMapFromFilter
     },
     markers() {
       if (!this.entries) {
@@ -297,7 +300,10 @@ export default {
         await this.fetchMapCenter(to)
       }
       const new_query = this.buildQuery(to, false)
-      old_query != new_query && this.fetchData(this.buildQuery(to))
+      if (old_query != new_query) {
+        this.fetchData(this.buildQuery(to))
+        this.activeFilters = []
+      }
     }
   }
 }

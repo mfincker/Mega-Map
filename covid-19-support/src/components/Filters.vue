@@ -8,7 +8,7 @@
       </template>
       <template v-else>
         <div v-b-toggle="item[0]" @click="toggleChevron" class="collaps-toggle">
-          {{ item[0] }}
+          {{ $t(item[0]) }}
           <i class="fas fa-chevron-right"></i>
         </div>
 
@@ -30,10 +30,10 @@
 </template>
 
 <script>
+import { needs } from '@/resources/resources.js'
 export default {
   name: 'Filters',
   props: {
-    need: String,
     markers: Array,
     activeFilters: Array
   },
@@ -42,12 +42,14 @@ export default {
       selected: []
     }
   },
+  mounted() {
+    this.selected = this.activeFilters
+  },
   methods: {
     boxSelected: function (content) {
       this.$emit('box-selected', content)
     },
     toggleChevron(evt) {
-      console.log(evt)
       if (evt.target.tagName == 'I') {
         evt.target.classList.toggle('fa-rotate-90')
       } else {
@@ -63,65 +65,15 @@ export default {
     }
   },
   computed: {
+    need() {
+      return needs[this.$route.params.need]
+    },
     // Displayed filters
     filterList() {
-      switch (this.need) {
-        case 'free_grocery':
-          return [
-            // { var: 'children', label: 'label.children' },
-            // { var: 'seniors', label: 'label.seniors' },
-            { var: 'open_today', label: 'label.open_today' }
-            // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
-          ]
-        case 'snap_wic_retailer':
-          return [
-            { var: 'wic', label: 'label.wic' },
-            { var: 'special_hours', label: 'label.special_hours' },
-            { var: 'safe_pick_up', label: 'label.safe_pick_up' },
-            { var: 'farmers_market', label: 'label.farmers_market' }
-          ]
-        case 'meal':
-          return [
-            { var: 'children', label: 'label.children' },
-            // { var: 'seniors', label: 'label.seniors' },
-            { var: 'open_today', label: 'label.open_today' }
-            // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
-          ]
-        case 'mental_health':
-          return [
-            // { var: 'free', label: 'label.free' },
-            { var: 'in_person', label: 'label.in_person' },
-            { var: 'telehealth', label: 'label.telehealth' }
-          ]
-        case 'health':
-          return [
-            // { var: 'free', label: 'label.free' },
-            { var: 'in_person', label: 'label.in_person' },
-            { var: 'telehealth', label: 'label.telehealth' },
-            [
-              'Area',
-              { var: 'med_primary_care', label: 'health.primary_care' },
-              { var: 'med_mental_health', label: 'health.mental_health' }
-            ],
-            [
-              'Payment options',
-              { var: 'free', label: 'label.free' },
-              { var: 'sliding_scale', label: 'health.sliding_scale' },
-              { var: 'financial_assistance', label: 'health.financial_assistance' }
-            ]
-          ]
-        case 'legal_assistance':
-          return [
-            { var: 'legal_criminal', label: 'legal.legal_criminal' },
-            { var: 'legal_domviolence', label: 'legal.legal_domviolence' },
-            { var: 'legal_worker_protection', label: 'legal.legal_worker_protection' },
-            { var: 'legal_healthcare', label: 'legal.legal_healthcare' },
-            { var: 'legal_housing', label: 'legal.legal_housing' },
-            { var: 'legal_immigration', label: 'legal.legal_immigration' }
-          ]
-        default:
-          return [null]
+      if (this.need.filters.length > 0) {
+        return this.need.filters
       }
+      return [null]
     }
   }
 }
