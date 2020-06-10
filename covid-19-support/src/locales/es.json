@@ -285,6 +285,7 @@
   "pebt": {
     "header": "Beneficios de comida para los niños que reciben comidas reducidas o gratis. ",
     "lead": "Aplique para P-EBT antes del 30 de Junio",
-    "link": "Aplique ahora"
+    "link": "Aplique ahora",
+    "link_url": "https://ca.p-ebt.org/es/"
   }
 }

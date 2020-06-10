@@ -285,6 +285,7 @@
   "pebt": {
     "header": "为免费或者优惠获取食物的孩子提供的食物福利",
     "lead": "六月30日前申请P-EBT",
-    "link": "立即申请"
+    "link": "立即申请",
+    "link_url": "https://ca.p-ebt.org/zh/"
   }
 }
