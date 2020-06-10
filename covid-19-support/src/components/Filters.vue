@@ -25,7 +25,8 @@
         </b-collapse>
       </template>
     </div>
-    <b-button id="apply" variant="primary">{{ $t('label.apply') }}</b-button>
+    <b-button id="apply" variant="primary" @click="$emit('close-filters')">{{ $t('label.apply') }}</b-button>
+    <b-button id="reset" variant="danger" @click="$emit('reset-filters')">{{ $t('label.reset') }}</b-button>
   </div>
 </template>
 

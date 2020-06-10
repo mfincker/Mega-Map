@@ -21,6 +21,8 @@
             :markers="markers"
             :activeFilters="activeFilters"
             @box-selected="boxSelected"
+            @close-filters="closeFilters"
+            @reset-filters="resetFilters"
           />
         </b-modal>
         <div>
@@ -143,6 +145,12 @@ export default {
       if (!response.ok) {
         throw Error(response.statusText)
       }
+    },
+    closeFilters() {
+      this.$bvModal.hide('filters-modal')
+    },
+    resetFilters() {
+      this.activeFilters = []
     },
     closeEditForm() {
       this.showEditForm = false
