@@ -47,8 +47,8 @@
               <span v-if="item.isOpen" class="badge open">{{ getOpenMessage(item) }}</span>
               <span v-if="item.call_in_advance == 1" class="badge">{{ $tc('label.call_in_advance') }}</span>
               <span v-if="item.special_hours == 1" class="badge">{{ $tc('label.special_hours') }}</span>
-              <span v-if="item.ebt_pay_phone == 1" class="badge">{{ $tc('label.ebt_pay_phone') }}</span>
-              <span v-if="item.ebt_pay_online == 1" class="badge">{{ $tc('label.ebt_pay_online') }}</span>
+              <span v-if="item.ebt_phone == 1" class="badge">{{ $tc('label.ebt_pay_phone') }}</span>
+              <span v-if="item.ebt_online == 1" class="badge">{{ $tc('label.ebt_pay_online') }}</span>
               <!-- Legal badges -->
               <span v-if="item.legal_criminal == 1" class="badge">{{ $tc('legal.legal_criminal') }}</span>
               <span v-if="item.legal_domviolence == 1" class="badge">{{ $tc('legal.legal_domviolence') }}</span>
