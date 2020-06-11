@@ -4,8 +4,8 @@
       Black Lives Matter.
     </template>
     <div id="blm-links">
-      <b-button class="blm-button" @click="$emit('blm-resource-selected')">Support Black-owned businesses</b-button>
-      <b-button class="blm-button" to="/blm-statement" target="_blank">Read our statement on BLM</b-button>
+      <!-- <b-button class="blm-button" @click="$emit('blm-resource-selected')">Support Black-owned businesses</b-button> -->
+      <b-button class="blm-button" to="/blm-statement" target="_blank">Read our statement</b-button>
     </div>
   </b-jumbotron>
 </template>
@@ -27,7 +27,7 @@ export default {
   max-width: 650px !important;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
 }
 
 .display-5 {
@@ -44,6 +44,6 @@ export default {
 
 .blm-button {
   border-radius: 15px !important;
-  margin: 5px;
+  margin: 5px 10px;
 }
 </style>

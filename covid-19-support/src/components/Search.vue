@@ -83,7 +83,7 @@ export default {
         //     { value: 'mental_health_telehealth', text: this.$tc('mental.telehealth', 1) }
         //   ]
         // },
-        { value: 'health', text: this.$t('category.medical_resources') },
+        { value: 'health', text: this.$t('category.medical_resources') }
         // {
         //   label: this.$tc('category.medical_resources', 1),
         //   options: [
@@ -91,7 +91,7 @@ export default {
         //     { value: 'medical_telehealth', text: this.$tc('medical.telehealth', 1) }
         //   ]
         // }
-        { value: 'blm', text: this.$t('category.blm') }
+        // { value: 'blm', text: this.$t('category.blm') }
       ]
     }
   },
