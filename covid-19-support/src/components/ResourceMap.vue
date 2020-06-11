@@ -33,7 +33,7 @@
         <l-marker
           :lat-lng="latLng(item.lat, item.lon)"
           :icon="selectedIcon(item.cartodb_id === resource.resourceId, item)"
-          v-for="item in geoMarkers"
+          v-for="item in markers"
           v-bind:key="item.cartodb_id"
           @click="$emit('marker-selected', { resourceId: item.cartodb_id, isSetByMap: true })"
         >
@@ -137,11 +137,11 @@ export default {
       return markerIcon
     }
   },
-  computed: {
-    geoMarkers() {
-      return this.markers.filter((c) => c.lat && c.lon)
-    }
-  },
+  // computed: {
+  //   geoMarkers() {
+  //     return this.markers.filter((c) => c.lat && c.lon)
+  //   }
+  // },
   watch: {
     resource: function (newResource) {
       if (newResource.isSetByMap || !newResource.resourceId) {
