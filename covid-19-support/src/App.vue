@@ -163,17 +163,17 @@ span {
 }
 
 .intro-centered {
-  margin: 8vh auto;
+  margin: 5vh auto;
 }
 
 @media (min-width: 600px) {
   .intro-centered {
-    margin: 15vh auto;
+    margin: 10vh auto;
   }
 }
 
 .introParagraph {
-  padding: 24px 8px 50px;
+  padding: 24px 8px 10px;
 }
 
 .introParagraph-light {

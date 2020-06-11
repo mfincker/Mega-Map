@@ -17,7 +17,7 @@ export default {
 </script>
 <style type="scss" scoped>
 #blm-banner {
-  padding: 15px;
+  padding: 10px;
   background-color: black !important;
   color: white;
   position: relative;
@@ -40,6 +40,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto 0;
 }
 
 .blm-button {

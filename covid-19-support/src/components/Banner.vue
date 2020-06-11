@@ -32,6 +32,12 @@ export default {
   max-width: 650px !important;
 }
 
+@media (max-width: 350px) {
+  #pebt-banner {
+    padding-bottom: 100px;
+  }
+}
+
 #close-banner {
   position: absolute;
   right: 5px;
