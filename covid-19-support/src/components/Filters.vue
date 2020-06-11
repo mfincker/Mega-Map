@@ -7,12 +7,12 @@
         </b-form-checkbox>
       </template>
       <template v-else>
-        <div v-b-toggle="item[0]" @click="toggleChevron" class="collaps-toggle">
+        <div v-b-toggle="'f_' + index" :ref="'f_' + index" @click="toggleChevron" class="collaps-toggle">
           {{ $t(item[0]) }}
           <i class="fas fa-chevron-right"></i>
         </div>
 
-        <b-collapse :id="item[0]">
+        <b-collapse :id="'f_' + index">
           <b-form-checkbox
             v-for="(item_sub, index_sub) in item.slice(1)"
             v-model="selected"
@@ -45,6 +45,17 @@ export default {
   },
   mounted() {
     this.selected = this.activeFilters
+    if (this.selected.length > 0) {
+      this.filterList.forEach((fs, i) => {
+        if (Array.isArray(fs)) {
+          if (fs.slice(1).some((f) => this.selected.includes(f.var))) {
+            this.$root.$emit('bv::toggle::collapse', 'f_' + i)
+            console.log(this.$refs['f_' + i][0])
+            this.$refs['f_' + i][0].getElementsByTagName('i')[0].classList.toggle('fa-rotate-90')
+          }
+        }
+      })
+    }
   },
   methods: {
     boxSelected: function (content) {
