@@ -16,7 +16,7 @@ export default {
   name: 'banner'
 }
 </script>
-<style type="scss">
+<style type="scss" scoped>
 #pebt-banner {
   padding: 15px;
   background-color: #f48171;

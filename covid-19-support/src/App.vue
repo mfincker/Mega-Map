@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleNavBar" />
-    <banner v-if="initialSearch && showBanner" @hide-banner="hideBanner" />
+    <blm-banner v-if="initialSearch" @blm-resource-selected="selectBlm" />
     <div class="intro" :class="{ 'intro-centered': initialSearch }">
       <template v-if="initialSearch">
         <h4 class="introParagraph">{{ $t('about.front-page.p1') }}</h4>
@@ -19,6 +19,7 @@
         <p class="introParagraph introParagraph-light">{{ $t('about.front-page.p3') }}</p>
       </template>
     </div>
+    <banner class="footer" v-if="initialSearch && showBanner" @hide-banner="hideBanner" />
     <router-view />
   </div>
 </template>
@@ -27,6 +28,7 @@
 import AppHeader from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
 import Banner from '@/components/Banner.vue'
+import BlmBanner from '@/components/BlmBanner.vue'
 import { needs } from '@/constants'
 export default {
   name: 'app',
@@ -52,7 +54,8 @@ export default {
   components: {
     AppHeader,
     Search,
-    Banner
+    Banner,
+    BlmBanner
   },
   mounted() {
     // Check if IE
@@ -93,11 +96,14 @@ export default {
     },
     toggleNavBar(navBarState) {
       this.isNavBarOpen = navBarState
+    },
+    selectBlm() {
+      this.need = 'blm'
     }
   },
   computed: {
     showSearchBar() {
-      if (this.$route.name == 'AboutUs') {
+      if (this.$route.name == 'AboutUs' || this.$route.name == 'BlmStatement') {
         return false
       }
       return !this.isNavBarOpen || this.initialSearch
@@ -178,5 +184,9 @@ span {
   position: relative;
   width: 100%;
   flex: 1 1 auto;
+}
+
+.footer {
+  margin-top: auto;
 }
 </style>
