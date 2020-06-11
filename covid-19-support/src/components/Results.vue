@@ -283,7 +283,11 @@ export default {
         await this.fetchMapCenter(to)
       }
       const new_query = this.buildQuery(to, false)
-      old_query != new_query && this.fetchData(this.buildQuery(to))
+      console.log(old_query, new_query)
+      if (old_query != new_query) {
+        this.fetchData(this.buildQuery(to))
+        this.activeFilters = []
+      }
     }
   }
 }
