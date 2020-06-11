@@ -81,7 +81,8 @@
       "p1": {
         "text": "Para sa mga katanungan sa anumang mga pagdaragdag ng data o kamalian, o para sa anumang iba pang mga katanungan, mangyaring makipag-ugnay sa {0}.",
         "link": "baycommunityresource@gmail.com"
-      }
+      },
+      "contact-us-header": "Makipag-ugnayan sa amin"
     },
     "disclaimer": {
       "header": "Pagtanggi",
@@ -190,7 +191,11 @@
     "safe_pick_up": "Ligtas na pagpipilian ng pick-up",
     "zoom_out_for_more_results": "Mag-zoom out para sa higit pang mga resulta.",
     "in_person": "Mga klinika sa tao",
-    "telehealth": "Tulong ng telehealth"
+    "telehealth": "Tulong ng telehealth",
+    "zipcode": "Zipcode/Lokasyon",
+    "suggest_an_edit": "Pag-mungkahi na i-edit/baguhin.",
+    "reset": "I-reset/Ulitin",
+    "submit": "Ipasa"
   },
   "languages": {
     "ar": "Arabe",
@@ -253,6 +258,33 @@
   "mental": {
     "in_person": "Tulong sa tao"
   },
-  "no_location_in_this_area": "Walang resulta sa lugar na ito.",
-  "no_location_meet_these_criteria": "Walang resulta para sa mga pamantayang ito."
+  "message": {
+    "no_location_in_this_area": "Walang resulta sa lugar na ito.",
+    "no_location_meet_these_criteria": "Walang resulta para sa mga pamantayang ito.",
+    "loading": "Naglo-load ...",
+    "ie_compatibility": "Ang pook-sapot (websayt) na ito ay hindi kubkob para sa Internet Explorer at ikaw ay walang gamit sa lahat ng tungkulin/kakayahan. Para sa mas mabuting karanasan, gumamit ng ibang panginain (tulad ng Firefox)",
+    "area_not_covered": "Hindi namin sakop ang pook/lugar na ito.",
+    "select_resource": "Pag-pili ng mapagkukunan.",
+    "provide_zip": "Ibigay ang zipcode o lokasyon.",
+    "error_getting_zip": "Mayroon kalisyaan/mali sa ibinigay na zipcode/lokasyon. Paki ulit muli."
+  },
+  "edit": {
+    "intro": "Botahin ang impormasyon para sa lokasyon sa talye mula sa ibaba. Pinapahalagahan namin ang tulong niyo sa pag pagpapanatili ng mapagkukunan hanggang sa napapanahon.",
+    "thanks": "Natanggap namin ang iyong edit/pagbago. Maraming salamat!",
+    "provider_name": "Ngalan/pangalan ng tagapagbigay ng serbisyo",
+    "location_name": "Pangalan ng lokasyon",
+    "website": "Pook-sapot (websayt)",
+    "opening_hours": "Oras ng pagbubukas:",
+    "senior_hours": "Oras ng pagbubukas para sa mga nakakatanda:",
+    "additional_info": "Adisyonal na impormasyon:",
+    "additional_info_text": "Mayroon pa ba na pagkukulang, kailangang baguhin o dapat na ipakita?",
+    "additional_info_placeholder": "Bagong serbisyo, lokasyon ay permanenteng sarado, oras ng pagbubukas para sa mas nakakatanda…",
+    "no_edit": "Walang pinag iba",
+    "submission_error": "Mayroong kalisyaan/mali sa pag-mungkahi. Maaaring kaming kontakin muli sa baycommunitysource@gmail.com."
+  },
+  "pebt": {
+    "header": "Benepisyo ng pagkain para sa mga bata na makakakuha ng libre o bawas na pagkain. ",
+    "lead": "Aplikasyon para sa P-EBT sa ika tatlumpu ng Hunyo.",
+    "link": "Mag-apply na ngayon"
+  }
 }
