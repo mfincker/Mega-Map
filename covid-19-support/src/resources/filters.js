@@ -24,3 +24,13 @@ export const complexFilters = [{ name: 'safe_pick_up', columns: ['curbside_picku
 // Day filters
 export const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `${attr}`)
 export const seniorDayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `sp_${attr}`)
+
+export const weekdayHours = [
+  { day: 'sunday' },
+  { day: 'monday' },
+  { day: 'tuesday' },
+  { day: 'wednesday' },
+  { day: 'thursday' },
+  { day: 'friday' },
+  { day: 'saturday' }
+]
