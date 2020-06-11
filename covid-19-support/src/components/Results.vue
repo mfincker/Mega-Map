@@ -152,9 +152,6 @@ export default {
     resetFilters() {
       this.activeFilters = []
     },
-    closeEditForm() {
-      this.showEditForm = false
-    },
     displayEditForm(item) {
       this.showEditForm = true
       this.editedLocation = item
