@@ -287,5 +287,8 @@
     "lead": "Aplique para P-EBT antes del 30 de Junio",
     "link": "Aplique ahora",
     "link_url": "https://ca.p-ebt.org/es/"
+  },
+  "ux_study": {
+    "link_url": "https://forms.gle/uLPX4UtJoed3DWsS9"
   }
 }

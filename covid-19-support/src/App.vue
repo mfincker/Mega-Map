@@ -2,6 +2,7 @@
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleNavBar" />
     <blm-banner v-if="initialSearch" @blm-resource-selected="selectBlm" />
+    <banner v-if="initialSearch && showBanner" @hide-banner="hideBanner" />
     <div class="intro" :class="{ 'intro-centered': initialSearch }">
       <template v-if="initialSearch">
         <h4 class="introParagraph">{{ $t('about.front-page.p1') }}</h4>
@@ -17,9 +18,11 @@
       />
       <template v-if="initialSearch">
         <p class="introParagraph introParagraph-light">{{ $t('about.front-page.p3') }}</p>
+        <p class="introParagraph ux-link">
+          <a :href="$t('ux_study.link_url')">{{ $t('ux_study.header') }}</a>
+        </p>
       </template>
     </div>
-    <banner class="footer" v-if="initialSearch && showBanner" @hide-banner="hideBanner" />
     <router-view />
   </div>
 </template>
@@ -186,7 +189,9 @@ span {
   flex: 1 1 auto;
 }
 
-.footer {
-  margin-top: auto;
+.ux-link {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 600 !important;
 }
 </style>

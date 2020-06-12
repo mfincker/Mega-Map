@@ -289,5 +289,12 @@
     "lead": "Apply for P-EBT by June 30th.",
     "link": "Apply now",
     "link_url": "https://ca.p-ebt.org/en/"
+  },
+  "ux_study": {
+    "header": "Help us serve you better.",
+    "text_main": "We want to learn more about what is top of mind for you at this time and get your input on how to improve the website.",
+    "text_sub": "If you are selected for interviewing,  all sessions will be conducted remotely via phone / video chat, and  we will compensate you for your time.",
+    "link_text": "Sign up now",
+    "link_url": "https://forms.gle/v4FNDDReXXiUtAP76"
   }
 }
