@@ -19,7 +19,7 @@
       <template v-if="initialSearch">
         <p class="introParagraph introParagraph-light">{{ $t('about.front-page.p3') }}</p>
         <p class="introParagraph ux-link">
-          <a :href="$t('ux_study.link_url')">{{ $t('ux_study.header') }}</a>
+          <a :href="$t('ux_study.link_url')" target="_blank">{{ $t('ux_study.header') }}</a>
         </p>
       </template>
     </div>
@@ -121,8 +121,8 @@ export default {
         this.need = null
         this.nearLocation = null
       } else {
-        // catch all - redirect to '/'
-        if (!needs.includes(to.params.need) && to.path != '/about-us') {
+        // catch all - redirect to '/' - needs to be fixed atm I need to add any new page to this list!
+        if (!needs.includes(to.params.need) && !['/about-us', '/blm-statement'].includes(to.path)) {
           this.$router.push('/')
         } else {
           this.initialSearch = false

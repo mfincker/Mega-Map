@@ -5,7 +5,7 @@
     </template>
     <div id="blm-links">
       <!-- <b-button class="blm-button" @click="$emit('blm-resource-selected')">Support Black-owned businesses</b-button> -->
-      <b-button class="blm-button" to="/blm-statement" target="_blank">Read our statement</b-button>
+      <b-button class="blm-button" to="/blm-statement">Read our statement</b-button>
     </div>
   </b-jumbotron>
 </template>
