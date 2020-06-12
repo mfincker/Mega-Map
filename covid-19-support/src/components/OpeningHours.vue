@@ -63,13 +63,13 @@ export default {
               // cnt++
               break
             case 1:
-              if (this.business[attr] == 0) {
-                myDays.push({ name: dayName, val: this.$t('label.closed'), class: 'openingHoursClosed' })
-              } else {
-                // myDays.push({ name: dayName, val: this.$t('label.normalhours') })
-                // cnt++
-              }
-              cnt++
+              // if (this.business[attr] == 0) {
+              //   myDays.push({ name: dayName, val: this.$t('label.closed'), class: 'openingHoursClosed' })
+              // } else {
+              //   // myDays.push({ name: dayName, val: this.$t('label.normalhours') })
+              //   // cnt++
+              // }
+              // cnt++
               break
             default:
               myDays.push({ name: dayName, val: this.business[attr].replace(/,/g, '<br/>') })
