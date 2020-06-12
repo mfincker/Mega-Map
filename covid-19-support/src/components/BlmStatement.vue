@@ -5,71 +5,77 @@
     <p>
       In sorrow and grief, anger and resistance, we mourn the deaths of George Floyd, Breonna Taylor, Ahmaud Arbery, Michael Lorenzo Dean,
       Eric Reason, and every
-      <a href="https://assets.documentcloud.org/documents/6933593/NPR-CodeSwitch-Saytheirnameslistv3.pdf">life lost</a> to anti-Black
+      <a href="https://www.npr.org/2020/05/29/865261916/a-decade-of-watching-black-people-die" target="_blank">life lost</a> to anti-Black
       violence. We stand with protestors and urgently declare: Black Lives Matter. Police brutality continues our country’s 400-year history
       of systemic racism. As Bay Area residents, we also acknowledge the sovereignty of the Ohlone tribe over the
-      <a href="https://sogoreate-landtrust.org/contemporary-ohlone-history/">unceded land of the Bay Area</a>.
+      <a href="https://sogoreate-landtrust.org/contemporary-ohlone-history/" target="_blank">unceded land of the Bay Area</a>.
     </p>
     <p>
-      We support the <a href="https://m4bl.org/policy-platforms/">Movement for Black Lives</a> in demanding that our country defunds police
-      forces, pays reparations to the descendants of slaves, and guarantees every human the right to safe housing, healthcare, just
-      compensation, and a livable environment.
+      We support the <a href="https://m4bl.org/policy-platforms/" target="_blank">Movement for Black Lives</a> in demanding that our country
+      defunds police forces, pays reparations to the descendants of slaves, and guarantees every human the right to safe housing,
+      healthcare, just compensation, and a livable environment.
     </p>
     <h3>Educational resources:</h3>
     <ul>
       <li>
-        <a href="https://docs.google.com/document/d/1BRlF2_zhNe86SGgHa6-VlBO-QgirITwCTugSfKie5Fs/mobilebasic"></a>Anti-Racism Resources for
-        White People
+        <a href="https://docs.google.com/document/d/1BRlF2_zhNe86SGgHa6-VlBO-QgirITwCTugSfKie5Fs/mobilebasic" target="_blank"></a
+        >Anti-Racism Resources for White People
       </li>
       <li>
         <a
           href="https://docs.google.com/document/d/1PrAq4iBNb4nVIcTsLcNlW8zjaQXBLkWayL8EaPlh0bc/preview?pru=AAABcp7vqN0*xEUiK3YZBBcq2WvF-5NT-w&fbclid=IwAR3mJDRoqqSOFRM1WzpeJF2Ir2hjH_7UWFB1sFVa7KPsA8V40KHcJuLigc8"
+          target="_blank"
           >Scaffolded Anti-Racism curriculum</a
         >
       </li>
       <li>
-        <a href="https://docs.google.com/document/d/1H-Vxs6jEUByXylMS2BjGH1kQ7mEuZnHpPSs1Bpaqmw0/mobilebasic#id.2bwn4teflt1v"
+        <a
+          href="https://docs.google.com/document/d/1H-Vxs6jEUByXylMS2BjGH1kQ7mEuZnHpPSs1Bpaqmw0/mobilebasic#id.2bwn4teflt1v"
+          target="_blank"
           >Justice in June learning calendar</a
         >
       </li>
       <li>
         For kids: Explore justice-based curriculums at the
-        <a href="https://www.zinnedproject.org/teaching-materials/explore-by-theme">Zinn Education Project</a>
+        <a href="https://www.zinnedproject.org/teaching-materials/explore-by-theme" target="_blank">Zinn Education Project</a>
       </li>
       <li>
-        Resources on police brutality: <a href="https://www.joincampaignzero.org/">Campaign Zero</a> and its affiliate
-        <a href="https://8cantwait.org/">8CantWait</a>
+        Resources on police brutality: <a href="https://www.joincampaignzero.org/" target="_blank">Campaign Zero</a> and its affiliate
+        <a href="https://8cantwait.org/" target="_blank">8CantWait</a>
       </li>
       <li>
         Ibram X. Kendi on “How to be an Anti-racist” (<a
           href="http://www.pbs.org/wnet/amanpour-and-company/video/bestselling-author-ibram-kendi-how-to-be-an-antiracist/"
+          target="_blank"
           >video</a
         >)
       </li>
-      <li><a href="https://www.antiracismproject.org/resources">The Anti-Racism Project</a></li>
+      <li><a href="https://www.antiracismproject.org/resources" target="_blank">The Anti-Racism Project</a></li>
       <li>
         The Marshall Project:
-        <a href="https://www.themarshallproject.org/records/3382-police-abolition">What does police abolition mean?</a>
+        <a href="https://www.themarshallproject.org/records/3382-police-abolition" target="_blank">What does police abolition mean?</a>
       </li>
     </ul>
     <h3>Ways to act:</h3>
     <ul>
-      <li><a href="https://blacklivesmatter.com/what-matters-2020/">VOTE</a></li>
-      <li><a href="https://blacklivesmatters.carrd.co/#text">Text or call your representatives</a></li>
-      <li><a href="https://blacklivesmatters.carrd.co/#petitions">Sign petitions</a></li>
+      <li><a href="https://blacklivesmatter.com/what-matters-2020/" target="_blank">VOTE</a></li>
+      <li><a href="https://blacklivesmatters.carrd.co/#text" target="_blank">Text or call your representatives</a></li>
+      <li><a href="https://blacklivesmatters.carrd.co/#petitions" target="_blank">Sign petitions</a></li>
       <li>
-        <a href="https://docs.google.com/document/d/1CIfMQED_B444Y-K8kAqUOgq8xrSFdSrjFBRnyK6wmz4/mobilebasic"
+        <a href="https://docs.google.com/document/d/1CIfMQED_B444Y-K8kAqUOgq8xrSFdSrjFBRnyK6wmz4/mobilebasic" target="_blank"
           >A Guide to Allyship for BLM</a
         >
       </li>
       <li>
-        <a href="https://medium.com/awaken-blog/20-allyship-actions-for-asians-to-show-up-for-the-black-community-right-now-464e5689cf3e"
+        <a
+          href="https://medium.com/awaken-blog/20-allyship-actions-for-asians-to-show-up-for-the-black-community-right-now-464e5689cf3e"
+          target="_blank"
           >For Asian-Americans: BLM allyship actions</a
         >
       </li>
-      <li><a href="https://aalbc.com/bookstores/index.php?statename=California">Support black-owned bookstores</a></li>
+      <li><a href="https://aalbc.com/bookstores/index.php?statename=California" target="_blank">Support black-owned bookstores</a></li>
       <li>
-        <a href="https://sf.eater.com/2020/6/4/21280530/black-owned-restaurants-san-francisco-oakland-east-bay"
+        <a href="https://sf.eater.com/2020/6/4/21280530/black-owned-restaurants-san-francisco-oakland-east-bay" target="_blank"
           >Support black-owned restaurants</a
         >
       </li>
@@ -80,7 +86,8 @@
       displaying data to support community needs.
     </p>
     <p>In solidarity,</p>
-    <p><a href="mailto:bayareacommunity@gmail.com">The Bay Area Community team</a></p>
+    <p>The Bay Area Community team</p>
+    <b-button variant="primary" href="mailto:bayareacommunity@gmail.com">Contact us</b-button>
   </div>
 </template>
 <script>
