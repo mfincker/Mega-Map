@@ -25,19 +25,11 @@
             @reset-filters="resetFilters"
           />
         </b-modal>
-        <div>
-          <b-button @click="(e) => e.stopPropagation()" class="btn btn-outline-primary btn-sm" v-b-modal.filters-modal>
-            {{ $t('label.filters') }}
+        <div class="pt-2 px-2">
+          <b-button @click="(e) => e.stopPropagation()" variant="info" class="btn btn-sm btn-block" v-b-modal.filters-modal>
+            <i class="fas fa-filter" /> {{ $t('label.filters') }}
           </b-button>
         </div>
-        <!--         <filters
-          ref="filters"
-          :class="{ noMap: !displayMap }"
-          :need="$route.params.need"
-          :markers="markers"
-          :activeFilters="activeFilters"
-          @box-selected="boxSelected"
-        /> -->
         <results-list
           :class="{ noMap: !displayMap }"
           :fetchDataState="fetchDataState"

@@ -7,12 +7,12 @@
         </b-form-checkbox>
       </template>
       <template v-else>
-        <div v-b-toggle="'f_' + index" :ref="'f_' + index" @click="toggleChevron" class="collaps-toggle">
+        <div v-b-toggle="'f_' + index" :ref="'f_' + index" @click="toggleChevron" class="collapse-toggle">
           {{ $t(item[0]) }}
           <i class="fas fa-chevron-right"></i>
         </div>
 
-        <b-collapse :id="'f_' + index">
+        <b-collapse :id="'f_' + index" class="collapse-toggle-content">
           <b-form-checkbox
             v-for="(item_sub, index_sub) in item.slice(1)"
             v-model="selected"
@@ -25,7 +25,7 @@
         </b-collapse>
       </template>
     </div>
-    <b-button id="apply" variant="primary" @click="$emit('close-filters')">{{ $t('label.apply') }}</b-button>
+    <b-button id="apply" variant="primary" class="mb-2" @click="$emit('close-filters')">{{ $t('label.apply') }}</b-button>
     <b-button id="reset" variant="danger" @click="$emit('reset-filters')">{{ $t('label.reset') }}</b-button>
   </div>
 </template>
@@ -99,9 +99,9 @@ export default {
   width: 100%;
   font-size: 0.8em;
   padding: 8px 16px;
-  background-color: white;
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
+  background-color: $gray-100;
+  border-radius: 4px;
+  margin-bottom: 8px;
 }
 
 .filters {
@@ -112,7 +112,6 @@ export default {
 
 .custom-checkbox {
   color: #495057;
-  background: white;
   margin-bottom: 4px;
   width: 80%;
   display: inline-block !important;
@@ -128,12 +127,16 @@ export default {
   border-color: rgba(0, 0, 0, 0.3);
 }
 
-.collaps-toggle {
+.collapse-toggle {
   margin: 5px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.collapse-toggle-content {
+  padding-left: 8px;
 }
 
 #apply {
