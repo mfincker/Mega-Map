@@ -25,7 +25,7 @@
             @reset-filters="resetFilters"
           />
         </b-modal>
-        <div class="pt-2 px-2">
+        <div class="pt-2 px-2" ref="filters">
           <b-button @click="(e) => e.stopPropagation()" variant="info" class="btn btn-md btn-block" v-b-modal.filters-modal>
             <i class="fas fa-filter" /> {{ $t('label.filters') }}
           </b-button>
@@ -167,7 +167,7 @@ export default {
     },
     scroll(offset) {
       if (this.displayMap) {
-        this.$refs['result-details'].scrollTo(0, offset + this.$refs['filters'].$el.offsetHeight)
+        this.$refs['result-details'].scrollTo(0, offset + this.$refs['filters'].offsetHeight)
       }
     },
     buildQuery(route, log = true) {
