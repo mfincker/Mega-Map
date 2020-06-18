@@ -15,11 +15,14 @@ export const booleanFilters = [
   'legal_worker_protection',
   'legal_healthcare',
   'legal_housing',
-  'legal_immigration'
+  'legal_immigration',
+  'catering',
+  'in_store_pickup',
+  'delivery'
 ]
 
 // Combination of boolean filters
-export const complexFilters = [{ name: 'safe_pick_up', columns: ['curbside_pickup', 'delivery'], combine: ([a, b]) => a || b }]
+export const complexFilters = [{ name: 'safe_pickup', columns: ['curbside_pickup', 'delivery'], combine: ([a, b]) => a || b }]
 
 // Day filters
 export const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `${attr}`)

@@ -1,5 +1,4 @@
-// List of available resources
-export const needs_name = ['free_grocery', 'meal', 'snap_wic_retailer', 'legal_assistance', 'mental_health', 'health']
+// Resource objects
 
 // Free grocery
 const free_grocery = {
@@ -99,11 +98,32 @@ const health = {
   sort: 'hotline_distance'
 }
 
+// BLM
+const blm = {
+  name: 'blm',
+  sql_query: " WHERE resource = 'restaurant' AND status = 1 AND bob = 1",
+  display_map: false,
+  badges: [
+    { var: 'open_today', label: 'label.open_today' },
+    { var: 'bob', label: 'label.bob' }
+  ],
+  filters: [
+    { var: 'catering', label: 'label.catering' },
+    { var: 'in_store_pickup', label: 'label.takeaway', display_map: true },
+    { var: 'delivery', label: 'label.delivery', display_map: true }
+  ],
+  sort: 'open_distance'
+}
+
+// UPDATE WHEN CREATING / REMOVING RESOURCES
 export const needs = {
   free_grocery: free_grocery,
   meal: meal,
   snap_wic_retailer: snap_wic_retailer,
   legal_assistance: legal_assistance,
   mental_health: mental_health,
-  health: health
+  health: health,
+  blm: blm
 }
+
+export const needs_name = ['free_grocery', 'meal', 'snap_wic_retailer', 'legal_assistance', 'mental_health', 'health', 'blm']
