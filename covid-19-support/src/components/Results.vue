@@ -26,7 +26,7 @@
           />
         </b-modal>
         <div class="pt-2 px-2">
-          <b-button @click="(e) => e.stopPropagation()" variant="info" class="btn btn-sm btn-block" v-b-modal.filters-modal>
+          <b-button @click="(e) => e.stopPropagation()" variant="info" class="btn btn-md btn-block" v-b-modal.filters-modal>
             <i class="fas fa-filter" /> {{ $t('label.filters') }}
           </b-button>
         </div>
