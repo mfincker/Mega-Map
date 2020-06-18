@@ -194,7 +194,6 @@ export default {
 .resultWrapper {
   flex: 1 1 100%;
   scrollbar-color: $gray-900 $gray-700;
-  overflow-y: scroll;
   width: 100%;
   z-index: 2000;
   padding: 8px;
