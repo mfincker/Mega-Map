@@ -11,9 +11,14 @@
       <a href="https://sogoreate-landtrust.org/contemporary-ohlone-history/" target="_blank">unceded land of the Bay Area</a>.
     </p>
     <p>
-      We support the <a href="https://m4bl.org/policy-platforms/" target="_blank">Movement for Black Lives</a> in demanding that our country
-      defunds police forces, pays reparations to the descendants of slaves, and guarantees every human the right to safe housing,
-      healthcare, just compensation, and a livable environment.
+      We support the movement's demands for redistributing police budgets into new forms of public safety and security. Although our website
+      does not specifically address systemic racism and inequity in this country, we built it to help people who are affected by these
+      systems in very real, everyday ways to access essential resources during the COVID-19 pandemic and beyond. We recommit to our mission
+      for every person to be guaranteed the right to safe housing, healthcare, just compensation, and a livable environment.
+    </p>
+    <p>
+      We would like to share several resources our team has used to educate ourselves in allyship, and empower ourselves to action, during
+      the weeks following George Floyd’s murder.
     </p>
     <h3>Educational resources:</h3>
     <ul>
