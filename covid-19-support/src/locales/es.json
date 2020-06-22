@@ -126,7 +126,8 @@
     "food_resources": "Recursos Alimenticios",
     "legal_resources": "Recursos Legales",
     "medical_resources": "Recursos Médicos",
-    "mental_health_resources": "Recursos de Salud Mental"
+    "mental_health_resources": "Recursos de Salud Mental",
+    "healthcare": "Cuidado médico"
   },
   "dayofweek": {
     "any": "Alguna",
@@ -195,7 +196,8 @@
     "zipcode": "código postal",
     "suggest_an_edit": "Sugiera una revisión",
     "reset": "Reiniciar",
-    "submit": "Envia"
+    "submit": "Envia",
+    "last_updated": "Los detalles fueron revisados"
   },
   "languages": {
     "ar": "árabe",
@@ -266,7 +268,8 @@
     "area_not_covered": "No cubrimos esta zona.",
     "select_resource": "Seleccione un recurso. ",
     "provide_zip": "Provee un código postal.",
-    "error_getting_zip": "Hubo un error con el código postal proporcionado. Inténtalo de nuevo."
+    "error_getting_zip": "Hubo un error con el código postal proporcionado. Inténtalo de nuevo.",
+    "error_loading_results": "Hubo un error. Por favor intente de nuevo. "
   },
   "edit": {
     "intro": "Por favor actualiza la información de este lugar en el formulario abajo. Apreciamos su ayuda para mantener los recursos actualizados. ",
@@ -284,12 +287,15 @@
   },
   "pebt": {
     "header": "Beneficios de comida para los niños que reciben comidas reducidas o gratis. ",
-    "lead": "Aplique para P-EBT antes del 30 de Junio",
+    "lead": "Aplique para P-EBT antes del 15 de Julio.",
     "link": "Aplique ahora",
-    "link_url": "https://ca.p-ebt.org/es/"
+    "link_url": "https://ca.p-ebt.org/es"
   },
   "ux_study": {
+    "text_main": "Queremos aprender más sobre lo que es más importante para usted en este momento y como podemos mejorar el sitio web.",
+    "link_text": "Regístrese ahora.",
     "link_url": "https://forms.gle/uLPX4UtJoed3DWsS9",
-    "header": "Ayúdanos a servirle mejor."
+    "text_sub": "Si lo seleccionan para una entrevista, todas las sesiones se realizarán por teléfono o video, y le compensaremos por su tiempo.",
+    "header": "Ayúdanos a servirle mejor. "
   }
 }

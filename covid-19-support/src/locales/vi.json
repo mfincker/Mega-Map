@@ -155,8 +155,8 @@
     "discount_medical": "Ưu đãi cho nhân viên y tế",
     "discounts": "Giảm giá",
     "drive_thru": "Lái xe tạt qua",
-    "email": "Email",
-    "email_lowercase": "email",
+    "email": "\rEmail",
+    "email_lowercase": "\remail",
     "farmers_market": "Chợ nông sản",
     "farm_pick_up": "Lấy hàng tại nông trại",
     "free": "Tài nguyên miễn phí",
@@ -284,7 +284,10 @@
   },
   "pebt": {
     "header": "Lợi ích thực phẩm dành cho trẻ em được nhận các bữa ăn miễn phí hoặc giảm giá.",
-    "lead": "Đăng ký xin P-EBT trước ngày 30 tháng 6.",
-    "link": "Đăng ký ngay bây giờ"
+    "lead": "Đăng ký xin P-EBT trước ngày 15 tháng 7.",
+    "link": "Đăng ký ngay bây giờ",
+    "link_url": "https://ca.p-ebt.org/en/"
+  },
+  "ux_study": {
   }
 }

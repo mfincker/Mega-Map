@@ -145,10 +145,10 @@
     "call_in_advance": "Sila panggil terdahulu",
     "children": "Untuk kanak-kanak",
     "close": "Tutup",
-    "closed": "Tertutup",
+    "closed": "Tutup",
     "closed-on": "Tutup pada",
     "closed-today": "Tutup Hari Ini",
-    "closedonday": "Ditutup (pada hari yang dipilih semasa)",
+    "closedonday": "Ditutup (pada hari yang dipilih)",
     "curbside_pickup": "Pengambilan tepi kedai",
     "curbside_or_delivery": "Servis hantaran atau pengambilan disediakan",
     "delivery": "penghantaran",
@@ -193,7 +193,7 @@
     "in_person": "Klinik",
     "telehealth": "Perkhidmatan mental telehealth",
     "zipcode": "Zipkod",
-    "suggest_an_edit": "Sila beri cadangan.",
+    "suggest_an_edit": "Sila beri cadangan",
     "reset": "Kosongkan semula",
     "submit": "Hantarkan"
   },
@@ -284,7 +284,11 @@
   },
   "pebt": {
     "header": "Faedah makanan untuk kanak-kanak yang mendapat makanan percuma atau dengan diskaun di sekolah.",
-    "lead": "Buat permohonan untuk P-EBT selewat-lewatnya pada 30 Jun.",
-    "link": "Mohon sekarang"
+    "lead": "Buat permohonan untuk P-EBT selewat-lewatnya pada 15 Julai.",
+    "link": "Mohon sekarang",
+    "link_url": "https://ca.p-ebt.org/en/"
+  },
+  "ux_study": {
+    "header": "Tolong kami tolong kamu."
   }
 }
