@@ -23,8 +23,9 @@
     <h3>Educational resources:</h3>
     <ul>
       <li>
-        <a href="https://docs.google.com/document/d/1BRlF2_zhNe86SGgHa6-VlBO-QgirITwCTugSfKie5Fs/mobilebasic" target="_blank"></a
-        >Anti-Racism Resources for White People
+        <a href="https://docs.google.com/document/d/1BRlF2_zhNe86SGgHa6-VlBO-QgirITwCTugSfKie5Fs/mobilebasic" target="_blank"
+          >Anti-Racism Resources for White People</a
+        >
       </li>
       <li>
         <a
@@ -63,7 +64,7 @@
     </ul>
     <h3>Ways to act:</h3>
     <ul>
-      <li><a href="https://blacklivesmatter.com/what-matters-2020/" target="_blank">VOTE</a></li>
+      <li><a href="https://turbovote.org/" target="_blank">VOTE</a></li>
       <li><a href="https://blacklivesmatters.carrd.co/#text" target="_blank">Text or call your representatives</a></li>
       <li><a href="https://blacklivesmatters.carrd.co/#petitions" target="_blank">Sign petitions</a></li>
       <li>
