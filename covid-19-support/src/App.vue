@@ -80,7 +80,7 @@ export default {
       errorStr: null,
       initialSearch: false,
       isNavBarOpen: false,
-      showBanner: true
+      showBanner: false
     }
   },
   methods: {
