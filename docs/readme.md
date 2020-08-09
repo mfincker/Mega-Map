@@ -13,6 +13,15 @@ a Bay Area school meals map, and now provides information on resources such
 as locations and schedules for free meals, food assistance, legal assistance, 
 and medical help.
 
+## Dev Quickstart
+
+From the `covid-19-support` directory:
+- Run locally: `npm run serve`
+- Deploy to staging: `env VUE_APP_DEPLOY="GITHUB" npm run build && npm run deploy`
+- Deploy to production: `npm run build && bash deploy_aws.sh`
+
+You can find the login credentials for AWS in the Google Drive. See the AWS docs for
+[How to login](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 
 ## This project is
 
