@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <app-header :language="language.name" @language-selected="changeLanguage" @toggled-nav-bar="toggleNavBar" />
+    <blm-banner v-if="initialSearch" @blm-resource-selected="selectBlm" />
     <banner v-if="initialSearch && showBanner" @hide-banner="hideBanner" />
     <div class="intro" :class="{ 'intro-centered': initialSearch }">
       <template v-if="initialSearch">
@@ -17,6 +18,9 @@
       />
       <template v-if="initialSearch">
         <p class="introParagraph introParagraph-light">{{ $t('about.front-page.p3') }}</p>
+        <p class="introParagraph ux-link">
+          <a :href="$t('ux_study.link_url')" target="_blank">{{ $t('ux_study.header') }}</a>
+        </p>
       </template>
     </div>
     <router-view />
@@ -27,7 +31,8 @@
 import AppHeader from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
 import Banner from '@/components/Banner.vue'
-import { needs_name } from '@/resources/resources.js'
+import BlmBanner from '@/components/BlmBanner.vue'
+import { needs_name } from '@/constants'
 export default {
   name: 'app',
   props: {
@@ -52,7 +57,8 @@ export default {
   components: {
     AppHeader,
     Search,
-    Banner
+    Banner,
+    BlmBanner
   },
   mounted() {
     // Check if IE
@@ -93,11 +99,14 @@ export default {
     },
     toggleNavBar(navBarState) {
       this.isNavBarOpen = navBarState
+    },
+    selectBlm() {
+      this.need = 'blm'
     }
   },
   computed: {
     showSearchBar() {
-      if (this.$route.name == 'AboutUs') {
+      if (this.$route.name == 'AboutUs' || this.$route.name == 'BlmStatement') {
         return false
       }
       return !this.isNavBarOpen || this.initialSearch
@@ -108,11 +117,12 @@ export default {
       // update need based on route
       if (to.path == '/') {
         this.initialSearch = true
+        this.showBanner = true
         this.need = null
         this.nearLocation = null
       } else {
-        // catch all - redirect to '/'
-        if (!needs_name.includes(to.params.need) && to.path != '/about-us') {
+        // catch all - redirect to '/' - needs to be fixed atm I need to add any new page to this list!
+        if (!needs.includes(to.params.need) && !['/about-us', '/blm-statement'].includes(to.path)) {
           this.$router.push('/')
         } else {
           this.initialSearch = false
@@ -156,17 +166,17 @@ span {
 }
 
 .intro-centered {
-  margin: 8vh auto;
+  margin: 5vh auto;
 }
 
 @media (min-width: 600px) {
   .intro-centered {
-    margin: 15vh auto;
+    margin: 10vh auto;
   }
 }
 
 .introParagraph {
-  padding: 24px 8px 0;
+  padding: 24px 8px 10px;
 }
 
 .introParagraph-light {
@@ -177,5 +187,11 @@ span {
   position: relative;
   width: 100%;
   flex: 1 1 auto;
+}
+
+.ux-link {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 600 !important;
 }
 </style>

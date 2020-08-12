@@ -9,6 +9,7 @@
     "devhelp": {
       "addbusiness": "إضافة عمل",
       "addinfo": "استخدم نماذجنا عبر الإنترنت لـ {0} أو {1}.",
+      "ambassadorinfo": "",
       "becomeambassador": "كن سفير مجتمع",
       "conduct": "مدونة قواعد السلوك",
       "devnote": "مطورو البرامج - ابحث عن {0} و {1} على GitHub.",
@@ -27,21 +28,106 @@
       "chb": "لواء تشابل هيل",
       "farmstewards": "جمعية رعاية مزرعة كارولينا",
       "localistnc": "#LocalListNC",
-      "partnership": "شراكة وسط تشابل هيل"
+      "partnership": "شراكة وسط تشابل هيل",
+      "dcl": "",
+      "bln": ""
     },
     "partners": "مصادر المعلومات",
-    "title": "عن هذا الموقع"
+    "title": "عن هذا الموقع",
+    "front-page": {
+      "p1": "",
+      "p2": "",
+      "p3": "",
+      "p4": {
+        "text": "",
+        "link0": "",
+        "link1": ""
+      }
+    },
+    "about-us": {
+      "header": "",
+      "p1": {
+        "text": "",
+        "link": ""
+      },
+      "p2": {
+        "text": "",
+        "link": "NCCovid Support"
+      },
+      "p3": {
+        "text": "",
+        "link": ""
+      }
+    },
+    "about-us-sources": "",
+    "about-us-contact": {
+      "link0": "baycommunityresource@gmail.com"
+    },
+    "about-us-disclaimer": "",
+    "info-sources": {
+      "header": "",
+      "p1": "",
+      "p2": ""
+    },
+    "info-source": {
+      "link1": "",
+      "link2": "",
+      "link3": "",
+      "link4": "",
+      "link5": ""
+    },
+    "contact-us": {
+      "header": "",
+      "p1": {
+        "text": "",
+        "link": "baycommunityresource@gmail.com"
+      },
+      "contact-us-header": ""
+    },
+    "disclaimer": {
+      "header": "",
+      "p": ""
+    },
+    "spthanks": {
+      "p": "",
+      "link0": "CARTO",
+      "link1": "Mapbox"
+    },
+    "our-team": {
+      "header": "",
+      "sourcing": "",
+      "dev": "",
+      "resource": "",
+      "translate": "",
+      "dqual": "",
+      "projl": "",
+      "devlead": "",
+      "dqlead": ""
+    },
+    "dataaccess": {
+      "header": "",
+      "p": "",
+      "link": "Big Local News"
+    }
   },
   "category": {
     "childcare": "رعاية الطفل",
     "family": "وجبة عائلية جاهزة | وجبات عائلية جاهزة",
     "farm": "سوق المزارع أو المزارع | أسواق المزارع والمزارعين",
+    "food_bev": "",
+    "free_grocery": "",
     "grocery": "بقالة |",
     "meal": "وجبة مجانية | وجبات مجانية",
     "petsupplies": "مستلزمات الحيوانات الأليفة",
     "pharmacy": "الصيدلية |",
     "restaurant": "المطاعم |",
-    "school": "وجبة مدرسية |"
+    "school": "وجبة مدرسية |",
+    "snap_wic_retailer": "",
+    "food_resources": "",
+    "legal_resources": "",
+    "medical_resources": "",
+    "mental_health_resources": "",
+    "healthcare": ""
   },
   "dayofweek": {
     "any": "أي",
@@ -57,19 +143,24 @@
     "address": "عنوان",
     "allweek": "كل الاسبوع",
     "backtolist": "الرجوع للقائمة",
+    "call_in_advance": "",
+    "children": "",
     "close": "قريب",
     "closed": "مغلق",
     "closed-on": "أغلقت يوم",
     "closed-today": "مغلق اليوم",
     "closedonday": "مغلق (في اليوم المحدد الحالي)",
     "curbside_pickup": "البيك اب",
+    "curbside_or_delivery": "",
     "delivery": "توصيل",
     "discount_medical": "خصم عامل طبي | تخفيضات عامل طبي",
+    "discounts": "",
     "drive_thru": "الطلب من المركبة",
     "email": "البريد الإلكتروني",
     "email_lowercase": "البريد الإلكتروني",
     "farmers_market": "سوق المزارعين |",
     "farm_pick_up": "الاستلام من المزرعة",
+    "free": "",
     "free_groceries": "موقع بقالة مجاني | مواقع بقالة مجانية",
     "freemeals": "موقع وجبة مجانية | مواقع وجبات مجانية",
     "free_produce": "موقع إنتاج مجاني | مواقع إنتاج مجاني",
@@ -85,11 +176,28 @@
     "openinghours": "ساعات العمل",
     "order_online": "اطلب وادفع عبر الإنترنت",
     "phone": "هاتف",
+    "public": "",
     "selectacategory": "اختر تصنيف...",
     "selected": "المحدد",
     "seniorhours": "ساعات كبار",
+    "seniors": "",
+    "snap": "",
     "special_hours": "ساعات تسوق كبار",
-    "website": "موقع الكتروني"
+    "website": "موقع الكتروني",
+    "wic": "",
+    "ebt_pay_phone": "",
+    "ebt_pay_online": "",
+    "open_today": "",
+    "pay_phone": "",
+    "safe_pick_up": "",
+    "zoom_out_for_more_results": "",
+    "in_person": "",
+    "telehealth": "",
+    "zipcode": "",
+    "suggest_an_edit": "",
+    "reset": "",
+    "submit": "",
+    "last_updated": ""
   },
   "languages": {
     "ar": "عربى",
@@ -99,10 +207,14 @@
     "ja": "اليابانية",
     "ko": "الكورية",
     "ms": "البورمية",
-    "zh": "الصينية المبسطة"
+    "zh": "الصينية المبسطة",
+    "vi": "",
+    "tl": ""
   },
   "sidebar": {
+    "home": "",
     "close-panel": "أغلق لوحة البحث",
+    "info-about-us": "",
     "info-end-text": "، يمكننا توسيع تغطيتنا.",
     "info-link-text": "مساعدتك",
     "open-panel": "افتح لوحة البحث",
@@ -111,7 +223,81 @@
     "stayhome": "إذا كنت مريضًا ، ابق في المنزل.",
     "washhands": "اغسل يديك كثيرًا.",
     "what-do-you-need": "ماذا تحتاج؟",
-    "when-do-you-need-it": "متى تحتاجها؟"
+    "when-do-you-need-it": "متى تحتاجها؟",
+    "current_location": "",
+    "what": "",
+    "what-are-you-looking-for": "",
+    "where": "",
+    "feedback": ""
   },
-  "title": "{0} دعم COVID"
+  "title": "{0} دعم COVID",
+  "county": {
+    "alameda": "",
+    "anywhere": "",
+    "contra-costa": "",
+    "marin": "",
+    "napa": "",
+    "san-francisco": "",
+    "san-mateo": "",
+    "santa-clara": "",
+    "solano": "",
+    "sonoma": "",
+    "monterey": ""
+  },
+  "legal": {
+    "general_info": "",
+    "legal_assistance": "",
+    "legal_criminal": "",
+    "legal_domviolence": "",
+    "legal_worker_protection": "",
+    "legal_healthcare": "",
+    "legal_housing": "",
+    "legal_immigration": ""
+  },
+  "medical": {
+    "telehealth": ""
+  },
+  "mental": {
+    "in_person": ""
+  },
+  "message": {
+    "no_location_in_this_area": "",
+    "no_location_meet_these_criteria": "",
+    "loading": "",
+    "ie_compatibility": "",
+    "area_not_covered": "",
+    "select_resource": "",
+    "provide_zip": "",
+    "error_getting_zip": "",
+    "error_loading_results": ""
+  },
+  "edit": {
+    "intro": "",
+    "thanks": "",
+    "provider_name": "",
+    "location_name": "",
+    "website": "",
+    "opening_hours": "",
+    "senior_hours": "",
+    "additional_info": "",
+    "additional_info_text": "",
+    "additional_info_placeholder": "",
+    "no_edit": "",
+    "submission_error": ""
+  },
+  "pebt": {
+    "header": "",
+    "lead": "",
+    "link": "",
+    "link_url": ""
+  },
+  "title": "{0} دعم COVID",
+  "ux_study": {
+    "text_main": "",
+    "link_text": "",
+    "link_url": "",
+    "text_sub": "",
+    "header": ""
+  }
 }
+

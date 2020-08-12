@@ -8,7 +8,7 @@
       </div>
       <div class="searchDropdown">
         <!-- <div class="searchDropdown-label" v-if="isInitialSearch">Zipcode:</div> -->
-        <b-form-input v-model="nearZip" :placeholder="$t('label.zipcode')" />
+        <b-form-input ref="zipcode" v-model="nearZip" :placeholder="$t('label.zipcode')" />
         <b-form-invalid-feedback v-if="submitted" :state="validZip">{{ $t('message.' + zipErroMessage) }}</b-form-invalid-feedback>
       </div>
       <b-button type="submit" variant="primary" class="search-btn"><i class="fas fa-search"></i></b-button>
@@ -105,7 +105,7 @@ export default {
       }
     },
     need() {
-      // reset submitted state on nearLocation change
+      // reset submitted state on need change
       if (this.submitted) {
         this.submitted = false
       }
@@ -114,6 +114,7 @@ export default {
       // if invalid need, already redirect to '/'
       if (this.need != v) {
         this.need = v
+        this.$refs.zipcode.focus()
       }
     },
     nearLocation(v) {

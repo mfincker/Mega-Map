@@ -126,7 +126,8 @@
     "food_resources": "Mga mapagkukunan ng pagkain",
     "legal_resources": "Mga mapagkukunan ng legal",
     "medical_resources": "Mga mapagkukunan ng medikal",
-    "mental_health_resources": "Mga mapagkukunan ng kalusugan ng kaisipan"
+    "mental_health_resources": "Mga mapagkukunan ng kalusugan ng kaisipan",
+    "healthcare": "Pangangalaga sa kalusugan"
   },
   "dayofweek": {
     "any": "Anumang araw",
@@ -195,7 +196,8 @@
     "zipcode": "Zipcode/Lokasyon",
     "suggest_an_edit": "Pag-mungkahi na i-edit/baguhin.",
     "reset": "I-reset/Ulitin",
-    "submit": "Ipasa"
+    "submit": "Ipasa",
+    "last_updated": "Ang mga detalyadong huling na-update"
   },
   "languages": {
     "ar": "Arabe",
@@ -266,7 +268,8 @@
     "area_not_covered": "Hindi namin sakop ang pook/lugar na ito.",
     "select_resource": "Pag-pili ng mapagkukunan.",
     "provide_zip": "Ibigay ang zipcode o lokasyon.",
-    "error_getting_zip": "Mayroon kalisyaan/mali sa ibinigay na zipcode/lokasyon. Paki ulit muli."
+    "error_getting_zip": "Mayroon kalisyaan/mali sa ibinigay na zipcode/lokasyon. Paki ulit muli.",
+    "error_loading_results": "Nagkaroon ng isang error. Pakiulit muli."
   },
   "edit": {
     "intro": "Botahin ang impormasyon para sa lokasyon sa talye mula sa ibaba. Pinapahalagahan namin ang tulong niyo sa pag pagpapanatili ng mapagkukunan hanggang sa napapanahon.",
@@ -284,7 +287,16 @@
   },
   "pebt": {
     "header": "Benepisyo ng pagkain para sa mga bata na makakakuha ng libre o bawas na pagkain. ",
-    "lead": "Aplikasyon para sa P-EBT sa ika tatlumpu ng Hunyo.",
-    "link": "Mag-apply na ngayon"
+    "lead": "Mag-apply para sa P-EBT noong Hulyo 15.",
+    "link": "Mag-apply na ngayon",
+    "link_url": "https://ca.p-ebt.org/en/"
+  },
+  "ux_study": {
+    "text_main": "Gusto naming matuto nang higit pa tungkol sa kung ano ang nasa itaas ng pag-iisip para sa iyo sa oras na ito at makuha ang iyong input sa kung paano pagbutihin ang website.",
+    "link_text": "Mag-sign up ngayon.",
+    "link_url": "https://forms.gle/v4FNDDReXXiUtAP76",
+    "text_sub": "Kung napili ka para sa pakikipanayam, ang lahat ng mga sesyon ay isasagawa nang malayuan sa pamamagitan ng telepono / video chat, at babayaran ka namin para sa iyong oras.",
+    "header": "Tulungan kaming maglingkod nang mas mahusay."
   }
 }
+

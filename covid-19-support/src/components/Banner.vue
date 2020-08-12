@@ -7,7 +7,7 @@
       {{ $t('pebt.lead') }}
       <b-button id="close-banner" @click="$emit('hide-banner')"><i class="fa fa-times-circle-o fa-lg" aria-hidden="true"></i> </b-button>
     </template>
-    <b-button variant="primary" href="https://ca.p-ebt.org/" target="_blank">{{ $t('pebt.link') }}</b-button>
+    <b-button variant="primary" :href="$t('pebt.link_url')" target="_blank">{{ $t('pebt.link') }}</b-button>
   </b-jumbotron>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   name: 'banner'
 }
 </script>
-<style type="scss">
+<style type="scss" scoped>
 #pebt-banner {
   padding: 15px;
   background-color: #f48171;

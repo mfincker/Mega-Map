@@ -9,6 +9,7 @@
     "devhelp": {
       "addbusiness": "agregar un negocio",
       "addinfo": "Utilice nuestros formularios en línea para {0} o {1}.",
+      "ambassadorinfo": "Ayúdenos a ampliar la cobertura en toda el Área de la Bahía. Los embajadores trabajarán con el gobierno local y las asociaciones empresariales para llevar los Recursos de la Comunidad del Área de la Bahía a su comunidad. Envíenos un correo electrónico a {0} para obtener herramientas y recursos para comenzar.",
       "becomeambassador": "Conviértase en embajador de la comunidad",
       "conduct": "Código de Conducta",
       "devnote": "Desarrolladores: encuentre nuestros {0} y {1} en GitHub.",
@@ -125,7 +126,8 @@
     "food_resources": "Recursos Alimenticios",
     "legal_resources": "Recursos Legales",
     "medical_resources": "Recursos Médicos",
-    "mental_health_resources": "Recursos de Salud Mental"
+    "mental_health_resources": "Recursos de Salud Mental",
+    "healthcare": "Cuidado médico"
   },
   "dayofweek": {
     "any": "Alguna",
@@ -190,7 +192,12 @@
     "safe_pick_up": "Opciones para recogida segura",
     "zoom_out_for_more_results": "Aleja el imagen para más resultados",
     "in_person": "Clínicas en persona",
-    "telehealth": "Asistencia por Telesalud"
+    "telehealth": "Asistencia por Telesalud",
+    "zipcode": "código postal",
+    "suggest_an_edit": "Sugiera una revisión",
+    "reset": "Reiniciar",
+    "submit": "Envia",
+    "last_updated": "Los detalles fueron revisados"
   },
   "languages": {
     "ar": "árabe",
@@ -253,6 +260,42 @@
   "mental": {
     "in_person": "Asistencia en persona"
   },
-  "no_location_in_this_area": "No hay resultado en esta zona. ",
-  "no_location_meet_these_criteria": "No hay resultado con este criterio."
+  "message": {
+    "no_location_in_this_area": "No hay resultado en esta zona. ",
+    "no_location_meet_these_criteria": "No hay resultado con este criterio.",
+    "loading": "Cargando...",
+    "ie_compatibility": "Este sitio web no fue optimizado para Internet Explorer y es posible que no tenga acceso a todas las funcionalidades. Para una mejor experiencia, utilice un navegador diferente (por ejemplo, Mozilla Firefox). ",
+    "area_not_covered": "No cubrimos esta zona.",
+    "select_resource": "Seleccione un recurso. ",
+    "provide_zip": "Provee un código postal.",
+    "error_getting_zip": "Hubo un error con el código postal proporcionado. Inténtalo de nuevo.",
+    "error_loading_results": "Hubo un error. Por favor intente de nuevo. "
+  },
+  "edit": {
+    "intro": "Por favor actualiza la información de este lugar en el formulario abajo. Apreciamos su ayuda para mantener los recursos actualizados. ",
+    "thanks": "Recibimos sus revisiones. Gracias!",
+    "provider_name": "Nombre del proveedor",
+    "location_name": "Nombre del lugar",
+    "website": "El sitio web",
+    "opening_hours": "Horas de apertura:",
+    "senior_hours": "Horas para los mayores de edad:",
+    "additional_info": "Información adicional:",
+    "additional_info_text": "¿Algo más que falta, debe cambiarse o debe mostrarse?",
+    "additional_info_placeholder": "Nuevo servicio, ubicación permanentemente cerrada, horario comercial superior ...",
+    "no_edit": "Nada ha cambiado.",
+    "submission_error": "Hubo un error durante el envio del formulario. Inténtalo de nuevo."
+  },
+  "pebt": {
+    "header": "Beneficios de comida para los niños que reciben comidas reducidas o gratis. ",
+    "lead": "Aplique para P-EBT antes del 15 de Julio.",
+    "link": "Aplique ahora",
+    "link_url": "https://ca.p-ebt.org/es"
+  },
+  "ux_study": {
+    "text_main": "Queremos aprender más sobre lo que es más importante para usted en este momento y como podemos mejorar el sitio web.",
+    "link_text": "Regístrese ahora.",
+    "link_url": "https://forms.gle/uLPX4UtJoed3DWsS9",
+    "text_sub": "Si lo seleccionan para una entrevista, todas las sesiones se realizarán por teléfono o video, y le compensaremos por su tiempo.",
+    "header": "Ayúdanos a servirle mejor. "
+  }
 }
