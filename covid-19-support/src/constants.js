@@ -82,7 +82,7 @@ export const cartoBaseURL =
   // 'https://mfincker.carto.com/api/v2/sql?api_key=' + process.env.VUE_APP_CARTO_API_KEY
   'https://dcl-mega-map.carto.com/api/v2/sql?'
 
-export const cartoDBName = 'mega_map_database'
+export const cartoDBName = 'airtable'
 
 export const zipDBName = 'zipcode_db'
 
@@ -95,9 +95,9 @@ export const sqlQueries = {
   meal: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal' AND status = '1'",
   snap_wic_retailer: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 0 AND status = 1",
   // legal_general_info: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_general_info'",
-  legal_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_services' AND status = 1",
+  legal_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal' AND status = 1",
   // medical: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical' AND status = 1",
-  mental_health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'health' AND med_mental_health = 1 AND status = 1",
+  mental_health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND med_mental_health = 1 AND status = 1",
   health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'health' AND status = 1"
 }
 

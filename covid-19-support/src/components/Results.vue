@@ -47,7 +47,7 @@ import {
   booleanFilters,
   complexFilters,
   dayFilters,
-  needsWithGeoFilter
+  // needsWithGeoFilter
 } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
 import ResultsList from '@/components/ResultsList.vue'
@@ -170,7 +170,7 @@ export default {
     buildQuery(route, log = true) {
       // query building
       let query = sqlQueries[route.params.need]
-      if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined')) {
+      /*if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined')) {
         let countyFilter =
           this.county
             .reduce((s, c) => {
@@ -179,7 +179,7 @@ export default {
             .slice(0, -4) + ')'
 
         query = query + ' AND ' + countyFilter
-      }
+      }*/
       // log resource selection
       log &&
         window.gtag('event', 'Resource selection', {
