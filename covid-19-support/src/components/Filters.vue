@@ -41,13 +41,13 @@ export default {
     // Displayed filters
     filterList() {
       switch (this.need) {
-        case 'free_grocery':
-          return [
-            // { var: 'children', label: 'label.children' },
-            // { var: 'seniors', label: 'label.seniors' },
-            { var: 'open_today', label: 'label.open_today' }
-            // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
-          ]
+        // case 'free_grocery':
+        //   return [
+        //     // { var: 'children', label: 'label.children' },
+        //     // { var: 'seniors', label: 'label.seniors' },
+        //     { var: 'open_today', label: 'label.open_today' }
+        //     // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
+        //   ]
         case 'snap_wic_retailer':
           return [
             { var: 'wic', label: 'label.wic' },
@@ -55,20 +55,26 @@ export default {
             { var: 'safe_pick_up', label: 'label.safe_pick_up' },
             { var: 'farmers_market', label: 'label.farmers_market' }
           ]
-        case 'meal':
+        // case 'meal':
+        //   return [
+        //     { var: 'children', label: 'label.children' },
+        //     // { var: 'seniors', label: 'label.seniors' },
+        //     { var: 'open_today', label: 'label.open_today' }
+        //     // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
+        //   ]
+        case 'school_meal':
           return [
-            { var: 'children', label: 'label.children' },
-            // { var: 'seniors', label: 'label.seniors' },
+            { var: 'open_today', label: 'label.open_today' },
+            { var: 'require_child', label: 'label.require_child' },
+            { var: 'must_show_id', label: 'label.must_show_id' },
+            { var: 'all_children', label: 'label.all_children' }
+          ]
+        case 'free_food':
+          return [
             { var: 'open_today', label: 'label.open_today' }
             // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
           ]
         case 'mental_health':
-          return [
-            // { var: 'free', label: 'label.free' },
-            { var: 'in_person', label: 'label.in_person' },
-            { var: 'telehealth', label: 'label.telehealth' }
-          ]
-        case 'health':
           return [
             // { var: 'free', label: 'label.free' },
             { var: 'in_person', label: 'label.in_person' },
@@ -82,6 +88,29 @@ export default {
             { var: 'legal_healthcare', label: 'legal.legal_healthcare' },
             { var: 'legal_housing', label: 'legal.legal_housing' },
             { var: 'legal_immigration', label: 'legal.legal_immigration' }
+          ]
+        case 'health':
+          return [
+            { var: 'in_person', label: 'label.in_person' },
+            { var: 'telehealth', label: 'label.telehealth' },
+            { var: 'med_testing', label: 'health.med_testing' },
+            { var: 'med_primary_care', label: 'health.med_primary_care' },
+            { var: 'med_pediatrics', label: 'health.med_pediatrics' },
+            { var: 'med_senior', label: 'health.med_senior' },
+            { var: 'med_women', label: 'health.med_women' },
+            { var: 'med_urgent_care', label: 'health.med_urgent_care' },
+            { var: 'med_dental', label: 'health.med_dental' },
+            { var: 'med_vision', label: 'health.med_vision' },
+            { var: 'med_pharmacy', label: 'health.med_pharmacy' },
+            { var: 'med_mental_health', label: 'health.med_mental_health' },
+            { var: 'med_hotline', label: 'health.med_hotline' },
+            { var: 'med_addiction', label: 'health.med_addiction' },
+            { var: 'med_domestic_violence', label: 'health.med_domestic_violence' }
+          ]
+        case 'ballot_drop':
+          return [
+            { var: 'ballot_outdoor', label: 'label.ballot_outdoor' },
+            { var: 'ballot_indoor', label: 'label.ballot_indoor' }
           ]
         default:
           return [null]
