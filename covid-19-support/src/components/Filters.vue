@@ -65,8 +65,8 @@ export default {
         case 'school_meal':
           return [
             { var: 'open_today', label: 'label.open_today' },
-            { var: 'require_child', label: 'label.require_child' },
-            { var: 'must_show_id', label: 'label.must_show_id' },
+            // { var: 'require_child', label: 'label.require_child' },
+            // { var: 'must_show_id', label: 'label.must_show_id' },
             { var: 'all_children', label: 'label.all_children' }
           ]
         case 'free_food':

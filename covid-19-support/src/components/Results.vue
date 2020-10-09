@@ -217,7 +217,7 @@ export default {
         : null
     },
     displayMap() {
-      const needWithMap = ['meal', 'free_grocery', 'snap_wic_retailer', 'free_food', 'school_meal']
+      const needWithMap = ['meal', 'free_grocery', 'snap_wic_retailer', 'free_food', 'school_meal', 'ballot_drop']
       return needWithMap.includes(this.$route.params.need) || this.activeFilters.includes('in_person')
     },
     markers() {

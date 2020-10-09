@@ -49,6 +49,10 @@
               <span v-if="item.special_hours == 1" class="badge">{{ $tc('label.special_hours') }}</span>
               <span v-if="item.ebt_pay_phone == 1" class="badge">{{ $tc('label.ebt_pay_phone') }}</span>
               <span v-if="item.ebt_pay_online == 1" class="badge">{{ $tc('label.ebt_pay_online') }}</span>
+              <span v-if="item.all_children == 1" class="badge">{{ $tc('label.all_children') }}</span>
+              <span v-if="item.require_child == 1" class="badge">{{ $tc('label.require_child') }}</span>
+              <span v-if="item.ballot_indoor == 1" class="badge">{{ $tc('label.ballot_indoor') }}</span>
+              <span v-if="item.ballot_outdoor == 1" class="badge">{{ $tc('label.ballot_outdoor') }}</span>
               <!-- Legal badges -->
               <span v-if="item.legal_criminal == 1" class="badge">{{ $tc('legal.legal_criminal') }}</span>
               <span v-if="item.legal_domviolence == 1" class="badge">{{ $tc('legal.legal_domviolence') }}</span>

@@ -93,8 +93,9 @@ export default {
         //     { value: 'medical_telehealth', text: this.$tc('medical.telehealth', 1) }
         //   ]
         // }
-        { value: 'blm', text: this.$t('category.blm') }
-        // { value: 'blm', text: this.$t('category.blm') }
+        { value: 'blm', text: this.$t('category.blm') },
+        { value: 'ballot_drop', text: this.$t('category.ballot_drop') }
+        // { value: 'cash_assistance', text: this.$t('category.cash_assistance') }
       ]
     }
   },
