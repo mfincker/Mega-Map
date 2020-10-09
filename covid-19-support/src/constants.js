@@ -68,7 +68,25 @@ export const booleanFilters = [
   'legal_worker_protection',
   'legal_healthcare',
   'legal_housing',
-  'legal_immigration'
+  'legal_immigration',
+  'require_child',
+  'must_show_id',
+  'all_children',
+  'med_testing',
+  'med_primary_care',
+  'med_pediatrics',
+  'med_senior',
+  'med_women',
+  'med_urgent_care',
+  'med_dental',
+  'med_vision',
+  'med_pharmacy',
+  'med_mental_health',
+  'med_hotline',
+  'med_addiction',
+  'med_domestic_violence',
+  'ballet_outdoor',
+  'ballet_indoor'
 ]
 
 // Combination of boolean filters
