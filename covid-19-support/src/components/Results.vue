@@ -46,7 +46,7 @@ import {
   // countyLatLon,
   booleanFilters,
   complexFilters,
-  dayFilters,
+  dayFilters
   // needsWithGeoFilter
 } from '@/constants'
 import ResourceMap from '@/components/ResourceMap.vue'
@@ -217,7 +217,7 @@ export default {
         : null
     },
     displayMap() {
-      const needWithMap = ['meal', 'free_grocery', 'snap_wic_retailer']
+      const needWithMap = ['meal', 'free_grocery', 'snap_wic_retailer', 'free_food', 'school_meal']
       return needWithMap.includes(this.$route.params.need) || this.activeFilters.includes('in_person')
     },
     markers() {

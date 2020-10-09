@@ -62,8 +62,10 @@ export default {
         {
           label: this.$tc('category.food_resources', 1),
           options: [
-            { value: 'meal', text: this.$tc('category.meal', 2) },
-            { value: 'free_grocery', text: this.$tc('category.free_grocery', 2) },
+            // { value: 'meal', text: this.$tc('category.meal', 2) },
+            // { value: 'free_grocery', text: this.$tc('category.free_grocery', 2) },
+            { value: 'free_food', text: this.$tc('category.free_food', 2) },
+            { value: 'school_meal', text: this.$tc('category.school', 2) },
             { value: 'snap_wic_retailer', text: this.$tc('category.snap_wic_retailer', 2) }
           ]
         },
@@ -83,7 +85,7 @@ export default {
         //     { value: 'mental_health_telehealth', text: this.$tc('mental.telehealth', 1) }
         //   ]
         // },
-        { value: 'health', text: this.$t('category.medical_resources') }
+        { value: 'health', text: this.$t('category.medical_resources') },
         // {
         //   label: this.$tc('category.medical_resources', 1),
         //   options: [
@@ -91,6 +93,7 @@ export default {
         //     { value: 'medical_telehealth', text: this.$tc('medical.telehealth', 1) }
         //   ]
         // }
+        { value: 'blm', text: this.$t('category.blm') }
         // { value: 'blm', text: this.$t('category.blm') }
       ]
     }
