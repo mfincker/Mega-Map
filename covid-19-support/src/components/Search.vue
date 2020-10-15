@@ -64,7 +64,7 @@ export default {
           options: [
             // { value: 'meal', text: this.$tc('category.meal', 2) },
             // { value: 'free_grocery', text: this.$tc('category.free_grocery', 2) },
-            { value: 'free_food', text: this.$tc('category.free_food', 2) },
+            // { value: 'free_food', text: this.$tc('category.free_food', 2) },
             { value: 'school_meal', text: this.$tc('category.school', 2) },
             { value: 'snap_wic_retailer', text: this.$tc('category.snap_wic_retailer', 2) }
           ]
@@ -78,6 +78,7 @@ export default {
         //   ]
         // },
         { value: 'mental_health', text: this.$t('category.mental_health_resources') },
+        // { value: 'dv_resources', text: this.$t('category.dv_resources') },
         // {
         //   label: this.$tc('category.mental_health_resources', 1),
         //   options: [
@@ -93,9 +94,9 @@ export default {
         //     { value: 'medical_telehealth', text: this.$tc('medical.telehealth', 1) }
         //   ]
         // }
-        { value: 'blm', text: this.$t('category.blm') },
-        { value: 'ballot_drop', text: this.$t('category.ballot_drop') }
-        // { value: 'cash_assistance', text: this.$t('category.cash_assistance') }
+        // { value: 'blm', text: this.$t('category.blm') },
+        { value: 'ballot_drop', text: this.$t('category.ballot_drop') },
+        { value: 'cash_assistance', text: this.$t('category.cash_assistance') }
       ]
     }
   },

@@ -67,7 +67,8 @@ export default {
             { var: 'open_today', label: 'label.open_today' },
             // { var: 'require_child', label: 'label.require_child' },
             // { var: 'must_show_id', label: 'label.must_show_id' },
-            { var: 'all_children', label: 'label.all_children' }
+            { var: 'all_children', label: 'label.all_children' },
+            { var: 'enrolled_children', label: 'label.enrolled_children' }
           ]
         case 'free_food':
           return [
@@ -110,7 +111,16 @@ export default {
         case 'ballot_drop':
           return [
             { var: 'ballot_outdoor', label: 'label.ballot_outdoor' },
-            { var: 'ballot_indoor', label: 'label.ballot_indoor' }
+            { var: 'ballot_indoor', label: 'label.ballot_indoor' },
+            { var: 'twentyfourhrs', label: 'label.twentyfourhrs' }
+          ]
+        case 'cash_assistance':
+          return [
+            { var: 'fin_grocery', label: 'label.fin_grocery' },
+            { var: 'fin_housing', label: 'label.fin_housing' },
+            { var: 'fin_legal', label: 'label.fin_legal' },
+            { var: 'fin_medical', label: 'label.fin_medical' },
+            { var: 'fin_utilities', label: 'label.fin_utilities' }
           ]
         default:
           return [null]

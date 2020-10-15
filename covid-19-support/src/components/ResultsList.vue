@@ -29,14 +29,15 @@
               <div class="resultMetadata">
                 <span class="resultTitle">{{ item.provider_name }}</span>
                 <span v-if="!!item.address" class="resultAddress">
-                  {{ item.address }}
-                  <span v-if="!!item.city">, {{ item.city }}</span>
+                  {{ item.address }},
+                  <span v-if="!!item.city"> {{ item.city }}</span>
+                  <span v-if="!!item.zip"> {{ item.zip }}</span>
                 </span>
                 <span>
                   <a class="resultContact" :href="'tel:' + item.contact">{{ item.contact }}</a>
                 </span>
                 <!-- Legal resource description -->
-                <span v-if="(legalResources || medicalResources || mentalResources) && !!item.notes" class="resultNotes">
+                <span v-if="(legalResources || medicalResources || mentalResources || cashResources) && !!item.notes" class="resultNotes">
                   <b>{{ $t('label.notes') }}:</b>
                   {{ getTranslation(item, 'notes') }}
                 </span>
@@ -50,9 +51,12 @@
               <span v-if="item.ebt_pay_phone == 1" class="badge">{{ $tc('label.ebt_pay_phone') }}</span>
               <span v-if="item.ebt_pay_online == 1" class="badge">{{ $tc('label.ebt_pay_online') }}</span>
               <span v-if="item.all_children == 1" class="badge">{{ $tc('label.all_children') }}</span>
+              <span v-if="item.must_show_id == 1" class="badge">{{ $tc('label.must_show_id') }}</span>
               <span v-if="item.require_child == 1" class="badge">{{ $tc('label.require_child') }}</span>
+              <span v-if="item.enrolled_children == 1" class="badge">{{ $tc('label.enrolled_children') }}</span>
               <span v-if="item.ballot_indoor == 1" class="badge">{{ $tc('label.ballot_indoor') }}</span>
               <span v-if="item.ballot_outdoor == 1" class="badge">{{ $tc('label.ballot_outdoor') }}</span>
+              <span v-if="item.twentyfourhrs == 1" class="badge">{{ $tc('label.twentyfourhrs') }}</span>
               <!-- Legal badges -->
               <span v-if="item.legal_criminal == 1" class="badge">{{ $tc('legal.legal_criminal') }}</span>
               <span v-if="item.legal_domviolence == 1" class="badge">{{ $tc('legal.legal_domviolence') }}</span>
@@ -60,6 +64,12 @@
               <span v-if="item.legal_healthcare == 1" class="badge">{{ $tc('legal.legal_healthcare') }}</span>
               <span v-if="item.legal_housing == 1" class="badge">{{ $tc('legal.legal_housing') }}</span>
               <span v-if="item.legal_housing == 1" class="badge">{{ $tc('legal.legal_immigration') }}</span>
+              <!-- Cash badges -->
+              <span v-if="item.fin_grocery == 1" class="badge">{{ $tc('label.fin_grocery') }}</span>
+              <span v-if="item.fin_housing == 1" class="badge">{{ $tc('label.fin_housing') }}</span>
+              <span v-if="item.fin_legal == 1" class="badge">{{ $tc('label.fin_legal') }}</span>
+              <span v-if="item.fin_medical == 1" class="badge">{{ $tc('label.fin_medical') }}</span>
+              <span v-if="item.fin_utilities == 1" class="badge">{{ $tc('label.fin_utilities') }}</span>
               <!-- End Badges -->
             </div>
             <i class="fas fa-chevron-right fa-lg" :class="{ 'fa-rotate-90': showDetails && item.cartodb_id == resource.resourceId }"></i>
@@ -70,6 +80,7 @@
               :legalResources="legalResources"
               :medicalResources="medicalResources"
               :mentalResources="mentalResources"
+              :cashResources="cashResources"
             />
             <p>
               <b-button @click="(e) => e.stopPropagation()" class="btn btn-outline-primary btn-sm" v-b-modal.suggest-edit-modal>
@@ -190,6 +201,9 @@ export default {
     },
     mentalResources() {
       return this.$route.params.need.startsWith('mental')
+    },
+    cashResources() {
+      return this.$route.params.need.startsWith('cash')
     }
   }
 }

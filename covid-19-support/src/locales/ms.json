@@ -59,7 +59,7 @@
         "link": "website Github"
       }
     },
-    "about-us-sources": "Pangkalan data maklumat kami menggunakan data yang dikumpulkan oleh organisasi berikut:\nPencari Kedai USDA SNAP\nPencari Kedai USDA WIC\nSecond Harvest Silicon Valley\nProgram Advokasi Pediatrik Stanford\n\nKumpulan sukarelawan kami lanjutnya mengesahkan data dan mengumpulkan maklumat tambahan seperti waktu senior Covid-19, pilihan pengambilan tepi jalan yang selamat dan lain-lain. ",
+    "about-us-sources": "Pangkalan data maklumat kami menggunakan data yang dikumpulkan oleh organisasi berikut:\nPencari Kedai USDA SNAP\nPencari Kedai USDA WIC\nSecond Harvest Silicon Valley\nProgram Advokasi Pediatrik Stanford\n\nKumpulan sukarelawan kami lanjutnya mengesahkan data dan mengumpulkan maklumat tambahan seperti waktu senior Covid-19, pilihan pengambilan tepi jalan yang selamat dan lain-lain.",
     "about-us-contact": {
       "link0": "baycommunityresource@gmail.com"
     },
@@ -118,15 +118,18 @@
     "free_grocery": "Runcit percuma | Runcit percuma",
     "grocery": "Runcit | Groceries",
     "meal": "Makanan percuma | Makanan percuma",
+    "ballot_drop": "Kotak kertas mengundi",
     "petsupplies": "Bekalan Haiwan Peliharaan",
     "pharmacy": "Farmasi | Farmasi",
     "restaurant": "Restoran | Restoran",
     "school": "Makan sekolah | Makanan sekolah",
     "snap_wic_retailer": "Kedai mengambil bayaran CalFresh/WIC | Kedai mengambil bayaran CalFresh/WIC",
+    "cash_assistance": "Bantuan wang",
     "food_resources": "Makanan dan barangan runcit",
     "legal_resources": "Perkhidmatan peguam",
     "medical_resources": "Perkhidmatan perubatan",
-    "mental_health_resources": "Perkhidmatan kesihatan mental"
+    "mental_health_resources": "Perkhidmatan kesihatan mental",
+    "dv_resources": "Sokongan mangsa penderaan domestik"
   },
   "dayofweek": {
     "any": "Sebarang",
@@ -151,7 +154,7 @@
     "closedonday": "Ditutup (pada hari yang dipilih)",
     "curbside_pickup": "Pengambilan tepi kedai",
     "curbside_or_delivery": "Servis hantaran atau pengambilan disediakan",
-    "delivery": "penghantaran",
+    "delivery": "Hantaran barang",
     "discount_medical": "Diskaun penjawat perubatan | diskaun penjawat perubatan |",
     "discounts": "Diskaun",
     "drive_thru": "Pandu lalu",
@@ -163,6 +166,19 @@
     "free_groceries": "Lokasi runcit percuma | Lokasi runcit percuma",
     "freemeals": "Lokasi makanan percuma | Lokasi makan percuma",
     "free_produce": "Lokasi menghasilkan percuma | Lokasi menghasilkan percuma",
+    "require_child": "Kanak-kanak mesti hadir bersama",
+    "must_show_id": "Mesti tunjukkan ID",
+    "all_children": "Untuk semua kanak-kanak",
+    "enrolled_children": "Untuk pelajar daerah sahaja",
+    "ballot_outdoor": "Tempat letak balot mengundi di luar",
+    "ballot_indoor": "Tempat letak balot mengundi di dalam",
+    "twentyfourhrs": "Buka 24 jam",
+    "fin_grocery": "Wang untuk barangan runcit",
+    "fin_housing": "Wang untuk membayar sewa",
+    "fin_legal": "Wang untuk membayar yuran perguam",
+    "fin_medical": "Wang untuk membayar yuran medikal",
+    "fin_utilities": "Wang untuk membayar kos utiliti",
+    "freefood": "Tempat makanan percuma awam",
     "instructions": "Arahan",
     "mapkey": "Kunci Peta",
     "meal_public": "Makanan dibuka untuk orang ramai",
@@ -195,16 +211,39 @@
     "zipcode": "Zipkod",
     "suggest_an_edit": "Sila beri cadangan",
     "reset": "Kosongkan semula",
-    "submit": "Hantarkan"
+    "submit": "Hantarkan",
+    "last_updated": "Maklumat dikemaskini:",
+    "in_store_pickup": "Bawa pulang",
+    "catering": "Katering",
+    "dv_legal": "Sokongan legal",
+    "dv_housing": "Sokongan perumahan",
+    "dv_medical": "Sokongan medikal",
+    "dv_crisis": "Sokongan krisis",
+    "dv_mental_health": "Sokongan kesihatan mental"
+  },
+  "health": {
+    "med_testing": "Ujian COVID",
+    "med_primary_care": "Doktor kajian umum",
+    "med_pediatrics": "Doktor kanak-kanak",
+    "med_senior": "Doktor warga emas",
+    "med_women": "Doktor wanita",
+    "med_urgent_care": "Rawatan kecemasan",
+    "med_dental": "Rawatan dental",
+    "med_vision": "Doktor mata",
+    "med_pharmacy": "Farmasi",
+    "med_mental_health": "Doktor kesihatan mental",
+    "med_hotline": "Talian kecemasan",
+    "med_addiction": "Sokongan ketagihan dan pemulihan",
+    "med_domestic_violence": "Sokongan mangsa penderaan domestik"
   },
   "languages": {
     "ar": "Bahasa Arab",
     "en": "Bahasa Inggeris",
-    "es": "Sepanyol",
-    "fr": "Perancis",
-    "ja": "Jepun",
-    "ko": "Korea",
-    "ms": "Burma",
+    "es": "Bahasa Sepanyol",
+    "fr": "Bahasa Perancis",
+    "ja": "Bahasa Jepun",
+    "ko": "Bahasa Korea",
+    "ms": "Bahasa Melayu",
     "zh": "Bahasa Cina",
     "vi": "Bahasa Vietnam",
     "tl": "Bahasa Tagalog"
@@ -290,5 +329,6 @@
   },
   "ux_study": {
     "header": "Tolong kami tolong kamu."
-  }
+  },
+  "DO NOT TRANSLATE FROM HERE DOWN": "DO NOT TRANSLATE FROM HERE DOWN"
 }

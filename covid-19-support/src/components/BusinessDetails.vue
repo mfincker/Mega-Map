@@ -26,7 +26,7 @@
         <p>
           <opening-hours :business="business" :title="$t('label.openinghours')"></opening-hours>
           <opening-hours v-if="business.special_hours" :business="business" :title="$t('label.seniorhours')" :senior="true"></opening-hours>
-          <template v-if="!!business.notes && !legalResources && !mentalResources && !medicalResources">
+          <template v-if="!!business.notes && !legalResources && !mentalResources && !medicalResources && !cashResources">
             <p>
               <b>{{ $t('label.notes') }}:</b> {{ getTranslation(business, 'notes') }}
             </p>

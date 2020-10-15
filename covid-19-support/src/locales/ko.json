@@ -47,7 +47,7 @@
     "about-us": {
       "header": "우리에 대해",
       "p1": {
-        "text": "저희는 자원봉사자로 지역사회에 코로나 위기에 대해 공적자원에 접근할수 있도록 정보를 제공하는 프로젝트를 하고 있습니다. 이프로젝트는 {0} 에서 부터 시작 해서 현재는 베이 지역에 학교 무료 급식 지도제공으로 시작 해서 지금은 더 자세한 사항들, 예를 들면 위치정보, 무료배급시간, 급식 보조 , 법률, 의료지원등 을 제공 합니다. ",
+        "text": "저희는 자원봉사자로 지역사회에 코로나 위기에 대해 공적자원에 접근할수 있도록 정보를 제공하는 프로젝트를 하고 있습니다. 이프로젝트는 {0} 에서 부터 시작 해서 현재는 베이 지역에 학교 무료 급식 지도제공으로 시작 해서 지금은 더 자세한 사항들, 예를 들면 위치정보, 무료배급시간, 급식 보조 , 법률, 의료지원등 을 제공 합니다.",
         "link": "베이 지역 음식제공 학교 지도"
       },
       "p2": {
@@ -59,7 +59,7 @@
         "link": "Github 페이지"
       }
     },
-    "about-us-sources": "저희 데이터 정보들은 아래의 조직으로부터 제공되었습니다.  USDA SNAP 가게 위치 추적기\r\nUSDA WIC 가게 위치추적기\r\nSecond Harvest of Silicon Valley\r\nStanford Pediatric Advocacy\r\n",
+    "about-us-sources": "저희 데이터 정보들은 아래의 조직으로부터 제공되었습니다.  USDA SNAP 가게 위치 추적기\r\nUSDA WIC 가게 위치추적기\r\nSecond Harvest of Silicon Valley\r\nStanford Pediatric Advocacy",
     "about-us-contact": {
       "link0": "baycommunityresource@gmail.com"
     },
@@ -122,6 +122,7 @@
     "restaurant": "식당 | 레스토랑",
     "school": "학교 급식 | 학교 급식",
     "snap_wic_retailer": "칼프레쉬/ WIC 소매상인 | 칼프레쉬/WIC 소매상인",
+    "cash_assistance": "현금 지원",
     "food_resources": "음식 자원",
     "legal_resources": "법률 자원",
     "medical_resources": "의료 자원",
@@ -163,6 +164,19 @@
     "free_groceries": "무료 식료품류 장소",
     "freemeals": "무료 식사 장소",
     "free_produce": "무료 농산물 장소",
+    "require_child": "자녀가 있어야합니다.",
+    "must_show_id": "신분증을 보여 주셔야합니다",
+    "all_children": "모든 아이들에게 봉사",
+    "enrolled_children": "학군에 등록 된 학생 만",
+    "ballot_outdoor": "야외 투표 용지",
+    "ballot_indoor": "실내 투표 용지",
+    "twentyfourhrs": "24 시간 영업",
+    "fin_grocery": "식료품을위한 현금",
+    "fin_housing": "임대 현금",
+    "fin_legal": "법률 수수료 현금",
+    "fin_medical": "의료비 현금",
+    "fin_utilities": "유틸리티에 대한 현금",
+    "freefood": "무료 음식 위치 | 무료 음식 위치",
     "instructions": "방법",
     "mapkey": "지도 키",
     "meal_public": "공개 식사",
@@ -198,6 +212,21 @@
     "submit": "제출",
     "last_updated": "세부사항은 최종적으로 업데이트 됬습니다."
   },
+  "health": {
+    "med_testing": "COVID 테스트",
+    "med_primary_care": "일차 진료",
+    "med_pediatrics": "소아과",
+    "med_senior": "노인 간호",
+    "med_women": "여성 건강 관리",
+    "med_urgent_care": "긴급 치료",
+    "med_dental": "치과 치료",
+    "med_vision": "시력 관리",
+    "med_pharmacy": "조제",
+    "med_mental_health": "정신 건강 관리",
+    "med_hotline": "핫라인",
+    "med_addiction": "중독 및 회복 지원",
+    "med_domestic_violence": "가정 폭력 피해자 지원"
+  },
   "languages": {
     "ar": "아라비아어",
     "en": "영어",
@@ -205,7 +234,6 @@
     "fr": "프랑스어",
     "ja": "일본어",
     "ko": "한국어",
-    "ms": "버마어",
     "zh": "중국어",
     "vi": "베트남어",
     "tl": "필리핀어"
@@ -213,7 +241,7 @@
   "sidebar": {
     "home": "집",
     "close-panel": "검색 창 닫기",
-    "info-about-us": "현재 이 사이트는 베이 지역을 제공합니다. ",
+    "info-about-us": "현재 이 사이트는 베이 지역을 제공합니다.",
     "info-end-text": "웹사이트를 확장시킬 수 있습니다.",
     "info-link-text": "당신의 도움으로",
     "open-panel": "검색 창 열기",
@@ -267,11 +295,11 @@
     "area_not_covered": "이지역은 지원을 하지 않습니다.",
     "select_resource": "자료를 선택해 주세요.",
     "provide_zip": "우편번호를 넣어 주세요.",
-    "error_getting_zip": "우편번호에 오류가 있습니다. 다시 입력해 주세요 ",
+    "error_getting_zip": "우편번호에 오류가 있습니다. 다시 입력해 주세요",
     "error_loading_results": "오류가 있습니다. 다시 시도 해주세요."
   },
   "edit": {
-    "intro": " 아래의 양식에 이지역의 정보를 업데이트 해주시기 바랍니다. 이곳의 정보를 최근으로 계속 유지 할수 있도록 도움 주셔서 감사 드립니다. ",
+    "intro": "아래의 양식에 이지역의 정보를 업데이트 해주시기 바랍니다. 이곳의 정보를 최근으로 계속 유지 할수 있도록 도움 주셔서 감사 드립니다.",
     "thanks": "사용자의 수정내용을 받았습니다. 감사 합니다.",
     "provider_name": "제공자 이름",
     "location_name": "지역명",
@@ -279,7 +307,7 @@
     "opening_hours": "영업시간",
     "senior_hours": "연장자 지정 시간",
     "additional_info": "추가 정보",
-    "additional_info_text": "이외의  누락되거나 변경해야 하거나 표기해야 할 사항들이 있습니까? ",
+    "additional_info_text": "이외의  누락되거나 변경해야 하거나 표기해야 할 사항들이 있습니까?",
     "additional_info_placeholder": "새로운 세비스, 지역이 영구히 문을 닫았습니다., 연장자 지정 쇼핑 시간...",
     "no_edit": "변경 사항이 없습니다.",
     "submission_error": "양식제출중 오류가 발생했습니다, 다시 시도 하시거나 baycommunityresource@gmail.com 로 연락 바랍니다."

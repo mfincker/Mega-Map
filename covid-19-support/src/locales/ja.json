@@ -30,7 +30,27 @@
       "partnership": "チャペルヒルダウンタウンパートナーシップ"
     },
     "partners": "情報源",
-    "title": "このサイトについて"
+    "title": "このサイトについて",
+    "about-us-contact": {
+      "link0": "baycommunityresource@gmail.com"
+    },
+    "about-us": {
+      "p2": {
+        "link": "NCCovid Support"
+      }
+    },
+    "contact-us": {
+      "p1": {
+        "link": "baycommunityresource@gmail.com"
+      }
+    },
+    "spthanks": {
+      "link0": "CARTO",
+      "link1": "Mapbox"
+    },
+    "dataaccess": {
+      "link": "Big Local News"
+    }
   },
   "category": {
     "childcare": "育児",
@@ -41,7 +61,8 @@
     "petsupplies": "ペット用品",
     "pharmacy": "薬局|薬局",
     "restaurant": "レストラン|レストラン",
-    "school": "学校給食|学校給食"
+    "school": "学校給食|学校給食",
+    "cash_assistance": "現金援助"
   },
   "dayofweek": {
     "any": "どれか",
@@ -73,6 +94,19 @@
     "free_groceries": "無料の食料品店|無料の食料品店",
     "freemeals": "無料の食事場所|無料の食事場所",
     "free_produce": "無料の商品の場所|無料の商品の場所",
+    "require_child": "子供がいる必要があります",
+    "must_show_id": "IDを表示する必要があります",
+    "all_children": "すべての子供たちに奉仕する",
+    "enrolled_children": "地区に在籍している学生のみ",
+    "ballot_outdoor": "屋外バロットドロップ",
+    "ballot_indoor": "屋内バロットドロップ",
+    "twentyfourhrs": "24時間営業",
+    "fin_grocery": "食料品の現金",
+    "fin_housing": "家賃の現金",
+    "fin_legal": "法定費用の現金",
+    "fin_medical": "医療費の現金",
+    "fin_utilities": "ユーティリティの現金",
+    "freefood": "無料の食事場所|無料の食事場所",
     "instructions": "説明書",
     "mapkey": "マップキー",
     "meal_public": "食事は一般に公開されています",
@@ -91,6 +125,21 @@
     "special_hours": "シニアショッピング時間",
     "website": "ウェブサイト"
   },
+  "health": {
+    "med_testing": "COVIDテスト",
+    "med_primary_care": "プライマリケア",
+    "med_pediatrics": "小児科",
+    "med_senior": "シニアケア",
+    "med_women": "女性のヘルスケア",
+    "med_urgent_care": "緊急処置",
+    "med_dental": "歯の手入れ",
+    "med_vision": "ビジョンケア",
+    "med_pharmacy": "薬局",
+    "med_mental_health": "メンタルヘルスケア",
+    "med_hotline": "ホットライン",
+    "med_addiction": "中毒と回復のサポート",
+    "med_domestic_violence": "家庭内暴力支援の犠牲者"
+  },
   "languages": {
     "ar": "アラビア語",
     "en": "英語",
@@ -98,7 +147,6 @@
     "fr": "フランス語",
     "ja": "日本人",
     "ko": "韓国語",
-    "ms": "ビルマ語",
     "zh": "簡体字中国語"
   },
   "sidebar": {

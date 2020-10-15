@@ -1,14 +1,14 @@
 {
   "about": {
-    "close": "Isara ",
+    "close": "Isara",
     "contact": "Makipag-ugnayan sa amin",
     "contactus": {
       "email": "email",
-      "info": "Ang pahinang ito ay nasa pamamahala ng {0} of {1}. Para sa mga katanungan at pagkikipagugnayan, magyari lang po mag-email sa {2}. "
+      "info": "Ang pahinang ito ay nasa pamamahala ng {0} of {1}. Para sa mga katanungan at pagkikipagugnayan, magyari lang po mag-email sa {2}."
     },
     "devhelp": {
       "addbusiness": "isama ang isang negosyo",
-      "addinfo": "Gamitin ang mga online form para sa {0} o {1}. ",
+      "addinfo": "Gamitin ang mga online form para sa {0} o {1}.",
       "ambassadorinfo": "Tulungan kaming palawakin ang saklaw sa buong Bay Area. Makikipagtulungan ang mga embahador kasama ang mga lokal na pamahalaan at mga asosasyon sa negosyo upang dalhin ang Bay Area Community Resources sa kanilang komunidad. I-email sa amin ang {0} para magsimula.",
       "becomeambassador": "Maging isang embahador ng komunidad",
       "conduct": "Kodigo ng mga alituntunin",
@@ -33,13 +33,13 @@
       "bln": "Malaking Lokal ng Balita"
     },
     "partners": "Pinagmulan ng Impormasyon",
-    "title": "Tungkol sa site na ito ",
+    "title": "Tungkol sa site na ito",
     "front-page": {
-      "p1": "Kumusta! ",
+      "p1": "Kumusta!",
       "p2": "Nagbibigay kami ng impormasyon tungkol sa mga mapagkukunan tulad ng libreng pagkain, tulong sa pagkain, legal na tulong, at tulong medikal.",
       "p3": "Magsimula sa pamamagitan ng pagpili kung nasaan ka at kung ano ang hinahanap mo.",
       "p4": {
-        "text": "Kami ay kaakibat sa {0} at {1} ng Stanford at lubos na nagpapasalamat kay Bill Behrman, Sara Altman, at Cheryl Phillips para sa kanilang patuloy na suporta at payo. ",
+        "text": "Kami ay kaakibat sa {0} at {1} ng Stanford at lubos na nagpapasalamat kay Bill Behrman, Sara Altman, at Cheryl Phillips para sa kanilang patuloy na suporta at payo.",
         "link0": "Laboratoryo ng Hamon ng Data",
         "link1": "Malaking Lokal ng Balita"
       }
@@ -95,7 +95,7 @@
     },
     "our-team": {
       "header": "Ang aming koponan",
-      "sourcing": "Data sourcing at pagsasalin: ",
+      "sourcing": "Data sourcing at pagsasalin:",
       "dev": "Data engineering at pag-unlad",
       "resource": "mga coordinator ng mapagkukunan",
       "translate": "tagasalin",
@@ -118,11 +118,13 @@
     "free_grocery": "Libreng Groseri|Mga Libreng Groseri",
     "grocery": "Groseri|Mga Groseri",
     "meal": "Libreng inihandang pagkain|Mga libreng inihandang pagkain",
+    "ballot_drop": "Lugar ng drop-off ng balota",
     "petsupplies": "Gamit para sa mga alagang hayop",
     "pharmacy": "Parmasya|Mga Parmasya",
     "restaurant": "Restawran|Mga Restawran",
     "school": "Pagkain sa paaralan|Mga pagkain sa paaralan",
     "snap_wic_retailer": "Nagtitinda ng CalFresh/WIC|Mga nagtitinda ng CalFresh/WIC",
+    "cash_assistance": "Tulong sa cash",
     "food_resources": "Mga mapagkukunan ng pagkain",
     "legal_resources": "Mga mapagkukunan ng legal",
     "medical_resources": "Mga mapagkukunan ng medikal",
@@ -141,7 +143,7 @@
   },
   "label": {
     "address": "Tirahan",
-    "allweek": "Buong linggo ",
+    "allweek": "Buong linggo",
     "backtolist": "Bumalik sa listahan",
     "call_in_advance": "Dapat tumawag muna",
     "children": "Para sa mga kabataan",
@@ -164,7 +166,20 @@
     "free_groceries": "Lugar ng libreng groseri | Mga lugar ng libreng groseri",
     "freemeals": "Lugar ng libreng pagkain | Mga lugar ng libreng pagkain",
     "free_produce": "Lugar ng libreng ani | Mga lugar ng libreng ani",
-    "instructions": "Mga tagubilin ",
+    "require_child": "Kailangang naroroon ang bata",
+    "must_show_id": "Dapat ipakita ang ID",
+    "all_children": "Paglilingkod sa lahat ng mga bata",
+    "enrolled_children": "Ang mga mag-aaral lamang ang nakatala sa distrito",
+    "ballot_outdoor": "Pagbaba ng balota sa labas",
+    "ballot_indoor": "Pagbaba ng panloob na balota",
+    "twentyfourhrs": "Buksan ang 24 na Oras",
+    "fin_grocery": "Cash para sa mga groseri",
+    "fin_housing": "Cash for rent",
+    "fin_legal": "Cash para sa ligal na bayarin",
+    "fin_medical": "Cash para sa mga bayarin sa medisina",
+    "fin_utilities": "Cash para sa mga utility",
+    "freefood": "Libreng lokasyon ng pagkain | Libreng mga lokasyon ng pagkain",
+    "instructions": "Mga tagubilin",
     "mapkey": "Key ng mapa",
     "meal_public": "Mga pagkain bukas sa publiko",
     "meal_student": "Mga pagkain para sa mga kabataan",
@@ -177,7 +192,7 @@
     "order_online": "Mag-order & magbayad online",
     "phone": "Telepono",
     "public": "Bukas para sa lahat",
-    "selectacategory": "Pumili ng kategorya... ",
+    "selectacategory": "Pumili ng kategorya...",
     "selected": "Napili",
     "seniorhours": "Mga oras para sa mga nakatatanda",
     "seniors": "Para sa mga nakatatanda",
@@ -199,6 +214,21 @@
     "submit": "Ipasa",
     "last_updated": "Ang mga detalyadong huling na-update"
   },
+  "health": {
+    "med_testing": "Pagsubok sa COVID",
+    "med_primary_care": "Pangangalaga sa pangunahing",
+    "med_pediatrics": "Pediatrics",
+    "med_senior": "Pangangalaga ng matanda",
+    "med_women": "Pangangalaga sa kalusugan ng kababaihan",
+    "med_urgent_care": "Agarang pangangalaga",
+    "med_dental": "Pangangalaga sa ngipin",
+    "med_vision": "Pangangalaga sa paningin",
+    "med_pharmacy": "Parmasya",
+    "med_mental_health": "Pangangalaga sa kalusugan ng kaisipan",
+    "med_hotline": "Hotline",
+    "med_addiction": "Suporta sa pagkagumon at pagbawi",
+    "med_domestic_violence": "Biktima ng suporta sa karahasan sa tahanan"
+  },
   "languages": {
     "ar": "Arabe",
     "en": "Ingles",
@@ -206,7 +236,6 @@
     "fr": "Pranses",
     "ja": "Japanese",
     "ko": "Koreano",
-    "ms": "Burmese",
     "zh": "Pinasimple na Tsino",
     "vi": "Vietnamese",
     "tl": "Tagalog"
@@ -220,10 +249,10 @@
     "open-panel": "Bukas na panel ng paghahanap",
     "shopsafe": "Mangyaring bumili ng ligtas!",
     "sixfeet": "Manatiling 6 na talampakan habang namimili.",
-    "stayhome": "Kung ikaw ay may sakit, manatili sa bahay. ",
+    "stayhome": "Kung ikaw ay may sakit, manatili sa bahay.",
     "washhands": "Hugasan ang iyong mga kamay nang madalas.",
     "what-do-you-need": "Ano'ng kailangan mo?",
-    "when-do-you-need-it": "Kailan mo ito kailangan? ",
+    "when-do-you-need-it": "Kailan mo ito kailangan?",
     "current_location": "Kasalukuyang lokasyon",
     "what": "Mapagkukunan ...",
     "what-are-you-looking-for": "Ano ang hinahanap mo?",
@@ -286,7 +315,7 @@
     "submission_error": "Mayroong kalisyaan/mali sa pag-mungkahi. Maaaring kaming kontakin muli sa baycommunitysource@gmail.com."
   },
   "pebt": {
-    "header": "Benepisyo ng pagkain para sa mga bata na makakakuha ng libre o bawas na pagkain. ",
+    "header": "Benepisyo ng pagkain para sa mga bata na makakakuha ng libre o bawas na pagkain.",
     "lead": "Mag-apply para sa P-EBT noong Hulyo 15.",
     "link": "Mag-apply na ngayon",
     "link_url": "https://ca.p-ebt.org/en/"

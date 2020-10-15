@@ -72,6 +72,7 @@ export const booleanFilters = [
   'require_child',
   'must_show_id',
   'all_children',
+  'enrolled_children',
   'med_testing',
   'med_primary_care',
   'med_pediatrics',
@@ -86,7 +87,13 @@ export const booleanFilters = [
   'med_addiction',
   'med_domestic_violence',
   'ballot_outdoor',
-  'ballot_indoor'
+  'ballot_indoor',
+  'fin_grocery',
+  'fin_housing',
+  'fin_legal',
+  'fin_medical',
+  'fin_utilities',
+  'twentyfourhrs'
 ]
 
 // Combination of boolean filters
@@ -113,7 +120,8 @@ export const needs = [
   'health',
   'mental_health',
   'school_meal',
-  'ballot_drop'
+  'ballot_drop',
+  'cash_assistance'
 ]
 
 export const needsWithGeoFilter = ['legal_assistance', 'health', 'mental_health']
@@ -129,8 +137,8 @@ export const sqlQueries = {
   // medical: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical' AND status = 1",
   mental_health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND med_mental_health = 1 AND status = 1",
   health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'health' AND status = 1",
-  ballot_drop: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'ballot_drop' AND status = 1"
-  // cash_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'cash_assistance' AND status = 1"
+  ballot_drop: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'ballot_drop' AND status = 1",
+  cash_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'cash_assistance' AND status = 1"
 }
 
 export const zipQuery = 'SELECT * FROM ' + zipDBName + ' WHERE zip = '

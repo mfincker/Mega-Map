@@ -4,15 +4,14 @@ export function businessIcon(business) {
       return 'fas fa-hand-holding-heart'
     case 'legal_services':
       return 'fas fa-balance-scale-left'
-    case 'medical':
-      return 'fas fa-briefcase-medical'
+    case 'health':
+      return 'fas fa-briefcase'
     case 'grocery':
-      if (business.farmers_market == 1) {
-        return 'fas fa-store'
-      }
       return 'fas fa-shopping-basket'
     case 'meal':
       return 'fas fa-utensils'
+    case 'ballot_drop':
+      return 'fas fa-vote-yea'
     default:
       return 'fas fa-question'
   }

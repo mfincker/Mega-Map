@@ -36,7 +36,7 @@
     "title": "Về trang này",
     "front-page": {
       "p1": "Xin chào!",
-      "p2": "Chúng tôi cung cấp thông tin về những trợ giúp cộng đồng như bữa ăn miễn phí, thức ăn, pháp lý và y tế. ",
+      "p2": "Chúng tôi cung cấp thông tin về những trợ giúp cộng đồng như bữa ăn miễn phí, thức ăn, pháp lý và y tế.",
       "p3": "Bắt đầu bằng việc chọn vị trí của bạn và cái bạn cần tìm.",
       "p4": {
         "text": "Chúng tôi có liên kết với {0} và {1} từ Stanford và thật sự cảm ơn Bill Behrman, Sara Altman và Cheryl Phillips vì những đóng góp và tư vấn của họ",
@@ -55,7 +55,7 @@
         "link": "NCCovid Support"
       },
       "p3": {
-        "text": "Bạn có thể tìm thêm thông tin về dự án, bao gồm mã nguồn để tái thiết lập dự án từ {0}\r\n",
+        "text": "Bạn có thể tìm thêm thông tin về dự án, bao gồm mã nguồn để tái thiết lập dự án từ {0}",
         "link": "Trang Github"
       }
     },
@@ -70,9 +70,9 @@
       "p2": "Các tình nguyện viên phi thường của chúng tôi là người kiểm chứng và thu thập các thông tin như giờ hoạt động COVID-19 dành riêng cho người lớn tuổi, các lựa chọn lấy hàng an toàn từ bên lề đường..vv"
     },
     "info-source": {
-      "link1": "Định vị cửa hàng USDA SNAP ",
-      "link2": "Định vị cửa hàng USDA WIX ",
-      "link3": "Tổ chức Second Harvest khu vực Silicon Valley ",
+      "link1": "Định vị cửa hàng USDA SNAP",
+      "link2": "Định vị cửa hàng USDA WIX",
+      "link3": "Tổ chức Second Harvest khu vực Silicon Valley",
       "link4": "Tổ chức vận đồng cho bệnh nhi Stanford",
       "link5": "Trung tâm nghiên cứu hệ sinh thái Berkeley"
     },
@@ -118,15 +118,17 @@
     "free_grocery": "Lương thực miễn phí|Các lương thực miễn phí",
     "grocery": "Lương thực|Lương thực",
     "meal": "Bữa ăn miễn phí|Những bữa ăn miễn phí",
+    "ballot_drop": "Địa điểm bỏ phiếu bầu",
     "petsupplies": "Đồ cho thú nuôi",
     "pharmacy": "Tiệm thuốc|Những tiệm thuốc",
     "restaurant": "Nhà hàng|Những nhà hàng",
     "school": "Bữa ăn trong trường|Những bữa ăn trong trường",
     "snap_wic_retailer": "Nhà bán lẻ CalFresh/WIC|Những nhà bán lẻ CalFresh/WIC",
+    "cash_assistance": "Hỗ trợ tiền mặt",
     "food_resources": "Hỗ trợ thực phẩm",
     "legal_resources": "Hỗ trợ pháp lý",
     "medical_resources": "Hỗ trợ y tế",
-    "mental_health_resources": "Hỗ trợ sức khóe tinh thần"
+    "mental_health_resources": "Hỗ trợ sức khỏe tinh thần"
   },
   "dayofweek": {
     "any": "Ngày bất kỳ",
@@ -155,14 +157,27 @@
     "discount_medical": "Ưu đãi cho nhân viên y tế",
     "discounts": "Giảm giá",
     "drive_thru": "Lái xe tạt qua",
-    "email": "\rEmail",
-    "email_lowercase": "\remail",
+    "email": "Email",
+    "email_lowercase": "email",
     "farmers_market": "Chợ nông sản",
     "farm_pick_up": "Lấy hàng tại nông trại",
     "free": "Tài nguyên miễn phí",
     "free_groceries": "\bĐịa điểm thực phẩm miễn phí",
     "freemeals": "Địa điểm đồ ăn miễn phí",
     "free_produce": "Địa điểm rau củ miễn phí",
+    "require_child": "Trẻ em cần phải có mặt",
+    "must_show_id": "Phải hiển thị ID",
+    "all_children": "Phục vụ tất cả trẻ em",
+    "enrolled_children": "Chỉ học sinh ghi danh trong học khu",
+    "ballot_outdoor": "Bỏ phiếu ngoài trời",
+    "ballot_indoor": "Bỏ phiếu trong nhà",
+    "twentyfourhrs": "Mở cửa 24 giờ",
+    "fin_grocery": "Tiền mặt cho cửa hàng tạp hóa",
+    "fin_housing": "Tiền cho thuê",
+    "fin_legal": "Tiền mặt cho phí pháp lý",
+    "fin_medical": "Tiền mặt cho phí y tế",
+    "fin_utilities": "Tiền mặt cho các tiện ích",
+    "freefood": "Địa điểm thực phẩm miễn phí | Địa điểm thực phẩm miễn phí",
     "instructions": "Hướng dẫn",
     "mapkey": "Ghi chú",
     "meal_public": "Bữa ăn cho cộng đồng",
@@ -190,12 +205,27 @@
     "pay_phone": "Thanh toán bằng EBT qua điện thoại",
     "safe_pick_up": "Các lựa chọn lấy hàng an toàn",
     "zoom_out_for_more_results": "Thu nhỏ để có nhiều kết quả hơn",
-    "in_person": "Phòng khám ",
-    "telehealth": "Hỗ trợ y tế trực tuyến ",
+    "in_person": "Phòng khám",
+    "telehealth": "Hỗ trợ y tế trực tuyến",
     "zipcode": "Mã zipcode",
     "suggest_an_edit": "Đề nghị chỉnh sửa một cái gì đó",
     "reset": "Làm lại",
     "submit": "Gửi đi"
+  },
+  "health": {
+    "med_testing": "Kiểm tra COVID",
+    "med_primary_care": "Ưu tiên hàng đầu",
+    "med_pediatrics": "Khoa nhi",
+    "med_senior": "Chăm sóc cao cấp",
+    "med_women": "Chăm sóc sức khỏe phụ nữ",
+    "med_urgent_care": "Chăm sóc đặc biệt",
+    "med_dental": "Chăm sóc răng miệng",
+    "med_vision": "Chăm sóc thị lực",
+    "med_pharmacy": "Tiệm thuốc",
+    "med_mental_health": "Chăm soc sưc khỏe tâm thân",
+    "med_hotline": "Hotline",
+    "med_addiction": "Hỗ trợ cai nghiện và phục hồi",
+    "med_domestic_violence": "Hỗ trợ nạn nhân bạo lực gia đình"
   },
   "languages": {
     "ar": "Tiếng Ả Rập",
@@ -204,7 +234,7 @@
     "fr": "Tiếng Pháp",
     "ja": "Tiếng Nhật",
     "ko": "Tiếng Hàn",
-    "ms": "Tiếng Myanma",
+    "ms": "Tiếng Mã Lai",
     "zh": "Tiếng Trung (giản thể)",
     "vi": "Tiếng Việt",
     "tl": "Tiếng Philippines"
@@ -230,17 +260,17 @@
   },
   "title": "{0} Hỗ trợ COVID",
   "county": {
-    "alameda": "Hạt Alameda",
+    "alameda": "Quận Alameda",
     "anywhere": "Bất kỳ đâu",
-    "contra-costa": "Địa hạt Contra Costa",
-    "marin": "Địa hạt Marin",
-    "napa": "Địa hạt Napa",
-    "san-francisco": "Địa hạt San Francisco",
-    "san-mateo": "Địa hạt San Mateo",
-    "santa-clara": "Địa hạt Santa Clara",
-    "solano": "Địa hạt Solano",
-    "sonoma": "Địa hạt Sonoma",
-    "monterey": "Địa hạt Monterey"
+    "contra-costa": "Quận Contra Costa",
+    "marin": "Quận Marin",
+    "napa": "Quận Napa",
+    "san-francisco": "Quận San Francisco",
+    "san-mateo": "Quận San Mateo",
+    "santa-clara": "Quận Santa Clara",
+    "solano": "Quận Solano",
+    "sonoma": "Quận Sonoma",
+    "monterey": "Quận Monterey"
   },
   "legal": {
     "general_info": "Thông tin chung",
@@ -256,7 +286,7 @@
     "telehealth": "Phòng khám trực tuyến"
   },
   "mental": {
-    "in_person": "Hỗ trợ trực tiếp "
+    "in_person": "Hỗ trợ trực tiếp"
   },
   "message": {
     "no_location_in_this_area": "Không có kết quả trong khu vực này",
@@ -266,7 +296,7 @@
     "area_not_covered": "Chúng tôi không bao gồm khu vực này.",
     "select_resource": "Chọn một nguồn hỗ trợ.",
     "provide_zip": "Cung cấp mã zipcode",
-    "error_getting_zip": "Mã zipcode quý vị cung cấp có lỗi. Xin vui lòng thử lại. "
+    "error_getting_zip": "Mã zipcode quý vị cung cấp có lỗi. Xin vui lòng thử lại."
   },
   "edit": {
     "intro": "Xin cập nhật thông tin cho địa điểm này trong mẫu đơn dưới đây. Chúng tôi thật sự cảm ơn sự giúp đỡ của bạn trong việc giữ cho các nguồn hỗ trợ này luôn được cập nhật.",
@@ -278,7 +308,7 @@
     "senior_hours": "Giờ dành cho người lớn tuổi:",
     "additional_info": "Thông tin thêm:",
     "additional_info_text": "Còn bất cứ điều gì khác còn đang thiếu, cần được sửa đổi hoặc nên được hiển thị không?",
-    "additional_info_placeholder": "Dịch vụ mới, địa điểm được đóng cửa vĩnh viễn, giờ mua sắm cho người lớn tuổi ... ",
+    "additional_info_placeholder": "Dịch vụ mới, địa điểm được đóng cửa vĩnh viễn, giờ mua sắm cho người lớn tuổi ...",
     "no_edit": "Không có gì thay đổi.",
     "submission_error": "Đã có một lỗi trong quá trình gửi biểu mẫu. Vui lòng thử lại hoặc liên hệ với chúng tôi tại baycommunityresource@gmail.com."
   },
@@ -287,7 +317,5 @@
     "lead": "Đăng ký xin P-EBT trước ngày 15 tháng 7.",
     "link": "Đăng ký ngay bây giờ",
     "link_url": "https://ca.p-ebt.org/en/"
-  },
-  "ux_study": {
   }
 }
