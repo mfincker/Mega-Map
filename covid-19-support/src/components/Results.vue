@@ -255,7 +255,7 @@ export default {
 
       markers = markers.map((c) => ({
         ...c,
-        isOpen: c[dayFilter] !== '0',
+        isOpen: c[dayFilter] !== '0' && c[dayFilter] !== '',
         distance: haversineDistance(this.centroid, [c.lat, c.lon], true)
       })) //.sort(sortByDistance)
 

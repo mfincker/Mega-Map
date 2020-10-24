@@ -9,10 +9,10 @@
     "devhelp": {
       "addbusiness": "Thêm một doanh nghiệp",
       "addinfo": "Sử dụng tờ khai trực tuyến để {0} hoặc {1}",
-      "ambassadorinfo": "Giúp chúng tôi mở rộng mức độ phủ sóng trên khắp vùng Bay. Các đại sứ sẽ làm việc với chính quyền địa phương và các hiệp hội doanh nghiệp để cung cấp các tài liệu cộng đồng của vùng Bay đến với cộng đồng của họ. Email chúng tôi tại {0} để được cung cấp các công cụ và tài liệu để bắt đầu.",
+      "ambassadorinfo": "Giúp chúng tôi mở rộng mức độ phủ sóng trên khắp vùng Bay. Các đại sứ sẽ làm việc với chính quyền địa phương và các hiệp hội doanh nghiệp để cung cấp các tài liệu cộng đồng của vùng Bay đến với cộng đồng của họ. Email chúng tôi qua {0} để được cung cấp các công cụ và tài liệu để bắt đầu.",
       "becomeambassador": "Trở thành một đại sứ cộng đồng",
       "conduct": "Bộ quy tắc ứng xử",
-      "devnote": "Các lập trình viên - tìm {0} và {1} của chúng tôi trên GitHub.",
+      "devnote": "Các lập trình viên - tìm {0} và {1) của chúng tôi trên GitHub.",
       "dupsite": "Sử dụng mã code của chúng tôi để xây dựng một trang web cho bang hoặc vùng địa phương của bạn.",
       "info": "Đây là một dự án mở open-source, được xây dựng để chia sẻ và mở rộng ra các cộng đồng khác.",
       "source": "mã nguồn",
@@ -44,17 +44,11 @@
         "link1": "Những tin tức địa phương"
       }
     },
-    "about-us-sources": "Cơ sở dữ liệu của chúng tôi dựa trên thông tin từ các tổ chức như:\nĐịnh vị cửa hàng USDA SNAP \nĐịnh vị cửa hàng USDA WIX\nTổ chức Second Harvest khu vực Silicon Valley\nTổ chức vận đồng cho bệnh nhi Stanford\n\nCác tình nguyện viên phi thường của chúng tôi là người kiểm chứng và thu thập các thông tin như giờ hoạt động COVID-19 dành riêng cho người lớn tuổi, các lựa chọn lấy hàng an toàn từ bên lề đường..vv",
-    "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
-    },
-    "about-us-disclaimer": "Dự án hỗ trợ cộng đồng trong khu vực Bay Area này là hoàn toàn tình nguyện. Chúng tôi có một đội ngũ thu thập và kiểm chứng thông tin từ nhiều nguồn khác nhau. Chúng tôi nỗ lực hết sức để cập nhật thông tin nhanh nhất. Tuy vậy chúng tôi không thể đảm bảo các thông tin này luôn chính xác 100%",
     "about-us": {
       "header": "Về chúng tôi",
       "p1": {
-        "text": "Đây là một dự án mở và hoàn toàn tình nguyện nhằm giúp cộng đồng vượt qua khủng hoảng COVID thông qua việc cung cấp thông tin về các nguồn lực công cộng. Dự án này bắt đầu từ một {0}, và nay cung cấp thông tin về các nguồn hỗ trợ khác như địa điểm và thời gian cung cấp bữa ăn miễn phí, hỗ trợ thực phẩm, hỗ trợ pháp lý và hỗ trợ y tế. Chúng tôi là một phần của tổ chức {1}.",
-        "link1": "unBox",
-        "link0": "Bản đồ bữa ăn trường học khu vực Bay Area"
+        "text": "Đây là một dự án mở và hoàn toàn tình nguyện nhằm giúp cộng đồng vượt qua khủng hoảng COVID thông qua việc cung cấp thông tin về các nguồn lực công cộng. Dự án này bắt đầu từ một {}, và nay cung cấp thông tin về các nguồn hỗ trợ khác như địa điểm và thời gian cung cấp bữa ăn miễn phí, hỗ trợ thực phẩm, hỗ trợ pháp lý và hỗ trợ y tế.",
+        "link": "Bản đồ bữa ăn trường học khu vực Bay Area"
       },
       "p2": {
         "text": "Dự án này được mô phỏng dựa trên {0}",
@@ -65,6 +59,11 @@
         "link": "Trang Github"
       }
     },
+    "about-us-sources": "Cơ sở dữ liệu của chúng tôi dựa trên thông tin từ các tổ chức như:\nĐịnh vị cửa hàng USDA SNAP \nĐịnh vị cửa hàng USDA WIX\nTổ chức Second Harvest khu vực Silicon Valley\nTổ chức vận đồng cho bệnh nhi Stanford\n\nCác tình nguyện viên phi thường của chúng tôi là người kiểm chứng và thu thập các thông tin như giờ hoạt động COVID-19 dành riêng cho người lớn tuổi, các lựa chọn lấy hàng an toàn từ bên lề đường..vv",
+    "about-us-contact": {
+      "link0": "baycommunityresource@gmail.com"
+    },
+    "about-us-disclaimer": "Dự án hỗ trợ cộng đồng trong khu vực Bay Area này là hoàn toàn tình nguyện. Chúng tôi có một đội ngũ thu thập và kiểm chứng thông tin từ nhiều nguồn khác nhau. Chúng tôi nỗ lực hết sức để cập nhật thông tin nhanh nhất. Tuy vậy chúng tôi không thể đảm bảo các thông tin này luôn chính xác 100%",
     "info-sources": {
       "header": "Nguồn thông tin",
       "p1": "Cơ sở dữ liệu của chúng tôi dựa trên thông tin từ những tổ chức sau:",
@@ -169,15 +168,15 @@
     "require_child": "Trẻ em cần phải có mặt",
     "must_show_id": "Phải hiển thị ID",
     "all_children": "Phục vụ tất cả trẻ em",
-    "enrolled_children": "Chỉ học sinh có ghi danh trong học khu",
+    "enrolled_children": "Chỉ học sinh ghi danh trong học khu",
     "ballot_outdoor": "Bỏ phiếu ngoài trời",
     "ballot_indoor": "Bỏ phiếu trong nhà",
     "twentyfourhrs": "Mở cửa 24 giờ",
-    "fin_grocery": "Tiền cho thực phẩm",
-    "fin_housing": "Tiền thuê nhà",
-    "fin_legal": "Tiền cho phí pháp lý",
-    "fin_medical": "Tiền cho phí y tế",
-    "fin_utilities": "Tiền cho các tiện ích",
+    "fin_grocery": "Tiền mặt cho cửa hàng tạp hóa",
+    "fin_housing": "Tiền cho thuê",
+    "fin_legal": "Tiền mặt cho phí pháp lý",
+    "fin_medical": "Tiền mặt cho phí y tế",
+    "fin_utilities": "Tiền mặt cho các tiện ích",
     "freefood": "Địa điểm thực phẩm miễn phí | Địa điểm thực phẩm miễn phí",
     "instructions": "Hướng dẫn",
     "mapkey": "Ghi chú",
@@ -217,13 +216,13 @@
     "med_testing": "Kiểm tra COVID",
     "med_primary_care": "Ưu tiên hàng đầu",
     "med_pediatrics": "Khoa nhi",
-    "med_senior": "Chăm sóc người già",
+    "med_senior": "Chăm sóc cao cấp",
     "med_women": "Chăm sóc sức khỏe phụ nữ",
-    "med_urgent_care": "Chăm sóc nhẩn cấp",
+    "med_urgent_care": "Chăm sóc đặc biệt",
     "med_dental": "Chăm sóc răng miệng",
     "med_vision": "Chăm sóc thị lực",
     "med_pharmacy": "Tiệm thuốc",
-    "med_mental_health": "Chăm sóc sức khỏe tâm thần",
+    "med_mental_health": "Chăm soc sưc khỏe tâm thân",
     "med_hotline": "Hotline",
     "med_addiction": "Hỗ trợ cai nghiện và phục hồi",
     "med_domestic_violence": "Hỗ trợ nạn nhân bạo lực gia đình"

@@ -44,17 +44,11 @@
         "link1": "Big Local News"
       }
     },
-    "about-us-sources": "Pangkalan data maklumat kami menggunakan data yang dikumpulkan oleh organisasi berikut:\nPencari Kedai USDA SNAP\nPencari Kedai USDA WIC\nSecond Harvest Silicon Valley\nProgram Advokasi Pediatrik Stanford\n\nKumpulan sukarelawan kami lanjutnya mengesahkan data dan mengumpulkan maklumat tambahan seperti waktu senior Covid-19, pilihan pengambilan tepi jalan yang selamat dan lain-lain.",
-    "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
-    },
-    "about-us-disclaimer": "Projek Bay Area Resources adalah projek sukarelawan. Sukarelawan kami mengumpulkan dan mengesahkan data dari pelbagai sumber. Kami cuba dengan sedaya upaya untuk memastikan semua maklumat di laman web ini tepat. Namun kami tidak dapat menjamin maklumat tersebut sepenuhnya.",
     "about-us": {
       "header": "Projek Ini",
       "p1": {
-        "text": "Project ini adalah sumber terbuka dan sukarelawan untuk membantu masyarakat Bay Area menavigasi krisis COVID dengan memberikan maklumat penting. Projek ini dimulakan sebagai {peta makan sekolah Bay Area}, dan kini memberikan maklumat lebih lanjut seperti jadual dan lokasi untuk bantuan makanan, bantuan undang-undang, dan bantuan perubatan. Kami ahli organisasi {1}.",
-        "link1": "unBox",
-        "link0": "peta makan sekolah Bay Area"
+        "text": "Project ini adalah sumber terbuka dan sukarelawan untuk membantu masyarakat Bay Area menavigasi krisis COVID dengan memberikan maklumat penting. Projek ini dimulakan sebagai {peta makan sekolah Bay Area}, dan kini memberikan maklumat lebih lanjut seperti jadual dan lokasi untuk bantuan makanan, bantuan undang-undang, dan bantuan perubatan.",
+        "link": "peta makan sekolah Bay Area"
       },
       "p2": {
         "text": "Pembangunan untuk projek ini diadaptasi dari {0}.",
@@ -65,6 +59,11 @@
         "link": "website Github"
       }
     },
+    "about-us-sources": "Pangkalan data maklumat kami menggunakan data yang dikumpulkan oleh organisasi berikut:\nPencari Kedai USDA SNAP\nPencari Kedai USDA WIC\nSecond Harvest Silicon Valley\nProgram Advokasi Pediatrik Stanford\n\nKumpulan sukarelawan kami lanjutnya mengesahkan data dan mengumpulkan maklumat tambahan seperti waktu senior Covid-19, pilihan pengambilan tepi jalan yang selamat dan lain-lain.",
+    "about-us-contact": {
+      "link0": "baycommunityresource@gmail.com"
+    },
+    "about-us-disclaimer": "Projek Bay Area Resources adalah projek sukarelawan. Sukarelawan kami mengumpulkan dan mengesahkan data dari pelbagai sumber. Kami cuba dengan sedaya upaya untuk memastikan semua maklumat di laman web ini tepat. Namun kami tidak dapat menjamin maklumat tersebut sepenuhnya.",
     "info-sources": {
       "header": "Sumber maklumat",
       "p1": "Pangkalan data maklumat kami menggunakan data yang dikumpulkan oleh organisasi berikut:",

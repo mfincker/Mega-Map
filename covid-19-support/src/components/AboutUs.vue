@@ -5,8 +5,10 @@
     <i18n path="about.about-us.p1.text" tag="p">
       <a
         href="https://www.google.com/maps/d/u/0/viewer?mid=1xfWfgbjULao-rlKJFfWT07hR-StV4Zx9&ll=37.46071505887045%2C-121.93017180578084&z=11"
-        >{{ $t('about.about-us.p1.link') }}</a
       >
+        {{ $t('about.about-us.p1.link0') }}
+      </a>
+      <a href="https://www.unboxproject.org/">{{ $t('about.about-us.p1.link1') }}</a>
     </i18n>
     <i18n path="about.about-us.p2.text" tag="p">
       <a href="https://github.com/code-for-chapel-hill/NC-COVID-Support/">NC Covid Support</a>

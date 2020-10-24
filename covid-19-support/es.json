@@ -44,17 +44,11 @@
         "link1": "Noticias Locales Grandes"
       }
     },
-    "about-us-sources": "Nuestro base de datos se beneficia de los datos recogidos por las siguientes organizaciones:\nLocalizador de las tiendas de USDA SNAP \nLocalizador de las tiendas de USDA WIC \nSecond Harvest de Silicon Valley\nStanford Pediatric Advocacy\n\nTenemos un equipo de voluntarios increíbles que verifican los datos y recopilan cualquier información adicional, como horas adicionales de Covid-19 para adultos mayores, opciones de recogida segura en la acera, etc.",
-    "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
-    },
-    "about-us-disclaimer": "Este proyecto de Recursos del Área de la Bahía es puramente voluntario. Tenemos un equipo de humanos que recopila y verifica los datos de diversas fuentes. Hacemos nuestro mejor esfuerzo para mantener toda la información en el sitio lo más actualizada posible, sin embargo, no podemos garantizar que la información sea 100% precisa.",
     "about-us": {
       "header": "Acerca de nosotros",
       "p1": {
-        "text": "Somos un proyecto de código abierto mantenido por voluntarios para ayudar a las comunidades a navegar la crisis COVID al proporcionar información sobre recursos públicos. Este proyecto comenzó como un {0}, y ahora proporciona información sobre más recursos, como ubicaciones y horarios para comidas gratis, asistencia alimentaria, asistencia legal y asistencia médica. Somos parte de la organización {1}.",
-        "link1": "unBox",
-        "link0": "mapa de comidas escolares del Área de la Bahía"
+        "text": "Somos un proyecto de código abierto mantenido por voluntarios para ayudar a las comunidades a navegar la crisis COVID al proporcionar información sobre recursos públicos. Este proyecto comenzó como un {0}, y ahora proporciona información sobre más recursos, como ubicaciones y horarios para comidas gratis, asistencia alimentaria, asistencia legal y asistencia médica.",
+        "link": "mapa de comidas escolares del Área de la Bahía"
       },
       "p2": {
         "text": "El desarrollo de este proyecto fue adaptado de {0}.",
@@ -65,6 +59,11 @@
         "link": "página de Github"
       }
     },
+    "about-us-sources": "Nuestro base de datos se beneficia de los datos recogidos por las siguientes organizaciones:\nLocalizador de las tiendas de USDA SNAP \nLocalizador de las tiendas de USDA WIC \nSecond Harvest de Silicon Valley\nStanford Pediatric Advocacy\n\nTenemos un equipo de voluntarios increíbles que verifican los datos y recopilan cualquier información adicional, como horas adicionales de Covid-19 para adultos mayores, opciones de recogida segura en la acera, etc.",
+    "about-us-contact": {
+      "link0": "baycommunityresource@gmail.com"
+    },
+    "about-us-disclaimer": "Este proyecto de Recursos del Área de la Bahía es puramente voluntario. Tenemos un equipo de humanos que recopila y verifica los datos de diversas fuentes. Hacemos nuestro mejor esfuerzo para mantener toda la información en el sitio lo más actualizada posible, sin embargo, no podemos garantizar que la información sea 100% precisa.",
     "info-sources": {
       "header": "Fuentes de Información",
       "p1": "Nuestro base de datos se beneficia de los datos recogidos por las siguientes organizaciones:",
@@ -118,7 +117,6 @@
     "farm": "Granja o Mercado de Granjeros | Granjas y Mercados de Agricultores",
     "food_bev": "Comida y bebida de especialidad",
     "free_grocery": "Comestible gratis|Comestibles gratis",
-    "free_food": "Comida gratis para el publico",
     "grocery": "Comestibles",
     "meal": "Comida gratis | Comidas gratis",
     "ballot_drop": "Urna de la boleta",
@@ -215,9 +213,7 @@
     "suggest_an_edit": "Sugiera una revisión",
     "reset": "Reiniciar",
     "submit": "Envia",
-    "last_updated": "Los detalles fueron revisados",
-    "in_store_pickup": "Para llevar",
-    "dv_legal": "Apoyo legal"
+    "last_updated": "Los detalles fueron revisados"
   },
   "health": {
     "med_testing": "Prueba de COVID",
