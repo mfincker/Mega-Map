@@ -87,6 +87,7 @@ export default {
         //   ]
         // },
         { value: 'health', text: this.$t('category.medical_resources') },
+        { value: 'dv_resources', text: this.$t('category.dv_resources') },
         // {
         //   label: this.$tc('category.medical_resources', 1),
         //   options: [
@@ -95,7 +96,7 @@ export default {
         //   ]
         // }
         // { value: 'blm', text: this.$t('category.blm') },
-        { value: 'ballot_drop', text: this.$t('category.ballot_drop') },
+        // { value: 'ballot_drop', text: this.$t('category.ballot_drop') },
         { value: 'cash_assistance', text: this.$t('category.cash_assistance') }
       ]
     }

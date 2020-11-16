@@ -81,6 +81,7 @@
               :medicalResources="medicalResources"
               :mentalResources="mentalResources"
               :cashResources="cashResources"
+              :dvResources="dvResources"
             />
             <p>
               <b-button @click="(e) => e.stopPropagation()" class="btn btn-outline-primary btn-sm" v-b-modal.suggest-edit-modal>
@@ -204,6 +205,9 @@ export default {
     },
     cashResources() {
       return this.$route.params.need.startsWith('cash')
+    },
+    dvResources() {
+      return this.$route.params.need.startsWith('dv')
     }
   }
 }
