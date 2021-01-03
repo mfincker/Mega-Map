@@ -1,7 +1,7 @@
 {
   "about": {
     "close": "Đóng",
-    "contact": "Lien lac",
+    "contact": "Liên hệ chúng tôi",
     "contactus": {
       "email": "Email",
       "info": "Trang này được chạy bởi {0} của {1}. Nếu có câu hỏi, vui lòng liên hệ chúng tôi qua email {2}"
@@ -134,7 +134,7 @@
     "mental_health_resources": "Hỗ trợ sức khỏe tinh thần",
     "healthcare": "Chăm sóc sức khỏe",
     "dv_resources": "Tài nguyên về Bạo lực Gia đình",
-    "eviction_resources": "Tài nguyên trục xuất chổ ở",
+    "eviction_resources": "Tài nguyên trục xuất",
     "bob": "Nhà hàng do người da đen sở hữu"
   },
   "dayofweek": {
@@ -160,7 +160,7 @@
     "closedonday": "Đóng cửa (vào ngày đang được chọn)",
     "curbside_pickup": "Nhận hàng tại điểm hẹn",
     "curbside_or_delivery": "Giao hàng tận nơi hoặc nhận hàng tại điểm hẹn",
-    "delivery": "Giao hàng tận nơi",
+    "delivery": "Chuyển",
     "discount_medical": "Ưu đãi cho nhân viên y tế",
     "discounts": "Giảm giá",
     "drive_thru": "Lái xe tạt qua",
@@ -218,14 +218,14 @@
     "suggest_an_edit": "Đề nghị chỉnh sửa một cái gì đó",
     "reset": "Làm lại",
     "submit": "Gửi đi",
-    "last_updated": "Thông tin chi tiết cập nhật sau cùng",
+    "last_updated": "Thông tin chi tiết được cập nhật lần cuối",
     "in_store_pickup": "Lấy đi",
     "catering": "Dịch vụ ăn uống",
-    "dv_legal": "Bạo lực gia đình hỗ trợ pháp lý",
-    "dv_housing": "Bạo lực gia đình hỗ trợ nhà ở",
-    "dv_medical": "Bạo lực gia đình hỗ trợ y tế",
-    "dv_crisis": "Hỗ trợ khủng hoảng bạo lực gia đình",
-    "dv_mental_health": "Bạo lực gia đình hỗ trợ sức khỏe tâm thần",
+    "dv_legal": "DV hỗ trợ pháp lý",
+    "dv_housing": "DV hỗ trợ nhà ở",
+    "dv_medical": "DV hỗ trợ y tế",
+    "dv_crisis": "Hỗ trợ khủng hoảng DV",
+    "dv_mental_health": "DV hỗ trợ sức khỏe tâm thần",
     "apply": "Áp dụng các bộ lọc",
     "filters": "Bộ lọc"
   },
@@ -314,7 +314,7 @@
     "select_resource": "Chọn một nguồn hỗ trợ.",
     "provide_zip": "Cung cấp mã zipcode",
     "error_getting_zip": "Mã zipcode quý vị cung cấp có lỗi. Xin vui lòng thử lại.",
-    "error_loading_results": "Có điều sai. Vui lòng thử lại."
+    "error_loading_results": "Có một lỗi. Vui lòng thử lại."
   },
   "edit": {
     "intro": "Xin cập nhật thông tin cho địa điểm này trong mẫu đơn dưới đây. Chúng tôi thật sự cảm ơn sự giúp đỡ của bạn trong việc giữ cho các nguồn hỗ trợ này luôn được cập nhật.",
@@ -340,7 +340,7 @@
     "text_main": "Chúng tôi muốn tìm hiểu thêm về điều quan tâm hàng đầu đối với bạn vào lúc này và nhận được ý kiến đóng góp của bạn về cách cải thiện trang web.",
     "link_text": "Đăng ký ngay.",
     "link_url": "https://bit.ly/bac-interviews",
-    "text_sub": "Nếu bạn được chọn để phỏng vấn, tất cả các phiên sẽ được  trò chuyện thông qua điện thoại / video và chúng tôi sẽ bù lại cho thời gian của bạn.",
+    "text_sub": "Nếu bạn được chọn để phỏng vấn, tất cả các phiên sẽ được thực hiện từ xa thông qua trò chuyện điện thoại / video và chúng tôi sẽ bù lại thời gian cho bạn.",
     "header": "Hãy giúp chúng tôi phục vụ bạn tốt hơn."
   }
 }

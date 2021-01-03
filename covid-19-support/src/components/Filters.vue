@@ -108,11 +108,13 @@ export default {
             { var: 'med_addiction', label: 'health.med_addiction' },
             { var: 'med_domestic_violence', label: 'health.med_domestic_violence' }
           ]
-        case 'ballot_drop':
+        case 'dv_resources':
           return [
-            { var: 'ballot_outdoor', label: 'label.ballot_outdoor' },
-            { var: 'ballot_indoor', label: 'label.ballot_indoor' },
-            { var: 'twentyfourhrs', label: 'label.twentyfourhrs' }
+            { var: 'dv_medical', label: 'label.dv_medical' },
+            { var: 'dv_mental_health', label: 'label.dv_mental_health' },
+            { var: 'dv_housing', label: 'label.dv_housing' },
+            { var: 'dv_legal', label: 'label.dv_legal' },
+            { var: 'dv_crisis', label: 'label.dv_crisis' }
           ]
         case 'cash_assistance':
           return [

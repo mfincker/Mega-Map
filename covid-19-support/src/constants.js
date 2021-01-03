@@ -98,7 +98,6 @@ export const booleanFilters = [
   'dv_housing',
   'dv_legal',
   'dv_crisis',
-  'dv_referrals',
   'twentyfourhrs'
 ]
 
