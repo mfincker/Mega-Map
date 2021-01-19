@@ -36,7 +36,8 @@
     "title": "About this site",
     "front-page": {
       "p1": "Welcome!",
-      "p2": "We provide information on resources such as free meals, food, legal assistance, and medical help.",
+      "p2a": "We provide information on school meal sites in the Bay Area, updated every two weeks.",
+      "p2b": "Soon, we will also include updated information on free food, legal aid, cash assistance, medical and mental health, child care, domestic violence support, housing, and COVID-19 testing resources. These categories are a work-in-progress! We are working with our partners to bring together the best available information, keep it current, and share it in the most simple, helpful way.",
       "p3": "Start by selecting where you are and what you're looking for.",
       "p4": {
         "text": "We are affiliated with Stanford's {0} and {1} and are extremely grateful to Bill Behrman, Sara Altman, and Cheryl Phillips for their ongoing support and advice.",

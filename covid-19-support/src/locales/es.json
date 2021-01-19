@@ -36,7 +36,8 @@
     "title": "Sobre este sitio",
     "front-page": {
       "p1": "Hola!",
-      "p2": "Brindamos información sobre los recursos como comidas gratis, alimentos, asistencia legal, y ayuda médica.",
+      "p2a": "Proporcionamos información sobre los sitios de comidas escolares en el Área de la Bahía, actualizada cada dos semanas.",
+      "p2b": "Pronto, incluiremos también información actualizada sobre comida gratis, asistencia legal, ayuda en efectivo, salud médica y mental, cuidado de niños, apoyo para casos de violencia doméstica, vivienda y recursos para pruebas de COVID-19. ¡Estas categorías son un trabajo en progreso! Estamos trabajando con nuestros socios para reunir la mejor información disponible, mantenerla actualizada y compartirla en la manera más sencilla y útil.",
       "p3": "Empieza al seleccionar donde esta usted y lo que esta buscando.",
       "p4": {
         "text": "Estamos afiliados a {0} y {1} de Stanford y estamos extremadamente agradecidos con Bill Behrman, Sara Altman y Cheryl Phillips por su continuo apoyo y asesoramiento.",

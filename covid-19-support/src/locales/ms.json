@@ -36,7 +36,8 @@
     "title": "Mengenai laman web ini",
     "front-page": {
       "p1": "Selamat Datang!",
-      "p2": "Website ini mengandungi maklumat mengenai sumber seperti makanan percuma, barangan runcit, bantuan undang-undang, dan bantuan perubatan.",
+      "p2a": "Kami memberikan maklumat mengenai laman makan sekolah di Bay Area, yang dikemas kini setiap dua minggu.",
+      "p2b": "Tidak lama lagi, kami juga akan memasukkan maklumat terkini mengenai makanan percuma, bantuan hukum, bantuan tunai, kesihatan perubatan dan mental, penjagaan anak, sokongan keganasan rumah tangga, perumahan, dan sumber pengujian COVID-19. Kategori-kategori ini sedang dijalankan! Kami bekerjasama dengan rakan kongsi kami untuk menyatukan maklumat terbaik yang ada, menyimpannya terkini, dan membagikannya dengan cara yang paling mudah dan bermanfaat.",
       "p3": "Mulakan dengan memilih lokasi dan keperluan anda.",
       "p4": {
         "text": "Kami amat berbesar hati kepada Bill Behrman, Sara Altman dan Cheryl Phillips dari program {0} dan {1} di universiti Stanford atas nasihat dan sokongan mereka yang berterusan.",

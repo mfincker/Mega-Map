@@ -6,7 +6,12 @@
     <div class="intro" :class="{ 'intro-centered': initialSearch }">
       <template v-if="initialSearch">
         <h4 class="introParagraph">{{ $t('about.front-page.p1') }}</h4>
-        <p class="introParagraph">{{ $t('about.front-page.p2') }}</p>
+        <p class="introParagraph">
+          {{ $t('about.front-page.p2a') }}
+          <br />
+          <br />
+          {{ $t('about.front-page.p2b') }}
+        </p>
       </template>
       <search
         :needFromApp="need"

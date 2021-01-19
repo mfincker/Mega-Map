@@ -36,7 +36,8 @@
     "title": "Về trang này",
     "front-page": {
       "p1": "Xin chào!",
-      "p2": "Chúng tôi cung cấp thông tin về những trợ giúp cộng đồng như bữa ăn miễn phí, thức ăn, pháp lý và y tế.",
+      "p2a": "Chúng tôi cung cấp thông tin về các địa điểm bữa ăn của trường học trong Vùng Vịnh, được cập nhật hai tuần một lần.",
+      "p2b": "Sắp tới, chúng tôi cũng sẽ đưa thông tin cập nhật về thực phẩm miễn phí, trợ giúp pháp lý, hỗ trợ tiền mặt, sức khỏe y tế và tâm thần, chăm sóc trẻ em, hỗ trợ bạo lực gia đình, nhà ở và các nguồn xét nghiệm COVID-19. Các danh mục này đang được tiến hành! Chúng tôi đang làm việc với các đối tác của mình để tập hợp những thông tin tốt nhất sẵn có, cập nhật và chia sẻ thông tin đó theo cách đơn giản và hữu ích nhất.",
       "p3": "Bắt đầu bằng việc chọn vị trí của bạn và cái bạn cần tìm.",
       "p4": {
         "text": "Chúng tôi có liên kết với {0} và {1} từ Stanford và thật sự cảm ơn Bill Behrman, Sara Altman và Cheryl Phillips vì những đóng góp và tư vấn của họ",
