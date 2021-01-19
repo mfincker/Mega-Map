@@ -33,7 +33,10 @@
           </template>
         </p>
 
-        <p class="updated">{{ $t('label.last_updated') }}: {{ business.last_update }}</p>
+        <p class="updated">
+          {{ $t('label.last_updated') }}:
+          {{ new Date(business.last_update).toLocaleDateString(this.$i18n.locale, { year: 'numeric', month: '2-digit', day: '2-digit' }) }}
+        </p>
       </div>
     </b-list-group>
   </span>
