@@ -36,7 +36,8 @@
     "title": "Tungkol sa site na ito",
     "front-page": {
       "p1": "Kumusta!",
-      "p2": "Nagbibigay kami ng impormasyon tungkol sa mga mapagkukunan tulad ng libreng pagkain, tulong sa pagkain, legal na tulong, at tulong medikal.",
+      "p2a": "Nagbibigay kami ng impormasyon sa mga site ng pagkain sa paaralan sa Bay Area, na-update tuwing dalawang linggo.",
+      "p2b": "Sa madaling panahon, isasama din namin ang na-update na impormasyon tungkol sa libreng pagkain, ligal na tulong, tulong sa pera, kalusugan ng medikal at mental, pangangalaga sa bata, suporta sa karahasan sa tahanan, pabahay, at mga mapagkukunang pagsubok sa COVID-19. Ang mga kategoryang ito ay isang isinasagawa na! Nakikipagtulungan kami sa aming mga kasosyo upang pagsama-samahin ang pinakamahusay na magagamit na impormasyon, panatilihin itong kasalukuyang, at ibahagi ito sa pinakasimpleng, kapaki-pakinabang na paraan.",
       "p3": "Magsimula sa pamamagitan ng pagpili kung nasaan ka at kung ano ang hinahanap mo.",
       "p4": {
         "text": "Kami ay kaakibat sa {0} at {1} ng Stanford at lubos na nagpapasalamat kay Bill Behrman, Sara Altman, at Cheryl Phillips para sa kanilang patuloy na suporta at payo.",
