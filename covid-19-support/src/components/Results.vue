@@ -177,12 +177,19 @@ export default {
 
       const dayFilter = dayFilters[new Date().getDay()]
 
+      // TODO(Typescript) Add Boolean Filters Union type to avoid this issue
+      /**
+       * There should be no need to check for outdated filters
+       */
       // Filter out results based on boolean filters
+
       this.activeFilters.forEach((element) => {
-        if (booleanFilters.includes(element)) {
+        if (booleanFilters.has(element)) {
           markers = markers.filter((c) => c[element] == 1)
         }
       })
+
+      debugger
       // Filter out items based on complexFilters
       complexFilters.forEach((f) => {
         if (this.activeFilters.includes(f.name)) {

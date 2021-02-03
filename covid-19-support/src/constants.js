@@ -35,10 +35,10 @@ export const openStreetMapAttribution = '&copy; <a href="http://osm.org/copyrigh
 export const mapBoxAttribution =
   '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="https://carto.com/attribution">CARTO</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>'
 
-export const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `${attr}`)
-export const seniorDayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `sp_${attr}`)
+export const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat']
+export const seniorDayFilters = ['sp_sun', 'sp_mon', 'sp_tues', 'sp_wed', 'sp_thr', 'sp_fri', 'sp_sat']
 
-export const booleanFilters = [
+export const booleanFilters = new Set([
   'pay_at_pickup',
   'curbside_pickup',
   'special_hours',
@@ -99,7 +99,7 @@ export const booleanFilters = [
   'dv_legal',
   'dv_crisis',
   'twentyfourhrs'
-]
+])
 
 // Combination of boolean filters
 export const complexFilters = [
@@ -131,24 +131,6 @@ export const needs = [
 
 export const needsWithGeoFilter = ['legal_assistance', 'health', 'mental_health', 'dv_resources']
 
-export const sqlQueries = {
-  free_grocery: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 1 AND status = 1",
-  meal: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal' AND status = '1'",
-  school_meal: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal' AND meal_student = 1 AND status = 1",
-  free_food: 'SELECT * FROM ' + cartoDBName + " WHERE resource IN ('grocery', 'meal') AND free = 1 AND meal_student = 0 AND status = 1",
-  snap_wic_retailer: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 0 AND status = 1",
-  // legal_general_info: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_general_info'",
-  legal_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal' AND status = 1",
-  // medical: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical' AND status = 1",
-  mental_health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND med_mental_health = 1 AND status = 1",
-  health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'health' AND status = 1",
-  ballot_drop: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'ballot_drop' AND status = 1",
-  cash_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'cash_assistance' AND status = 1",
-  dv_resources: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'dv_resources' AND status = 1"
-}
-
-export const zipQuery = 'SELECT * FROM ' + zipDBName + ' WHERE zip = '
-
 export const countyLatLon = {
   anywhere: { lat: 37.594, lon: -122.223, zoom: 8 },
   alameda: { lat: 37.8097, lon: -122.25328, zoom: 10 },
@@ -163,7 +145,7 @@ export const countyLatLon = {
   sonoma: { lat: 38.481106, lon: -122.797838, zoom: 10 }
 }
 
-export const validZipcodes = [
+export const validZipcodes = new Set([
   '94501',
   '94502',
   '94536',
@@ -634,7 +616,7 @@ export const validZipcodes = [
   '95486',
   '95487',
   '95492'
-]
+])
 
 export const MappedRouteQueries = new Map([
   [
@@ -712,7 +694,6 @@ export const MappedRouteQueries = new Map([
   [
     'free_food',
     {
-      // TODO(1) need to look at double resources
       selections: ['*'],
       conditions: [
         ['resource', `'grocery'`],
