@@ -18,7 +18,6 @@
           ref="filters"
           :class="{ noMap: !displayMap }"
           :need="$route.params.need"
-          :markers="markers"
           :activeFilters="activeFilters"
           @box-selected="boxSelected"
         />
@@ -39,7 +38,7 @@
 
 <script>
 import 'whatwg-fetch'
-import { cartoBaseURL, sqlQueries, booleanFilters, complexFilters, dayFilters, MappedRouteQueries, zipDBName } from '../constants'
+import { cartoBaseURL, booleanFilters, complexFilters, dayFilters, MappedRouteQueries, zipDBName } from '../constants'
 import ResourceMap from './ResourceMap'
 import ResultsList from './ResultsList'
 import Filters from './Filters'
@@ -59,7 +58,6 @@ export default {
   },
   data() {
     return {
-      entries: null,
       mapUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
       bounds: null,
       centroid: [null, null],
@@ -69,10 +67,7 @@ export default {
       fetchDataState: StatusEnum.loading,
       nearLatLonZoom: { lat: null, lon: null, zoom: null },
       resetMap: false,
-      county: {},
-      showEditForm: false,
-      editedLocation: null,
-      cachedEntries: {}
+      county: {}
     }
   },
   async created() {
@@ -86,7 +81,7 @@ export default {
         .select(...resourceSelections)
         .condition(...resourceConditions)
         .genStringSelectQuery()
-      this.fetchData(generatedQuery)
+      this.fetchAndStoreData(generatedQuery)
     },
     async fetchMapCenter(route) {
       try {
@@ -114,26 +109,25 @@ export default {
         this.$router.push('/')
       }
     },
-    async fetchData(query) {
+    async fetchAndStoreData(query) {
       try {
-        if (!this.cachedEntries[query]) {
-          this.fetchDataState = StatusEnum.loading
-          const res = await fetch(cartoBaseURL + '&q=' + query)
-
-          if (!res.ok) {
-            throw Error(response.statusText)
-          }
-
-          const entries = await res.json()
-          this.cachedEntries[query] = entries.rows
+        const liveQueryFromStore = this.$store.getters.getCurrentLiveQuery
+        if (query === liveQueryFromStore.query) {
+          return liveQueryFromStore.entries
         }
-        this.entries = this.cachedEntries[query]
+        this.fetchDataState = StatusEnum.loading
+
+        const response = await (await fetch(cartoBaseURL + '&q=' + query)).json()
+
+        this.$store.commit('setCurrentLiveQuery', {
+          entries: response.rows,
+          query: query
+        })
         this.fetchDataState = StatusEnum.loaded
       } catch (e) {
         this.fetchDataState = StatusEnum.error
         Logger.logEvent('Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
-
-        console.log(e)
+        console.error(e)
       }
     },
     boxSelected: function (filter) {
@@ -173,12 +167,15 @@ export default {
       return needWithMap.includes(this.$route.params.need) || this.activeFilters.includes('in_person')
     },
     markers() {
-      if (!this.entries) {
+      // TODO(Complexity) Improve Cyclomatic complexity of method
+      const liveQueryFromStore = this.$store.getters.getCurrentLiveQuery
+      if (!liveQueryFromStore.entries) {
         return null
       }
-      var today = new Date().getDay()
-      const dayFilter = dayFilters[today]
-      let markers = this.entries
+
+      let markers = liveQueryFromStore.entries
+
+      const dayFilter = dayFilters[new Date().getDay()]
 
       // Filter out results based on boolean filters
       this.activeFilters.forEach((element) => {
@@ -195,7 +192,6 @@ export default {
           })
         }
       })
-
       // Filter out markers based on map bounds
       if (this.displayMap && this.bounds) {
         markers = markers
@@ -204,21 +200,20 @@ export default {
             return this.bounds.contains(latLng(c.lat, c.lon))
           })
       }
-
       markers = markers.map((c) => ({
         ...c,
         isOpen: c[dayFilter] !== '0' && c[dayFilter] !== '',
         distance: haversineDistance(this.centroid, [c.lat, c.lon], true)
       })) //.sort(sortByDistance)
-
       if (this.activeFilters.includes('open_today')) {
         markers = markers.filter((c) => c.isOpen)
       }
-
       // Sorting
       if (this.displayMap) {
         markers = markers.sort(sortByDistance)
       }
+      this.$store.commit('setCurrentMarkers', markers)
+      markers = this.$store.getters.getCurrentMarkers
       return markers
     }
   },
@@ -257,7 +252,7 @@ export default {
           .condition(...fetchConditions)
           .genStringSelectQuery()
 
-        this.fetchData(fetchQuery)
+        this.fetchAndStoreData(fetchQuery)
         this.activeFilters = []
       }
     }

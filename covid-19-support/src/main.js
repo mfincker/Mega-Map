@@ -30,6 +30,8 @@ import './scss/bootstrap.scss'
 // REQUIRED - Importing our Main CSS file
 import './scss/Main.scss'
 
+import store from './store'
+
 // General style overrides and custom classes
 
 // Install BootstrapVue
@@ -43,6 +45,7 @@ Vue.config.productionTip = true
 new Vue({
   router,
   i18n,
+  store,
   render: (h) => h(App),
   methods: {
     updateLang(iso) {
