@@ -1,4 +1,4 @@
-import { cartoDBName } from './constants'
+import { cartoDBName } from '../constants'
 
 class QueryBuilder {
   _selections = []

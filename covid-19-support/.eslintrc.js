@@ -12,6 +12,7 @@ module.exports = {
     es6: true
   },
   rules: {
+    'no-debugger': 0,
     'prettier/prettier': [
       'error',
       {

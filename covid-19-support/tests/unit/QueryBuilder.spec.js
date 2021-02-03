@@ -1,4 +1,4 @@
-import QueryBuilder from '../../src/QueryBuilder'
+import QueryBuilder from '../../src/lib/QueryBuilder'
 
 //only the order and context of the resulting string should matter so we lower everything and remove all whitespace
 const TEST_STRING = "SELECT cartodb_id, the_geom, provider_name FROM airtable WHERE provider_name = 'Community Mobile Clinics by Santa Clara County and Valley Medical Center' AND resource = 'health'"

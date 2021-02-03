@@ -39,22 +39,14 @@
 
 <script>
 import 'whatwg-fetch'
-import {
-  cartoBaseURL,
-  sqlQueries,
-  zipQuery,
-  // countyLatLon,
-  booleanFilters,
-  complexFilters,
-  dayFilters
-  // needsWithGeoFilter
-} from '@/constants'
-import ResourceMap from '@/components/ResourceMap.vue'
-import ResultsList from '@/components/ResultsList.vue'
-import Filters from '@/components/Filters.vue'
-import { addOrRemove } from '@/utilities'
-import { haversineDistance, sortByDistance } from '@/utilities'
+import { cartoBaseURL, sqlQueries, booleanFilters, complexFilters, dayFilters, MappedRouteQueries, zipDBName } from '../constants'
+import ResourceMap from './ResourceMap'
+import ResultsList from './ResultsList'
+import Filters from './Filters'
+import { addOrRemove, haversineDistance, sortByDistance } from '../utilities'
 import { latLng } from 'leaflet'
+import Logger from '../lib/Logger'
+import QueryBuilder from '../lib/QueryBuilder'
 
 export const StatusEnum = Object.freeze({ loading: 1, error: 2, loaded: 3 })
 
@@ -90,14 +82,27 @@ export default {
   },
   methods: {
     async setUpMap(route) {
+      const { conditions: resourceConditions, selections: resourceSelections } = MappedRouteQueries.get(route.params.need)
+
       // Get map center
       await this.fetchMapCenter(this.$route)
-      const query = this.buildQuery(route)
-      this.fetchData(query)
+
+      const generatedQuery = new QueryBuilder()
+        .select(...resourceSelections)
+        .condition(...resourceConditions)
+        .genStringSelectQuery()
+
+      this.fetchData(generatedQuery)
     },
     async fetchMapCenter(route) {
       try {
-        const res = await fetch(cartoBaseURL + '&q=' + zipQuery + encodeURI(route.query.near))
+        const generatedZipQuery = new QueryBuilder(zipDBName)
+          .select('*')
+          .condition(['zip', parseInt(route.query.near)])
+          .genStringSelectQuery()
+
+        const res = await fetch(cartoBaseURL + '&q=' + generatedZipQuery)
+
         const row = await res.json()
         if (row.rows.length == 1) {
           this.nearLatLonZoom = { lat: row.rows[0].lat, lon: row.rows[0].lon, zoom: 13 }
@@ -111,7 +116,7 @@ export default {
       } catch (e) {
         console.log(e)
         alert(this.$t('message.error_getting_zip'))
-        window.gtag('event', 'Zip fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
+        Logger.logEvent('Zip fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
         this.$router.push('/')
       }
     },
@@ -129,7 +134,8 @@ export default {
         this.fetchDataState = StatusEnum.loaded
       } catch (e) {
         this.fetchDataState = StatusEnum.error
-        window.gtag('event', 'Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
+        Logger.logEvent('Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
+
         console.log(e)
       }
     },
@@ -170,26 +176,17 @@ export default {
     buildQuery(route, log = true) {
       // query building
       let query = sqlQueries[route.params.need]
-      /*if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined')) {
-        let countyFilter =
-          this.county
-            .reduce((s, c) => {
-              return s + c + ' = 1 OR '
-            }, '(')
-            .slice(0, -4) + ')'
 
-        query = query + ' AND ' + countyFilter
-      }*/
-      // log resource selection
-      log &&
-        window.gtag('event', 'Resource selection', {
+      if (log) {
+        // log resource selection
+        Logger.logEvent('Resource selection', {
           event_category: 'language - (' + this.$i18n.locale + ')',
           event_label: 'resource - ' + route.params.need
         })
-      // log location selection
-      if (log) {
+
+        // log location selection
         if (!(typeof route.query.near === 'undefined')) {
-          window.gtag('event', 'Location selection', {
+          Logger.logEvent('Location selection', {
             event_category: 'language - (' + this.$i18n.locale + ')',
             event_label:
               'county - ' +
@@ -198,7 +195,7 @@ export default {
               }, '')
           })
         } else {
-          window.gtag('event', 'Location selection', {
+          Logger.logEvent('Location selection', {
             event_category: 'language - (' + this.$i18n.locale + ')',
             event_label: 'undefined'
           })
@@ -272,7 +269,13 @@ export default {
   },
   watch: {
     $route: async function (to, from) {
-      const old_query = this.buildQuery(from, false)
+      const { conditions: fromConditions, selections: fromSelections } = MappedRouteQueries.get(from.params.need)
+
+      const old_query = new QueryBuilder()
+        .select(...fromSelections)
+        .condition(...fromConditions)
+        .genStringSelectQuery()
+
       // has near changed?
       if (!(typeof to.query.near === 'undefined') && to.query.near == from.query.near) {
         this.resetMap = true
@@ -282,10 +285,24 @@ export default {
       } else {
         await this.fetchMapCenter(to)
       }
-      const new_query = this.buildQuery(to, false)
-      console.log(old_query, new_query)
+
+      const { conditions: toConditions, selections: toSelections } = MappedRouteQueries.get(to.params.need)
+
+      const new_query = new QueryBuilder()
+        .select(...toSelections)
+        .condition(...toConditions)
+        .genStringSelectQuery()
+
+      console.log('OLD QUERY: ' + old_query + '\nNEW QUERY: ' + new_query)
       if (old_query != new_query) {
-        this.fetchData(this.buildQuery(to))
+        const { conditions: fetchConditions, selections: fetchSelections } = MappedRouteQueries.get(to.params.need)
+
+        const fetchQuery = new QueryBuilder()
+          .select(...fetchSelections)
+          .condition(...fetchConditions)
+          .genStringSelectQuery()
+
+        this.fetchData(fetchQuery)
         this.activeFilters = []
       }
     }

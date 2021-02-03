@@ -635,3 +635,124 @@ export const validZipcodes = [
   '95487',
   '95492'
 ]
+
+export const MappedRouteQueries = new Map([
+  [
+    'dv_resources',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'dv_resources'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'cash_assistance',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'cash_assistance'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'ballot_drop',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'ballot_drop'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'health',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'health'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'mental_health',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'mental_health'`],
+        ['med_mental_health', 1],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'legal_assistance',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'legal'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'snap_wic_retailer',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'grocery'`],
+        ['free', 0],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'free_food',
+    {
+      // TODO(1) need to look at double resources
+      selections: ['*'],
+      conditions: [
+        ['resource', `'grocery'`],
+        ['resource', `'meal'`],
+        ['free', 1],
+        ['meal_student', 0],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'school_meal',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'meal'`],
+        ['meal_student', 1],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'meal',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'meal'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'free_grocery',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'grocery'`],
+        ['free', 1],
+        ['status', 1]
+      ]
+    }
+  ]
+])
