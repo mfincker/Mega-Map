@@ -61,8 +61,6 @@ export default {
     return {
       entries: null,
       mapUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
-      // mapUrl:
-      // 'https://api.mapbox.com/styles/v1/stanford-datalab/ckafqd6k80vmc1jmoyy9hswlu/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RhbmZvcmQtZGF0YWxhYiIsImEiOiJja2FmanA0bnMwZG9rMnJvNzAyY3Q5bXRkIn0.utHFnJ3XvT1_0Shoaio5Zw'
       bounds: null,
       centroid: [null, null],
       resourceData: { resourceId: null, isSetByMap: false },
@@ -77,21 +75,17 @@ export default {
       cachedEntries: {}
     }
   },
-  created() {
-    this.setUpMap(this.$route)
+  async created() {
+    await this.fetchMapCenter(this.$route)
+    await this.setUpResults(this.$route)
   },
   methods: {
-    async setUpMap(route) {
+    async setUpResults(route) {
       const { conditions: resourceConditions, selections: resourceSelections } = MappedRouteQueries.get(route.params.need)
-
-      // Get map center
-      await this.fetchMapCenter(this.$route)
-
       const generatedQuery = new QueryBuilder()
         .select(...resourceSelections)
         .condition(...resourceConditions)
         .genStringSelectQuery()
-
       this.fetchData(generatedQuery)
     },
     async fetchMapCenter(route) {
@@ -122,11 +116,14 @@ export default {
     },
     async fetchData(query) {
       try {
-        // console.log(cartoBaseURL + '&q=' + query)
         if (!this.cachedEntries[query]) {
           this.fetchDataState = StatusEnum.loading
           const res = await fetch(cartoBaseURL + '&q=' + query)
-          this.handleErrors(res)
+
+          if (!res.ok) {
+            throw Error(response.statusText)
+          }
+
           const entries = await res.json()
           this.cachedEntries[query] = entries.rows
         }
@@ -138,18 +135,6 @@ export default {
 
         console.log(e)
       }
-    },
-    handleErrors(response) {
-      if (!response.ok) {
-        throw Error(response.statusText)
-      }
-    },
-    closeEditForm() {
-      this.showEditForm = false
-    },
-    displayEditForm(item) {
-      this.showEditForm = true
-      this.editedLocation = item
     },
     boxSelected: function (filter) {
       this.activeFilters = addOrRemove(this.activeFilters, filter)
@@ -172,36 +157,6 @@ export default {
       if (this.displayMap) {
         this.$refs['result-details'].scrollTo(0, offset + this.$refs['filters'].$el.offsetHeight)
       }
-    },
-    buildQuery(route, log = true) {
-      // query building
-      let query = sqlQueries[route.params.need]
-
-      if (log) {
-        // log resource selection
-        Logger.logEvent('Resource selection', {
-          event_category: 'language - (' + this.$i18n.locale + ')',
-          event_label: 'resource - ' + route.params.need
-        })
-
-        // log location selection
-        if (!(typeof route.query.near === 'undefined')) {
-          Logger.logEvent('Location selection', {
-            event_category: 'language - (' + this.$i18n.locale + ')',
-            event_label:
-              'county - ' +
-              this.county.reduce((a, c) => {
-                return a + c + ' '
-              }, '')
-          })
-        } else {
-          Logger.logEvent('Location selection', {
-            event_category: 'language - (' + this.$i18n.locale + ')',
-            event_label: 'undefined'
-          })
-        }
-      }
-      return encodeURI(query)
     }
   },
   computed: {
