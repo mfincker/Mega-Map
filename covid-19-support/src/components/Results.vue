@@ -189,7 +189,6 @@ export default {
         }
       })
 
-      debugger
       // Filter out items based on complexFilters
       complexFilters.forEach((f) => {
         if (this.activeFilters.includes(f.name)) {
