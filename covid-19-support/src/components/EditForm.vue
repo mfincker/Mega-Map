@@ -101,8 +101,7 @@ export default {
     }
   },
   created() {
-    this.dayFilters = dayFilters
-    this.weekdayHours = weekdayHours
+    this.dayFilters = this.weekdayHours = weekdayHours
     this.seniorDayFilters = seniorDayFilters
     // Prefill form with current values
     this.form = { ...this.location }
