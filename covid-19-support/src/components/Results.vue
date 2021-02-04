@@ -18,7 +18,6 @@
           ref="filters"
           :class="{ noMap: !displayMap }"
           :need="$route.params.need"
-          :markers="markers"
           :activeFilters="activeFilters"
           @box-selected="boxSelected"
         />
@@ -39,22 +38,14 @@
 
 <script>
 import 'whatwg-fetch'
-import {
-  cartoBaseURL,
-  sqlQueries,
-  zipQuery,
-  // countyLatLon,
-  booleanFilters,
-  complexFilters,
-  dayFilters
-  // needsWithGeoFilter
-} from '@/constants'
-import ResourceMap from '@/components/ResourceMap.vue'
-import ResultsList from '@/components/ResultsList.vue'
-import Filters from '@/components/Filters.vue'
-import { addOrRemove } from '@/utilities'
-import { haversineDistance, sortByDistance } from '@/utilities'
+import { cartoBaseURL, booleanFilters, complexFilters, dayFilters, MappedRouteQueries, zipDBName } from '../constants'
+import ResourceMap from './ResourceMap'
+import ResultsList from './ResultsList'
+import Filters from './Filters'
+import { addOrRemove, haversineDistance, sortByDistance } from '../utilities'
 import { latLng } from 'leaflet'
+import Logger from '../lib/Logger'
+import QueryBuilder from '../lib/QueryBuilder'
 
 export const StatusEnum = Object.freeze({ loading: 1, error: 2, loaded: 3 })
 
@@ -67,10 +58,7 @@ export default {
   },
   data() {
     return {
-      entries: null,
       mapUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
-      // mapUrl:
-      // 'https://api.mapbox.com/styles/v1/stanford-datalab/ckafqd6k80vmc1jmoyy9hswlu/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RhbmZvcmQtZGF0YWxhYiIsImEiOiJja2FmanA0bnMwZG9rMnJvNzAyY3Q5bXRkIn0.utHFnJ3XvT1_0Shoaio5Zw'
       bounds: null,
       centroid: [null, null],
       resourceData: { resourceId: null, isSetByMap: false },
@@ -79,25 +67,31 @@ export default {
       fetchDataState: StatusEnum.loading,
       nearLatLonZoom: { lat: null, lon: null, zoom: null },
       resetMap: false,
-      county: {},
-      showEditForm: false,
-      editedLocation: null,
-      cachedEntries: {}
+      county: {}
     }
   },
-  created() {
-    this.setUpMap(this.$route)
+  async created() {
+    await this.fetchMapCenter(this.$route)
+    await this.setUpResults(this.$route)
   },
   methods: {
-    async setUpMap(route) {
-      // Get map center
-      await this.fetchMapCenter(this.$route)
-      const query = this.buildQuery(route)
-      this.fetchData(query)
+    async setUpResults(route) {
+      const { conditions: resourceConditions, selections: resourceSelections } = MappedRouteQueries.get(route.params.need)
+      const generatedQuery = new QueryBuilder()
+        .select(...resourceSelections)
+        .condition(...resourceConditions)
+        .genStringSelectQuery()
+      this.fetchAndStoreData(generatedQuery)
     },
     async fetchMapCenter(route) {
       try {
-        const res = await fetch(cartoBaseURL + '&q=' + zipQuery + encodeURI(route.query.near))
+        const generatedZipQuery = new QueryBuilder(zipDBName)
+          .select('*')
+          .condition(['zip', parseInt(route.query.near)])
+          .genStringSelectQuery()
+
+        const res = await fetch(cartoBaseURL + '&q=' + generatedZipQuery)
+
         const row = await res.json()
         if (row.rows.length == 1) {
           this.nearLatLonZoom = { lat: row.rows[0].lat, lon: row.rows[0].lon, zoom: 13 }
@@ -111,39 +105,30 @@ export default {
       } catch (e) {
         console.log(e)
         alert(this.$t('message.error_getting_zip'))
-        window.gtag('event', 'Zip fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
+        Logger.logEvent('Zip fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
         this.$router.push('/')
       }
     },
-    async fetchData(query) {
+    async fetchAndStoreData(query) {
       try {
-        // console.log(cartoBaseURL + '&q=' + query)
-        if (!this.cachedEntries[query]) {
-          this.fetchDataState = StatusEnum.loading
-          const res = await fetch(cartoBaseURL + '&q=' + query)
-          this.handleErrors(res)
-          const entries = await res.json()
-          this.cachedEntries[query] = entries.rows
+        const liveQueryFromStore = this.$store.getters.getCurrentLiveQuery
+        if (query === liveQueryFromStore.query) {
+          return liveQueryFromStore.entries
         }
-        this.entries = this.cachedEntries[query]
+        this.fetchDataState = StatusEnum.loading
+
+        const response = await (await fetch(cartoBaseURL + '&q=' + query)).json()
+
+        this.$store.commit('setCurrentLiveQuery', {
+          entries: response.rows,
+          query: query
+        })
         this.fetchDataState = StatusEnum.loaded
       } catch (e) {
         this.fetchDataState = StatusEnum.error
-        window.gtag('event', 'Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
-        console.log(e)
+        Logger.logEvent('Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
+        console.error(e)
       }
-    },
-    handleErrors(response) {
-      if (!response.ok) {
-        throw Error(response.statusText)
-      }
-    },
-    closeEditForm() {
-      this.showEditForm = false
-    },
-    displayEditForm(item) {
-      this.showEditForm = true
-      this.editedLocation = item
     },
     boxSelected: function (filter) {
       this.activeFilters = addOrRemove(this.activeFilters, filter)
@@ -166,45 +151,6 @@ export default {
       if (this.displayMap) {
         this.$refs['result-details'].scrollTo(0, offset + this.$refs['filters'].$el.offsetHeight)
       }
-    },
-    buildQuery(route, log = true) {
-      // query building
-      let query = sqlQueries[route.params.need]
-      /*if (needsWithGeoFilter.includes(route.params.need) && !(typeof route.query.near === 'undefined')) {
-        let countyFilter =
-          this.county
-            .reduce((s, c) => {
-              return s + c + ' = 1 OR '
-            }, '(')
-            .slice(0, -4) + ')'
-
-        query = query + ' AND ' + countyFilter
-      }*/
-      // log resource selection
-      log &&
-        window.gtag('event', 'Resource selection', {
-          event_category: 'language - (' + this.$i18n.locale + ')',
-          event_label: 'resource - ' + route.params.need
-        })
-      // log location selection
-      if (log) {
-        if (!(typeof route.query.near === 'undefined')) {
-          window.gtag('event', 'Location selection', {
-            event_category: 'language - (' + this.$i18n.locale + ')',
-            event_label:
-              'county - ' +
-              this.county.reduce((a, c) => {
-                return a + c + ' '
-              }, '')
-          })
-        } else {
-          window.gtag('event', 'Location selection', {
-            event_category: 'language - (' + this.$i18n.locale + ')',
-            event_label: 'undefined'
-          })
-        }
-      }
-      return encodeURI(query)
     }
   },
   computed: {
@@ -221,19 +167,28 @@ export default {
       return needWithMap.includes(this.$route.params.need) || this.activeFilters.includes('in_person')
     },
     markers() {
-      if (!this.entries) {
+      // TODO(Complexity) Improve Cyclomatic complexity of method
+      const liveQueryFromStore = this.$store.getters.getCurrentLiveQuery
+      if (!liveQueryFromStore.entries) {
         return null
       }
-      var today = new Date().getDay()
-      const dayFilter = dayFilters[today]
-      let markers = this.entries
 
+      let markers = liveQueryFromStore.entries
+
+      const dayFilter = dayFilters[new Date().getDay()]
+
+      // TODO(Typescript) Add Boolean Filters Union type to avoid this issue
+      /**
+       * There should be no need to check for outdated filters
+       */
       // Filter out results based on boolean filters
+
       this.activeFilters.forEach((element) => {
-        if (booleanFilters.includes(element)) {
+        if (booleanFilters.has(element)) {
           markers = markers.filter((c) => c[element] == 1)
         }
       })
+
       // Filter out items based on complexFilters
       complexFilters.forEach((f) => {
         if (this.activeFilters.includes(f.name)) {
@@ -243,7 +198,6 @@ export default {
           })
         }
       })
-
       // Filter out markers based on map bounds
       if (this.displayMap && this.bounds) {
         markers = markers
@@ -252,27 +206,32 @@ export default {
             return this.bounds.contains(latLng(c.lat, c.lon))
           })
       }
-
       markers = markers.map((c) => ({
         ...c,
         isOpen: c[dayFilter] !== '0' && c[dayFilter] !== '',
         distance: haversineDistance(this.centroid, [c.lat, c.lon], true)
       })) //.sort(sortByDistance)
-
       if (this.activeFilters.includes('open_today')) {
         markers = markers.filter((c) => c.isOpen)
       }
-
       // Sorting
       if (this.displayMap) {
         markers = markers.sort(sortByDistance)
       }
+      this.$store.commit('setCurrentMarkers', markers)
+      markers = this.$store.getters.getCurrentMarkers
       return markers
     }
   },
   watch: {
     $route: async function (to, from) {
-      const old_query = this.buildQuery(from, false)
+      const { conditions: fromConditions, selections: fromSelections } = MappedRouteQueries.get(from.params.need)
+
+      const old_query = new QueryBuilder()
+        .select(...fromSelections)
+        .condition(...fromConditions)
+        .genStringSelectQuery()
+
       // has near changed?
       if (!(typeof to.query.near === 'undefined') && to.query.near == from.query.near) {
         this.resetMap = true
@@ -282,10 +241,24 @@ export default {
       } else {
         await this.fetchMapCenter(to)
       }
-      const new_query = this.buildQuery(to, false)
-      console.log(old_query, new_query)
+
+      const { conditions: toConditions, selections: toSelections } = MappedRouteQueries.get(to.params.need)
+
+      const new_query = new QueryBuilder()
+        .select(...toSelections)
+        .condition(...toConditions)
+        .genStringSelectQuery()
+
+      console.log('OLD QUERY: ' + old_query + '\nNEW QUERY: ' + new_query)
       if (old_query != new_query) {
-        this.fetchData(this.buildQuery(to))
+        const { conditions: fetchConditions, selections: fetchSelections } = MappedRouteQueries.get(to.params.need)
+
+        const fetchQuery = new QueryBuilder()
+          .select(...fetchSelections)
+          .condition(...fetchConditions)
+          .genStringSelectQuery()
+
+        this.fetchAndStoreData(fetchQuery)
         this.activeFilters = []
       }
     }

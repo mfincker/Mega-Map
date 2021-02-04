@@ -17,7 +17,6 @@ export default {
   name: 'Filters',
   props: {
     need: String,
-    markers: Array,
     activeFilters: Array
   },
   data() {

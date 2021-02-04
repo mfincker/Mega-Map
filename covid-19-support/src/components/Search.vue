@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { validZipcodes } from '@/constants'
+import { validZipcodes } from '../constants'
 export default {
   name: 'search',
   data() {
@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     validZip() {
-      return validZipcodes.includes(this.nearZip)
+      return validZipcodes.has(this.nearZip)
     },
     selectedNeed() {
       return this.need !== null
@@ -123,7 +123,7 @@ export default {
     },
     nearLocation(v) {
       // doesn't handle invalid zipcode
-      if (validZipcodes.includes(v)) {
+      if (validZipcodes.has(v)) {
         this.nearZip = v
       } else {
         this.nearZip = null

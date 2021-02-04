@@ -1,26 +1,3 @@
-export const dayAny = 7
-
-export const weekdays = [
-  { day: 'any', pos: dayAny },
-  { day: 'monday', pos: 1 },
-  { day: 'tuesday', pos: 2 },
-  { day: 'wednesday', pos: 3 },
-  { day: 'thursday', pos: 4 },
-  { day: 'friday', pos: 5 },
-  { day: 'saturday', pos: 6 },
-  { day: 'sunday', pos: 0 }
-]
-
-export const weekdaysJs = [
-  { day: 'sunday' },
-  { day: 'monday' },
-  { day: 'tuesday' },
-  { day: 'wednesday' },
-  { day: 'thursday' },
-  { day: 'friday' },
-  { day: 'saturday' }
-]
-
 export const weekdayHours = [
   { day: 'sunday' },
   { day: 'monday' },
@@ -31,14 +8,13 @@ export const weekdayHours = [
   { day: 'saturday' }
 ]
 
-export const openStreetMapAttribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 export const mapBoxAttribution =
   '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="https://carto.com/attribution">CARTO</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>'
 
-export const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `${attr}`)
-export const seniorDayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat'].map((attr) => `sp_${attr}`)
+export const dayFilters = ['sun', 'mon', 'tues', 'wed', 'thr', 'fri', 'sat']
+export const seniorDayFilters = ['sp_sun', 'sp_mon', 'sp_tues', 'sp_wed', 'sp_thr', 'sp_fri', 'sp_sat']
 
-export const booleanFilters = [
+export const booleanFilters = new Set([
   'pay_at_pickup',
   'curbside_pickup',
   'special_hours',
@@ -99,7 +75,7 @@ export const booleanFilters = [
   'dv_legal',
   'dv_crisis',
   'twentyfourhrs'
-]
+])
 
 // Combination of boolean filters
 export const complexFilters = [
@@ -108,15 +84,13 @@ export const complexFilters = [
 ]
 
 // CARTO DB VARIABLES
-export const cartoBaseURL =
-  // 'https://mfincker.carto.com/api/v2/sql?api_key=' + process.env.VUE_APP_CARTO_API_KEY
-  'https://dcl-mega-map.carto.com/api/v2/sql?'
+export const cartoBaseURL = 'https://dcl-mega-map.carto.com/api/v2/sql?'
 
 export const cartoDBName = 'airtable'
 
 export const zipDBName = 'zipcode_db'
 
-export const needs = [
+export const needs = new Set([
   'free_grocery',
   'meal',
   'free_food',
@@ -127,43 +101,9 @@ export const needs = [
   'school_meal',
   'cash_assistance',
   'dv_resources'
-]
+])
 
-export const needsWithGeoFilter = ['legal_assistance', 'health', 'mental_health', 'dv_resources']
-
-export const sqlQueries = {
-  free_grocery: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 1 AND status = 1",
-  meal: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal' AND status = '1'",
-  school_meal: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'meal' AND meal_student = 1 AND status = 1",
-  free_food: 'SELECT * FROM ' + cartoDBName + " WHERE resource IN ('grocery', 'meal') AND free = 1 AND meal_student = 0 AND status = 1",
-  snap_wic_retailer: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'grocery' AND free = 0 AND status = 1",
-  // legal_general_info: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal_general_info'",
-  legal_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'legal' AND status = 1",
-  // medical: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'medical' AND status = 1",
-  mental_health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'mental_health' AND med_mental_health = 1 AND status = 1",
-  health: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'health' AND status = 1",
-  ballot_drop: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'ballot_drop' AND status = 1",
-  cash_assistance: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'cash_assistance' AND status = 1",
-  dv_resources: 'SELECT * FROM ' + cartoDBName + " WHERE resource = 'dv_resources' AND status = 1"
-}
-
-export const zipQuery = 'SELECT * FROM ' + zipDBName + ' WHERE zip = '
-
-export const countyLatLon = {
-  anywhere: { lat: 37.594, lon: -122.223, zoom: 8 },
-  alameda: { lat: 37.8097, lon: -122.25328, zoom: 10 },
-  contra_costa: { lat: 37.897914, lon: -122.070408, zoom: 10 },
-  marin: { lat: 38.0319, lon: -122.665367, zoom: 10 },
-  monterey: { lat: 36.625121, lon: -121.765207, zoom: 10 },
-  napa: { lat: 38.417836, lon: -122.380023, zoom: 10 },
-  san_francisco: { lat: 37.7749, lon: -122.4194, zoom: 10 },
-  san_mateo: { lat: 37.529076, lon: -122.308764, zoom: 10 },
-  santa_clara: { lat: 37.308325, lon: -121.859261, zoom: 10 },
-  solano: { lat: 38.258686, lon: -122.014371, zoom: 10 },
-  sonoma: { lat: 38.481106, lon: -122.797838, zoom: 10 }
-}
-
-export const validZipcodes = [
+export const validZipcodes = new Set([
   '94501',
   '94502',
   '94536',
@@ -634,4 +574,124 @@ export const validZipcodes = [
   '95486',
   '95487',
   '95492'
-]
+])
+
+export const MappedRouteQueries = new Map([
+  [
+    'dv_resources',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'dv_resources'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'cash_assistance',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'cash_assistance'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'ballot_drop',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'ballot_drop'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'health',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'health'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'mental_health',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'mental_health'`],
+        ['med_mental_health', 1],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'legal_assistance',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'legal'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'snap_wic_retailer',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'grocery'`],
+        ['free', 0],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'free_food',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'grocery'`],
+        ['resource', `'meal'`],
+        ['free', 1],
+        ['meal_student', 0],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'school_meal',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'meal'`],
+        ['meal_student', 1],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'meal',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'meal'`],
+        ['status', 1]
+      ]
+    }
+  ],
+  [
+    'free_grocery',
+    {
+      selections: ['*'],
+      conditions: [
+        ['resource', `'grocery'`],
+        ['free', 1],
+        ['status', 1]
+      ]
+    }
+  ]
+])
