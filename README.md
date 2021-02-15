@@ -6,6 +6,9 @@
 ## Link to the live website: [Bay Area Community Resources](https://www.bayareacommunity.org/)
 
 ![Bay Area Community Resources Website](/covid-19-support/src/images/BAYCR.png)
+ 
+ 
+ ## Link to Wiki [Project Wiki](https://github.com/dcl-covid-19/mega-map-dev/wiki)
 
 We are a volunteer-driven, open-source project to help communities navigate the 
 COVID crisis by providing information on public resources. This project began as 
