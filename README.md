@@ -5,7 +5,7 @@
 
 ## Link to the live website: [Bay Area Community Resources](https://www.bayareacommunity.org/)
 
-![Bay Area Community Resources Website](/covid-19-support/src/images/BAYCR.png)
+![Bay Area Community Resources Website](/wiki/images/BAYCR.png)
  
  
  ## Link to Wiki [Project Wiki](https://github.com/dcl-covid-19/mega-map-dev/wiki)
