@@ -39,15 +39,14 @@
 <script>
 import 'whatwg-fetch'
 import { cartoBaseURL, booleanFilters, complexFilters, dayFilters, MappedRouteQueries, zipDBName } from '../constants'
-import ResourceMap from './ResourceMap'
-import ResultsList from './ResultsList'
-import Filters from './Filters'
+import ResourceMap from '../components/ResourceMap'
+import ResultsList from '../components/ResultsList'
+import Filters from '../components/Filters'
 import { addOrRemove, haversineDistance, sortByDistance } from '../utilities'
 import { latLng } from 'leaflet'
 import Logger from '../lib/Logger'
 import QueryBuilder from '../lib/QueryBuilder'
-
-export const StatusEnum = Object.freeze({ loading: 1, error: 2, loaded: 3 })
+import StatusEnum from '../lib/enums/StatusEnum'
 
 export default {
   name: 'results',
@@ -64,7 +63,7 @@ export default {
       resourceData: { resourceId: null, isSetByMap: false },
       activeFilters: [],
       zoomDiff: 0,
-      fetchDataState: StatusEnum.loading,
+      fetchDataState: StatusEnum.LOADING,
       nearLatLonZoom: { lat: null, lon: null, zoom: null },
       resetMap: false,
       county: {}
@@ -115,7 +114,7 @@ export default {
         if (query === liveQueryFromStore.query) {
           return liveQueryFromStore.entries
         }
-        this.fetchDataState = StatusEnum.loading
+        this.fetchDataState = StatusEnum.LOADING
 
         const response = await (await fetch(cartoBaseURL + '&q=' + query)).json()
 
@@ -123,9 +122,9 @@ export default {
           entries: response.rows,
           query: query
         })
-        this.fetchDataState = StatusEnum.loaded
+        this.fetchDataState = StatusEnum.LOADED
       } catch (e) {
-        this.fetchDataState = StatusEnum.error
+        this.fetchDataState = StatusEnum.ERROR
         Logger.logEvent('Data fetch error', { event_category: 'data_fetch', event_label: 'error ' + e })
         console.error(e)
       }

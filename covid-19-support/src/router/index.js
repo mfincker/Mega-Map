@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Results from '@/components/Results.vue'
-import AboutUs from '@/components/AboutUs.vue'
-import BlmStatement from '@/components/BlmStatement.vue'
+import Results from '../views/Results.vue'
+import AboutUs from '../views/AboutUs.vue'
+import BlmStatement from '../views/BlmStatement.vue'
 
 Vue.use(Router)
 

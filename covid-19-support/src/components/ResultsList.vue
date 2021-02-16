@@ -1,9 +1,9 @@
 <template>
   <div class="resultWrapper" ref="results">
-    <div v-if="fetchDataState === StatusEnum.loading" class="no-result">
+    <div v-if="fetchDataState === StatusEnum.LOADING" class="no-result">
       {{ $tc('message.loading') }}
     </div>
-    <div v-if="fetchDataState === StatusEnum.error" class="no-result">
+    <div v-if="fetchDataState === StatusEnum.ERROR" class="no-result">
       {{ $tc('message.error_loading_results') }}
     </div>
     <div v-if="isEmpty && displayMap" class="no-result">
@@ -11,7 +11,7 @@
       <a class="more-result" @click="zoomOut" v-if="displayMap">{{ $tc('label.zoom_out_for_more_results') }}</a>
     </div>
     <div v-if="isEmpty && !displayMap" class="no-result">{{ $tc('message.no_location_meet_these_criteria') }}</div>
-    <div v-if="fetchDataState === StatusEnum.loaded" class="resultList">
+    <div v-if="fetchDataState === StatusEnum.LOADED" class="resultList">
       <div
         v-for="item in markers"
         v-bind:key="item.cartodb_id"
@@ -100,7 +100,7 @@
 </template>
 <script>
 import BusinessDetails from '@/components/BusinessDetails.vue'
-import { StatusEnum } from '@/components/Results.vue'
+import StatusEnum from '../lib/enums/StatusEnum'
 import EditForm from '@/components/EditForm.vue'
 
 export default {
@@ -192,7 +192,7 @@ export default {
   },
   computed: {
     isEmpty() {
-      return this.fetchDataState === StatusEnum.loaded && this.markers.length == 0
+      return this.fetchDataState === StatusEnum.LOADED && this.markers.length == 0
     },
     legalResources() {
       return this.$route.params.need.startsWith('legal')
