@@ -37,7 +37,7 @@ import AppHeader from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
 import Banner from '@/components/Banner.vue'
 import BlmBanner from '@/components/BlmBanner.vue'
-import { needs } from '@/constants'
+import { needs } from './lib/constants'
 export default {
   name: 'app',
   props: {

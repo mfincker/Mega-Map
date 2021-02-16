@@ -83,7 +83,7 @@
 </template>
 
 <script>
-import { dayFilters, weekdayHours, seniorDayFilters } from '@/constants'
+import { dayFilters, weekdayHours, seniorDayFilters } from '../lib/constants'
 export default {
   name: 'EditForm',
   props: {
