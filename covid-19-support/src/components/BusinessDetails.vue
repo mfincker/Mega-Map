@@ -45,7 +45,7 @@
 <script>
 import OpeningHours from '@/components/OpeningHours.vue'
 import IconListItem from '@/components/IconListItem.vue'
-import { businessIcon } from '@/utilities'
+import { businessIcon } from '../lib/utilities'
 export default {
   name: 'BusinessDetails',
   components: {

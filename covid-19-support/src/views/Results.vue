@@ -42,7 +42,7 @@ import { cartoBaseURL, booleanFilters, complexFilters, dayFilters, MappedRouteQu
 import ResourceMap from '../components/ResourceMap'
 import ResultsList from '../components/ResultsList'
 import Filters from '../components/Filters'
-import { addOrRemove, haversineDistance, sortByDistance } from '../utilities'
+import { addOrRemove, haversineDistance, sortByDistance } from '../lib/utilities'
 import { latLng } from 'leaflet'
 import Logger from '../lib/Logger'
 import QueryBuilder from '../lib/QueryBuilder'
