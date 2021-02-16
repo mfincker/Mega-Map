@@ -223,6 +223,28 @@ export default {
     }
   },
   watch: {
+    activeFilters: async function () {
+      const { conditions: fromConditions, selections: fromSelections } = MappedRouteQueries.get(this.$attrs.need)
+      const isMedDomesticViolenceActive = this.activeFilters.includes('med_domestic_violence')
+
+      // Handles "Victim of domestic violence support" support case in ISSUE #70
+      if (isMedDomesticViolenceActive) {
+        const generatedActiveFilterQuery = new QueryBuilder()
+          .select(...fromSelections)
+          .condition(...fromConditions, ['med_domestic_violence', 1], ['resource', `'dv_resources'`])
+          .genStringSelectQuery()
+
+        this.fetchAndStoreData(generatedActiveFilterQuery)
+        return
+      }
+
+      const generatedActiveFilterQuery = new QueryBuilder()
+        .select(...fromSelections)
+        .condition(...fromConditions)
+        .genStringSelectQuery()
+
+      this.fetchAndStoreData(generatedActiveFilterQuery)
+    },
     $route: async function (to, from) {
       const { conditions: fromConditions, selections: fromSelections } = MappedRouteQueries.get(from.params.need)
 
