@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import FiltersEnum from '../lib/enums/FiltersEnum'
 export default {
   name: 'Filters',
   props: {
@@ -39,48 +40,32 @@ export default {
   computed: {
     // Displayed filters
     filterList() {
+      /**
+       * TODO(ISSUE #84)
+       * Labels Should all have new 'i18n' prefix
+       */
       switch (this.need) {
-        // case 'free_grocery':
-        //   return [
-        //     // { var: 'children', label: 'label.children' },
-        //     // { var: 'seniors', label: 'label.seniors' },
-        //     { var: 'open_today', label: 'label.open_today' }
-        //     // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
-        //   ]
-        case 'snap_wic_retailer':
+        case FiltersEnum.SNAP_WIC_RETAILER:
           return [
             { var: 'wic', label: 'label.wic' },
             { var: 'special_hours', label: 'label.special_hours' },
             { var: 'safe_pick_up', label: 'label.safe_pick_up' },
             { var: 'farmers_market', label: 'label.farmers_market' }
           ]
-        // case 'meal':
-        //   return [
-        //     { var: 'children', label: 'label.children' },
-        //     // { var: 'seniors', label: 'label.seniors' },
-        //     { var: 'open_today', label: 'label.open_today' }
-        //     // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
-        //   ]
-        case 'school_meal':
+        case FiltersEnum.SCHOOL_MEAL:
           return [
             { var: 'open_today', label: 'label.open_today' },
-            // { var: 'require_child', label: 'label.require_child' },
-            // { var: 'must_show_id', label: 'label.must_show_id' },
             { var: 'all_children', label: 'label.all_children' },
             { var: 'enrolled_children', label: 'label.enrolled_children' }
           ]
-        case 'free_food':
+        case FiltersEnum.FREE_FOOD:
+          return [{ var: 'open_today', label: 'label.open_today' }]
+        case FiltersEnum.MENTAL_HEALTH:
           return [
-            { var: 'open_today', label: 'label.open_today' }
-            // { var: 'safe_pick_up', label: 'label.safe_pick_up' }
-          ]
-        case 'mental_health':
-          return [
-            // { var: 'free', label: 'label.free' },
             { var: 'in_person', label: 'label.in_person' },
             { var: 'telehealth', label: 'label.telehealth' }
           ]
-        case 'legal_assistance':
+        case FiltersEnum.LEGAL_ASSISTANCE:
           return [
             { var: 'legal_criminal', label: 'legal.legal_criminal' },
             { var: 'legal_domviolence', label: 'legal.legal_domviolence' },
@@ -89,7 +74,7 @@ export default {
             { var: 'legal_housing', label: 'legal.legal_housing' },
             { var: 'legal_immigration', label: 'legal.legal_immigration' }
           ]
-        case 'health':
+        case FiltersEnum.HEALTH:
           return [
             { var: 'in_person', label: 'label.in_person' },
             { var: 'telehealth', label: 'label.telehealth' },
@@ -107,7 +92,7 @@ export default {
             { var: 'med_addiction', label: 'health.med_addiction' },
             { var: 'med_domestic_violence', label: 'health.med_domestic_violence' }
           ]
-        case 'dv_resources':
+        case FiltersEnum.DV_RESOURCES:
           return [
             { var: 'dv_medical', label: 'label.dv_medical' },
             { var: 'dv_mental_health', label: 'label.dv_mental_health' },
@@ -115,7 +100,7 @@ export default {
             { var: 'dv_legal', label: 'label.dv_legal' },
             { var: 'dv_crisis', label: 'label.dv_crisis' }
           ]
-        case 'cash_assistance':
+        case FiltersEnum.CASH_ASSISTANCE:
           return [
             { var: 'fin_grocery', label: 'label.fin_grocery' },
             { var: 'fin_housing', label: 'label.fin_housing' },
