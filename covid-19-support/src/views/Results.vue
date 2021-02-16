@@ -38,7 +38,7 @@
 
 <script>
 import 'whatwg-fetch'
-import { cartoBaseURL, booleanFilters, complexFilters, dayFilters, MappedRouteQueries, zipDBName } from '../constants'
+import { cartoBaseURL, booleanFilters, complexFilters, dayFilters, MappedRouteQueries, zipDBName } from '../lib/constants'
 import ResourceMap from '../components/ResourceMap'
 import ResultsList from '../components/ResultsList'
 import Filters from '../components/Filters'

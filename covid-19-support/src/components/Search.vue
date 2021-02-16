@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { validZipcodes } from '../constants'
+import { validZipcodes } from '../lib/constants'
 export default {
   name: 'search',
   data() {

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { dayFilters, seniorDayFilters, weekdayHours } from '@/constants'
+import { dayFilters, seniorDayFilters, weekdayHours } from '../lib/constants'
 export default {
   name: 'OpeningHours',
   data() {
