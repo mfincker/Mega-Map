@@ -1,11 +1,9 @@
 <template>
   <b-jumbotron fluid id="blm-banner" header-level="5" header-tag="h3">
-    <template v-slot:header>
-      Black Lives Matter.
-    </template>
+    <template v-slot:header> {{ $t('blm-banner.title') }} </template>
     <div id="blm-links">
       <!-- <b-button class="blm-button" @click="$emit('blm-resource-selected')">Support Black-owned businesses</b-button> -->
-      <b-button class="blm-button" to="/blm-statement">Read our statement</b-button>
+      <b-button class="blm-button" to="/blm-statement">{{ $t('blm-banner.button') }}</b-button>
     </div>
   </b-jumbotron>
 </template>

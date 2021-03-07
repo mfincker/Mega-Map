@@ -47,48 +47,92 @@
     },
     "about-us-sources": "Our database of information benefits from data collected by the following organizations:\nUSDA SNAP Store locator\nUSDA WIC Store locator\nSecond Harvest of Silicon Valley\nStanford Pediatric Advocacy\n\nWe have a team of amazing volunteers who verify the data and collect any additional information such as additional Covid-19 senior hours, safe curbside pick-up options etc.",
     "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
+      "link0": "info@unboxproject.org"
     },
     "about-us-disclaimer": "This Bay Area Resources project is purely volunteer-driven. We have a team of humans collecting and verifying data from diverse sources. We do our best to keep all the information on the site as up-to-date as possible, however we cannot guarantee that the information is 100% accurate.",
     "about-us": {
-      "header": "About Us",
+      "header": "Mission",
       "p1": {
-        "text": "We are a volunteer-driven, open-source project to help communities navigate the COVID crisis by providing information on public resources. This project began as a {0}, and now provides information on more resources such as locations and schedules for free meals, food assistance, legal assistance, and medical help. We are part of the organization {1}.",
+        "text": "Everyone should have access to reliable information on local community resources, in their language, on a simple, accessible platform.",
         "link1": "unBox",
         "link0": "Bay Area school meals map"
       },
       "p2": {
-        "text": "The development for this project was adapted from {0}.",
+        "text": "BayAreaCommunity.org is a community-driven project that works with local organizations to collect, update, and centralize trustworthy information on community services. We share this information with organizations, social workers, and Bay Area residents seeking resources through a mobile-friendly, multilingual website.",
         "link": "NCCovid Support"
       },
       "p3": {
-        "text": "You can find more information on the project, including the source code for replicating the project, from our {0}.",
-        "link": "Github page"
+        "text": "We are a project of the organization {0}, a food action collaborative led by students and recent-graduates fighting food insecurity in the US.",
+        "link": "unBox"
       }
     },
+    "our-story": {
+      "header": "Our Story",
+      "school-meals": {
+        "title": "School Meals:",
+        "subtitle": "BayAreaCommunity.org (BAC) maps every school meal site in the 9 Bay Area counties, and updates every two weeks."
+      },
+      "p1": "We began in March 2020, when COVID-19 school closures threatened to deprive many families of daily school meals. Mobilizing, the USDA allowed school districts to serve not only students in their district, but all children, at flexible service times and locations. These times and locations, however, changed frequently, and there was no single, reliable resource to help families across the Bay Area find out where meals were available. In response, our team of Stanford students and alumni used Google MyMaps to create and update a simple bilingual Bay Area school meals map that worked for phones.",
+      "p2": {
+        "text": "Within two weeks, our map received half a million views. School district websites displayed our site, and we were featured in {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, and {8}. We partnered with {9} to update {10} for Stanford Hospital’s low-income patients, and distributed them to partners and counties. We began supplying our school meals data to No Kid Hungry’s {11}. The UC Nutrition Policy Institute and Nourish CA leveraged our data to advocate for expanding school meal funding, child nutrition benefits, and USDA school meal waivers. Since May, we have been advised by Anne Moertel, Public Information Officer for San Francisco Unified School District’s (SFUSD) Student Nutrition Services.",
+        "link0": "SF Gate",
+        "link1": "Mercury News",
+        "link2": "NBC Bay Area",
+        "link3": "KQED",
+        "link4": "Palo Alto Online",
+        "link5": "Stanford News",
+        "link6": "Local News Matters",
+        "link7": "Stanford Pyjama Talks",
+        "link8": "Stanford Media",
+        "link9": "Stanford Pediatric Advocacy",
+        "link10": "resource flyers",
+        "link11": "National Free Meals Texting Hotline"
+      },
+      "p3": "Ten dedicated volunteers update our school meals database every two weeks, by checking school district websites and social media pages, and calling districts. We conduct monthly data quality audits to ensure we continue to provide Bay Area families with accurate, updated, accessible information.",
+      "building-beyond": {
+        "title": "Building Beyond School Meals:",
+        "subtitle": "As we continue to update and share our school meals database, we are working with our partners to provide information beyond school meals, including other free food resources, food-stamp-accepting stores and farmers’ markets, healthcare, cash assistance, housing, childcare, technology, legal aid, and more."
+      },
+      "p4": "Our local partners, their social worker staff, and the residents they support have shown us the importance of accurate, multilingual, accessible community resource information. Unlike with school meals, which required building our own database from scratch, many local organizations are already working to track and share updated information on other community resources, but need support in ensuring their resources remain up-to-date.",
+      "p5": "BAC helps by:",
+      "p6": "Volunteering directly for other organizations to help update their resource databases, maps, and websites.",
+      "p7": "Bringing together updated information from different organizations across the Bay Area to a centralized, multi-resource, and free database.",
+      "p8": "Sharing this information with individuals seeking resources and providing referrals through our mobile-friendly website, using human-centered design informed by local social workers and residents."
+    },
     "info-sources": {
-      "header": "Info Sources",
-      "p1": "Our database of information benefits from data collected by the following organizations:",
+      "header": "Data Sources",
+      "p1": "Our database of information benefits from data collected by the following sources:",
       "p2": "We have a team of amazing volunteers who verify the data and collect any additional information such as additional Covid-19 senior hours, safe curbside pick-up options etc."
     },
     "info-source": {
       "link1": "USDA SNAP Store locator",
       "link2": "USDA WIC Store locator",
-      "link3": "Second Harvest of Silicon Valley",
-      "link4": "Stanford Pediatric Advocacy",
-      "link5": "Berkeley Ecology Center"
+      "link3": "Berkeley Ecology Center",
+      "link4": "SF Food Resources Viewer",
+      "link5": "Santa Clara County Food Resources",
+      "link6": "County of Alameda COVID-19 Food Distribution, Testing, and Services Map",
+      "link7": "Contra Costa County COVID-19 Food Distribution Map",
+      "link8": "CalFresh County Office Locator",
+      "p2": {
+        "text": "URISA's GISCorps, Coders Against COVID ({0}), and Esri, 2020. COVID-19 Testing Locations in the United States. Spatial dataset. {1}",
+        "link0": "findcovidtesting.org",
+        "link1": "https://services.arcgis.com/8ZpVMShClf8U8dae/arcgis/rest/services/TestingLocations_public/FeatureServer"
+      }
     },
     "contact-us": {
-      "header": "Contact Us",
+      "header": "Connect",
       "p1": {
-        "text": "For questions on any data additions or inaccuracies, or for any other questions, please contact {0}.",
-        "link": "baycommunityresource@gmail.com"
+        "text": "Read our most recent {0} to learn more about our project! You can find the source code for replicating the project on our {1}. All our data is open source and available upon request, via our Airtable database. Please don’t hesitate to reach out with any questions, concerns, or inquiries to {2}.",
+        "link0": "Impact Report",
+        "link1": "Github page",
+        "link2": "info@unboxproject.org",
+        "link": "info@unboxproject.org"
       },
       "contact-us-header": "Contact us here"
     },
     "disclaimer": {
       "header": "Disclaimer",
-      "p": "This Bay Area Resources project is purely volunteer-driven. We have a team of humans collecting and verifying data from diverse sources. We do our best to keep all the information on the site as up-to-date as possible, however we cannot guarantee that the information is 100% accurate."
+      "p": "Our volunteer team collects and verifies data from diverse sources. We also help our partner organizations update their databases, and import them into our website. We strive to ensure our school meals database is 100% accurate and up-to-date, though we cannot guarantee we will not have errors. Soon, we will also include updated information on free food, legal aid, cash assistance, medical and mental health, child care, domestic violence support, housing, and COVID-19 testing resources, but these categories are a work-in-progress. We are working with our partners to bring together the best available information, keep it current, and share it in the most simple, helpful way."
     },
     "spthanks": {
       "p": "Special thanks to {0} and {1} for powering our site.",
@@ -96,11 +140,27 @@
       "link1": "Mapbox"
     },
     "our-team": {
-      "header": "Our team",
+      "header": "Our Team",
+      "p1": "We are a community of local students, alumni, and faculty from Stanford, USF, UC Berkeley, Palo Alto High School, Castilleja High School, Gunn High School, and Harker High School, and volunteers from Code for America’s local Code for San Jose chapter.",
+      "lead": "Project Lead",
+      "data-engineers": "Data Engineers",
+      "developers": "Developers",
+      "data-warriors": "Data Warriors",
+      "school-meals-lead": "School Meals Lead",
+      "project-manager": "Project Manager",
+      "health-lead": "Health Lead",
+      "dv-lead": "DV Lead",
+      "legal-lead": "Legal Lead",
+      "p2": {
+        "text": "We are immensely grateful to Joyce Tagal for her leadership in founding BAC; Maeva Fincker and our original developers, who built our custom UI in partnership with, and adapted from, the wonderful {0} team; Bill Behrman of the {1} for his sage guidance; Cheryl Phillips of {2} for her publicity support; students from the Stanford Future Bay Initiative, Stanford Sustainable Cities class, and Stanford Law COVID Pro Bono Program for their invaluable collaboration; and Open Referral and Mapbox for their technical support and advising.",
+        "link0": "NC COVID Support",
+        "link1": "Stanford Data Lab",
+        "link2": "Big Local News"
+      },
       "sourcing": "Data sourcing and translation:",
       "dev": "Data engineering and development:",
       "resource": "resource coordinators",
-      "translate": "translators",
+      "translate": "Translators",
       "dqual": "data quality",
       "internal-community": "internal community",
       "projl": "project lead",
@@ -329,7 +389,7 @@
     "additional_info_text": "Anything else that is missing, needs changing or should be displayed?",
     "additional_info_placeholder": "New service, location permanently closed, senior shopping hours ...",
     "no_edit": "Nothing has changed.",
-    "submission_error": "There was an error during the form submission. Please try again or contact us at baycommunityresource@gmail.com."
+    "submission_error": "There was an error during the form submission. Please try again or contact us at info@unboxproject.org."
   },
   "pebt": {
     "header": "Food benefits for kids who get free or reduced-price meals.",
@@ -344,383 +404,8 @@
     "text_sub": "If you are selected for interviewing,  all sessions will be conducted remotely via phone / video chat, and  we will compensate you for your time.",
     "header": "Help us serve you better."
   },
-  "faq": {
-    "title": "Welcome to Know Your Rights",
-    "header": "Know Your Rights",
-    "home_help_text": "Select an area below to find out more about your rights.",
-    "subcategory_header": "What best describes your situation?",
-    "subcategory_help_text": "Click on the questions below to expand answers.",
-    "back_button": "Back",
-    "categories": {
-      "criminal-justice": {
-        "title": "Criminal Justice",
-        "icon": "fa-gavel",
-        "content": {
-          "0": {
-            "title": "I've been arrested",
-            "questions": {
-              "0": {
-                "question": "What should I do?",
-                "answer": {
-                  "0": {
-                    "text": "Generally the protocols for police arrests are not different from pre-COVID times, except that they are more likely to issue summons in the field rather than bringing detainees into a station for booking {0}.",
-                    "links": {
-                      "0": {
-                        "text": "source",
-                        "link": "https://www.ppic.org/blog/how-will-covid-19-affect-arrests-in-california/"
-                      }
-                    }
-                  },
-                  "1": {
-                    "text": "You can find regular know-your-rights information for when you are stopped by the police at the ACLU Northern California Chapter's {0}.",
-                    "links": {
-                      "0": {
-                        "text": "website",
-                        "link": "https://www.aclunc.org/sites/default/files/kyr_police_en.pdf"
-                      }
-                    }
-                  }
-                }
-              },
-              "1": {
-                "question": "What is the status of the courts?",
-                "answer": {
-                  "0": {
-                    "text": "During a public health emergency like COVID-19, courts prioritize critical cases (i.e. bail hearings, emergency protective orders such as in domestic violence and child abuse cases, and contested quarantine and isolation orders) over other caseloads ({0}).",
-                    "links": {
-                      "0": {
-                        "text": "source",
-                        "link": "https://www.nolo.com/legal-encyclopedia/how-is-the-coronavirus-covid-19-impacting-criminal-cases.html"
-                      }
-                    }
-                  },
-                  "1": {
-                    "text": "You can find the most updated information about operation policies on each court's website for COVID-19 news. We list a few here for you."
-                  },
-                  "2": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "Alameda County Court Website",
-                        "link": "http://www.alameda.courts.ca.gov/Pages.aspx/COVID-19"
-                      }
-                    }
-                  },
-                  "3": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "Santa Clara County Court Website",
-                        "link": "http://www.scscourt.org/general_info/news_media/covid19.shtml#resources"
-                      }
-                    }
-                  },
-                  "4": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "San Mateo County Court Website",
-                        "link": "https://www.sanmateocourt.org/covid19.pdf"
-                      }
-                    }
-                  }
-                }
-              },
-              "2": {
-                "question": "How can I pay bail during COVID-19?",
-                "answer": {
-                  "0": {
-                    "text": "On April 6, the Judicial Council of California adopted 11 Emergency Rules and established that bail for infractions will be set at $0.00, while bail for technical violations of felony probation, Post Release Community Supervision (PRCS), or parole will be set at $5,000.00. The rules are repealed on June 10, but counties like Alameda have adopted their own \"zero bail\" emergency bail schedule."
-                  },
-                  "1": {
-                    "text": "See the {0} section.",
-                    "links": {
-                      "0": {
-                        "text": "Bail Fund Resources",
-                        "link": "#/faq/criminal-justice/2"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "1": {
-            "title": "Someone I know has been arrested",
-            "questions": {
-              "0": {
-                "question": "Can I attend their court hearing?",
-                "answer": {
-                  "0": {
-                    "text": "Since most matters are being heard remotely through court call and a public access, listen-only line is also available. You can also check the most updated information on each court's website for COVID-19 news."
-                  },
-                  "1": {
-                    "text": "See the {0} section for a list of website addresses.",
-                    "links": {
-                      "0": {
-                        "text": "Status of courts",
-                        "link": "#/faq/criminal-justice/0/1"
-                      }
-                    }
-                  }
-                }
-              },
-              "1": {
-                "question": "How can I help them apply for bail fund?",
-                "answer": {
-                  "0": {
-                    "text": "See the {0} section for a list of website addresses.",
-                    "links": {
-                      "0": {
-                        "text": "Status of courts",
-                        "link": "#/faq/criminal-justice/0/1"
-                      }
-                    }
-                  }
-                }
-              },
-              "2": {
-                "question": "Can I visit them in incarceration?",
-                "answer": {
-                  "0": {
-                    "text": "As part of CDCR's COVID-19 prevention efforts, normal visiting will be canceled statewide until further notice. This includes non-contact visits, family visits, and the Division of Juvenile Justice. You can find updates on the CDCR {0} for visitation information.",
-                    "links": {
-                      "0": {
-                        "text": "website",
-                        "link": "https://www.cdcr.ca.gov/visitors/"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "2": {
-            "title": "I am looking for bail fund resources during COVID",
-            "questions": {
-              "0": {
-                "question": "I’m looking for bail bonds for protesters.",
-                "answer": {
-                  "0": {
-                    "text": "There are many organizations that provide bail fund resources for protesters. We list a few here for you:"
-                  },
-                  "1": {
-                    "text": "National Lawyers Guild (NLG) San Francisco Chapter Hotline:"
-                  },
-                  "2": {
-                    "text": "(415) 285-1011 (for protestors arrested)"
-                  },
-                  "3": {
-                    "text": "(916) 500-4NLG (for friends and family). Please provide the full name and a birthday of the arrested person."
-                  },
-                  "4": {
-                    "text": "National bail fund network's {0} of protest bail funds in California.",
-                    "links": {
-                      "0": {
-                        "text": "list",
-                        "link": "https://bailfunds.github.io/#California"
-                      }
-                    }
-                  }
-                }
-              },
-              "1": {
-                "question": "I’m looking for bail resources for other charges.",
-                "answer": {
-                  "0": {
-                    "text": "You can find bail resources at the National Bail Fund Network's {0}.",
-                    "links": {
-                      "0": {
-                        "text": "website",
-                        "link": "https://www.communityjusticeexchange.org/nbfn-directory#california"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "sexual-harrassment": {
-        "title": "Sexual Harrassment",
-        "icon": "fa-restroom",
-        "content": {
-          "0": {
-            "title": "COVID-19 information",
-            "questions": {
-              "0": {
-                "question": "How can I stay safe as a survivor during the COVID-19 pandemic?",
-                "answer": {
-                  "0": {
-                    "text": "Here are hotlines and support tips for survivors during COVID-19:"
-                  },
-                  "1": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "For family and relationship stress",
-                        "link": "https://sfgov.org/dosw/sites/default/files/Family%20Violence%20Resources%20COVID-19_2020-04-13%20%282%29.pdf"
-                      }
-                    }
-                  },
-                  "2": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "For gender-based violence",
-                        "link": "https://sfgov.org/dosw/sites/default/files/COVID-19%20DV%20One%20Pager_Updated033020.pdf"
-                      }
-                    }
-                  },
-                  "3": {
-                    "text": "Here are two websites with tips for survivors on staying safe during COVID-19:"
-                  },
-                  "4": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "National Domestic Violence Hotline",
-                        "link": "https://www.thehotline.org/2020/03/13/staying-safe-during-covid-19"
-                      }
-                    }
-                  },
-                  "5": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "Sanctuary for Families",
-                        "link": "https://sanctuaryforfamilies.org/wp-content/uploads/2020/03/Safety-Plan-Flyer.pdf"
-                      }
-                    }
-                  },
-                  "6": {
-                    "text": "{0} for survivors who are currently in a relationship with their abuser.",
-                    "links": {
-                      "0": {
-                        "text": "Here is general information",
-                        "link": "https://www.womenslaw.org/about-abuse/safety-tips/domestic-violence-victims"
-                      }
-                    }
-                  }
-                }
-              },
-              "1": {
-                "question": "What additional resources and support services are available during the COVID-19 pandemic?",
-                "answer": {
-                  "0": "The Coronavirus Aid, Relief, and Economic Security Act (CARES Act) provides for an array of resources, including unemployment insurance, additional funds for serving survivors of domestic violence, and housing protections. More information about these resources can be found here:",
-                  "1": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "The National Network to End Domestic Violence",
-                        "link": "https://nnedv.org/wp-content/uploads/2020/04/Library_Policy_Housing_Resources_in_CARES_Act.pdf"
-                      }
-                    }
-                  },
-                  "2": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "Futures Without Violence",
-                        "link": "https://www.futureswithoutviolence.org/Support-for-Working-Families"
-                      }
-                    }
-                  },
-                  "3": {
-                    "text": "Survivors may face barriers obtaining relief payments provided by the CARES Act. The National Network to End Domestic Violence {0} for how survivors can obtain their payments.",
-                    "links": {
-                      "0": {
-                        "text": "has outlined processes",
-                        "link": "https://nnedv.org/wp-content/uploads/2020/04/Library_CTA_FINAL_CARESAct_ReliefPayment.pdf"
-                      }
-                    }
-                  }
-                }
-              },
-              "2": {
-                "question": "Can I be evicted during the COVID-19 pandemic?",
-                "answer": {
-                  "0": {
-                    "text": "Your state or locality may have put a pause on evictions during the COVID-19 pandemic. While these \"eviction moratoriums\" may have exceptions allowing for evictions due to criminal activity or other lease violations, domestic violence survivors have additional protections from evictions. Information on these protections and how to access them can be found {0}.",
-                    "links": {
-                      "0": {
-                        "text": "here",
-                        "link": "https://www.nhlp.org/wp-content/uploads/VAWA-Housing-Protections-COVID-19.pdf"
-                      }
-                    }
-                  }
-                }
-              },
-              "3": {
-                "question": "I have a court appearance during the COVID-19 pandemic. How should I prepare?",
-                "answer": {
-                  "0": {
-                    "text": "{0} provides general information about the court process for survivors who are not represented by lawyers.",
-                    "links": {
-                      "0": {
-                        "text": "This resource",
-                        "link": "https://www.womenslaw.org/laws/preparing-for-court-yourself"
-                      }
-                    }
-                  }
-                }
-              },
-              "4": {
-                "question": "Where can I find information on court policies during COVID-19?",
-                "answer": {
-                  "0": {
-                    "text": "Some courthouses have closed or postponed hearings due to the COVID-19 pandemic. Information on court closures and answers to frequently asked questions involving courts and COVID-19 can be found {0}.",
-                    "links": {
-                      "0": {
-                        "text": "here",
-                        "link": "https://www.womenslaw.org/laws/preparing-court-yourself/frequently-asked-questions-involving-courts-and-covid-19"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "1": {
-            "title": "Workplace information",
-            "questions": {
-              "0": {
-                "question": "I am an employee experiencing violence or threats of violence in my workplace. What can I do?",
-                "answer": {
-                  "0": {
-                    "text": "The protections available to employees experiencing violence or threats of violence in the workplace are generally the same as pre-COVID-19. There are steps that you and your employer can take to address violence in your workplace, including filing a complaint against your employer with the government, and filing for a workplace violence restraining order."
-                  },
-                  "1": {
-                    "text": "More information on these and other steps and on different kinds of sexual harassment and workplace violence can be found here:"
-                  },
-                  "2": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "General information",
-                        "link": "https://www.womenslaw.org/about-abuse/workplace/all"
-                      }
-                    }
-                  },
-                  "3": {
-                    "text": "{0}",
-                    "links": {
-                      "0": {
-                        "text": "Filing for a workplace restraining order in California",
-                        "link": "https://www.womenslaw.org/laws/ca/restraining-orders/workplace-violence-restraining-orders"
-                      }
-                    }
-                  }
-                }
-              },
-              "1": {
-                "question": "Can I get time off from work to go to court or to get resources and/or support?"
-              }
-            }
-          }
-        }
-      }
-    }
+  "blm-banner": {
+    "title": "Black Lives Matter.",
+    "button": "Read our statement"
   }
 }

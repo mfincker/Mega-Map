@@ -36,9 +36,9 @@
     "title": "Sobre este sitio",
     "front-page": {
       "p1": "Hola!",
-      "p2a": "Proporcionamos información sobre los sitios de comidas escolares en el Área de la Bahía, actualizada cada dos semanas.",
-      "p2b": "Pronto, incluiremos también información actualizada sobre comida gratis, asistencia legal, ayuda en efectivo, salud médica y mental, cuidado de niños, apoyo para casos de violencia doméstica, vivienda y recursos para pruebas de COVID-19. ¡Estas categorías son un trabajo en progreso! Estamos trabajando con nuestros socios para reunir la mejor información disponible, mantenerla actualizada y compartirla en la manera más sencilla y útil.",
-      "p3": "Empieza al seleccionar donde esta usted y lo que esta buscando.",
+      "p2a": "Nosotros proporcionamos información sobre los sitios de comidas escolares en el Área de la Bahía, esta página es actualizada cada dos semanas.",
+      "p2b": "Pronto incluiremos también información actualizada sobre comida gratis, asistencia legal, ayuda en efectivo, salud médica y mental, cuidado de niños, apoyo para casos de violencia doméstica, vivienda y recursos para pruebas de COVID-19. Estas categorías son un trabajo en progreso. Estamos trabajando con nuestros socios para reunir la mejor información disponible, mantenerla actualizada y compartirla de la manera más sencilla y útil.",
+      "p3": "Empieza seleccionando dónde está usted (su ubicación) y lo que está buscando.",
       "p4": {
         "text": "Estamos afiliados a {0} y {1} de Stanford y estamos extremadamente agradecidos con Bill Behrman, Sara Altman y Cheryl Phillips por su continuo apoyo y asesoramiento.",
         "link0": "Laboratorio de Retos de Datos",
@@ -47,48 +47,92 @@
     },
     "about-us-sources": "Nuestro base de datos se beneficia de los datos recogidos por las siguientes organizaciones:\nLocalizador de las tiendas de USDA SNAP \nLocalizador de las tiendas de USDA WIC \nSecond Harvest de Silicon Valley\nStanford Pediatric Advocacy\n\nTenemos un equipo de voluntarios increíbles que verifican los datos y recopilan cualquier información adicional, como horas adicionales de Covid-19 para adultos mayores, opciones de recogida segura en la acera, etc.",
     "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
+      "link0": "info@unboxproject.org"
     },
     "about-us-disclaimer": "Este proyecto de Recursos del Área de la Bahía es puramente voluntario. Tenemos un equipo de humanos que recopila y verifica los datos de diversas fuentes. Hacemos nuestro mejor esfuerzo para mantener toda la información en el sitio lo más actualizada posible, sin embargo, no podemos garantizar que la información sea 100% precisa.",
     "about-us": {
-      "header": "Acerca de nosotros",
+      "header": "Misión",
       "p1": {
-        "text": "Somos un proyecto de código abierto mantenido por voluntarios para ayudar a las comunidades a navegar la crisis COVID al proporcionar información sobre recursos públicos. Este proyecto comenzó como un {0}, y ahora proporciona información sobre más recursos, como ubicaciones y horarios para comidas gratis, asistencia alimentaria, asistencia legal y asistencia médica. Somos parte de la organización {1}.",
+        "text": "Creemos que todos deben tener acceso a información confiable sobre los recursos disponibles en la comunidad local, en su idioma, en una plataforma simple y accesible.",
         "link1": "unBox",
         "link0": "mapa de comidas escolares del Área de la Bahía"
       },
       "p2": {
-        "text": "El desarrollo de este proyecto fue adaptado de {0}.",
+        "text": "BayAreaCommunity.org es un proyecto dirigido por la comunidad que trabaja con organizaciones locales para recoger, actualizar y centralizar información confiable sobre servicios comunitarios. Compartimos esta información con las organizaciones, los trabajadores sociales y los residentes del Área de la Bahía que buscan recursos a través de un sitio web multilingüe, compatible con los dispositivos móviles.",
         "link": "NCCovid Support"
       },
       "p3": {
-        "text": "Puede encontrar más información sobre el proyecto, incluido el código fuente para replicar el proyecto, en nuestra {0}.",
-        "link": "página de Github"
+        "text": "Somos un proyecto de la organización {0}, la cual es una iniciativa liderada por estudiantes y recién graduados luchando contra la inseguridad alimentaria en los EE. UU.",
+        "link": "unBox"
       }
     },
+    "our-story": {
+      "header": "Nuestra historia",
+      "school-meals": {
+        "title": "Comidas escolares:",
+        "subtitle": "BayAreaCommunity.org (BAC) muestra todos los sitios donde se ofrecen comidas escolares en los 9 condados del Área de la Bahía y se actualiza cada dos semanas."
+      },
+      "p1": "Comenzamos en marzo del 2020 cuando los cierres de las escuelas debido al COVID-19 amenazaron con privar a muchas familias de las comidas escolares diarias. Frente a esta situación, el USDA permitió a los distritos escolares atender no solo a los estudiantes de su distrito, sino a todos los niños con horarios y lugares de servicio flexibles. Sin embargo, estos horarios y lugares cambiaban con frecuencia y no existía un recurso integro y confiable para ayudar a las familias a encontrar dónde había comidas disponibles. Al ver esto, nuestro equipo de estudiantes y graduados de Stanford utilizó Google MyMaps para crear y actualizar una página web con un mapa bilingüe trazando las comidas escolares del Área de la Bahía, que puede funcionar en los teléfonos celulares.",
+      "p2": {
+        "text": "Dentro de dos semanas, nuestro mapa recibió medio millón de visitas. Los sitios web del distrito escolar exhibieron nuestro sitio y aparecimos en {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, y {8}. Nos asociamos con {9} para actualizar {10} para los pacientes de bajos ingresos del Stanford Hospital y los distribuimos a socios y condados. Comenzamos a aportar los datos de nuestras comidas escolares a la línea directa y {11} de No Kid Hungry. El Instituto de Políticas de Nutrición de la UC y Nourish CA usaron nuestros datos para abogar por la expansión financiera de las comidas escolares, los beneficios de nutrición infantil y las renuncias de comidas escolares del USDA. Desde mayo, Anne Moertel, de la oficina oficial de Información Pública de los Servicios de Nutrición Estudiantil del Distrito Escolar Unificado de San Francisco (SFUSD), nos ha aconsejado.",
+        "link0": "SF Gate",
+        "link1": "Mercury News",
+        "link2": "NBC Bay Area",
+        "link3": "KQED",
+        "link4": "Palo Alto Online",
+        "link5": "Stanford News",
+        "link6": "Local News Matters",
+        "link7": "Stanford Pyjama Talks",
+        "link8": "Stanford Media",
+        "link9": "Stanford Pediatric Advocacy",
+        "link10": "los folletos de recursos",
+        "link11": "al mapa nacional de mensajes de texto de comidas gratuitas"
+      },
+      "p3": "Para actualizar nuestra base de datos de comidas escolares cada dos semanas, diez voluntarios dedicados prueban los sitios web del distrito escolar y las páginas de redes sociales, y llaman a los distritos. Realizamos auditorías mensuales de la calidad de los datos para asegurarnos que seguimos proporcionando información precisa, actualizada y accesible a las familias del Área de la Bahía.",
+      "building-beyond": {
+        "title": "Más allá de las comidas escolares:",
+        "subtitle": "A medida que continuamos actualizando y compartiendo nuestra base de datos de comidas escolares, estamos trabajando con nuestros socios para brindar información aparte, incluyendo otros recursos alimentarios gratuitos, tiendas que aceptan cupones de alimentos, mercados de agricultores, atención médica, asistencia en efectivo, vivienda, cuidado infantil, tecnología, asistencia legal y más."
+      },
+      "p4": "Nuestros socios locales, sus trabajadores sociales y los residentes a los que apoyan nos han demostrado la importancia de información de recursos comunitarios precisos, multilingüe y accesible. A diferencia de las comidas escolares, que requirieron la creación de nuestra propia base de datos, muchas organizaciones locales ya están trabajando para rastrear y compartir información actualizada sobre otros recursos comunitarios, pero necesitan apoyo para asegurar que sus recursos permanezcan actualizados.",
+      "p5": "BAC ayuda a:",
+      "p6": "Actualizar las bases de datos de recursos, mapas y sitios web para ayudar a otras organizaciones de manera directa.",
+      "p7": "Reunir información actualizada de diferentes organizaciones en el Área de la Bahía para crear base de datos centralizada, de múltiples recursos y gratuita.",
+      "p8": "Compartir esta información con personas que buscan recursos y brindar referencias a través de nuestro sitio web optimizado para dispositivos móviles, utilizando un diseño centrado en los usuarios e informado por los trabajadores sociales y los residentes locales."
+    },
     "info-sources": {
-      "header": "Fuentes de Información",
-      "p1": "Nuestro base de datos se beneficia de los datos recogidos por las siguientes organizaciones:",
+      "header": "Fuentes de datos",
+      "p1": "Nuestra base de datos de información se beneficia de los datos recopilados por las siguientes fuentes:",
       "p2": "Tenemos un equipo de voluntarios increíbles que verifican los datos y recopilan cualquier información adicional, como horas adicionales de Covid-19 para adultos mayores, opciones de recogida segura en la acera, etc."
     },
     "info-source": {
       "link1": "Localizador de las tiendas de USDA SNAP",
       "link2": "Localizador de las tiendas de USDA WIC",
-      "link3": "Second Harvest de Silicon Valley",
-      "link4": "Stanford Pediatric Advocacy",
-      "link5": "Centro de ecología de Berkeley"
+      "link3": "Centro de ecología de Berkeley",
+      "link4": "Visor de recursos alimentarios de SF",
+      "link5": "Recursos alimentarios del condado de Santa Clara",
+      "link6": "Mapa de distribución, pruebas y servicios de alimentos COVID-19 del condado de Alameda",
+      "link7": "Mapa de distribución de alimentos COVID-19 del condado de Contra Costa",
+      "link8": "Localizador de oficinas del condado de CalFresh",
+      "p2": {
+        "text": "URISA's GISCorps, Coders Against COVID ({0}), and Esri, 2020. COVID-19 Testing Locations in the United States. Spatial dataset. {1}",
+        "link0": "findcovidtesting.org",
+        "link1": "https://services.arcgis.com/8ZpVMShClf8U8dae/arcgis/rest/services/TestingLocations_public/FeatureServer"
+      }
     },
     "contact-us": {
-      "header": "Contactenos",
+      "header": "Conectar",
       "p1": {
-        "text": "Si usted tiene preguntas sobre cualquier adición de datos o inexactitudes, o para cualquier otra pregunta, comuníquese con {0}.",
-        "link": "baycommunityresource@gmail.com"
+        "text": "¡Lea nuestro {0} más reciente para obtener más información sobre nuestro proyecto! Puede encontrar el código de fuente para replicar el proyecto en nuestra {1]. Todos nuestros datos son de código abierto y están disponibles a pedido, a través de nuestra base de datos en Airtable. No dude en contactar a {2} con cualquier pregunta, inquietud o sugerencia.",
+        "link0": "informe de impacto",
+        "link1": "página de Github",
+        "link2": "info@unboxproject.org",
+        "link": "info@unboxproject.org"
       },
       "contact-us-header": "Contactenos aqui"
     },
     "disclaimer": {
       "header": "Renuncia",
-      "p": "Este proyecto de Recursos del Área de la Bahía es puramente voluntario. Tenemos un equipo de humanos que recopila y verifica los datos de diversas fuentes. Hacemos nuestro mejor esfuerzo para mantener toda la información en el sitio lo más actualizada posible, sin embargo, no podemos garantizar que la información sea 100% precisa."
+      "p": "Nuestro equipo de voluntarios busca y verifica datos de diversas fuentes. También ayudamos a nuestras organizaciones asociadas para actualizar sus bases de datos e importarlas a nuestro sitio web. Intentamos asegurar que nuestra base de datos de comidas escolares sea 100% precisa y esté actualizada, aun así, no podemos garantizar que no tengamos errores. Pronto, también incluiremos información actualizada sobre alimentos gratuitos, asistencia legal, asistencia en efectivo, salud médica y mental, cuidado de niños, apoyo para violencia doméstica, vivienda y recursos para las pruebas COVID-19, pero estas categorías aún están en progreso. Estamos trabajando con nuestros socios para reunir la mejor información disponible, mantenerla actualizada y compartirla de una manera más sencilla y útil."
     },
     "spthanks": {
       "p": "Agradecimiento especial a {0} y {1}  por potenciar nuestro sitio",
@@ -97,10 +141,26 @@
     },
     "our-team": {
       "header": "Nuestro equipo",
+      "p1": "Somos una comunidad de estudiantes, graduados y profesores locales de Stanford, USF, UC Berkeley, Palo Alto High School, Castilleja High School, Gunn High School y Harker High School, y voluntarios de Code for San Jose, la sección local de Code for America.",
+      "lead": "Líder del proyecto",
+      "data-engineers": "Ingenieros de datos",
+      "developers": "Desarrolladores",
+      "data-warriors": "Guerreros de entrada de datos",
+      "school-meals-lead": "Coordinador de datos de comidas escolares",
+      "project-manager": "Gerente de proyecto",
+      "health-lead": "Coordinadora de datos de de salud",
+      "dv-lead": "Coordinadora de datos de DV",
+      "legal-lead": "Coordinadora de datos de legales",
+      "p2": {
+        "text": "Estamos inmensamente agradecidxs con Joyce Tagal por su liderazgo en la fundación de BAC; Maeva Fincker y nuestros desarrolladores originales, quienes crearon nuestra interfaz de usuario personalizada en asociación con y adaptado del maravilloso equipo de {0}; Bill Behrman del {1} por su sabia dirección ; Cheryl Phillips de {2} por su apoyo publicitario; los estudiantes de la Stanford Future Bay Initiative, la clase de Stanford Sustainable Cities y el programa Stanford Law COVID Pro Bono por su inestimable colaboración; y Open Referral y Mapbox por su asistencia técnica y asesoramiento.",
+        "link0": "NC COVID Support",
+        "link1": "Stanford Data Lab",
+        "link2": "Big Local News"
+      },
       "sourcing": "Fuentes y traducción de datos:",
       "dev": "Ingenería de datos y desarrollo:",
       "resource": "coordinadores de los recursos",
-      "translate": "traductores",
+      "translate": "Traductores",
       "dqual": "calidad de los datos",
       "internal-community": "comunidad interno",
       "projl": "jefe del proyecto",
@@ -329,7 +389,7 @@
     "additional_info_text": "¿Algo más que falta, debe cambiarse o debe mostrarse?",
     "additional_info_placeholder": "Nuevo servicio, ubicación permanentemente cerrada, horario comercial superior ...",
     "no_edit": "Nada ha cambiado.",
-    "submission_error": "Hubo un error durante el envio del formulario. Inténtalo de nuevo."
+    "submission_error": "Hubo un error durante el envío del formulario. Vuelva a intentarlo o contáctenos en info@unboxproject.org."
   },
   "pebt": {
     "header": "Beneficios de comida para los niños que reciben comidas reducidas o gratis.",
@@ -344,5 +404,8 @@
     "text_sub": "Si lo seleccionan para una entrevista, todas las sesiones se realizarán por teléfono o video, y le compensaremos por su tiempo.",
     "header": "Ayúdanos a servirle mejor."
   },
-  "DO NOT TRANSLATE FROM HERE DOWN": "DO NOT TRANSLATE FROM HERE DOWN"
+  "blm-banner": {
+    "title": "Black Lives Matter.",
+    "button": "Lea nuestra declaración"
+  }
 }
