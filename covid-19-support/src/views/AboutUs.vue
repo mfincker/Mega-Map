@@ -19,7 +19,7 @@
         $t('about.our-story.p2.link0')
       }}</a>
       <a href="https://www.mercurynews.com/2020/03/20/map-where-in-the-bay-area-to-get-free-school-lunches-during-coronavirus-closures/">{{
-        $t('about.our-story.p2.link2')
+        $t('about.our-story.p2.link1')
       }}</a>
       <a href="https://www.nbcbayarea.com/news/coronavirus/school-meal-pickup-locations-expand-as-state-ordered-to-stay-home/2259136/">{{
         $t('about.our-story.p2.link2')
