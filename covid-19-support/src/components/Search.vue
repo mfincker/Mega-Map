@@ -1,18 +1,42 @@
 <template>
   <b-form id="search" @submit="onSubmit">
-    <b-list-group horizontal class="need-location-group">
-      <div class="searchDropdown">
-        <!-- <div class="searchDropdown-label" v-if="isInitialSearch">Looking for:</div> -->
-        <b-form-select v-model="need" :options="needOptions" />
-        <b-form-invalid-feedback v-if="submitted" :state="selectedNeed">{{ $t('message.' + 'select_resource') }}</b-form-invalid-feedback>
+    <div v-if="isCurrentPathAtIndex">
+      <div class="need-location-group">
+        <p class="introParagraph">{{ labelEveryTwoWeeks }}</p>
+        <div class="searchItems">
+          <div class="searchDropdown">
+            <b-form-select v-model="need" :options="needOptions" />
+            <b-form-invalid-feedback v-if="submitted" :state="selectedNeed">{{
+              $t('message.' + 'select_resource')
+            }}</b-form-invalid-feedback>
+          </div>
+          <div class="searchDropdown zipcode-layout">
+            <div>
+              <b-form-input ref="zipcode" v-model="nearZip" :placeholder="$t('label.zipcode')" />
+              <b-form-invalid-feedback v-if="submitted" :state="validZip">{{ $t('message.' + zipErroMessage) }}</b-form-invalid-feedback>
+            </div>
+            <b-button type="submit" variant="primary" class="search-btn"><i class="fas fa-search"></i></b-button>
+          </div>
+        </div>
+        <p class="introParagraph introParagraph-light">{{ labelStartBySelecting }}</p>
+        <p class="introParagraph-last">{{ labelSoonWeWill }}</p>
       </div>
-      <div class="searchDropdown">
-        <!-- <div class="searchDropdown-label" v-if="isInitialSearch">Zipcode:</div> -->
-        <b-form-input ref="zipcode" v-model="nearZip" :placeholder="$t('label.zipcode')" />
-        <b-form-invalid-feedback v-if="submitted" :state="validZip">{{ $t('message.' + zipErroMessage) }}</b-form-invalid-feedback>
-      </div>
-      <b-button type="submit" variant="primary" class="search-btn"><i class="fas fa-search"></i></b-button>
-    </b-list-group>
+    </div>
+    <div v-else>
+      <b-list-group horizontal class="need-location-group-non-idx">
+        <div class="searchDropdown">
+          <!-- <div class="searchDropdown-label" v-if="isInitialSearch">Looking for:</div> -->
+          <b-form-select v-model="need" :options="needOptions" />
+          <b-form-invalid-feedback v-if="submitted" :state="selectedNeed">{{ $t('message.' + 'select_resource') }}</b-form-invalid-feedback>
+        </div>
+        <div class="searchDropdown">
+          <!-- <div class="searchDropdown-label" v-if="isInitialSearch">Zipcode:</div> -->
+          <b-form-input ref="zipcode" v-model="nearZip" :placeholder="$t('label.zipcode')" />
+          <b-form-invalid-feedback v-if="submitted" :state="validZip">{{ $t('message.' + zipErroMessage) }}</b-form-invalid-feedback>
+        </div>
+        <b-button type="submit" variant="primary" class="search-btn"><i class="fas fa-search"></i></b-button>
+      </b-list-group>
+    </div>
   </b-form>
 </template>
 
@@ -28,6 +52,9 @@ export default {
     }
   },
   props: {
+    labelEveryTwoWeeks: String,
+    labelStartBySelecting: String,
+    labelSoonWeWill: String,
     needFromApp: String,
     nearLocation: String,
     // userLocation: { lat: Number, lon: Number },
@@ -47,6 +74,9 @@ export default {
     }
   },
   computed: {
+    isCurrentPathAtIndex() {
+      return this.$route.fullPath === '/'
+    },
     validZip() {
       return validZipcodes.has(this.nearZip)
     },
@@ -187,11 +217,44 @@ input:-webkit-autofill {
   margin: 0 auto !important;
 }
 
-.need-location-group {
-  /* flex-wrap: wrap; */
+.need-location-group-non-idx {
   justify-content: space-between;
   width: 100%;
   margin: 0 auto;
   padding: 0;
+}
+
+.need-location-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.introParagraph {
+  padding: 24px 8px 10px;
+}
+
+.introParagraph-last {
+  padding: 0px 8px 10px;
+}
+
+.introParagraph-light {
+  color: $gray-600;
+}
+
+.searchItems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.zipcode-layout {
+  display: flex;
+  flex-direction: row;
 }
 </style>
