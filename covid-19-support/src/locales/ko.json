@@ -47,7 +47,7 @@
     },
     "about-us-sources": "저희 데이터 정보들은 아래의 조직으로부터 제공되었습니다.  USDA SNAP 가게 위치 추적기\r\nUSDA WIC 가게 위치추적기\r\nSecond Harvest of Silicon Valley\r\nStanford Pediatric Advocacy",
     "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
+      "link0": "info@unboxproject.org"
     },
     "about-us-disclaimer": "이 베이지역 자료 프로젝트는 순수한 자원 봉사 입니다. 저희들은  여러 다양한 정보로 부터 자료를 모집하여 선별작업을 하는 팀 입니다. 저희들은 최선을 다해 모든 정보들이 가장 최근으로 유지 될수 있도록 하고 있습니다. 하지만 모든 정보가 100% 정확 하다고 보장을 할 수 는 없습니다.",
     "about-us": {
@@ -63,7 +63,7 @@
       },
       "p3": {
         "text": "저의 프로젝트에대한 더 자세한 정보 또는 유사 프로젝트 를 만들기 위한 소스 코드를 원하시면 {0} 으로 가세요.",
-        "link": "Github 페이지"
+        "link": "unBox"
       }
     },
     "info-sources": {
@@ -82,7 +82,7 @@
       "header": "문의하기",
       "p1": {
         "text": "추가 자료 제공 또는 부정확한 정보 혹은 다른 문의 사항이 있으시면 {0} 으로 연락 바랍니다.",
-        "link": "baycommunityresource@gmail.com"
+        "link": "info@unboxproject.org"
       },
       "contact-us-header": "여기에서 저희에게 연락하십시오"
     },
@@ -328,7 +328,7 @@
     "additional_info_text": "이외의  누락되거나 변경해야 하거나 표기해야 할 사항들이 있습니까?",
     "additional_info_placeholder": "새로운 세비스, 지역이 영구히 문을 닫았습니다., 연장자 지정 쇼핑 시간...",
     "no_edit": "변경 사항이 없습니다.",
-    "submission_error": "양식제출중 오류가 발생했습니다, 다시 시도 하시거나 baycommunityresource@gmail.com 로 연락 바랍니다."
+    "submission_error": "양식제출중 오류가 발생했습니다, 다시 시도 하시거나 info@unboxproject.org 로 연락 바랍니다."
   },
   "pebt": {
     "header": "무료급식이나 급식보조대상 학생들을 위한  음식서비스",

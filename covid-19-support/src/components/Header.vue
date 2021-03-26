@@ -10,7 +10,7 @@
       <b-collapse id="nav-collapse" v-model="navState" is-nav class="text-right">
         <b-navbar-nav>
           <b-nav-item to="/">{{ $t('sidebar.home') }}</b-nav-item>
-          <b-nav-item to="/about-us">{{ $t('about.about-us.header') }}</b-nav-item>
+          <b-nav-item to="/about-us">{{ $t('about.linktext') }}</b-nav-item>
           <b-nav-item href="https://forms.gle/dPVK8Pd8XKAiQ3Ti9" target="_blank">{{ $t('sidebar.feedback') }}</b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
@@ -41,7 +41,7 @@
           <img :src="require('../images/logo.svg')" width="24" />
           Bay Community
         </b-nav-item>
-        <b-nav-item to="/about-us">{{ $t('about.about-us.header') }}</b-nav-item>
+        <b-nav-item to="/about-us">{{ $t('about.linktext') }}</b-nav-item>
         <b-nav-item href="https://forms.gle/dPVK8Pd8XKAiQ3Ti9" target="_blank">{{ $t('sidebar.feedback') }}</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">

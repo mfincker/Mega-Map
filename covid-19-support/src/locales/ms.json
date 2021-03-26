@@ -47,48 +47,92 @@
     },
     "about-us-sources": "Pangkalan data maklumat kami menggunakan data yang dikumpulkan oleh organisasi berikut:\nPencari Kedai USDA SNAP\nPencari Kedai USDA WIC\nSecond Harvest Silicon Valley\nProgram Advokasi Pediatrik Stanford\n\nKumpulan sukarelawan kami lanjutnya mengesahkan data dan mengumpulkan maklumat tambahan seperti waktu senior Covid-19, pilihan pengambilan tepi jalan yang selamat dan lain-lain.",
     "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
+      "link0": "info@unboxproject.org"
     },
     "about-us-disclaimer": "Projek Bay Area Resources adalah projek sukarelawan. Sukarelawan kami mengumpulkan dan mengesahkan data dari pelbagai sumber. Kami cuba dengan sedaya upaya untuk memastikan semua maklumat di laman web ini tepat. Namun kami tidak dapat menjamin maklumat tersebut sepenuhnya.",
     "about-us": {
-      "header": "Projek Ini",
+      "header": "Misi",
       "p1": {
-        "text": "Project ini adalah sumber terbuka dan sukarelawan untuk membantu masyarakat Bay Area menavigasi krisis COVID dengan memberikan maklumat penting. Projek ini dimulakan sebagai {peta makan sekolah Bay Area}, dan kini memberikan maklumat lebih lanjut seperti jadual dan lokasi untuk bantuan makanan, bantuan undang-undang, dan bantuan perubatan. Kami ahli organisasi {1}.",
+        "text": "Setiap orang harus mempunyai akses ke maklumat yang boleh dipercayai mengenai sumber komuniti tempatan, dalam bahasa mereka, di platform yang mudah dan mudah diakses.",
         "link1": "unBox",
         "link0": "peta makan sekolah Bay Area"
       },
       "p2": {
-        "text": "Pembangunan untuk projek ini diadaptasi dari {0}.",
+        "text": "BayAreaCommunity.org adalah projek yang didorong oleh komuniti yang bekerjasama dengan organisasi tempatan untuk mengumpulkan, mengemas kini, dan memusatkan maklumat yang boleh dipercayai mengenai perkhidmatan masyarakat. Kami berkongsi maklumat ini dengan organisasi, pekerja sosial, dan penduduk Bay Area yang mencari sumber melalui laman web berbilang bahasa yang mudah alih.",
         "link": "NCCovid Support"
       },
       "p3": {
-        "text": "Anda boleh mendapatkan lebih banyak maklumat mengenai projek, termasuk kod sumber untuk meniru projek, dari halaman {0} kami.",
-        "link": "website Github"
+        "text": "Kami adalah projek organisasi {0}, suatu kolektif pelajar kolej yang aktif dalam menangani ketidaksamaan pengedaran makanan di AS.",
+        "link": "unBox"
       }
     },
+    "our-story": {
+      "header": "Cerita kita",
+      "school-meals": {
+        "title": "Makanan Sekolah:",
+        "subtitle": "BayAreaCommunity.org (BAC) memetakan setiap tempat makan sekolah di 9 daerah Bay Area, dan dikemas kini setiap dua minggu."
+      },
+      "p1": "Kami bermula pada bulan Mac 2020, ketika penutupan sekolah COVID-19 mengancam makanan harian kanak-kanak. Masa itu, USDA membenarkan daerah sekolah melayani bukan sahaja pelajar di daerah mereka, tetapi semua anak-anak pada waktu dan lokasi perkhidmatan yang fleksibel. Walau bagaimanapun, waktu dan lokasi untuk setiap sekolah sering berubah, dan tidak ada satu sumber yang dipercayai untuk membantu keluarga Bay Area mencari makanan tersedia. Oleh itu, pasukan kami yang terdiri daripada pelajar dan alumni Stanford menggunakan Google MyMaps untuk membuat dan mengemas kini peta makanan sekolah dwibahasa Bay Area yang berfungsi untuk telefon bimbit.",
+      "p2": {
+        "text": "Dalam dua minggu, peta kami mendapat setengah juta tontonan. Laman web daerah sekolah memaparkan laman web kami, dan kami dipaparkan di {1}, {2}, {3}, {4}, {5}, {6}, {7} dan {8}. Kami bekerjasama dengan {9} untuk mengemas kini {10} untuk pesakit berpendapatan rendah di Hospital Stanford, dan mengedarkannya kepada rakan kongsi dan daerah. Kami mula memberikan data makanan sekolah kami ke {11} No Kid Hungry. Institut Dasar Pemakanan UC dan Nourish CA memanfaatkan data kami untuk menyokong pengembangan dana makan sekolah, faedah pemakanan anak, dan waiver pengecualian makan sekolah USDA. Sejak bulan Mei, kami dinasihatkan oleh Anne Moertel, Pegawai Maklumat Awam untuk Perkhidmatan Pemakanan Pelajar San Francisco Unified School District (SFUSD).",
+        "link0": "SF Gate",
+        "link1": "Mercury News",
+        "link2": "NBC Bay Area",
+        "link3": "KQED",
+        "link4": "Palo Alto Online",
+        "link5": "Stanford News",
+        "link6": "Local News Matters",
+        "link7": "Stanford Pyjama Talks",
+        "link8": "Stanford Media",
+        "link9": "Stanford Pediatric Advocacy",
+        "link10": "risalah sumber",
+        "link11": "Hotline Makanan Percuma Nasional"
+      },
+      "p3": "Setiap dua minggu, sepuluh sukarelawan kami berdedikasi mengemaskini pangkalan data makanan sekolah kami, dengan memeriksa laman web daerah sekolah dan laman media sosial dan menghubungi daerah. Kami menjalankan audit kualiti data setiap bulan untuk memastikan kami terus memberikan maklumat yang tepat, kemas kini dan mudah diakses kepada keluarga Bay Area.",
+      "building-beyond": {
+        "title": "Berusaha memasukkan lebih banyak sumber daripada makanan sekolah:",
+        "subtitle": "Semasa kami terus mengemas kini dan berkongsi pangkalan data makanan sekolah, kami bekerjasama dengan rakan kongsi kami untuk memberikan maklumat di luar waktu makan sekolah, termasuk sumber makanan percuma lain, kedai yang menerima cap makanan dan pasar tani, penjagaan kesihatan, bantuan tunai, perumahan, penjagaan anak , teknologi, bantuan undang-undang dan banyak lagi."
+      },
+      "p4": "Rakan kongsi tempatan kami, kakitangan pekerja sosial mereka, dan penduduk yang mereka sokong telah menunjukkan kepada kami pentingnya maklumat sumber masyarakat yang tepat, pelbagai bahasa dan mudah diakses. Tidak seperti makanan sekolah, yang memerlukan pembinaan pangkalan data kita sendiri dari awal, banyak organisasi tempatan sudah berusaha untuk mengesan dan berkongsi maklumat terkini mengenai sumber komuniti lain, tetapi memerlukan sokongan untuk memastikan sumber mereka tetap terkini.",
+      "p5": "BAC membantu dengan:",
+      "p6": "Sukarelawan secara langsung untuk organisasi lain untuk membantu mengemas kini pangkalan data sumber, peta dan laman web mereka.",
+      "p7": "Menyatukan maklumat terkini dari pelbagai organisasi di Bay Area ke pangkalan data terpusat, pelbagai sumber, dan percuma.",
+      "p8": "Berkongsi maklumat ini dengan individu yang mencari sumber dan memberikan rujukan melalui laman web mesra mudah alih kami, menggunakan reka bentuk yang berpusatkan manusia yang dimaklumkan oleh pekerja sosial tempatan dan penduduk."
+    },
     "info-sources": {
-      "header": "Sumber maklumat",
-      "p1": "Pangkalan data maklumat kami menggunakan data yang dikumpulkan oleh organisasi berikut:",
+      "header": "Sumber data",
+      "p1": "Pangkalan data maklumat kami mendapat manfaat daripada data yang dikumpulkan oleh sumber berikut:",
       "p2": "Kumpulan sukarelawan kami lanjutnya mengesahkan data dan mengumpulkan maklumat tambahan seperti waktu senior Covid-19, pilihan pengambilan tepi jalan yang selamat dan lain-lain."
     },
     "info-source": {
       "link1": "Pencari Kedai USDA SNAP",
       "link2": "Pencari Kedai USDA WIC",
-      "link3": "Second Harvest Silicon Valley",
-      "link4": "Program Advokasi Pediatrik Stanford",
-      "link5": "Pusat Ekologi Berkeley"
+      "link3": "Pusat Ekologi Berkeley",
+      "link4": "Pemapar Sumber Makanan SF",
+      "link5": "Sumber Makanan Santa Clara County",
+      "link6": "Peta Pengedaran, Ujian dan Perkhidmatan Perkhidmatan COVID-19 County Alameda",
+      "link7": "Peta Pengedaran Makanan Contra Costa County COVID-19",
+      "link8": "Pencari Pejabat CalFresh County",
+      "p2": {
+        "text": "URISA's GISCorps, Coders Against COVID ({0}), and Esri, 2020. COVID-19 Testing Locations in the United States. Spatial dataset. {1}",
+        "link0": "findcovidtesting.org",
+        "link1": "https://services.arcgis.com/8ZpVMShClf8U8dae/arcgis/rest/services/TestingLocations_public/FeatureServer"
+      }
     },
     "contact-us": {
-      "header": "Hubungi kami",
+      "header": "Sambung",
       "p1": {
-        "text": "Untuk pertanyaan lanjut atau untuk melaporkan masalah, hubungi {0}.",
-        "link": "baycommunityresource@gmail.com"
+        "text": "Baca {0} terbaru kami untuk mengetahui lebih lanjut mengenai projek kami! Anda boleh mendapatkan kod sumber untuk meniru projek di {1}. Semua data kami adalah sumber terbuka dan tersedia atas permintaan, melalui pangkalan data Airtable kami. Jangan ragu untuk menghubungi anda dengan pertanyaan, masalah, atau pertanyaan ke {2}.",
+        "link0": "Laporan Impak",
+        "link1": "halaman Github kami",
+        "link2": "info@unboxproject.org",
+        "link": "info@unboxproject.org"
       },
       "contact-us-header": "hubungi kami di sini"
     },
     "disclaimer": {
       "header": "Penafian",
-      "p": "Projek Bay Area Resources adalah projek sukarelawan. Sukarelawan kami mengumpulkan dan mengesahkan data dari pelbagai sumber. Kami cuba dengan sedaya upaya untuk memastikan semua maklumat di laman web ini tepat. Namun kami tidak dapat menjamin maklumat tersebut sepenuhnya."
+      "p": "Pasukan sukarelawan kami mengumpulkan dan mengesahkan data dari pelbagai sumber. Kami juga membantu organisasi rakan kongsi kami mengemas kini pangkalan data mereka, dan mengimportnya ke laman web kami. Kami berusaha untuk memastikan pangkalan data makanan sekolah kami 100% tepat dan terkini, walaupun kami tidak dapat menjamin bahawa kami tidak akan mengalami kesilapan. Tidak lama lagi, kami juga akan memasukkan maklumat terkini mengenai makanan percuma, bantuan undang-undang, bantuan tunai, kesihatan perubatan dan mental, penjagaan anak, sokongan keganasan rumah tangga, perumahan, dan sumber ujian COVID-19, tetapi kategori ini masih dalam proses. Kami bekerjasama dengan rakan kongsi kami untuk menyatukan maklumat terbaik yang ada, menyimpannya terkini, dan membagikannya dengan cara yang paling mudah dan bermanfaat."
     },
     "spthanks": {
       "p": "Ribuan terima kasih kepada {0} dan {1} yang membekalkan laman web ini.",
@@ -97,10 +141,26 @@
     },
     "our-team": {
       "header": "Pasukan kami",
+      "p1": "Kami adalah komuniti pelajar tempatan, alumni, dan fakulti dari Stanford, USF, UC Berkeley, Palo Alto High School, Castilleja High School, Gunn High School, dan Harker High School, dan sukarelawan dari Code for America's local Code untuk bab San Jose .",
+      "lead": "Ketua Projek",
+      "data-engineers": "Jurutera Data",
+      "developers": "Pembangun Web",
+      "data-warriors": "Pahlawan Kemasukan Data",
+      "school-meals-lead": "Penyelaras Data Makanan Sekolah",
+      "project-manager": "Pengurus projek",
+      "health-lead": "Penyelaras Data Kesihatan",
+      "dv-lead": "Penyelaras Data DV",
+      "legal-lead": "Penyelaras Data Undang-undang",
+      "p2": {
+        "text": "Kami sangat berterima kasih kepada Joyce Tagal atas kepimpinannya dalam mendirikan BAC; Maeva Fincker dan pemaju asal kami, yang membina UI tersuai kami dengan kerjasama, dan menyesuaikan diri dari, pasukan {0} yang luar biasa; Bill Behrman dari {1} untuk bimbingan bijaknya; Cheryl Phillips dari {2} atas sokongan publisiti; pelajar dari Stanford Future Bay Initiative, Stanford Sustainable Cities class, dan Stanford Law COVID Pro Bono Program untuk kerjasama mereka yang tidak ternilai; dan Buka Rujukan dan Peti Petunjuk untuk sokongan teknikal dan nasihat mereka.",
+        "link0": "sokongan NC COVID",
+        "link1": "Stanford Data Lab",
+        "link2": "Big Local News"
+      },
       "sourcing": "Pengutipan dan penterjemahan data:",
       "dev": "Kejuruteraan data dan laman web:",
       "resource": "pengurus maklumat",
-      "translate": "penterjemah",
+      "translate": "Penterjemah",
       "dqual": "kualiti maklumat",
       "projl": "ketua projek",
       "devlead": "ketua teknikal",
@@ -321,7 +381,7 @@
     "additional_info_text": "Ada apa lagi maklumat yang hilang, perlu diubah atau mesti dipaparkan?",
     "additional_info_placeholder": "Perkhidmatan baru, lokasi ditutup secara kekal, waktu membeli-belah warga emas ...",
     "no_edit": "Tiada apa yang berubah.",
-    "submission_error": "Terdapat ralat semasa penghantaran borang. Sila cuba lagi atau hubungi kami di baycommunityresource@gmail.com."
+    "submission_error": "Terdapat ralat semasa penghantaran borang. Sila cuba lagi atau hubungi kami di info@unboxproject.org."
   },
   "pebt": {
     "header": "Faedah makanan untuk kanak-kanak yang mendapat makanan percuma atau dengan diskaun di sekolah.",
@@ -332,5 +392,8 @@
   "ux_study": {
     "header": "Tolong kami tolong kamu."
   },
-  "DO NOT TRANSLATE FROM HERE DOWN": "DO NOT TRANSLATE FROM HERE DOWN"
+  "blm-banner": {
+    "title": "Black Lives Matter.",
+    "button": "Baca kenyataan kami"
+  }
 }

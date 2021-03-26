@@ -47,48 +47,91 @@
     },
     "about-us-sources": "Ang aming database ng impormasyon ay nakikinabang mula sa data na nakolekta ng mga sumusunod na samahan:\ntagahanap ng tindahan ng USDA SNAP\ntagahanap ng tindahan ng USDA WIC\nPangalawang Pag-aani ng Silicon Valley\nAdvocacy ng Stanford Pediatric\n\nMayroon kaming isang koponan ng mga kamangha-manghang mga boluntaryo na nagpapatunay sa data at nangongolekta ng anumang karagdagang impormasyon tulad ng karagdagang Covid-19 na mga oras para sa mga nakatatanda, ligtas na pagpipilian ng curbside pick-up, etc.",
     "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
+      "link0": "info@unboxproject.org"
     },
     "about-us-disclaimer": "Ang proyektong Bay Area Resources na ito ay puro boluntaryo na hinihimok. Mayroon kaming isang koponan ng mga tao na nangolekta at nagpapatunay ng data mula sa magkakaibang mapagkukunan. Ginagawa namin ang aming makakaya upang mapanatili ang lahat ng impormasyon sa site kamakailan hangga't maaari, subalit hindi namin masiguro na ang impormasyon ay tumpak na 100%.",
     "about-us": {
-      "header": "Tungkol sa amin",
+      "header": "Misyon",
       "p1": {
-        "text": "Kami ay isang boluntaryo na hinihimok, bukas na mapagkukunan upang matulungan ang mga komunidad na mag-navigate sa krisis sa COVID sa pamamagitan ng pagbibigay ng impormasyon sa mga pampublikong mapagkukunan. Ang proyektong ito ay nagsimula bilang isang {0}, at ngayon ay nagbibigay ng impormasyon sa higit pang mga mapagkukunan tulad ng mga lokasyon at iskedyul para sa libreng pagkain, tulong sa pagkain, tulong sa legal, at tulong medikal. Bahagi kami ng samahan {1}.",
+        "text": "Dapat magkaroon ng access ang bawat isa sa maaasahang impormasyon sa mga lokal na mapagkukunan ng komunidad, sa kanilang wika, sa isang simple, naa-access na platform.",
         "link1": "unBox",
         "link0": "Mapa ng pagkain sa paaralan ng Bay Area"
       },
       "p2": {
-        "text": "Ang pag-unlad para sa proyektong ito ay inangkop mula sa {0}.",
-        "link": "NCCovid Support"
+        "text": "Ang BayAreaCommunity.org ay isang proyekto na hinihimok ng pamayanan na gumagana sa mga lokal na samahan upang mangolekta, mag-update, at gawing sentralisado ang maaasahang impormasyon sa mga serbisyo sa pamayanan. Ibinahagi namin ang impormasyong ito sa mga samahan, manggagawa sa lipunan, at residente ng Bay Area na naghahanap ng mapagkukunan sa pamamagitan ng isang mobile-friendly, multilingual website."
       },
       "p3": {
-        "text": "Maaari kang maghanap ng karagdagang impormasyon sa proyekto, kasama ang pinagmulan kodigo para sa pagtitiklop ng proyekto, mula sa aming {0}.",
-        "link": "pahina ng Github"
+        "text": "Kami ay isang proyekto ng samahan {0}, isang pakikipagtulungan sa pagkilos ng pagkain na pinangunahan ng mga mag-aaral at kamakailang nagtapos na nakikipaglaban sa kawalang-seguridad ng pagkain sa US.",
+        "link": "unBox"
       }
     },
+    "our-story": {
+      "header": "Ang Kwento namin",
+      "school-meals": {
+        "title": "Mga Pagkain sa Paaralan:",
+        "subtitle": "Ang BayAreaCommunity.org (BAC) ay nagma-mapa sa bawat site ng pagkain sa paaralan sa 9 Bay Area na mga county, at ina-update bawat dalawang linggo."
+      },
+      "p1": "Nagsimula kami noong Marso 2020, nang ang mga pagsasara ng paaralan ng COVID-19 ay nagbanta na aalisin ang maraming pamilya sa pang-araw-araw na pagkain sa paaralan. Ang pagpapakilos, pinayagan ng USDA ang mga distrito ng paaralan na maghatid hindi lamang ng mga mag-aaral sa kanilang distrito, ngunit lahat ng mga bata, sa nababaluktot na mga oras ng serbisyo at lokasyon. Ang mga oras at lokasyon na ito, gayunpaman, ay madalas na nagbago, at walang solong, maaasahang mapagkukunan upang matulungan ang mga pamilya sa buong Bay Area na alamin kung saan magagamit ang mga pagkain. Bilang tugon, ang aming koponan ng mga mag-aaral at alumni ng Stanford ay gumamit ng Google MyMaps upang lumikha at mag-update ng isang simpleng mapa ng paaralan sa dalawahang lugar ng Bay Area na gumana para sa mga telepono.",
+      "p2": {
+        "text": "Sa loob ng dalawang linggo, nakatanggap ang aming mapa ng kalahating milyong pagtingin. Ang mga website ng distrito ng paaralan ay ipinakita ang aming site, at itinampok kami sa {1}, {2}, {3}, {4}, {5}, {6}, {7} at {8}. Nakipagtulungan kami sa {9} upang i-update ang mga {10} para sa mga pasyente na may mababang kita ang Stanford Hospital, at ipinamahagi ang mga ito sa mga kasosyo at mga county. Sinimulan naming ibigay ang aming data ng mga pagkain sa paaralan sa No Kid Hungry's {11} and Map. Ang UC Nutrisyon Patakaran Institute at Nourish CA ay pinamamahalaan ang aming data upang itaguyod para sa pagpapalawak ng pagpopondo sa pagkain sa paaralan, mga benepisyo sa nutrisyon ng bata, at pag-iwas sa pagkain sa paaralan ng USDA. Mula noong Mayo, pinayuhan kami ni Anne Moertel, Public Information Officer para sa Mga Serbisyo para sa Nutrisyon ng Mag-aaral ng San Francisco Unified School District (SFUSD).",
+        "link0": "SF Gate",
+        "link1": "Mercury News",
+        "link2": "NBC Bay Area",
+        "link3": "KQED",
+        "link4": "Palo Alto Online",
+        "link5": "Stanford News",
+        "link6": "Local News Matters",
+        "link7": "Stanford Pyjama Talks",
+        "link8": "Stanford Media",
+        "link9": "Stanford Pediatric Advocacy",
+        "link10": "flyer ng mapagkukunan",
+        "link11": "National Free Meals Texting Hotline"
+      },
+      "p3": "Sampung dedikadong mga boluntaryo ang nag-a-update ng aming database ng mga pagkain sa paaralan tuwing dalawang linggo, sa pamamagitan ng pag-check sa mga website ng distrito ng paaralan at mga pahina ng social media, at pagtawag sa mga distrito. Nagsasagawa kami ng buwanang mga pag-audit sa kalidad ng data upang matiyak na patuloy kaming nagbibigay sa mga pamilya sa Bay Area ng tumpak, na-update, na naa-access na impormasyon.",
+      "building-beyond": {
+        "title": "Pagpapalawak upang isama ang mga mapagkukunan na lampas sa mga pagkain sa paaralan:",
+        "subtitle": "Sa patuloy naming pag-update at pagbabahagi ng aming database ng mga pagkain sa paaralan, nakikipagtulungan kami sa aming mga kasosyo upang makapagbigay ng impormasyon na lampas sa mga pagkain sa paaralan, kasama ang iba pang mga libreng mapagkukunan ng pagkain, mga tindahan na tumatanggap ng stamp na pagkain at merkado ng mga magsasaka, pangangalaga sa kalusugan, tulong sa cash, pabahay, pangangalaga sa bata , teknolohiya, tulong legal, at marami pa."
+      },
+      "p4": "Ang aming mga kasosyo sa lokal, kanilang kawani sa social worker, at ang mga residente na suportado nila ay ipinakita sa amin ang kahalagahan ng tumpak, maraming wika, naa-access na impormasyon sa mapagkukunan ng pamayanan. Hindi tulad ng mga pagkain sa paaralan, na kung saan kinakailangan ang pagbuo ng aming sariling database mula sa simula, maraming mga lokal na samahan ang nagtatrabaho upang subaybayan at ibahagi ang na-update na impormasyon sa iba pang mga mapagkukunan ng komunidad, ngunit kailangan ng suporta sa pagtiyak na ang kanilang mga mapagkukunan ay mananatiling napapanahon.",
+      "p5": "Ang BAC ay tumutulong sa pamamagitan ng:",
+      "p6": "Direktang pagboboluntaryo para sa iba pang mga organisasyon upang makatulong na mai-update ang kanilang mga database ng mapagkukunan, mga mapa, at mga website.",
+      "p7": "Pinagsasama ang nai-update na impormasyon mula sa iba't ibang mga organisasyon sa buong Bay Area sa isang sentralisadong, multi-mapagkukunan, at libreng database.",
+      "p8": "Ang pagbabahagi ng impormasyong ito sa mga indibidwal na naghahanap ng mapagkukunan at pagbibigay ng mga referral sa pamamagitan ng aming website na madaling gamitin sa mobile, gamit ang disenyo na nakasentro sa tao na alam ng mga lokal na manggagawa sa lipunan at residente."
+    },
     "info-sources": {
-      "header": "Pinagmulan ng Impormasyon",
-      "p1": "Ang aming database ng impormasyon ay nakikinabang mula sa data na nakolekta ng mga sumusunod na samahan:",
+      "header": "Mga Pinagmulan ng Data",
+      "p1": "Ang aming database ng mga benepisyo sa impormasyon mula sa data na nakolekta ng mga sumusunod na mapagkukunan:",
       "p2": "Mayroon kaming isang koponan ng mga kamangha-manghang mga boluntaryo na nagpapatunay sa data at nangongolekta ng anumang karagdagang impormasyon tulad ng karagdagang Covid-19 na mga oras para sa mga nakatatanda, ligtas na pagpipilian ng curbside pick-up, etc."
     },
     "info-source": {
       "link1": "tagahanap ng tindahan ng USDA SNAP",
       "link2": "tagahanap ng tindahan ng USDA WIC",
-      "link3": "Pangalawang Pag-aani ng Silicon Valley",
-      "link4": "Advocacy ng Stanford Pediatric",
-      "link5": "Sentro ng Ekolohiya ng Berkeley"
+      "link3": "Berkeley Ecology Center",
+      "link4": "SF Viewer ng Mga Mapagkukunan ng Pagkain",
+      "link5": "Mga mapagkukunan ng Pagkain ng Santa Clara County",
+      "link6": "County ng Alameda COVID-19 Mapa ng Pamamahagi, Pagsubok, at Mapa ng Mga Serbisyo",
+      "link7": "Contra Costa County COVID-19 Mapa ng Pamamahagi ng Pagkain",
+      "link8": "Naghahanap ng Opisina ng CalFresh County",
+      "p2": {
+        "text": "URISA's GISCorps, Coders Against COVID (findcovidtesting.org), and Esri, 2020. COVID-19 Testing Locations in the United States. Spatial dataset. https://services.arcgis.com/8ZpVMShClf8U8dae/arcgis/rest/services/TestingLocations_public/FeatureServer",
+        "link0": "findcovidtesting.org",
+        "link1": "https://services.arcgis.com/8ZpVMShClf8U8dae/arcgis/rest/services/TestingLocations_public/FeatureServer"
+      }
     },
     "contact-us": {
-      "header": "Makipag-ugnayan sa amin",
+      "header": "Kumonekta",
       "p1": {
-        "text": "Para sa mga katanungan sa anumang mga pagdaragdag ng data o kamalian, o para sa anumang iba pang mga katanungan, mangyaring makipag-ugnay sa {0}.",
-        "link": "baycommunityresource@gmail.com"
+        "text": "Basahin ang aming pinakabagong {0} upang malaman ang tungkol sa aming proyekto! Maaari mong makita ang source code para sa pagtiklop ng proyekto sa aming {1}. Ang lahat ng aming data ay bukas na mapagkukunan at magagamit kapag hiniling, sa pamamagitan ng aming Airtable database. Mangyaring huwag mag-atubiling makipag-ugnay sa anumang mga katanungan, alalahanin, o mga katanungan sa {2}.",
+        "link0": "Ulat sa Epekto",
+        "link1": "pahina ng Github",
+        "link2": "info@unboxproject.org",
+        "link": "info@unboxproject.org"
       },
       "contact-us-header": "Makipag-ugnayan sa amin"
     },
     "disclaimer": {
       "header": "Pagtanggi",
-      "p": "Ang proyektong Bay Area Resources na ito ay puro boluntaryo na hinihimok. Mayroon kaming isang koponan ng mga tao na nangolekta at nagpapatunay ng data mula sa magkakaibang mapagkukunan. Ginagawa namin ang aming makakaya upang mapanatili ang lahat ng impormasyon sa site kamakailan hangga't maaari, subalit hindi namin masiguro na ang impormasyon ay tumpak na 100%."
+      "p": "Kinokolekta at pinatutunayan ng aming koponan ng boluntaryo ang data mula sa magkakaibang mga mapagkukunan. Tinutulungan din namin ang aming mga samahang samahan na i-update ang kanilang mga database, at mai-import ang mga ito sa aming website. Nagsusumikap kaming matiyak na ang aming database ng mga pagkain sa paaralan ay 100% tumpak at napapanahon, bagaman hindi namin masisiguro na wala kaming mga pagkakamali. Sa madaling panahon, isasama din namin ang na-update na impormasyon tungkol sa libreng pagkain, ligal na tulong, tulong sa pera, kalusugan ng medikal at mental, pangangalaga sa bata, suporta sa karahasan sa tahanan, pabahay, at mga mapagkukunang pagsubok sa COVID-19, ngunit ang mga kategoryang ito ay isang pag-unlad na ginagawa. Nakikipagtulungan kami sa aming mga kasosyo upang pagsama-samahin ang pinakamahusay na magagamit na impormasyon, panatilihin itong kasalukuyang, at ibahagi ito sa pinakasimpleng, kapaki-pakinabang na paraan."
     },
     "spthanks": {
       "p": "Espesyal na pasasalamat sa {0} at {1} para sa kapangyarihan ng aming site.",
@@ -97,10 +140,26 @@
     },
     "our-team": {
       "header": "Ang aming koponan",
+      "p1": "Kami ay isang komunidad ng mga lokal na mag-aaral, alumni, at guro mula sa Stanford, USF, UC Berkeley, Palo Alto High School, Castilleja High School, Gunn High School, at Harker High School, at mga boluntaryo mula sa lokal na Code ng America para sa kabanata ng San Jose .",
+      "lead": "Pinuno ng proyekto",
+      "data-engineers": "Mga Data Engineer",
+      "developers": "Mga Nag-develop",
+      "data-warriors": "Data Entry Warriors",
+      "school-meals-lead": "Koordinator ng Data ng Mga Pagkain sa Paaralan",
+      "project-manager": "Tagapamahala ng proyekto",
+      "health-lead": "Tagapag-ugnay ng Data ng Kalusugan",
+      "dv-lead": "Tagapag-ugnay ng Data ng DV",
+      "legal-lead": "Legal Coordinator ng Data",
+      "p2": {
+        "text": "Lubos kaming nagpapasalamat kay Joyce Tagal sa kanyang pamumuno sa pagtatatag ng BAC; Si Maeva Fincker at ang aming orihinal na mga developer, na nagtayo ng aming pasadyang UI sa pakikipagsosyo sa, at inangkop mula sa, ang kahanga-hangang koponan ng {0}; Bill Behrman ng {1} para sa kanyang patnubay sa pantas; Cheryl Phillips ng {2} para sa kanyang suporta sa publisidad; mga mag-aaral mula sa Stanford Future Bay Initiative, Stanford Sustainable Cities class, at Stanford Law COVID Pro Bono Program para sa kanilang napakahalagang pakikipagtulungan; at Buksan ang Referral at Mapbox para sa kanilang suportang panteknikal at payo.",
+        "link0": "NC COVID Support",
+        "link1": "Stanford Data Lab",
+        "link2": "Big Local News"
+      },
       "sourcing": "Data sourcing at pagsasalin:",
       "dev": "Data engineering at pag-unlad",
       "resource": "mga coordinator ng mapagkukunan",
-      "translate": "tagasalin",
+      "translate": "Mga tagasalin",
       "dqual": "kalidad ng data",
       "internal-community": "panloob na komunidad",
       "projl": "lider ng proyekto",
@@ -329,7 +388,7 @@
     "additional_info_text": "Mayroon pa ba na pagkukulang, kailangang baguhin o dapat na ipakita?",
     "additional_info_placeholder": "Bagong serbisyo, lokasyon ay permanenteng sarado, oras ng pagbubukas para sa mas nakakatanda…",
     "no_edit": "Walang pinag iba",
-    "submission_error": "Mayroong kalisyaan/mali sa pag-mungkahi. Maaaring kaming kontakin muli sa baycommunitysource@gmail.com."
+    "submission_error": "Mayroong kalisyaan/mali sa pag-mungkahi. Maaaring kaming kontakin muli sa info@unboxproject.org."
   },
   "pebt": {
     "header": "Benepisyo ng pagkain para sa mga bata na makakakuha ng libre o bawas na pagkain.",
@@ -343,5 +402,9 @@
     "link_url": "https://bit.ly/bac-interviews",
     "text_sub": "Kung napili ka para sa pakikipanayam, ang lahat ng mga sesyon ay isasagawa nang malayuan sa pamamagitan ng telepono / video chat, at babayaran ka namin para sa iyong oras.",
     "header": "Tulungan kaming maglingkod nang mas mahusay."
+  },
+  "blm-banner": {
+    "title": "Mahalaga Rin sa Amin ang Buhay ng Mga Itim",
+    "button": "Basahin ang aming pahayag"
   }
 }

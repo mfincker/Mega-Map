@@ -47,48 +47,92 @@
     },
     "about-us-sources": "Cơ sở dữ liệu của chúng tôi dựa trên thông tin từ các tổ chức như:\nĐịnh vị cửa hàng USDA SNAP \nĐịnh vị cửa hàng USDA WIX\nTổ chức Second Harvest khu vực Silicon Valley\nTổ chức vận đồng cho bệnh nhi Stanford\n\nCác tình nguyện viên phi thường của chúng tôi là người kiểm chứng và thu thập các thông tin như giờ hoạt động COVID-19 dành riêng cho người lớn tuổi, các lựa chọn lấy hàng an toàn từ bên lề đường..vv",
     "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
+      "link0": "info@unboxproject.org"
     },
     "about-us-disclaimer": "Dự án hỗ trợ cộng đồng trong khu vực Bay Area này là hoàn toàn tình nguyện. Chúng tôi có một đội ngũ thu thập và kiểm chứng thông tin từ nhiều nguồn khác nhau. Chúng tôi nỗ lực hết sức để cập nhật thông tin nhanh nhất. Tuy vậy chúng tôi không thể đảm bảo các thông tin này luôn chính xác 100%",
     "about-us": {
-      "header": "Về chúng tôi",
+      "header": "Sứ mệnh",
       "p1": {
-        "text": "Đây là một dự án mở và hoàn toàn tình nguyện nhằm giúp cộng đồng vượt qua khủng hoảng COVID thông qua việc cung cấp thông tin về các nguồn lực công cộng. Dự án này bắt đầu từ một {0}, và nay cung cấp thông tin về các nguồn hỗ trợ khác như địa điểm và thời gian cung cấp bữa ăn miễn phí, hỗ trợ thực phẩm, hỗ trợ pháp lý và hỗ trợ y tế. Chúng tôi là một phần của tổ chức {1}.",
+        "text": "Mọi người nên có quyền truy cập thông tin đáng tin cậy về các nguồn lực cộng đồng địa phương, bằng ngôn ngữ của họ, trên một nền tảng đơn giản, dễ tiếp cận.",
         "link1": "unBox",
         "link0": "Bản đồ bữa ăn trường học khu vực Bay Area"
       },
       "p2": {
-        "text": "Dự án này được mô phỏng dựa trên {0}",
+        "text": "BayAreaCommunity.org là một dự án hướng tới cộng đồng làm việc với các tổ chức địa phương để thu thập, cập nhật và tập trung thông tin đáng tin cậy về các dịch vụ cộng đồng. Chúng tôi chia sẻ thông tin này với các tổ chức, nhân viên xã hội và cư dân Vùng Vịnh đang tìm kiếm tài nguyên thông qua trang web đa ngôn ngữ thân thiện với thiết bị di động.",
         "link": "NCCovid Support"
       },
       "p3": {
-        "text": "Bạn có thể tìm thêm thông tin về dự án, bao gồm mã nguồn để tái thiết lập dự án từ {0}",
-        "link": "Trang Github"
+        "text": "Chúng tôi là một dự án của tổ chức {0}, một hoạt động thực phẩm do sinh viên và sinh viên mới tốt nghiệp hợp tác chống lại tình trạng mất an ninh lương thực ở Hoa Kỳ.",
+        "link": "unBox"
       }
     },
+    "our-story": {
+      "header": "Câu chuyện của chúng ta",
+      "school-meals": {
+        "title": "Bữa ăn ở trường:",
+        "subtitle": "BayAreaCommunity.org (BAC) lập bản đồ mọi địa điểm bữa ăn của trường trong 9 quận của Vùng Vịnh, và cập nhật hai tuần một lần."
+      },
+      "p1": "Chúng tôi bắt đầu vào tháng 3 năm 2020, khi việc đóng cửa trường học COVID-19 đe dọa tước đi bữa ăn hàng ngày của nhiều gia đình. Huy động, USDA cho phép các khu học chánh phục vụ không chỉ học sinh trong học khu của họ, mà tất cả trẻ em, vào các thời gian và địa điểm phục vụ linh hoạt. Tuy nhiên, thời gian và địa điểm này thay đổi thường xuyên, và không có nguồn lực duy nhất, đáng tin cậy để giúp các gia đình trên khắp Vùng Vịnh tìm ra nơi có các bữa ăn. Đáp lại, nhóm sinh viên và cựu sinh viên Stanford của chúng tôi đã sử dụng Google MyMaps để tạo và cập nhật bản đồ bữa ăn ở trường học vùng Vịnh song ngữ đơn giản hoạt động trên điện thoại.",
+      "p2": {
+        "text": "Trong vòng hai tuần, bản đồ của chúng tôi đã nhận được nửa triệu lượt xem. Các trang web của khu học chánh đã hiển thị trang web của chúng tôi, và chúng tôi đã được giới thiệu trên {1}, {2}, {3}, {4}, {5}. {6}, {7} và {8}. Chúng tôi hợp tác với {9} để cập nhật {10} cho bệnh nhân có thu nhập thấp của Bệnh viện Stanford và phân phát chúng cho các đối tác và các quận. Chúng tôi bắt đầu cung cấp dữ liệu về các bữa ăn ở trường của mình cho {11}. Viện Chính sách Dinh dưỡng UC và Nourish CA đã tận dụng dữ liệu của chúng tôi để vận động mở rộng tài trợ bữa ăn học đường, lợi ích dinh dưỡng cho trẻ em và miễn trừ bữa ăn học đường của USDA. Kể từ tháng 5, chúng tôi đã được Anne Moertel, Nhân viên Thông tin Công cộng cho Dịch vụ Dinh dưỡng Học sinh của Học khu Thống nhất San Francisco (SFUSD), cố vấn.",
+        "link0": "SF Gate",
+        "link1": "Mercury News",
+        "link2": "NBC Bay Area",
+        "link3": "KQED",
+        "link4": "Palo Alto Online",
+        "link5": "Stanford News",
+        "link6": "Local News Matters",
+        "link7": "Stanford Pyjama Talks",
+        "link8": "Stanford Media",
+        "link9": "Stanford Pediatric Advocacy",
+        "link10": "tờ rơi tài nguyên",
+        "link11": "Đường dây nóng và Bản đồ Nhắn tin Bữa ăn Miễn phí Quốc gia của No Kid Hungry"
+      },
+      "p3": "Mười tình nguyện viên tận tụy cập nhật cơ sở dữ liệu về bữa ăn học đường của chúng tôi hai tuần một lần, bằng cách kiểm tra các trang web của học khu và các trang mạng xã hội, và gọi điện cho các học khu. Chúng tôi tiến hành kiểm tra chất lượng dữ liệu hàng tháng để đảm bảo chúng tôi tiếp tục cung cấp cho các gia đình ở Bay Area thông tin chính xác, cập nhật và có thể truy cập được.",
+      "building-beyond": {
+        "title": "Được mở rộng để bao gồm nhiều tài nguyên hơn bữa ăn ở trường:",
+        "subtitle": "Khi chúng tôi tiếp tục cập nhật và chia sẻ cơ sở dữ liệu về bữa ăn học đường của mình, chúng tôi đang làm việc với các đối tác của mình để cung cấp thông tin ngoài bữa ăn ở trường, bao gồm các nguồn thực phẩm miễn phí khác, các cửa hàng chấp nhận phiếu thực phẩm và chợ nông sản, chăm sóc sức khỏe, hỗ trợ tiền mặt, nhà ở, chăm sóc trẻ em , công nghệ, trợ giúp pháp lý, v.v."
+      },
+      "p4": "Các đối tác địa phương của chúng tôi, nhân viên xã hội của họ và những cư dân mà họ hỗ trợ đã cho chúng tôi thấy tầm quan trọng của thông tin tài nguyên cộng đồng chính xác, đa ngôn ngữ, dễ tiếp cận. Không giống như bữa ăn ở trường, vốn đòi hỏi phải xây dựng cơ sở dữ liệu của riêng chúng tôi từ đầu, nhiều tổ chức địa phương đã và đang làm việc để theo dõi và chia sẻ thông tin cập nhật về các nguồn lực cộng đồng khác, nhưng cần hỗ trợ để đảm bảo các nguồn của họ luôn cập nhật.",
+      "p5": "BAC giúp đỡ bởi:",
+      "p6": "Tình nguyện trực tiếp cho các tổ chức khác để giúp cập nhật cơ sở dữ liệu tài nguyên, bản đồ và trang web của họ.",
+      "p7": "Tập hợp thông tin cập nhật từ các tổ chức khác nhau trên toàn Vùng Vịnh vào cơ sở dữ liệu tập trung, đa tài nguyên và miễn phí.",
+      "p8": "Chia sẻ thông tin này với các cá nhân đang tìm kiếm tài nguyên và cung cấp giới thiệu thông qua trang web thân thiện với thiết bị di động của chúng tôi, sử dụng thiết kế lấy con người làm trung tâm do các nhân viên xã hội và cư dân địa phương cung cấp."
+    },
     "info-sources": {
-      "header": "Nguồn thông tin",
-      "p1": "Cơ sở dữ liệu của chúng tôi dựa trên thông tin từ những tổ chức sau:",
+      "header": "Nguồn dữ liệu",
+      "p1": "Cơ sở dữ liệu thông tin của chúng tôi được hưởng lợi từ dữ liệu được thu thập bởi các nguồn sau:",
       "p2": "Các tình nguyện viên phi thường của chúng tôi là người kiểm chứng và thu thập các thông tin như giờ hoạt động COVID-19 dành riêng cho người lớn tuổi, các lựa chọn lấy hàng an toàn từ bên lề đường..vv"
     },
     "info-source": {
       "link1": "Định vị cửa hàng USDA SNAP",
       "link2": "Định vị cửa hàng USDA WIX",
-      "link3": "Tổ chức Second Harvest khu vực Silicon Valley",
-      "link4": "Tổ chức vận đồng cho bệnh nhi Stanford",
-      "link5": "Trung tâm nghiên cứu hệ sinh thái Berkeley"
+      "link3": "Trung tâm sinh thái Berkeley",
+      "link4": "SF Food Resources Viewer",
+      "link5": "Nguồn thực phẩm của Hạt Santa Clara",
+      "link6": "Bản đồ Phân phối, Kiểm nghiệm và Dịch vụ Thực phẩm COVID-19 của Hạt Alameda",
+      "link7": "Bản đồ phân phối thực phẩm COVID-19 của Hạt Contra Costa",
+      "link8": "Bộ định vị văn phòng hạt CalFresh",
+      "p2": {
+        "text": "URISA's GISCorps, Coders Against COVID ({0}), and Esri, 2020. COVID-19 Testing Locations in the United States. Spatial dataset. {1}",
+        "link0": "findcovidtesting.org",
+        "link1": "https://services.arcgis.com/8ZpVMShClf8U8dae/arcgis/rest/services/TestingLocations_public/FeatureServer"
+      }
     },
     "contact-us": {
-      "header": "Liên lạc với chúng tôi",
+      "header": "Kết nối",
       "p1": {
-        "text": "Nếu bạn muốn đóng góp thông tin, phát hiện thông tin không chính xác hoặc có bất kỳ câu hỏi gì, vui lòng liên lạc {0}",
-        "link": "baycommunityresource@gmail.com"
+        "text": "Đọc {0} gần đây nhất của chúng tôi để tìm hiểu thêm về dự án của chúng tôi! Bạn có thể tìm thấy mã nguồn để tái tạo dự án trên {1} của chúng tôi. Tất cả dữ liệu của chúng tôi là nguồn mở và có sẵn theo yêu cầu, thông qua cơ sở dữ liệu Airtable của chúng tôi. Vui lòng liên hệ nếu có bất kỳ câu hỏi, thắc mắc hoặc yêu cầu nào tới {2}.",
+        "link0": "báo cáo tác động",
+        "link1": "trang Github",
+        "link2": "info@unboxproject.org",
+        "link": "info@unboxproject.org"
       },
       "contact-us-header": "Liên lạc với chúng tôi tại đây"
     },
     "disclaimer": {
       "header": "Miễn trừ trách nhiệm",
-      "p": "Dự án hỗ trợ cộng đồng trong khu vực Bay Area này là hoàn toàn tình nguyện. Chúng tôi có một đội ngũ thu thập và kiểm chứng thông tin từ nhiều nguồn khác nhau. Chúng tôi nỗ lực hết sức để cập nhật thông tin nhanh nhất. Tuy vậy chúng tôi không thể đảm bảo các thông tin này luôn chính xác 100%"
+      "p": "Nhóm tình nguyện viên của chúng tôi thu thập và xác minh dữ liệu từ nhiều nguồn khác nhau. Chúng tôi cũng giúp các tổ chức đối tác cập nhật cơ sở dữ liệu của họ và nhập chúng vào trang web của chúng tôi. Chúng tôi cố gắng đảm bảo cơ sở dữ liệu về bữa ăn học đường của chúng tôi chính xác và cập nhật 100%, mặc dù chúng tôi không thể đảm bảo rằng chúng tôi sẽ không có sai sót. Sắp tới, chúng tôi cũng sẽ đưa thông tin cập nhật về thực phẩm miễn phí, trợ giúp pháp lý, hỗ trợ tiền mặt, sức khỏe y tế và tâm thần, chăm sóc trẻ em, hỗ trợ bạo lực gia đình, nhà ở và tài nguyên xét nghiệm COVID-19, nhưng những danh mục này đang trong quá trình thực hiện. Chúng tôi đang làm việc với các đối tác của mình để tập hợp những thông tin tốt nhất sẵn có, cập nhật và chia sẻ thông tin đó theo cách đơn giản và hữu ích nhất."
     },
     "spthanks": {
       "p": "Chân thành cảm ơn {0} và {1} đã hỗ trợ cho trang này.",
@@ -97,10 +141,26 @@
     },
     "our-team": {
       "header": "Đội ngũ của chúng tôi",
+      "p1": "Chúng tôi là một cộng đồng bao gồm các sinh viên địa phương, cựu sinh viên và giảng viên từ Stanford, USF, UC Berkeley, Trường trung học Palo Alto, Trường trung học Castilleja, Trường trung học Gunn và Trường trung học Harker, và các tình nguyện viên từ chương Code for local Code for San Jose của Mỹ .",
+      "lead": "Lãnh đạo dự án",
+      "data-engineers": "Kỹ sư dữ liệu",
+      "developers": "Nhà phát triển",
+      "data-warriors": "Các chiến binh nhập dữ liệu",
+      "school-meals-lead": "Điều phối viên Dữ liệu Bữa ăn của Trường",
+      "project-manager": "Quản lý dự án",
+      "health-lead": "Điều phối viên Dữ liệu Y tế",
+      "dv-lead": "Điều phối viên dữ liệu DV",
+      "legal-lead": "Điều phối viên dữ liệu pháp lý",
+      "p2": {
+        "text": "Chúng tôi vô cùng biết ơn Joyce Tagal vì sự lãnh đạo của bà trong việc thành lập BAC; Maeva Fincker và các nhà phát triển ban đầu của chúng tôi, những người đã hợp tác xây dựng giao diện người dùng tùy chỉnh của chúng tôi và điều chỉnh từ nhóm {0} tuyệt vời; Bill Behrman của {1} để được hướng dẫn hiền triết; Cheryl Phillips của {2} vì sự ủng hộ của công chúng; sinh viên từ Sáng kiến ​​Vịnh Tương lai Stanford, lớp Các Thành phố Bền vững Stanford và Chương trình Luật Stanford COVID Pro Bono vì sự hợp tác vô giá của họ; và Mở giới thiệu và Mapbox để được hỗ trợ kỹ thuật và tư vấn.",
+        "link0": "NC COVID Support",
+        "link1": "Stanford Data Lab",
+        "link2": "Big Local News"
+      },
       "sourcing": "Sưu tập và thông dịch dữ liệu :",
       "dev": "Tạo và phát triển dữ liệu:",
       "resource": "Người điều phối các nguồn hỗ trợ",
-      "translate": "người thông dịch",
+      "translate": "Người dịch",
       "dqual": "chất lượng dữ liệu",
       "internal-community": "cộng đồng nội bộ",
       "projl": "trưởng dự án",
@@ -329,7 +389,7 @@
     "additional_info_text": "Còn bất cứ điều gì khác còn đang thiếu, cần được sửa đổi hoặc nên được hiển thị không?",
     "additional_info_placeholder": "Dịch vụ mới, địa điểm được đóng cửa vĩnh viễn, giờ mua sắm cho người lớn tuổi ...",
     "no_edit": "Không có gì thay đổi.",
-    "submission_error": "Đã có một lỗi trong quá trình gửi biểu mẫu. Vui lòng thử lại hoặc liên hệ với chúng tôi tại baycommunityresource@gmail.com."
+    "submission_error": "Đã có một lỗi trong quá trình gửi biểu mẫu. Vui lòng thử lại hoặc liên hệ với chúng tôi tại info@unboxproject.org."
   },
   "pebt": {
     "header": "Lợi ích thực phẩm dành cho trẻ em được nhận các bữa ăn miễn phí hoặc giảm giá.",
@@ -343,5 +403,9 @@
     "link_url": "https://bit.ly/bac-interviews",
     "text_sub": "Nếu bạn được chọn để phỏng vấn, tất cả các phiên sẽ được  trò chuyện thông qua điện thoại / video và chúng tôi sẽ bù lại cho thời gian của bạn.",
     "header": "Hãy giúp chúng tôi phục vụ bạn tốt hơn."
+  },
+  "blm-banner": {
+    "title": "Mạng Sống Người Da Đen Đáng Tôn Trọng.",
+    "button": "Đọc tuyên bố của chúng tôi"
   }
 }

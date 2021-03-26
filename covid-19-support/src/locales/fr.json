@@ -32,7 +32,7 @@
     "partners": "Sources d'informations",
     "title": "A propos de ce site",
     "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
+      "link0": "info@unboxproject.org"
     },
     "about-us": {
       "p1": {
@@ -44,7 +44,7 @@
     },
     "contact-us": {
       "p1": {
-        "link": "baycommunityresource@gmail.com"
+        "link": "info@unboxproject.org"
       }
     },
     "spthanks": {
@@ -174,6 +174,5 @@
     "when-do-you-need-it": "Quand en avez-vous besoin?",
     "what": "Ressource..."
   },
-  "title": "Prise en charge de {0} COVID",
-  "DO NOT TRANSLATE FROM HERE DOWN": "DO NOT TRANSLATE FROM HERE DOWN"
+  "title": "Prise en charge de {0} COVID"
 }

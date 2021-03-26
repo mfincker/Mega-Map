@@ -36,8 +36,8 @@
     "title": "关于本网站",
     "front-page": {
       "p1": "你好！",
-      "p2a": "我们提供有关湾区学校用餐场所的信息，每两周更新一次。",
-      "p2b": "不久，我们还将提供有关免费食品，法律援助，现金援助，医疗和精神健康，儿童保育，家庭暴力支持，住房以及COVID-19测试资源的最新信息。 这些类别尚在开发中！ 我们正在与合作伙伴合作，以收集最佳的可用信息，使其保持最新状态，并以最简单，有用的方式进行共享。",
+      "p2a": "我们提供有关湾区校餐服务的信息，每两周更新一次。",
+      "p2b": "不久，我们还将提供有关免费食品，法律援助，现金援助，医疗和精神健康，儿童保育，家庭暴力支持，住房以及COVID-19测试地点资源的最新信息。 这些类别尚在开发中！ 我们正在与合作伙伴合作，以收集可靠的信息，保持更新，并以最快速便捷的方式进行共享。",
       "p3": "开始检索，请选择你的位置和你想要找的资源。",
       "p4": {
         "text": "我们隶属于斯坦福  {0} 和 {1} , 我们很感谢Bill Behrman, Sara Altman, and Cheryl Phillips 对我们给予的帮助和指导。",
@@ -47,48 +47,92 @@
     },
     "about-us-sources": "我们的资源库受益于以下机构收集来的信息：USDA SNAP 商店位置检索\nUSDA WIC 商店位置检索\n硅谷 Second Harvest\n斯坦福 Pediatric Advocacy\n我们有一支志愿者队伍来核对和收集更多跟COVID-19有关的信息，包括老人时间段，街边递送服务等。",
     "about-us-contact": {
-      "link0": "baycommunityresource@gmail.com"
+      "link0": "info@unboxproject.org"
     },
     "about-us-disclaimer": "这个湾区资源项目全部是有志愿者完成的。我们有一支志愿者队伍搜集和核对信息。我们尽最大能力确保信息时效性，但是我们无法保证信息100%准确。",
     "about-us": {
-      "header": "关于我们",
+      "header": "使命",
       "p1": {
-        "text": "我们由志愿者协助完成的资源公共享的项目为我们的社区提供所需资源的信息来帮助度过COVID-19疫情的难关。我们项目从 {0} 开始，现在提供更全面的资源信息，包括免费餐，食物，法律协助和医疗协助等资源的开放时间和地点。这个项目最初借鉴了NC的COVID-19协助。你也在github上寻找到更多关于我们项目的信息，包括我们的程序编码。我们是{1}组织的一部分。",
+        "text": "我们每一个人都应该可以在一个便捷、公开的的平台上，用自己的母语查找到关本地社区资源的可靠信息。",
         "link1": "unBox",
         "link0": "湾区学校用餐地图"
       },
       "p2": {
-        "text": "我们项目最初借鉴了 {0} 。",
+        "text": "BayAreaCommunity.org 是一个与本地组织合作的，对于值得信赖的社区项目进行信息收集，更新和归纳的社区服务项目。我们通过我们的多语言手机app与社会组织、社会工作者、以及湾区居民分享这些信息。",
         "link": "NCCovid Support"
       },
       "p3": {
-        "text": "你也在 {0} 上寻找到更多关于我们项目的信息，包括我们的程序编码。",
-        "link": "github网页"
+        "text": "我们是 {0} 组织的一个项目。unBox由美国在读和刚毕业的学生领导，旨在应对美国膳食需求问题。",
+        "link": "unBox"
       }
     },
+    "our-story": {
+      "header": "我们的故事",
+      "school-meals": {
+        "title": "校餐:",
+        "subtitle": "BayAreaCommunity.org（BAC）绘制了包含湾区9个县中每个学校餐点的地图，每两周更新一次。"
+      },
+      "p1": "2020年3月，当COVID-19停课导致许多家庭即将面临要失去日常学校餐时的威胁时，我们开始了工作。USDA规定学区在灵活的时间和地点不仅对本地学生而且对所有孩子都提供提供服务。但是，这些时间和地点经常变化，并且没有单一可靠的资源来帮助湾区的家庭找到可以用餐的地方。作为回应，我们的斯坦福大学学生和校友团队使用Google MyMaps创建和更新了适用于手机的简单的双语湾区学校用餐地图。",
+      "p2": {
+        "text": "在两周内，我们的地图获得了50万次浏览。学区网站显示了我们的网站，并且在 {0), {1}, {2}, {3}, {4}, {5}, {6}, {7}, 和 {8}上受到关注。我们与{9}合作，为Stanford Hospital的低收入患者更新了{10}，并将其分发给合作伙伴和县市。我们开始向No Kid Hungry的{11}和地图提供学校餐点数据。 UC营养政策研究所和Nourish CA利用我们的数据来倡导扩大学校膳食资金，儿童营养福利以及USDA学校膳食豁免。自5月以来，我们得到了旧金山联合学区（SFUSD）学生营养服务公共信息官Anne Moertel的建议。",
+        "link0": "SF Gate",
+        "link1": "Mercury News",
+        "link2": "NBC Bay Area",
+        "link3": "KQED",
+        "link4": "Palo Alto Online",
+        "link5": "Stanford News",
+        "link6": "Local News Matters",
+        "link7": "Stanford Pyjama Talks",
+        "link8": "Stanford Media",
+        "link9": "Stanford Pediatric Advocacy",
+        "link10": "资源传单",
+        "link11": "国家免费膳食短信热线"
+      },
+      "p3": "十位敬业的志愿者每两周通过检查学区网站和社交媒体页面并致电学区来更新我们的学校膳食数据库。我们每月进行数据质量审核，以确保我们继续为湾区家庭提供准确，更新和可访问的信息。",
+      "building-beyond": {
+        "title": "努力提供比校餐更多的资源:",
+        "subtitle": "在我们继续更新和共享校餐数据库的同时，我们正在与合作伙伴合作，提供学校餐食以外的信息，包括其他免费食物资源，接受食品券的商店和农贸市场，医疗保健，现金援助，住房，儿童保育，技术，法律援助等。"
+      },
+      "p4": "我们的当地合作伙伴，他们的社工人员以及他们支持的居民向我们展示了准确，多语言，可访问的社区资源信息的重要性。与校餐项目需要从头开始建立我们自己的数据库不同，许多本地组织已经在努力跟踪和共享有关其他社区资源的更新信息，但是需要有人来为确保其资源更新提供支持。",
+      "p5": "BAC通过以下方式提供帮助：",
+      "p6": "直接为其他组织提供志愿服务，以帮助更新其资源数据库，地图和网站。",
+      "p7": "将来自湾区不同组织的最新信息收集到一个集中的，多资源的免费数据库中。",
+      "p8": "通过我们的移动网站，与个人分享我们数据库资源，并使用以当地社会工作者和居民为中心的以人为本的设计。"
+    },
     "info-sources": {
-      "header": "信息资源",
-      "p1": "我们的资源库受益于以下机构收集来的信息",
+      "header": "数据源",
+      "p1": "我们的信息数据库受益于以下来源收集的数据：",
       "p2": "我们有一支志愿者队伍进行资源的征集和核对，其中包裹跟Covid-19 有关信息，比如老人时间段，街边安全递送等信息。"
     },
     "info-source": {
       "link1": "USDA SNAP 商店位置检索",
       "link2": "USDA WIC 商店位置检索",
-      "link3": "硅谷 Second Harvest",
-      "link4": "斯坦福 Pediatric Advocacy",
-      "link5": "伯克利生态环保中心"
+      "link3": "伯克利生态中心",
+      "link4": "SF食品资源查看器",
+      "link5": "圣克拉拉县粮食资源",
+      "link6": "阿拉米达县COVID-19食品分配，测试和服务地图",
+      "link7": "孔塔海岸县COVID-19食品分配图",
+      "link8": "CalFresh县办公室定位器",
+      "p2": {
+        "text": "URISA's GISCorps, Coders Against COVID ({0}), and Esri, 2020. COVID-19 Testing Locations in the United States. Spatial dataset. {1}",
+        "link0": "findcovidtesting.org",
+        "link1": "https://services.arcgis.com/8ZpVMShClf8U8dae/arcgis/rest/services/TestingLocations_public/FeatureServer"
+      }
     },
     "contact-us": {
-      "header": "联系我们",
+      "header": "连接",
       "p1": {
-        "text": "如果有关于数据增添和准确性方面的问题，或者任何其他方面的问题，请{0}。",
-        "link": "baycommunityresource@gmail.com"
+        "text": "阅读我们最新的{0}，以了解有关我们项目的更多信息！您可以在我们的{1} 上找到用于复制项目的源代码。我们所有的数据都是公开的，可以根据需要通过我们的Airtable数据库获取。如果您有任何疑问，疑虑或疑问，请随时与我们联系，电子邮件地址是{2}。",
+        "link0": "影响报告",
+        "link1": "Github页面",
+        "link2": "info@unboxproject.org",
+        "link": "info@unboxproject.org"
       },
       "contact-us-header": "这里联系我们"
     },
     "disclaimer": {
       "header": "免责声明",
-      "p": "这个湾区资源项目全部是有志愿者完成的。我们有一支志愿者队伍搜集和核对信息。我们尽最大能力确保信息时效性，但是我们无法保证信息100%准确。"
+      "p": "我们的志愿者团队从各种来源收集并验证数据。我们还帮助我们的合作伙伴组织更新其数据库，并将其导入我们的网站。尽管我们不能保证我们不会出错，但我们努力确保我们的学校膳食数据库是100％准确和最新的。不久，我们还将提供有关免费食品，法律援助，现金援助，医疗和精神健康，儿童保育，家庭暴力支持，住房和COVID-19测试资源的最新信息，但是这些类别仍在开发中。我们正在与合作伙伴合作，以收集最佳的可用信息，使其保持最新状态，并以最简单，有用的方式进行共享。"
     },
     "spthanks": {
       "p": "特别感谢{0} 和{1} 为我们的网站提供的帮助。",
@@ -97,6 +141,22 @@
     },
     "our-team": {
       "header": "我们的队伍",
+      "p1": "我们是由来自斯坦福大学，南佛罗里达大学，加州大学伯克利分校，帕洛阿尔托高中，卡斯蒂利亚高中，冈恩高中和哈克高中的本地学生，校友和教职员工组成的社区，以及来自美国地方法规圣何塞分会的志愿者。",
+      "lead": "项目负责人",
+      "data-engineers": "数据工程师",
+      "developers": "开发人员",
+      "data-warriors": "数据输入战士",
+      "school-meals-lead": "校餐数据协调员",
+      "project-manager": "专案经理",
+      "health-lead": "健康数据协调员",
+      "dv-lead": "DV数据协调员",
+      "legal-lead": "法律数据协调员",
+      "p2": {
+        "text": "我们非常感谢乔伊斯·塔加尔（Joyce Tagal）领导创立BAC； Maeva Fincker和我们的最初开发人员与出色的{0}团队合作改建了自定义UI；{1}的Bill Behrman提供的明智的指导；{2}的谢丽尔·菲利普斯（Cheryl Phillips）的宣传支持；感谢与斯坦福未来湾计划 （Stanford Future Bay Initiative），斯坦福可持续城市 （Stanford Sustainable Cities）课程和斯坦福法律COVID无偿公益计划 （Stanford Law COVID Pro Bono Program）的学生之间的宝贵合作；来自Open Referral和Mapbox的技术支持与建议。",
+        "link0": "NC COVID Support",
+        "link1": "Stanford Data Lab",
+        "link2": "Big Local News"
+      },
       "sourcing": "数据收集和翻译",
       "dev": "数据工程师",
       "resource": "资源协调员",
@@ -329,7 +389,7 @@
     "additional_info_text": "其他忽略的信息，需要更改或者展示的信息？",
     "additional_info_placeholder": "新的服务， 地址永久关闭，老年人购买时间",
     "no_edit": "没有变化",
-    "submission_error": "提交错误，请重试或者通过baycommunityresource@gmail.com.联系我们。"
+    "submission_error": "提交错误，请重试或者通过info@unboxproject.org.联系我们。"
   },
   "pebt": {
     "header": "为免费或者优惠获取食物的孩子提供的食物福利",
@@ -344,7 +404,8 @@
     "text_sub": "如果你被选为采访对象，所有采访都会远程通过电话或视频的方式进行，并且我们会对你进行有偿补贴。",
     "header": "帮我们为您提供更好的服务。"
   },
-  "faq": {
-    "title": "住房对家庭暴力的支持"
+  "blm-banner": {
+    "title": "黑人的命也是命.",
+    "button": "阅读我们的声明"
   }
 }
