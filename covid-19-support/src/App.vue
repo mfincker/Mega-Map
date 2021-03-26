@@ -6,14 +6,11 @@
     <div class="intro" :class="{ 'intro-centered': initialSearch }">
       <template v-if="initialSearch">
         <h4 class="introParagraph">{{ $t('about.front-page.p1') }}</h4>
-        <p class="introParagraph">
-          {{ $t('about.front-page.p2a') }}
-          <br />
-          <br />
-          {{ $t('about.front-page.p2b') }}
-        </p>
       </template>
       <search
+        :labelEveryTwoWeeks="$t('about.front-page.p2a')"
+        :labelStartBySelecting="$t('about.front-page.p3')"
+        :labelSoonWeWill="$t('about.front-page.p2b')"
         :needFromApp="need"
         :nearLocation="nearLocation"
         :userLocation="userLocation"
@@ -22,7 +19,6 @@
         v-if="showSearchBar"
       />
       <template v-if="initialSearch">
-        <p class="introParagraph introParagraph-light">{{ $t('about.front-page.p3') }}</p>
         <p class="introParagraph ux-link">
           <a :href="$t('ux_study.link_url')" target="_blank">{{ $t('ux_study.header') }}</a>
         </p>
