@@ -1,0 +1,32 @@
+name: DeployToStaging
+
+on:
+  release:
+    types: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'    
+
+    - run: npm install
+      working-directory: covid-19-support
+    
+    - run: npm run build
+      env:
+        VUE_APP_THEME: ${{ secrets.VUE_APP_THEME }}
+        VUE_APP_DEPLOY: 'GITHUB'  
+      working-directory: covid-19-support
+    
+    - run: npm run deploy
+      env:
+        VUE_APP_DEPLOY: 'GITHUB'
+      working-directory: covid-19-support
