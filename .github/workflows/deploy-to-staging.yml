@@ -1,8 +1,9 @@
 name: DeployToStaging
 
 on:
-  release:
-    types: [push]
+  push:
+    branches:
+      - staging
 
 jobs:
   build:
