@@ -18,10 +18,7 @@ jobs:
       with:
         node-version: '12.x'    
 
-    - name: Setup git user
-      run: |
-          git config --global user.name "calba5141114"
-          git config --global user.email "me@carlosalba.dev"
+    - uses: fregante/setup-git-user@v1
 
     - run: npm install
       working-directory: covid-19-support
@@ -32,7 +29,10 @@ jobs:
         VUE_APP_DEPLOY: 'GITHUB'  
       working-directory: covid-19-support
     
-    - run: npm run deploy
-      env:
-        VUE_APP_DEPLOY: 'GITHUB'
-      working-directory: covid-19-support
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: covid-19-support/dist # The folder the action should deploy.
+        CLEAN: true
