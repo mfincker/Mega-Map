@@ -7,6 +7,7 @@
       <template v-if="initialSearch">
         <h4 class="introParagraph">{{ $t('about.front-page.p1') }}</h4>
       </template>
+      <p>Testing DeployToStaging Workflow</p>
       <search
         :labelEveryTwoWeeks="$t('about.front-page.p2a')"
         :labelStartBySelecting="$t('about.front-page.p3')"
