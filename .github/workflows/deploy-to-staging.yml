@@ -17,6 +17,8 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'    
+        
+    - uses: fregante/setup-git-user@v1
 
     - run: npm install
       working-directory: covid-19-support
