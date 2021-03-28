@@ -236,14 +236,17 @@ input:-webkit-autofill {
 
 .introParagraph {
   padding: 24px 8px 10px;
+  font-size: 16px;
 }
 
 .introParagraph-last {
   padding: 0px 8px 10px;
+  font-size: 16px;
 }
 
 .introParagraph-light {
   color: $gray-600;
+  font-size: 16px;
 }
 
 .searchItems {
