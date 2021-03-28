@@ -103,5 +103,6 @@ export default {
 
 .updated {
   color: #aaa;
+  font-size: 15px;
 }
 </style>
