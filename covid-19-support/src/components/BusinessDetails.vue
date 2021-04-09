@@ -37,6 +37,13 @@
           {{ $t('label.last_updated') }}:
           {{ new Date(business.last_update).toLocaleDateString(this.$i18n.locale, { year: 'numeric', month: '2-digit', day: '2-digit' }) }}
         </p>
+
+        <div v-if="this.businessGoogleMapUrl">
+          <a class="googleMapsExternalLink" :href="this.businessGoogleMapUrl" target="_blank" rel="noopener noreferrer">
+            {{ $t('label.directions_to_store') }}
+          </a>
+          <div class="googleMapsExternalLinkBottomSpacer" />
+        </div>
       </div>
     </b-list-group>
   </span>
@@ -104,5 +111,14 @@ export default {
 .updated {
   color: #aaa;
   font-size: 15px;
+}
+
+.googleMapsExternalLink {
+  color: black;
+  text-decoration: underline;
+}
+
+.googleMapsExternalLinkBottomSpacer {
+  height: 13px;
 }
 </style>
